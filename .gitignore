@@ -1,4 +1,5 @@
 framesSquencce/.externalNativeBuild/
+.idea/workspace.xml
 sample/.externalNativeBuild/
 .gradle/
 .idea/
