@@ -1,4 +1,4 @@
-package com.danny_jiang.algorithm;
+package com.danny_jiang.algorithm.bubble_sort;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -7,9 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
-import com.danny_jiang.algorithm.fragment.BubbleSortAnalyzeFragment;
-import com.danny_jiang.algorithm.fragment.BubbleSortVisualizerFragment;
-import com.danny_jiang.algorithm.fragment.BubbleSortTutorialFragment;
+import com.danny_jiang.algorithm.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +23,9 @@ public class BubbleSortActivity extends FragmentActivity implements AndroidFragm
         initFragments();
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("TAB1"));
-        tabLayout.addTab(tabLayout.newTab().setText("TAB2"));
-        tabLayout.addTab(tabLayout.newTab().setText("TAB3"));
+        tabLayout.addTab(tabLayout.newTab().setText("TUTORIAL"));
+        tabLayout.addTab(tabLayout.newTab().setText("VISUALIZER"));
+        tabLayout.addTab(tabLayout.newTab().setText("ANALYSIS"));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

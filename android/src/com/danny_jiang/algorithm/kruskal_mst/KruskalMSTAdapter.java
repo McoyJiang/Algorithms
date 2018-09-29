@@ -1,4 +1,4 @@
-package com.danny_jiang.algorithm.adapter;
+package com.danny_jiang.algorithm.kruskal_mst;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;

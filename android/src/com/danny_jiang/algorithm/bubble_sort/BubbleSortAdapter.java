@@ -1,4 +1,4 @@
-package com.danny_jiang.algorithm.adapter;
+package com.danny_jiang.algorithm.bubble_sort;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;

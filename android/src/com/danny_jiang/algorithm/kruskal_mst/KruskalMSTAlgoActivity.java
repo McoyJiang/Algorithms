@@ -1,4 +1,4 @@
-package com.danny_jiang.algorithm.activity;
+package com.danny_jiang.algorithm.kruskal_mst;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;

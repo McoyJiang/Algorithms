@@ -98,10 +98,10 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/dann
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:10:9-35
 	android:theme
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:13:9-40
-activity#com.danny_jiang.algorithm.BubbleSortActivity
+activity#com.danny_jiang.algorithm.bubble_sort.BubbleSortActivity
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:15:9-20:20
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:15:19-53
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:15:19-65
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
@@ -112,7 +112,7 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:18:17-77
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:18:27-74
-activity#com.danny_jiang.algorithm.activity.KruskalMSTAlgoActivity
+activity#com.danny_jiang.algorithm.kruskal_mst.KruskalMSTAlgoActivity
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:22:9-23:20
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:22:19-66
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:22:19-69

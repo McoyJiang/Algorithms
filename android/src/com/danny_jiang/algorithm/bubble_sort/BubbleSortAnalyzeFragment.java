@@ -1,4 +1,4 @@
-package com.danny_jiang.algorithm.fragment;
+package com.danny_jiang.algorithm.bubble_sort;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

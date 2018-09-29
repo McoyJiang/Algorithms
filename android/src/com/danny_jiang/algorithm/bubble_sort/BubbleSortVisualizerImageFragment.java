@@ -1,4 +1,4 @@
-package com.danny_jiang.algorithm.fragment;
+package com.danny_jiang.algorithm.bubble_sort;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
-import com.danny_jiang.algorithm.adapter.BubbleSortAdapter;
 
 public class BubbleSortVisualizerImageFragment extends AndroidFragmentApplication {
 
