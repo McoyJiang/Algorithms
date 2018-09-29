@@ -4,7 +4,7 @@
             "outputFile": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
             "map": [
                 {
-                    "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ee21539590f16b331e546403cd8b59a7/res/values-port/values-port.xml",
+                    "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ec3e357c71656d4403cccd78c920c234/res/values-port/values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

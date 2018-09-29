@@ -14,7 +14,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:testOnly="true"
-        android:theme="@style/GdxTheme" >
+        android:theme="@style/AppTheme" >
         <activity android:name="com.danny_jiang.algorithm.BubbleSortActivity" >
         </activity>
         <activity android:name="com.danny_jiang.algorithm.activity.KruskalMSTAlgoActivity" >
