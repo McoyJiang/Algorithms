@@ -29,7 +29,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
                 Gdx.files.internal("badlogic.jpg")
         )));
         next.setSize(200, 100);
-        next.setPosition(400, 100);
+        next.setPosition(800, 10);
         stage.addActor(next);
         next.addListener(new ClickListener() {
             @Override

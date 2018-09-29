@@ -2,7 +2,14 @@ package com.danny_jiang.algorithm.bubble_sort;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.Action;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
+import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
+import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.utils.AnimationUtils;
@@ -31,17 +38,39 @@ import java.util.List;
 public class BubbleSortAdapter extends AlgorithmAdapter {
 
     private HorizontalGroup bubbleSortGroup;
+    private Image upArrow;
     private List<AlgorithmBall> actorList;
 
     @Override
     public void create() {
         super.create();
 
-        initializeActors();
+        updateStatus(0);
     }
 
-    private void initializeActors() {
+    private void updateStatus(int index) {
+        for (int k = 0; k < 7; k++) {
+            if (k < index) {
+                actorList.get(k).defaultStatus();
+            }
+            if (k == index && index < i) {
+                actorList.get(index).activeStatus();
+                actorList.get(index + 1).activeStatus();
+            }
+        }
+    }
+
+    @Override
+    protected void inflateStage() {
         actorList = new ArrayList<>();
+
+        bubbleSortGroup = new HorizontalGroup();
+        bubbleSortGroup.align(Align.center);
+        bubbleSortGroup.space(30);
+        bubbleSortGroup.setSize(stage.getWidth(), stage.getHeight() * 3 / 4);
+        bubbleSortGroup.setPosition(0, stage.getHeight() / 4);
+        bubbleSortGroup.setDebug(true);
+        stage.addActor(bubbleSortGroup);
 
         for (int i = 0; i < 7; i++) {
             AlgorithmBall algorithmBall = new AlgorithmBall("" + array[i]);
@@ -51,15 +80,11 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
             actorList.add(algorithmBall);
             bubbleSortGroup.addActor(algorithmBall);
         }
-    }
 
-    @Override
-    protected void inflateStage() {
-        bubbleSortGroup = new HorizontalGroup();
-        bubbleSortGroup.align(Align.center);
-        bubbleSortGroup.space(30);
-        bubbleSortGroup.setSize(stage.getWidth(), stage.getHeight());
-        stage.addActor(bubbleSortGroup);
+        upArrow = new Image(new Texture("up_arrow.png"));
+        upArrow.setSize(100, 150);
+        upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2, 200);
+        stage.addActor(upArrow);
     }
 
     @Override
@@ -88,14 +113,32 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
             if (array[j] > array[j + 1]) {
                 switchChild(j, j + 1);
                 swapArray(j);
+            } else {
+                moveArrow(j + 1);
             }
             j++;
         } else {
             actorList.get(j).deadStatus();
+            moveArrow(0);
             j = 0;
             i--;
         }
         System.out.println(Arrays.toString(array));
+    }
+
+    private void moveArrow(final int index) {
+        AlgorithmBall algorithmBall = actorList.get(index);
+        float position = algorithmBall.getX();
+        MoveToAction moveToAction = Actions.moveTo(position, upArrow.getY());
+        moveToAction.setDuration(0.3f);
+        RunnableAction updateAction = Actions.run(new Runnable() {
+            @Override
+            public void run() {
+                updateStatus(index);
+            }
+        });
+        SequenceAction sequence = Actions.sequence(Actions.delay(0.3f), moveToAction, updateAction);
+        upArrow.addAction(sequence);
     }
 
     private void swapArray(int j) {
@@ -108,7 +151,7 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         final AlgorithmBall actorFirst = actorList.get(first);
         final AlgorithmBall actorSecond = actorList.get(second);
 
-        stage.addAction(AnimationUtils.curveSwitchActors(actorFirst, actorSecond, new Runnable() {
+        Action switchActors = AnimationUtils.curveSwitchActors(actorFirst, actorSecond, new Runnable() {
             @Override
             public void run() {
                 actorFirst.setIndex(second);
@@ -118,6 +161,13 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
                 actorList.remove(second);
                 actorList.add(second, actorFirst);
             }
-        }));
+        });
+        RunnableAction run = Actions.run(new Runnable() {
+            @Override
+            public void run() {
+                moveArrow(second);
+            }
+        });
+        stage.addAction(Actions.sequence(switchActors, run));
     }
 }
