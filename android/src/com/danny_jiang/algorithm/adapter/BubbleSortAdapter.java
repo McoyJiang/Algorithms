@@ -16,7 +16,9 @@ import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.utils.AnimationUtils;
 import com.danny_jiang.algorithm.utils.BezierAction;
@@ -30,29 +32,31 @@ import java.util.List;
 
 public class BubbleSortAdapter extends ApplicationAdapter {
 
-    int[] array = {45, 17, 23, 5, 76, 10, 4};
-    Stage stage;
-    HorizontalGroup horizontalGroup;
-    List<AlgorithmBall> actorList;
+    private int[] array = {45, 17, 23, 5, 76, 10, 4};
+    private Stage stage;
+    private List<AlgorithmBall> actorList;
 
     @Override
     public void create() {
         super.create();
         Collections.shuffle(Arrays.asList(array));
         stage = new Stage();
-        horizontalGroup = new HorizontalGroup();
+        Image bg = new Image(new Texture(Gdx.files.internal("bg/visualizer_bg.png")));
+        bg.setSize(stage.getWidth(), stage.getHeight());
+        stage.addActor(bg);
+        HorizontalGroup horizontalGroup = new HorizontalGroup();
         horizontalGroup.align(Align.center);
         horizontalGroup.space(30);
-        horizontalGroup.setSize(stage.getWidth(), stage.getHeight() / 4);
-        horizontalGroup.setPosition(0, stage.getHeight() * 3 / 4);
+        horizontalGroup.setSize(stage.getWidth(), stage.getHeight());
         stage.addActor(horizontalGroup);
 
-        BaseGdxActor actor = new BaseGdxActor(new TextureRegion(new Texture(
+        BaseGdxActor next = new BaseGdxActor(new TextureRegion(new Texture(
                 Gdx.files.internal("badlogic.jpg")
         )));
-        actor.setPosition(400, 400);
-        stage.addActor(actor);
-        actor.addListener(new ClickListener() {
+        next.setSize(200, 100);
+        next.setPosition(400, 100);
+        stage.addActor(next);
+        next.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 nextStep();
@@ -83,7 +87,7 @@ public class BubbleSortAdapter extends ApplicationAdapter {
     public void render() {
         super.render();
         // 黄色清屏
-        Gdx.gl.glClearColor(1, 1, 1, 1);
+        Gdx.gl.glClearColor(1, 1, 1, 0);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         stage.act();
