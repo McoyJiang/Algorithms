@@ -7,7 +7,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
-import com.danny_jiang.algorithm.fragment.BubbleSortFragment;
+import com.danny_jiang.algorithm.fragment.BubbleSortAnalyzeFragment;
+import com.danny_jiang.algorithm.fragment.BubbleSortVisualizerFragment;
 import com.danny_jiang.algorithm.fragment.BubbleSortTutorialFragment;
 
 import java.util.ArrayList;
@@ -15,7 +16,6 @@ import java.util.List;
 
 public class BubbleSortActivity extends FragmentActivity implements AndroidFragmentApplication.Callbacks  {
 
-    private TabLayout tabLayout;
     private List<Fragment> fragmentList;
 
     @Override
@@ -24,7 +24,7 @@ public class BubbleSortActivity extends FragmentActivity implements AndroidFragm
         setContentView(R.layout.common_activity_layout);
         initFragments();
 
-        tabLayout = findViewById(R.id.tab_layout);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("TAB1"));
         tabLayout.addTab(tabLayout.newTab().setText("TAB2"));
         tabLayout.addTab(tabLayout.newTab().setText("TAB3"));
@@ -51,8 +51,13 @@ public class BubbleSortActivity extends FragmentActivity implements AndroidFragm
     private void initFragments() {
         fragmentList = new ArrayList<>();
         fragmentList.add(new BubbleSortTutorialFragment());
-        fragmentList.add(new BubbleSortFragment());
-        fragmentList.add(new BubbleSortTutorialFragment());
+        fragmentList.add(new BubbleSortVisualizerFragment());
+        fragmentList.add(new BubbleSortAnalyzeFragment());
+
+        Fragment fragment = fragmentList.get(0);
+        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+        trans.replace(R.id.algo_content, fragment);
+        trans.commit();
     }
 
     @Override
