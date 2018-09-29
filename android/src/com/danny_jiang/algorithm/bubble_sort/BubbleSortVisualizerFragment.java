@@ -16,15 +16,15 @@ public class BubbleSortVisualizerFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.bubble_fragment, container, false);
+        return inflater.inflate(R.layout.bubble_sort_visualizer_fragment, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        BubbleSortVisualizerImageFragment categorizationFragment = new BubbleSortVisualizerImageFragment();
+        BubbleSortVisualizerImageFragment fragment = new BubbleSortVisualizerImageFragment();
         FragmentTransaction trans = getChildFragmentManager().beginTransaction();
-        trans.replace(R.id.visualizer, categorizationFragment);
+        trans.replace(R.id.visualizer, fragment);
         trans.commit();
     }
 }

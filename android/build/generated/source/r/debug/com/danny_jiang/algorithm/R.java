@@ -3868,9 +3868,9 @@ public final class R {
     public static final int abc_search_view=0x7f0a0018;
     public static final int abc_select_dialog_material=0x7f0a0019;
     public static final int abc_tooltip=0x7f0a001a;
-    public static final int bubble_fragment=0x7f0a001b;
-    public static final int bubble_sort_analyze_fragment=0x7f0a001c;
-    public static final int bubble_sort_tutorial_fragment=0x7f0a001d;
+    public static final int bubble_sort_analyze_fragment=0x7f0a001b;
+    public static final int bubble_sort_tutorial_fragment=0x7f0a001c;
+    public static final int bubble_sort_visualizer_fragment=0x7f0a001d;
     public static final int common_activity_layout=0x7f0a001e;
     public static final int design_bottom_navigation_item=0x7f0a001f;
     public static final int design_bottom_sheet_dialog=0x7f0a0020;

@@ -1022,9 +1022,9 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0a0017
 int layout abc_search_view 0x7f0a0018
 int layout abc_select_dialog_material 0x7f0a0019
 int layout abc_tooltip 0x7f0a001a
-int layout bubble_fragment 0x7f0a001b
-int layout bubble_sort_analyze_fragment 0x7f0a001c
-int layout bubble_sort_tutorial_fragment 0x7f0a001d
+int layout bubble_sort_analyze_fragment 0x7f0a001b
+int layout bubble_sort_tutorial_fragment 0x7f0a001c
+int layout bubble_sort_visualizer_fragment 0x7f0a001d
 int layout common_activity_layout 0x7f0a001e
 int layout design_bottom_navigation_item 0x7f0a001f
 int layout design_bottom_sheet_dialog 0x7f0a0020
