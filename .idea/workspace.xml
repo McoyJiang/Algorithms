@@ -11,40 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95903ecf-d556-4cd5-8987-9118fe98856e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/javaCompile.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/build/generated/source/r/debug/com/danny_jiang/algorithm/R.java" afterPath="$PROJECT_DIR$/android/build/generated/source/r/debug/com/danny_jiang/algorithm/R.java" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi-v2/debug.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi-v2/debug.json" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/debug.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/debug.json" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/classes/debug/com/danny_jiang/algorithm/BubbleSortActivity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/classes/debug/com/danny_jiang/algorithm/R$layout.class" afterPath="$PROJECT_DIR$/android/build/intermediates/classes/debug/com/danny_jiang/algorithm/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/classes/debug/com/danny_jiang/algorithm/activity/KruskalMSTAlgoActivity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/6h3UCGtJDQ4uBnhYYP7NcZetF7E=" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/6h3UCGtJDQ4uBnhYYP7NcZetF7E=" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/res/debug/resources-debug.ap_" afterPath="$PROJECT_DIR$/android/build/intermediates/res/debug/resources-debug.ap_" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/symbols/debug/R.txt" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/desugar/debug/0/com/danny_jiang/algorithm/BubbleSortActivity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/desugar/debug/0/com/danny_jiang/algorithm/R$layout.class" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/desugar/debug/0/com/danny_jiang/algorithm/R$layout.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/desugar/debug/0/com/danny_jiang/algorithm/activity/KruskalMSTAlgoActivity.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/0/com/danny_jiang/algorithm/BubbleSortActivity.dex" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/0/com/danny_jiang/algorithm/R$layout.dex" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/0/com/danny_jiang/algorithm/R$layout.dex" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/0/com/danny_jiang/algorithm/activity/KruskalMSTAlgoActivity.dex" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" />
-      <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/android/res/layout/bubble_fragment.xml" afterPath="$PROJECT_DIR$/android/res/layout/bubble_sort_visualizer_fragment.xml" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortVisualizerFragment.java" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortVisualizerFragment.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -92,11 +59,9 @@
       <file leaf-file-name="BubbleSortAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="53" column="52" lean-forward="true" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="264">
+              <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1188#1353#0" expanded="true" />
@@ -3134,7 +3099,7 @@
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1188#1353#0" expanded="true" />
@@ -3145,11 +3110,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="53" column="52" lean-forward="true" selection-start-line="53" selection-start-column="52" selection-end-line="53" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="264">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

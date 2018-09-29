@@ -2,9 +2,7 @@ package com.danny_jiang.algorithm.bubble_sort;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.utils.AnimationUtils;
