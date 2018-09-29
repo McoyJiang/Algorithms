@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 
 import com.danny_jiang.algorithm.R;
 
-public class TestFragment extends Fragment {
+public class BubbleSortTutorialFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.test_fragment, container, false);
+        return inflater.inflate(R.layout.bubble_sort_tutorial_fragment, container, false);
     }
 }
