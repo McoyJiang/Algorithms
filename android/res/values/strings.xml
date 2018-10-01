@@ -2,5 +2,6 @@
 <resources>
 
     <string name="app_name">Algorithm</string>
+    <string name="next">NEXT</string>
 
 </resources>

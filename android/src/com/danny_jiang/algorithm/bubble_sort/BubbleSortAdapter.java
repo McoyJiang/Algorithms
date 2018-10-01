@@ -1,8 +1,10 @@
 package com.danny_jiang.algorithm.bubble_sort;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
@@ -10,6 +12,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.utils.AnimationUtils;
@@ -22,22 +25,26 @@ import java.util.List;
 
 /**
  * void bubble_sort(int A[], int n) {
- *  int temp;
- *  for(int i = 0; i < n-1; i++) {
- *      for(int j = 0; j < n - i - 1; j++) {
- *          if(A[j] > A[j + 1] ) {
- *              // here swapping of positions is being done.
- *              temp = A[j];
- *              A[j] = A[j];
- *              A[j + 1] = temp;
- *          }
- *      }
- *  }
+ * int temp;
+ * for(int i = 0; i < n-1; i++) {
+ * for(int j = 0; j < n - i - 1; j++) {
+ * if(A[j] > A[j + 1] ) {
+ * // here swapping of positions is being done.
+ * temp = A[j];
+ * A[j] = A[j];
+ * A[j + 1] = temp;
+ * }
+ * }
+ * }
  * }
  */
 public class BubbleSortAdapter extends AlgorithmAdapter {
+    private static final String SWITCH = "%d is larger than %d\n\n" +
+            "So need to swap their positions\n" +
+            "And move the cursor to the next";
 
     private HorizontalGroup bubbleSortGroup;
+    private Label stepDescription;
     private Image upArrow;
     private List<AlgorithmBall> actorList;
 
@@ -46,6 +53,10 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         super.create();
 
         updateStatus(0);
+
+        Integer i1 = Integer.parseInt(actorList.get(0).getText());
+        Integer i2 = Integer.parseInt(actorList.get(1).getText());
+        stepDescription.setText(String.format(SWITCH, i1, i2));
     }
 
     private void updateStatus(int index) {
@@ -67,9 +78,8 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         bubbleSortGroup = new HorizontalGroup();
         bubbleSortGroup.align(Align.center);
         bubbleSortGroup.space(30);
-        bubbleSortGroup.setSize(stage.getWidth(), stage.getHeight() * 3 / 4);
-        bubbleSortGroup.setPosition(0, stage.getHeight() / 4);
-        bubbleSortGroup.setDebug(true);
+        bubbleSortGroup.setSize(stage.getWidth(), stage.getHeight() / 4);
+        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4);
         stage.addActor(bubbleSortGroup);
 
         for (int i = 0; i < 7; i++) {
@@ -83,8 +93,19 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
 
         upArrow = new Image(new Texture("up_arrow.png"));
         upArrow.setSize(100, 150);
-        upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2, 200);
+        upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
+                bubbleSortGroup.getY() - upArrow.getHeight() + 30);
         stage.addActor(upArrow);
+
+
+        BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal("font/hjd.fnt"));
+        Label.LabelStyle style = new Label.LabelStyle();
+        style.font = bitmapFont;
+        style.fontColor = new Color(1, 0, 0, 1);
+        stepDescription.setSize(500, 350);
+        stepDescription.setFontScale(2f);
+        stepDescription.setPosition(30, stage.getHeight() / 2 - upArrow.getHeight());
+        stage.addActor(stepDescription);
     }
 
     @Override
@@ -112,7 +133,6 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         if (j < i) {
             if (array[j] > array[j + 1]) {
                 switchChild(j, j + 1);
-                swapArray(j);
             } else {
                 moveArrow(j + 1);
             }
@@ -131,43 +151,31 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         float position = algorithmBall.getX();
         MoveToAction moveToAction = Actions.moveTo(position, upArrow.getY());
         moveToAction.setDuration(0.3f);
-        RunnableAction updateAction = Actions.run(new Runnable() {
-            @Override
-            public void run() {
-                updateStatus(index);
-            }
-        });
+        RunnableAction updateAction = Actions.run(() -> updateStatus(index));
         SequenceAction sequence = Actions.sequence(Actions.delay(0.3f), moveToAction, updateAction);
         upArrow.addAction(sequence);
-    }
-
-    private void swapArray(int j) {
-        int temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
     }
 
     private void switchChild(int first, int second) {
         final AlgorithmBall actorFirst = actorList.get(first);
         final AlgorithmBall actorSecond = actorList.get(second);
 
-        Action switchActors = AnimationUtils.curveSwitchActors(actorFirst, actorSecond, new Runnable() {
-            @Override
-            public void run() {
-                actorFirst.setIndex(second);
-                actorSecond.setIndex(first);
-                actorList.remove(first);
-                actorList.add(first, actorSecond);
-                actorList.remove(second);
-                actorList.add(second, actorFirst);
-            }
+        Action switchActors = AnimationUtils.curveSwitchActors(actorFirst, actorSecond, () -> {
+            actorFirst.setIndex(second);
+            actorSecond.setIndex(first);
+            actorList.remove(first);
+            actorList.add(first, actorSecond);
+            actorList.remove(second);
+            actorList.add(second, actorFirst);
         });
-        RunnableAction run = Actions.run(new Runnable() {
-            @Override
-            public void run() {
-                moveArrow(second);
-            }
-        });
-        stage.addAction(Actions.sequence(switchActors, run));
+        RunnableAction swapArray = Actions.run(() -> swapArray(first));
+        RunnableAction run = Actions.run(() -> moveArrow(second));
+        stage.addAction(Actions.sequence(switchActors, swapArray, run));
+    }
+
+    private void swapArray(int j) {
+        int temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
     }
 }

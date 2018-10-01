@@ -57,4 +57,12 @@ public class AlgorithmBall extends BaseGdxActor {
     public void setIndex(int index) {
         this.index = index;
     }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getText() {
+        return text;
+    }
 }

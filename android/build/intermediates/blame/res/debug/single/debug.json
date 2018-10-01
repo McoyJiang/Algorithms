@@ -92,10 +92,6 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ec3e357c71656d4403cccd78c920c234/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_bubble_sort_visualizer_fragment.xml.flat",
-        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/layout/bubble_sort_visualizer_fragment.xml"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_abc_action_bar_up_container.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ec3e357c71656d4403cccd78c920c234/res/layout/abc_action_bar_up_container.xml"
     },
