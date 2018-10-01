@@ -39,15 +39,15 @@ import java.util.List;
  * }
  */
 public class BubbleSortAdapter extends AlgorithmAdapter {
-    private static final String SWITCH = "%d is larger than %d\n\n" +
+    private static final String SWITCH = "Now %d is larger than %d\n" +
             "So need to swap their positions\n" +
             "And move the cursor to the next";
 
-    private static final String NOT_SWITCH = "%d is not larger than %d\n\n" +
+    private static final String NOT_SWITCH = "%d is not larger than %d\n" +
             "No need to swap their positions\n" +
             "Only move the cursor to the next";
 
-    private static final String FINISH = "The iterator finished.\n\n" +
+    private static final String FINISH = "Now the iterator finished.\n" +
             "Mark %d as found status\n" +
             "The move the cursor to the first";
 
@@ -62,29 +62,30 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
 
         updateStatus(0);
 
-
+        stepDescription.setText("At the beginning, 45 > 17\n" +
+                "Should swap 45 and 17 position\n" +
+                "Try to click \"Next Step\"");
     }
 
-    private void updateStepDescription(int index) {
+    private void updateStepDescription(int index, boolean maxFound) {
         Integer i1 = Integer.parseInt(actorList.get(index).getText());
-        Integer i2 = Integer.parseInt(actorList.get(index + 1).getText());
-        if (i1 > i2) {
-            stepDescription.setText(String.format(SWITCH, i1, i2));
+        if (maxFound) {
+            stepDescription.setText(String.format(FINISH, i1));
         } else {
-            stepDescription.setText(String.format(NOT_SWITCH, i1, i2));
+            Integer i2 = Integer.parseInt(actorList.get(index + 1).getText());
+            if (i1 > i2) {
+                stepDescription.setText(String.format(SWITCH, i1, i2));
+            } else {
+                stepDescription.setText(String.format(NOT_SWITCH, i1, i2));
+            }
         }
-    }
-
-    private void iteratorFinished(int index) {
-        Integer i1 = Integer.parseInt(actorList.get(index).getText());
-        stepDescription.setText(String.format(FINISH, i1));
     }
 
     private void updateStatus(int index) {
         if (index < i) {
-            updateStepDescription(index);
+            updateStepDescription(index, false);
         } else {
-            iteratorFinished(index);
+            updateStepDescription(index, true);
         }
         for (int k = 0; k < 7; k++) {
             if (k < index) {
@@ -166,10 +167,15 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
             j++;
         } else {
             actorList.get(j).deadStatus();
-            moveArrow(0);
-            j = 0;
-            i--;
+            if (i == 0) {
+                stepDescription.setText("Bubble sort completed !");
+            } else {
+                moveArrow(0);
+                j = 0;
+                i--;
+            }
         }
+
         System.out.println(Arrays.toString(array));
     }
 
