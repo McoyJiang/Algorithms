@@ -43,6 +43,14 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
             "So need to swap their positions\n" +
             "And move the cursor to the next";
 
+    private static final String NOT_SWITCH = "%d is not larger than %d\n\n" +
+            "No need to swap their positions\n" +
+            "Only move the cursor to the next";
+
+    private static final String FINISH = "The iterator finished.\n\n" +
+            "Mark %d as found status\n" +
+            "The move the cursor to the first";
+
     private HorizontalGroup bubbleSortGroup;
     private Label stepDescription;
     private Image upArrow;
@@ -54,12 +62,30 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
 
         updateStatus(0);
 
-        Integer i1 = Integer.parseInt(actorList.get(0).getText());
-        Integer i2 = Integer.parseInt(actorList.get(1).getText());
-        stepDescription.setText(String.format(SWITCH, i1, i2));
+
+    }
+
+    private void updateStepDescription(int index) {
+        Integer i1 = Integer.parseInt(actorList.get(index).getText());
+        Integer i2 = Integer.parseInt(actorList.get(index + 1).getText());
+        if (i1 > i2) {
+            stepDescription.setText(String.format(SWITCH, i1, i2));
+        } else {
+            stepDescription.setText(String.format(NOT_SWITCH, i1, i2));
+        }
+    }
+
+    private void iteratorFinished(int index) {
+        Integer i1 = Integer.parseInt(actorList.get(index).getText());
+        stepDescription.setText(String.format(FINISH, i1));
     }
 
     private void updateStatus(int index) {
+        if (index < i) {
+            updateStepDescription(index);
+        } else {
+            iteratorFinished(index);
+        }
         for (int k = 0; k < 7; k++) {
             if (k < index) {
                 actorList.get(k).defaultStatus();
@@ -102,6 +128,7 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         Label.LabelStyle style = new Label.LabelStyle();
         style.font = bitmapFont;
         style.fontColor = new Color(1, 0, 0, 1);
+        stepDescription = new Label("", style);
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
         stepDescription.setPosition(30, stage.getHeight() / 2 - upArrow.getHeight());

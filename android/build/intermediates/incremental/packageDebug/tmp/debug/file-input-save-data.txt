@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Oct 01 17:14:50 CST 2018
+#Mon Oct 01 17:27:27 CST 2018
 17.baseType=DIRECTORY
 4.path=lib/arm64-v8a/libgdx.so
 22.set=ASSET
