@@ -14,6 +14,14 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
 
     protected int[] array;
     protected Stage stage;
+    protected BaseGdxActor next;
+    protected ClickListener nextClickListener = new ClickListener() {
+        @Override
+        public void clicked(InputEvent event, float x, float y) {
+            disableNextButton();
+            nextStep();
+        }
+    };
     @Override
     public void create() {
         super.create();
@@ -25,19 +33,26 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         stage.addActor(bg);
         Gdx.input.setInputProcessor(stage);
 
-        BaseGdxActor next = new BaseGdxActor(new TextureRegion(new Texture(
-                Gdx.files.internal("badlogic.jpg")
-        )));
-        next.setSize(200, 100);
-        next.setPosition(800, 10);
+        next = new BaseGdxActor();
+        enableNextButton();
+        next.setSize(200, 200);
+        next.setPosition(stage.getWidth() - 250, 10);
         stage.addActor(next);
-        next.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                nextStep();
-            }
-        });
         inflateStage();
+    }
+
+    public void enableNextButton() {
+        next.setRegion(new TextureRegion(new Texture(
+                Gdx.files.internal("next_step.png")
+        )));
+        next.addListener(nextClickListener);
+    }
+
+    public void disableNextButton() {
+        next.setRegion(new TextureRegion(new Texture(
+                Gdx.files.internal("next_step_disable.png")
+        )));
+        next.removeListener(nextClickListener);
     }
 
     protected abstract void nextStep();

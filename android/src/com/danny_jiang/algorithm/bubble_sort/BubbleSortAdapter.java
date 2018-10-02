@@ -96,6 +96,7 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
                 actorList.get(index + 1).activeStatus();
             }
         }
+        enableNextButton();
     }
 
     @Override
@@ -121,7 +122,7 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         upArrow = new Image(new Texture("up_arrow.png"));
         upArrow.setSize(100, 150);
         upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
-                bubbleSortGroup.getY() - upArrow.getHeight() + 30);
+                bubbleSortGroup.getY() - upArrow.getHeight() + 100);
         stage.addActor(upArrow);
 
 

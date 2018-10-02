@@ -56,7 +56,7 @@ public class BaseGdxActor extends Actor {
         this.region = region;
     }
 
-    protected BaseGdxActor() {
+    public BaseGdxActor() {
         setInputListener();
     }
 
