@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <WebView
+        android:id="@+id/bubble_sort_tutorial_webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Tutorial"
-        android:gravity="center"/>
+        android:gravity="center" />
 
 </android.support.constraint.ConstraintLayout>
