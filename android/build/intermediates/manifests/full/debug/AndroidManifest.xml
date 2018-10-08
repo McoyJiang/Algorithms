@@ -18,13 +18,15 @@
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.danny_jiang.algorithm.bubble_sort.BubbleSortActivity" >
+        </activity>
+        <activity android:name="com.danny_jiang.algorithm.kruskal_mst.KruskalMSTAlgoActivity" >
+        </activity>
+        <activity android:name="com.danny_jiang.algorithm.heap_sort.HeapSortActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name="com.danny_jiang.algorithm.kruskal_mst.KruskalMSTAlgoActivity" >
         </activity>
     </application>
 

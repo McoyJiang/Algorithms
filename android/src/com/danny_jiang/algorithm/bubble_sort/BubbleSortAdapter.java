@@ -143,17 +143,6 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         Collections.shuffle(Arrays.asList(array));
     }
 
-    @Override
-    public void render() {
-        super.render();
-        // 黄色清屏
-        Gdx.gl.glClearColor(1, 1, 1, 0);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        stage.act();
-        stage.draw();
-    }
-
     private int i = 6;
     private int j = 0;
 

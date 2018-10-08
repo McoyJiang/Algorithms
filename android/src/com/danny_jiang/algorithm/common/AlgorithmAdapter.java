@@ -2,6 +2,7 @@ package com.danny_jiang.algorithm.common;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -39,6 +40,17 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         next.setPosition(stage.getWidth() - 250, 10);
         stage.addActor(next);
         inflateStage();
+    }
+
+    @Override
+    public void render() {
+        super.render();
+        // 黄色清屏
+        Gdx.gl.glClearColor(1, 1, 1, 0);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        stage.act();
+        stage.draw();
     }
 
     public void enableNextButton() {
