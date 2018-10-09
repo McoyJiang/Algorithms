@@ -114,15 +114,8 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         sReenterLock.unlock();
     }
 
-    @Override
-    public void render() {
-        super.render();
-        // 黄色清屏
-        Gdx.gl.glClearColor(1, 1, 1, 0);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        stage.act();
-        stage.draw();
+    public void nextStep() {
+        signal();
     }
 
     public void enableNextButton() {
@@ -139,12 +132,28 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         next.removeListener(nextClickListener);
     }
 
+    @Override
+    public void render() {
+        super.render();
+        // 黄色清屏
+        Gdx.gl.glClearColor(1, 1, 1, 0);
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        stage.act();
+        stage.draw();
+    }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        if (sDecodingThread != null) {
+            sDecodingThread.quit();
+        }
+    }
+
     protected abstract void animation(Message msg);
     protected abstract void algorithm();
 
-    protected abstract void nextStep();
-
     protected abstract void inflateStage();
-
     protected abstract void initData();
 }

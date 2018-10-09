@@ -59,8 +59,4 @@ public class HeapSortAdapter extends AlgorithmAdapter{
     protected void initData() {
     }
 
-    @Override
-    protected void nextStep() {
-
-    }
 }

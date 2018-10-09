@@ -64,6 +64,8 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
     private Label stepDescription;
     private Image upArrow;
     private List<AlgorithmBall> actorList;
+
+    private volatile int deadEnd = 6;
     private volatile int currentIteratorJ = -1;
 
     /*
@@ -97,7 +99,7 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
     }
 
     private void updateStatus(int index) {
-        if (index < i) {
+        if (index < deadEnd) {
             updateStepDescription(index, false);
         } else {
             updateStepDescription(index, true);
@@ -106,7 +108,7 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
             if (k < index) {
                 actorList.get(k).defaultStatus();
             }
-            if (k == index && index < i) {
+            if (k == index && index < deadEnd) {
                 actorList.get(index).activeStatus();
                 actorList.get(index + 1).activeStatus();
             }
@@ -171,9 +173,9 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
                 Log.d(TAG, "ITERATOR_FINISH: " + msg.arg1);
                 Gdx.app.postRunnable(() ->
                 {
-                    actorList.get(i).deadStatus();
+                    actorList.get(deadEnd).deadStatus();
                     moveArrow(0);
-                    i--;
+                    deadEnd--;
                 });
 
                 break;
@@ -213,33 +215,6 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(COMPLETED)
         ));
-    }
-
-    private int i = 6;
-    private int j = 0;
-
-    @Override
-    public void nextStep() {
-        signal();
-//        if (j < i) {
-//            if (sData[j] > sData[j + 1]) {
-//                switchChild(j, j + 1);
-//            } else {
-//                moveArrow(j + 1);
-//            }
-//            j++;
-//        } else {
-//            actorList.get(j).deadStatus();
-//            if (i == 0) {
-//                stepDescription.setText("Bubble sort completed !");
-//            } else {
-//                moveArrow(0);
-//                j = 0;
-//                i--;
-//            }
-//        }
-//
-//        System.out.println(Arrays.toString(sData));
     }
 
     private void moveArrow(final int index) {
