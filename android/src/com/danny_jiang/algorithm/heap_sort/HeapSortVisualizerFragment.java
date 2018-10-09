@@ -19,6 +19,6 @@ public class HeapSortVisualizerFragment extends AndroidFragmentApplication {
         heapSortAdapter = new HeapSortAdapter();
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.numSamples = 4;
-        return initializeForView(heapSortAdapter, config);
+        return initializeForView(new TestAdapter(), config);
     }
 }
