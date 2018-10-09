@@ -1,8 +1,10 @@
 package com.danny_jiang.algorithm.bubble_sort;
 
+import android.os.Message;
+import android.util.Log;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
@@ -39,6 +41,8 @@ import java.util.List;
  * }
  */
 public class BubbleSortAdapter extends AlgorithmAdapter {
+    private static final String TAG = BubbleSortAdapter.class.getSimpleName();
+
     private static final String SWITCH = "Now %d is larger than %d\n" +
             "So need to swap their positions\n" +
             "And move the cursor to the next";
@@ -51,10 +55,19 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
             "Mark %d as found status\n" +
             "The move the cursor to the first";
 
+    private static final int ITERATOR = 0;
+    private static final int SWAP = 1;
+    private static final int ITERATOR_FINISH = 2;
+
     private HorizontalGroup bubbleSortGroup;
     private Label stepDescription;
     private Image upArrow;
     private List<AlgorithmBall> actorList;
+
+    /*
+     * Data use to display Bubble Sort Algorithm
+     */
+    private int[] sData = new int[]{45, 17, 23, 5, 76, 10, 4};
 
     @Override
     public void create() {
@@ -110,8 +123,8 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4);
         stage.addActor(bubbleSortGroup);
 
-        for (int i = 0; i < 7; i++) {
-            AlgorithmBall algorithmBall = new AlgorithmBall("" + array[i]);
+        for (int i = 0; i < sData.length; i++) {
+            AlgorithmBall algorithmBall = new AlgorithmBall("" + sData[i]);
             algorithmBall.setIndex(i);
             algorithmBall.setSize(100, 100);
             algorithmBall.setPosition(i * 150 + 50, 200);
@@ -139,8 +152,49 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
 
     @Override
     protected void initData() {
-        array = new int[]{45, 17, 23, 5, 76, 10, 4};
-        Collections.shuffle(Arrays.asList(array));
+    }
+
+    @Override
+    protected void animation(Message msg) {
+        switch (msg.what) {
+            case ITERATOR:
+                Log.d(TAG, "ITERATOR: " + msg.arg1);
+                moveArrow(msg.arg1);
+                break;
+            case SWAP:
+                Log.d(TAG, "ITERATOR: " + msg.arg1);
+                switchChild(msg.arg1, msg.arg1 + 1);
+                break;
+            case ITERATOR_FINISH:
+                break;
+        }
+    }
+
+    @Override
+    protected void algorithm() {
+        Log.d(TAG, "algorithm: should wait");
+        await();
+        /**
+         * Bubble Sort algorithm
+         */
+        Log.d(TAG, "algorithm: bubble sort started");
+        for (int i = 0; i < sData.length; i++) {
+            for (int j = 0; j < sData.length - i - 1; j++) {
+                final int currentJ = j;
+                try {
+                    if (sData[j] > sData[j + 1]) {
+                        swapArray(j);
+                        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                                sDecodingThreadHandler.obtainMessage(SWAP, currentJ, -1)));
+                    } else {
+                        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                                sDecodingThreadHandler.obtainMessage(ITERATOR, currentJ, -1)));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     private int i = 6;
@@ -148,25 +202,26 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
 
     @Override
     public void nextStep() {
-        if (j < i) {
-            if (array[j] > array[j + 1]) {
-                switchChild(j, j + 1);
-            } else {
-                moveArrow(j + 1);
-            }
-            j++;
-        } else {
-            actorList.get(j).deadStatus();
-            if (i == 0) {
-                stepDescription.setText("Bubble sort completed !");
-            } else {
-                moveArrow(0);
-                j = 0;
-                i--;
-            }
-        }
-
-        System.out.println(Arrays.toString(array));
+        signal();
+//        if (j < i) {
+//            if (sData[j] > sData[j + 1]) {
+//                switchChild(j, j + 1);
+//            } else {
+//                moveArrow(j + 1);
+//            }
+//            j++;
+//        } else {
+//            actorList.get(j).deadStatus();
+//            if (i == 0) {
+//                stepDescription.setText("Bubble sort completed !");
+//            } else {
+//                moveArrow(0);
+//                j = 0;
+//                i--;
+//            }
+//        }
+//
+//        System.out.println(Arrays.toString(sData));
     }
 
     private void moveArrow(final int index) {
@@ -197,8 +252,8 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
     }
 
     private void swapArray(int j) {
-        int temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
+        int temp = sData[j];
+        sData[j] = sData[j + 1];
+        sData[j + 1] = temp;
     }
 }

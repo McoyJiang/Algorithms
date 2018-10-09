@@ -1,5 +1,7 @@
 package com.danny_jiang.algorithm.heap_sort;
 
+import android.os.Message;
+
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
@@ -41,6 +43,16 @@ public class HeapSortAdapter extends AlgorithmAdapter{
             algorithmBall.setPosition(i * 150 + 50, group.getHeight() - 200);
             group.addActor(algorithmBall);
         }
+    }
+
+    @Override
+    protected void animation(Message msg) {
+
+    }
+
+    @Override
+    protected void algorithm() {
+
     }
 
     @Override
