@@ -58,11 +58,13 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
     private static final int ITERATOR = 0;
     private static final int SWAP = 1;
     private static final int ITERATOR_FINISH = 2;
+    private static final int COMPLETED = 3;
 
     private HorizontalGroup bubbleSortGroup;
     private Label stepDescription;
     private Image upArrow;
     private List<AlgorithmBall> actorList;
+    private volatile int currentIteratorJ = -1;
 
     /*
      * Data use to display Bubble Sort Algorithm
@@ -100,7 +102,7 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         } else {
             updateStepDescription(index, true);
         }
-        for (int k = 0; k < 7; k++) {
+        for (int k = 0; k < sData.length; k++) {
             if (k < index) {
                 actorList.get(k).defaultStatus();
             }
@@ -159,13 +161,24 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         switch (msg.what) {
             case ITERATOR:
                 Log.d(TAG, "ITERATOR: " + msg.arg1);
-                moveArrow(msg.arg1);
+                moveArrow(msg.arg1 + 1);
                 break;
             case SWAP:
-                Log.d(TAG, "ITERATOR: " + msg.arg1);
+                Log.d(TAG, "SWAP: " + msg.arg1);
                 switchChild(msg.arg1, msg.arg1 + 1);
                 break;
             case ITERATOR_FINISH:
+                Log.d(TAG, "ITERATOR_FINISH: " + msg.arg1);
+                Gdx.app.postRunnable(() ->
+                {
+                    actorList.get(i).deadStatus();
+                    moveArrow(0);
+                    i--;
+                });
+
+                break;
+            case COMPLETED:
+                stepDescription.setText("Bubble sort completed !");
                 break;
         }
     }
@@ -180,21 +193,26 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         Log.d(TAG, "algorithm: bubble sort started");
         for (int i = 0; i < sData.length; i++) {
             for (int j = 0; j < sData.length - i - 1; j++) {
-                final int currentJ = j;
+                currentIteratorJ = j;
                 try {
                     if (sData[j] > sData[j + 1]) {
-                        swapArray(j);
                         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                                sDecodingThreadHandler.obtainMessage(SWAP, currentJ, -1)));
+                                sDecodingThreadHandler.obtainMessage(SWAP, currentIteratorJ, -1)));
                     } else {
                         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                                sDecodingThreadHandler.obtainMessage(ITERATOR, currentJ, -1)));
+                                sDecodingThreadHandler.obtainMessage(ITERATOR, currentIteratorJ, -1)));
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
+            await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(ITERATOR_FINISH, currentIteratorJ + 1, -1)
+            ));
         }
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(COMPLETED)
+        ));
     }
 
     private int i = 6;

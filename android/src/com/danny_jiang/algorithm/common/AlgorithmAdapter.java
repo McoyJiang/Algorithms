@@ -45,7 +45,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     protected ClickListener nextClickListener = new ClickListener() {
         @Override
         public void clicked(InputEvent event, float x, float y) {
-            //disableNextButton();
+            disableNextButton();
             nextStep();
         }
     };
