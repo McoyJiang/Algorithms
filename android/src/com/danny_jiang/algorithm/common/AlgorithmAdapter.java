@@ -24,10 +24,10 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     /*
      * async component
      */
-    protected HandlerThread sDecodingThread;
+    private HandlerThread sDecodingThread;
     protected Handler sDecodingThreadHandler;
-    protected ReentrantLock sReenterLock = new ReentrantLock(true);
-    protected Condition sCondition = sReenterLock.newCondition();
+    private ReentrantLock sReenterLock = new ReentrantLock(true);
+    private Condition sCondition = sReenterLock.newCondition();
 
     public interface BeforeWaitCallback {
         void beforeWait();
@@ -36,13 +36,11 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         void waitInterrupt();
     }
 
-    private Runnable algorithmRunnable = () -> {
-        algorithm();
-    };
+    private Runnable algorithmRunnable = this::algorithm;
 
     protected Stage stage;
     protected BaseGdxActor next;
-    protected ClickListener nextClickListener = new ClickListener() {
+    private ClickListener nextClickListener = new ClickListener() {
         @Override
         public void clicked(InputEvent event, float x, float y) {
             disableNextButton();

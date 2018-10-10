@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
-import com.danny_jiang.algorithm.bubble_sort.BubbleSortAdapter;
+import com.danny_jiang.algorithm.insert_sort.InsertSortAdapter;
 
 public class HeapSortVisualizerFragment extends AndroidFragmentApplication {
     private HeapSortAdapter heapSortAdapter;
@@ -20,6 +20,6 @@ public class HeapSortVisualizerFragment extends AndroidFragmentApplication {
         heapSortAdapter = new HeapSortAdapter();
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.numSamples = 4;
-        return initializeForView(new BubbleSortAdapter(), config);
+        return initializeForView(new InsertSortAdapter(), config);
     }
 }
