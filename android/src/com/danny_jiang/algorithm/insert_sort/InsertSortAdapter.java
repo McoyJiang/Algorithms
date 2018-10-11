@@ -2,12 +2,16 @@ package com.danny_jiang.algorithm.insert_sort;
 
 import android.os.Message;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.utils.AnimationUtils;
@@ -28,8 +32,9 @@ public class InsertSortAdapter extends AlgorithmAdapter{
      * List to storage AlgorithmBall
      */
     private List<AlgorithmBall> ballList = new ArrayList<>();
-    private HorizontalGroup newBallGroup;
 
+    // algorithm description for each step
+    private Label stepDescription;
     /*
      * Data use to display Insert Sort Algorithm
      */
@@ -43,13 +48,6 @@ public class InsertSortAdapter extends AlgorithmAdapter{
 
     @Override
     protected void inflateStage() {
-        newBallGroup = new HorizontalGroup();
-        newBallGroup.align(Align.center);
-        newBallGroup.space(30);
-        newBallGroup.setSize(stage.getWidth(), stage.getHeight() / 4);
-        newBallGroup.setPosition(0, stage.getHeight() * 3 / 4);
-        stage.addActor(newBallGroup);
-
         for (int i = 0; i < sData.length; i++) {
             AlgorithmBall algorithmBall = new AlgorithmBall("" + sData[i]);
             algorithmBall.setIndex(i);
@@ -58,6 +56,16 @@ public class InsertSortAdapter extends AlgorithmAdapter{
             ballList.add(algorithmBall);
             stage.addActor(algorithmBall);
         }
+
+        BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal("font/hjd.fnt"));
+        Label.LabelStyle style = new Label.LabelStyle();
+        style.font = bitmapFont;
+        style.fontColor = new Color(1, 0, 0, 1);
+        stepDescription = new Label("", style);
+        stepDescription.setSize(500, 350);
+        stepDescription.setFontScale(2f);
+        stepDescription.setPosition(30, stage.getHeight() / 2);
+        stage.addActor(stepDescription);
     }
 
     @Override
@@ -74,6 +82,7 @@ public class InsertSortAdapter extends AlgorithmAdapter{
                 swapBall(msg.arg1, msg.arg1 + 1);
                 break;
             case COMPLETED:
+                stepDescription.setText("Insertion Sort completed!");
                 break;
         }
     }
@@ -83,16 +92,6 @@ public class InsertSortAdapter extends AlgorithmAdapter{
         MoveByAction upMove = Actions.moveBy(0, 500);
         upMove.setDuration(1);
         algorithmBall.addAction(upMove);
-
-//        ScaleToAction scaleAway = Actions.scaleTo(0, 0);
-//        scaleAway.setDuration(2);
-//        RunnableAction run = Actions.run(() -> {
-//            //algorithmBall.remove();
-//            //newBallGroup.addActor(algorithmBall);
-//        });
-//        ScaleToAction scaleIn = Actions.scaleTo(1, 1);
-//        scaleIn.setDuration(2);
-//        algorithmBall.addAction(Actions.sequence(scaleAway, run, scaleIn));
     }
 
     private void swapBall(final int first, final int second) {
@@ -133,5 +132,8 @@ public class InsertSortAdapter extends AlgorithmAdapter{
             sData[i + 1] = key;
         }
         System.out.println("sort completed: array is " + Arrays.toString(sData));
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(COMPLETED, currentIndexI, -1)
+        ));
     }
 }
