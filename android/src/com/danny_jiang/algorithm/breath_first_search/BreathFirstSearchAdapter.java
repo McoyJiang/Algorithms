@@ -92,32 +92,24 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         graph.addEdge(0, 2);
         graph.addEdge(0, 4);
 
-        graph.addEdge(1, 2);
         graph.addEdge(1, 5);
 
-        //graph.addEdge(2, 0);
-        //graph.addEdge(2, 1);
+        graph.addEdge(2, 1);
         graph.addEdge(2, 3);
         graph.addEdge(2, 5);
 
-        //graph.addEdge(3, 2);
         graph.addEdge(3, 5);
 
-        //graph.addEdge(4, 0);
         graph.addEdge(4, 5);
-
-        //graph.addEdge(5, 1);
-        //graph.addEdge(5, 2);
-        //graph.addEdge(5, 3);
-        //graph.addEdge(5, 4);
     }
 
     @Override
     protected void animation(Message msg) {
+        final int index = msg.arg1;
         switch (msg.what) {
             case DEQUEUE:
-                Gdx.app.postRunnable(() ->
-                        actorList.get(msg.arg1).deadStatus());
+                Gdx.app.postRunnable(() -> actorList.get(index).deadStatus()
+                );
                 break;
         }
     }
@@ -138,7 +130,6 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         // Mark the current node as visited and enqueue it
         visited[start] = true;
         queue.add(start);
-
         StringBuilder stringBuilder = new StringBuilder();
         while (queue.size() != 0) {
             // Dequeue a vertex from queue and print it
@@ -161,6 +152,5 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
             }
         }
         Log.e(TAG, "search result : " + stringBuilder.toString());
-
     }
 }
