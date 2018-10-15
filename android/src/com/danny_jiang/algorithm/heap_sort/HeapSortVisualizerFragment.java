@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
+import com.danny_jiang.algorithm.breath_first_search.BreathFirstSearchAdapter;
 import com.danny_jiang.algorithm.insert_sort.InsertSortAdapter;
 
 public class HeapSortVisualizerFragment extends AndroidFragmentApplication {
@@ -20,6 +21,6 @@ public class HeapSortVisualizerFragment extends AndroidFragmentApplication {
         heapSortAdapter = new HeapSortAdapter();
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.numSamples = 4;
-        return initializeForView(new InsertSortAdapter(), config);
+        return initializeForView(new BreathFirstSearchAdapter(), config);
     }
 }
