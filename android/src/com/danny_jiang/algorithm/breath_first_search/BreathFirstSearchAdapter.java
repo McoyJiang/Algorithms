@@ -5,23 +5,31 @@ import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
+import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
+import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.data_structure.Graph;
 import com.danny_jiang.algorithm.views.AlgorithmBall;
 import com.danny_jiang.algorithm.views.AlgorithmLine;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class BreathFirstSearchAdapter extends AlgorithmAdapter{
     private static final String TAG = BreathFirstSearchAdapter.class.getSimpleName();
     private static final int DEQUEUE = 1;
+    private static final int START = 2;
 
     private volatile Graph graph;
 
     private List<AlgorithmBall> actorList;
+    private Map<Integer, List<AlgorithmLine>> lineMap = new HashMap<>();
     private volatile int currentIndex;
 
     @Override
@@ -76,6 +84,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                 AlgorithmLine line = new AlgorithmLine(srcBall.getOriginX(), srcBall.getOriginY(),
                         dstBall.getOriginX(), dstBall.getOriginY(), 10);
                 line.setLineColor(Color.PURPLE);
+                lineMap.get(i).add(line);
                 stage.addActor(line);
             }
         }
@@ -96,20 +105,52 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
 
         graph.addEdge(2, 1);
         graph.addEdge(2, 3);
-        graph.addEdge(2, 5);
 
         graph.addEdge(3, 5);
 
         graph.addEdge(4, 5);
+
+        lineMap.put(0, new ArrayList<>());
+        lineMap.put(1, new ArrayList<>());
+        lineMap.put(2, new ArrayList<>());
+        lineMap.put(3, new ArrayList<>());
+        lineMap.put(4, new ArrayList<>());
     }
 
     @Override
     protected void animation(Message msg) {
-        final int index = msg.arg1;
         switch (msg.what) {
             case DEQUEUE:
-                Gdx.app.postRunnable(() -> actorList.get(index).deadStatus()
+                final int index = msg.arg1;
+                final LinkedList<Integer> linkedList = (LinkedList<Integer>) msg.obj;
+                Gdx.app.postRunnable(() -> {
+                            ParallelAction parallel = Actions.parallel();
+                            List<AlgorithmLine> algorithmLines = lineMap.get(index);
+                            for (AlgorithmLine algorithmLine : algorithmLines) {
+                                RunnableAction run = Actions.run(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        algorithmLine.setLineColor(Color.GREEN);
+                                    }
+                                });
+                                parallel.addAction(run);
+                            }
+                            RunnableAction last = Actions.run(new Runnable() {
+                                @Override
+                                public void run() {
+                                    for (Integer integer : linkedList) {
+                                        actorList.get(integer).deadStatus();
+                                    }
+                                }
+                            });
+
+                            stage.addAction(Actions.sequence(Actions.delay(0.3f), parallel,
+                                    Actions.delay(0.5f), last));
+                        }
                 );
+                break;
+            case START:
+                Gdx.app.postRunnable(() -> actorList.get(0).deadStatus());
                 break;
         }
     }
@@ -130,13 +171,17 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         // Mark the current node as visited and enqueue it
         visited[start] = true;
         queue.add(start);
+        await((BeforeWaitCallback) () ->
+                {
+                    Message message = sDecodingThreadHandler.obtainMessage(START, queue);
+                    message.arg1 = currentIndex;
+                    sDecodingThreadHandler.sendMessage(message);
+                }
+        );
         StringBuilder stringBuilder = new StringBuilder();
         while (queue.size() != 0) {
             // Dequeue a vertex from queue and print it
             currentIndex = start = queue.poll();
-            await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(DEQUEUE, currentIndex, -1)
-            ));
             stringBuilder.append(start + " ");
 
             // Get all adjacent vertices of the dequeued vertex s
@@ -150,6 +195,13 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                     queue.add(n);
                 }
             }
+            await((BeforeWaitCallback) () ->
+                    {
+                        Message message = sDecodingThreadHandler.obtainMessage(DEQUEUE, queue);
+                        message.arg1 = currentIndex;
+                        sDecodingThreadHandler.sendMessage(message);
+                    }
+            );
         }
         Log.e(TAG, "search result : " + stringBuilder.toString());
     }
