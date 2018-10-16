@@ -22,6 +22,8 @@
         <activity android:name="com.danny_jiang.algorithm.kruskal_mst.KruskalMSTAlgoActivity" >
         </activity>
         <activity android:name="com.danny_jiang.algorithm.heap_sort.HeapSortActivity" >
+        </activity>
+        <activity android:name="com.danny_jiang.algorithm.breath_first_search.BreathFirstSearchActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

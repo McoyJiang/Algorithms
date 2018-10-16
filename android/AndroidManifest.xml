@@ -22,6 +22,10 @@
         </activity>
 
         <activity android:name=".heap_sort.HeapSortActivity">
+
+        </activity>
+
+        <activity android:name=".breath_first_search.BreathFirstSearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

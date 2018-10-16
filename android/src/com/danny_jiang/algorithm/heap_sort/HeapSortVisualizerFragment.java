@@ -9,18 +9,13 @@ import android.view.ViewGroup;
 
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
-import com.danny_jiang.algorithm.breath_first_search.BreathFirstSearchAdapter;
-import com.danny_jiang.algorithm.insert_sort.InsertSortAdapter;
 
 public class HeapSortVisualizerFragment extends AndroidFragmentApplication {
-    private HeapSortAdapter heapSortAdapter;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        heapSortAdapter = new HeapSortAdapter();
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.numSamples = 4;
-        return initializeForView(new BreathFirstSearchAdapter(), config);
+        return initializeForView(new HeapSortAdapter(), config);
     }
 }

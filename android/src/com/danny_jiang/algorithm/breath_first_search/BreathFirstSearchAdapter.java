@@ -92,6 +92,9 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         for (AlgorithmBall bal : actorList) {
             stage.addActor(bal);
         }
+
+        // add Queue
+
     }
 
     @Override
