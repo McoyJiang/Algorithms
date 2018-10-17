@@ -8,10 +8,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
-import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.data_structure.Graph;
-import com.danny_jiang.algorithm.views.AlgorithmBall;
 import com.danny_jiang.algorithm.views.AlgorithmLine;
 
 import java.util.ArrayList;
@@ -28,7 +26,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
 
     private volatile Graph graph;
 
-    private List<AlgorithmBall> actorList;
+    private List<GraphBall> actorList;
     private Map<Integer, List<AlgorithmLine>> lineMap = new HashMap<>();
     private volatile int currentIndex;
 
@@ -37,14 +35,14 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         actorList = new ArrayList<>();
 
         for (int i = 0; i < graph.V; i++) {
-            AlgorithmBall algorithmBall = new AlgorithmBall("" + i);
+            GraphBall algorithmBall = new GraphBall("" + i);
             algorithmBall.setIndex(i);
             algorithmBall.setSize(100, 100);
-            algorithmBall.activeStatus();
+            algorithmBall.defaultStatus();
             actorList.add(algorithmBall);
         }
 
-        AlgorithmBall ball = actorList.get(0);
+        GraphBall ball = actorList.get(0);
         ball.setPosition(200, 1200);
         ball.setOrigin(ball.getX() + ball.getWidth() / 2,
                 ball.getY() + ball.getHeight() / 2);
@@ -76,20 +74,20 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
 
         LinkedList<Integer>[] lists = graph.adj;
         for (int i = 0; i < lists.length; i++) {
-            AlgorithmBall srcBall = actorList.get(i);
+            GraphBall srcBall = actorList.get(i);
             LinkedList<Integer> linkedList = lists[i];
             for (Integer integer : linkedList) {
-                AlgorithmBall dstBall = actorList.get(integer);
+                GraphBall dstBall = actorList.get(integer);
 
                 AlgorithmLine line = new AlgorithmLine(srcBall.getOriginX(), srcBall.getOriginY(),
                         dstBall.getOriginX(), dstBall.getOriginY(), 10);
-                line.setLineColor(Color.PURPLE);
+                line.setLineColor(Color.GRAY);
                 lineMap.get(i).add(line);
                 stage.addActor(line);
             }
         }
 
-        for (AlgorithmBall bal : actorList) {
+        for (GraphBall bal : actorList) {
             stage.addActor(bal);
         }
 
@@ -129,47 +127,35 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                 Log.e(TAG, "animation: index is " + index);
                 final LinkedList<Integer> linkedList = (LinkedList<Integer>) msg.obj;
                 Gdx.app.postRunnable(() -> {
-                            ParallelAction parallel = Actions.parallel();
+                    RunnableAction iteratorActorRun = Actions.run(() ->
+                            actorList.get(index).iteratorStatus());
+
+                    ParallelAction parallel = Actions.parallel();
                             List<AlgorithmLine> algorithmLines = lineMap.get(index);
                             for (AlgorithmLine algorithmLine : algorithmLines) {
-                                RunnableAction run1 = Actions.run(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        algorithmLine.setLineColor(Color.GREEN);
-                                    }
-                                });
-                                RunnableAction run2 = Actions.run(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        algorithmLine.setLineColor(Color.PURPLE);
-                                    }
-                                });
-                                RunnableAction run3 = Actions.run(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        algorithmLine.setLineColor(Color.GREEN);
-                                    }
-                                });
+                                RunnableAction run1 = Actions.run(() ->
+                                        algorithmLine.setLineColor(Color.GREEN));
+                                RunnableAction run2 = Actions.run(() ->
+                                        algorithmLine.setLineColor(Color.GRAY));
+                                RunnableAction run3 = Actions.run(() ->
+                                        algorithmLine.setLineColor(Color.GREEN));
                                 parallel.addAction(Actions.sequence(run1, Actions.delay(0.3f),
                                         run2, Actions.delay(0.3f), run3));
                             }
-                            RunnableAction last = Actions.run(new Runnable() {
-                                @Override
-                                public void run() {
-                                    for (Integer integer : linkedList) {
-                                        actorList.get(integer).deadStatus();
-                                    }
-                                    actorList.get(index).activeStatus();
+                            RunnableAction last = Actions.run(() -> {
+                                for (Integer integer : linkedList) {
+                                    actorList.get(integer).activeStatus();
                                 }
+                                actorList.get(index).deadStatus();
                             });
 
-                            stage.addAction(Actions.sequence(Actions.delay(0.3f), parallel,
+                            stage.addAction(Actions.sequence(iteratorActorRun, Actions.delay(0.3f), parallel,
                                     Actions.delay(0.5f), last));
                         }
                 );
                 break;
             case START:
-                Gdx.app.postRunnable(() -> actorList.get(0).deadStatus());
+                Gdx.app.postRunnable(() -> actorList.get(0).iteratorStatus());
                 break;
         }
     }
