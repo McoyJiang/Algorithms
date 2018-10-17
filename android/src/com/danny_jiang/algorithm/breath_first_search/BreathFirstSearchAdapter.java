@@ -132,35 +132,20 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                             ParallelAction parallel = Actions.parallel();
                             List<AlgorithmLine> algorithmLines = lineMap.get(index);
                             for (AlgorithmLine algorithmLine : algorithmLines) {
-                                RunnableAction run1 = Actions.run(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        algorithmLine.setLineColor(Color.GREEN);
-                                    }
-                                });
-                                RunnableAction run2 = Actions.run(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        algorithmLine.setLineColor(Color.PURPLE);
-                                    }
-                                });
-                                RunnableAction run3 = Actions.run(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        algorithmLine.setLineColor(Color.GREEN);
-                                    }
-                                });
+                                RunnableAction run1 = Actions.run(() ->
+                                        algorithmLine.setLineColor(Color.GREEN));
+                                RunnableAction run2 = Actions.run(() ->
+                                        algorithmLine.setLineColor(Color.PURPLE));
+                                RunnableAction run3 = Actions.run(() ->
+                                        algorithmLine.setLineColor(Color.GREEN));
                                 parallel.addAction(Actions.sequence(run1, Actions.delay(0.3f),
                                         run2, Actions.delay(0.3f), run3));
                             }
-                            RunnableAction last = Actions.run(new Runnable() {
-                                @Override
-                                public void run() {
-                                    for (Integer integer : linkedList) {
-                                        actorList.get(integer).deadStatus();
-                                    }
-                                    actorList.get(index).activeStatus();
+                            RunnableAction last = Actions.run(() -> {
+                                for (Integer integer : linkedList) {
+                                    actorList.get(integer).deadStatus();
                                 }
+                                actorList.get(index).activeStatus();
                             });
 
                             stage.addAction(Actions.sequence(Actions.delay(0.3f), parallel,
