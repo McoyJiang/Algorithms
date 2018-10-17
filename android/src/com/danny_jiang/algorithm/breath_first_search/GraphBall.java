@@ -11,6 +11,11 @@ public class GraphBall extends AlgorithmBall {
         super(text);
     }
 
+    @Override
+    public void defaultStatus() {
+        setRegion(new TextureRegion(new Texture(Gdx.files.internal("bg/gray_ball_bg.png"))));
+    }
+
     public void iteratorStatus() {
         setRegion(new TextureRegion(new Texture(
                 Gdx.files.internal("bg/iterator_ball_bg.png"))));

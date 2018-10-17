@@ -81,7 +81,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
 
                 AlgorithmLine line = new AlgorithmLine(srcBall.getOriginX(), srcBall.getOriginY(),
                         dstBall.getOriginX(), dstBall.getOriginY(), 10);
-                line.setLineColor(Color.PURPLE);
+                line.setLineColor(Color.GRAY);
                 lineMap.get(i).add(line);
                 stage.addActor(line);
             }
@@ -136,7 +136,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                                 RunnableAction run1 = Actions.run(() ->
                                         algorithmLine.setLineColor(Color.GREEN));
                                 RunnableAction run2 = Actions.run(() ->
-                                        algorithmLine.setLineColor(Color.PURPLE));
+                                        algorithmLine.setLineColor(Color.GRAY));
                                 RunnableAction run3 = Actions.run(() ->
                                         algorithmLine.setLineColor(Color.GREEN));
                                 parallel.addAction(Actions.sequence(run1, Actions.delay(0.3f),
