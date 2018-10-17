@@ -4,23 +4,23 @@ ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidMa
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-37:12
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-37:12
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-37:12
-MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/976d7568cfea2c85bc0791e4e5afcc5c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ec3e357c71656d4403cccd78c920c234/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/54d82bbc6677ef2f24b41d9abfa1cac9/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/dc01f1fd14e6a3e4a5461804e93fc01f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/735b4e31afe518ca7e7b0fd0ae256be2/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/cec2bdd4e1a85e802800ad4e0d2c8a3b/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/b0a205867254c62b2afc879704d823e4/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a4a9463204877613f0fdae10a6e3d662/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/8a2f1bde641c6e16772530f616ffa4c6/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/6cf309d94eb34b9adea8243bb7d7eb4c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/93d51cd34dab01ebb22abbf144db1530/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/8b53a1e44a5dcdd30240a11f50f71d71/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ee21539590f16b331e546403cd8b59a7/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/69f9685b4620939a8bd0495e62a6269a/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/05fd9dae4f3ff639a741fabb6dff596d/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/23a5556118e36e0af4fe649f6b3feb2a/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/402b0ae6704339081344ca4de52ef99f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8b7f8f42864d3fcc6e0c80f4df9a9eb9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/071726dbad78e16c386dde8f2780969a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/8c538ba4fcf42ce9bd4642860b863c89/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/48377c1438ea1990ee3bfff8fc0e6830/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/c10f096b9a707f1b75b0bf4b12e87239/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/a09b167ec81de906384cfec1d98b1586/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/9343cf23313cd83a841252df8c020993/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/37ee0c0758b4e77606ac0ab590d434e2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/f277fef2a0b5b14476f4228a4a444fb2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/a940961a56110d59813c6deb6a8dad2a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/378a015a7c63e4d0616781e3e8bdd18d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/6a9fe20d3668cc3cfdb9aa5e6207b5c5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ddfa5c6d1516c281fee8ffe287aaf22c/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/e824b81b1ae2dfdfb4638b74ea63fa8b/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/8744429d56111cbc07f0ff60f85977cb/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/1d8484f90345d06f81e277cb5fc61bc9/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/701d8abd0c0723a9342a9080bf774e7b/AndroidManifest.xml:17:1-22:12
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-37:12
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-37:12
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-37:12
@@ -39,52 +39,52 @@ INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/Androi
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 uses-sdk
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-73
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-73
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-73
-MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/976d7568cfea2c85bc0791e4e5afcc5c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/976d7568cfea2c85bc0791e4e5afcc5c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ec3e357c71656d4403cccd78c920c234/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ec3e357c71656d4403cccd78c920c234/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/54d82bbc6677ef2f24b41d9abfa1cac9/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/54d82bbc6677ef2f24b41d9abfa1cac9/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/dc01f1fd14e6a3e4a5461804e93fc01f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/dc01f1fd14e6a3e4a5461804e93fc01f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/735b4e31afe518ca7e7b0fd0ae256be2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/735b4e31afe518ca7e7b0fd0ae256be2/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/cec2bdd4e1a85e802800ad4e0d2c8a3b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/cec2bdd4e1a85e802800ad4e0d2c8a3b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/b0a205867254c62b2afc879704d823e4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/b0a205867254c62b2afc879704d823e4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a4a9463204877613f0fdae10a6e3d662/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/a4a9463204877613f0fdae10a6e3d662/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/8a2f1bde641c6e16772530f616ffa4c6/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/8a2f1bde641c6e16772530f616ffa4c6/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/6cf309d94eb34b9adea8243bb7d7eb4c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/6cf309d94eb34b9adea8243bb7d7eb4c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/93d51cd34dab01ebb22abbf144db1530/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/93d51cd34dab01ebb22abbf144db1530/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/8b53a1e44a5dcdd30240a11f50f71d71/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/8b53a1e44a5dcdd30240a11f50f71d71/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ee21539590f16b331e546403cd8b59a7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ee21539590f16b331e546403cd8b59a7/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/69f9685b4620939a8bd0495e62a6269a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/69f9685b4620939a8bd0495e62a6269a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/05fd9dae4f3ff639a741fabb6dff596d/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/05fd9dae4f3ff639a741fabb6dff596d/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/23a5556118e36e0af4fe649f6b3feb2a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/23a5556118e36e0af4fe649f6b3feb2a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/402b0ae6704339081344ca4de52ef99f/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/402b0ae6704339081344ca4de52ef99f/AndroidManifest.xml:20:5-44
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-73
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-73
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-47
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-47
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-47
+MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8b7f8f42864d3fcc6e0c80f4df9a9eb9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/8b7f8f42864d3fcc6e0c80f4df9a9eb9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/071726dbad78e16c386dde8f2780969a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/071726dbad78e16c386dde8f2780969a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/8c538ba4fcf42ce9bd4642860b863c89/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/8c538ba4fcf42ce9bd4642860b863c89/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/48377c1438ea1990ee3bfff8fc0e6830/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/48377c1438ea1990ee3bfff8fc0e6830/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/c10f096b9a707f1b75b0bf4b12e87239/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/c10f096b9a707f1b75b0bf4b12e87239/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/a09b167ec81de906384cfec1d98b1586/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/a09b167ec81de906384cfec1d98b1586/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/9343cf23313cd83a841252df8c020993/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/9343cf23313cd83a841252df8c020993/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/37ee0c0758b4e77606ac0ab590d434e2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/37ee0c0758b4e77606ac0ab590d434e2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/f277fef2a0b5b14476f4228a4a444fb2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/f277fef2a0b5b14476f4228a4a444fb2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/a940961a56110d59813c6deb6a8dad2a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/a940961a56110d59813c6deb6a8dad2a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/378a015a7c63e4d0616781e3e8bdd18d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/378a015a7c63e4d0616781e3e8bdd18d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/6a9fe20d3668cc3cfdb9aa5e6207b5c5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/6a9fe20d3668cc3cfdb9aa5e6207b5c5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ddfa5c6d1516c281fee8ffe287aaf22c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ddfa5c6d1516c281fee8ffe287aaf22c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/e824b81b1ae2dfdfb4638b74ea63fa8b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/e824b81b1ae2dfdfb4638b74ea63fa8b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/8744429d56111cbc07f0ff60f85977cb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/8744429d56111cbc07f0ff60f85977cb/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/1d8484f90345d06f81e277cb5fc61bc9/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/1d8484f90345d06f81e277cb5fc61bc9/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/701d8abd0c0723a9342a9080bf774e7b/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/701d8abd0c0723a9342a9080bf774e7b/AndroidManifest.xml:20:5-44
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-47
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-47
 	android:targetSdkVersion
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:41-70
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:15-44
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:15-40
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:7:5-47
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 uses-permission#android.permission.INTERNET
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:9:5-67
@@ -92,8 +92,8 @@ ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidMa
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:9:22-64
 application
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:11:5-35:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/54d82bbc6677ef2f24b41d9abfa1cac9/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/54d82bbc6677ef2f24b41d9abfa1cac9/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/8c538ba4fcf42ce9bd4642860b863c89/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/8c538ba4fcf42ce9bd4642860b863c89/AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:14:9-41
 	android:icon

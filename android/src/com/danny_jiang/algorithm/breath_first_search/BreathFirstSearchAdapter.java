@@ -118,6 +118,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         lineMap.put(2, new ArrayList<>());
         lineMap.put(3, new ArrayList<>());
         lineMap.put(4, new ArrayList<>());
+        lineMap.put(5, new ArrayList<>());
     }
 
     @Override
@@ -125,18 +126,32 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         switch (msg.what) {
             case DEQUEUE:
                 final int index = msg.arg1;
+                Log.e(TAG, "animation: index is " + index);
                 final LinkedList<Integer> linkedList = (LinkedList<Integer>) msg.obj;
                 Gdx.app.postRunnable(() -> {
                             ParallelAction parallel = Actions.parallel();
                             List<AlgorithmLine> algorithmLines = lineMap.get(index);
                             for (AlgorithmLine algorithmLine : algorithmLines) {
-                                RunnableAction run = Actions.run(new Runnable() {
+                                RunnableAction run1 = Actions.run(new Runnable() {
                                     @Override
                                     public void run() {
                                         algorithmLine.setLineColor(Color.GREEN);
                                     }
                                 });
-                                parallel.addAction(run);
+                                RunnableAction run2 = Actions.run(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        algorithmLine.setLineColor(Color.PURPLE);
+                                    }
+                                });
+                                RunnableAction run3 = Actions.run(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        algorithmLine.setLineColor(Color.GREEN);
+                                    }
+                                });
+                                parallel.addAction(Actions.sequence(run1, Actions.delay(0.3f),
+                                        run2, Actions.delay(0.3f), run3));
                             }
                             RunnableAction last = Actions.run(new Runnable() {
                                 @Override
@@ -144,6 +159,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                                     for (Integer integer : linkedList) {
                                         actorList.get(integer).deadStatus();
                                     }
+                                    actorList.get(index).activeStatus();
                                 }
                             });
 
