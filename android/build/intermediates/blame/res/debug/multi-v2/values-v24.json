@@ -4,7 +4,7 @@
             "outputFile": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/ec3e357c71656d4403cccd78c920c234/res/values-v24/values-v24.xml",
+                    "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/071726dbad78e16c386dde8f2780969a/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/8b53a1e44a5dcdd30240a11f50f71d71/res/values-v24/values-v24.xml",
+                    "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/6a9fe20d3668cc3cfdb9aa5e6207b5c5/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
