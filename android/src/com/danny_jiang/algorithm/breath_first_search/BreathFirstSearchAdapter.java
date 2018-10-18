@@ -43,32 +43,32 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         }
 
         GraphBall ball = actorList.get(0);
-        ball.setPosition(200, 1200);
+        ball.setPosition(200, 1300);
         ball.setOrigin(ball.getX() + ball.getWidth() / 2,
                 ball.getY() + ball.getHeight() / 2);
 
         ball = actorList.get(1);
-        ball.setPosition(900, 1200);
+        ball.setPosition(900, 1300);
         ball.setOrigin(ball.getX() + ball.getWidth() / 2,
                 ball.getY() + ball.getHeight() / 2);
 
         ball = actorList.get(2);
-        ball.setPosition(450, 1000);
+        ball.setPosition(450, 1100);
         ball.setOrigin(ball.getX() + ball.getWidth() / 2,
                 ball.getY() + ball.getHeight() / 2);
 
         ball = actorList.get(3);
-        ball.setPosition(450, 700);
+        ball.setPosition(450, 800);
         ball.setOrigin(ball.getX() + ball.getWidth() / 2,
                 ball.getY() + ball.getHeight() / 2);
 
         ball = actorList.get(4);
-        ball.setPosition(150, 400);
+        ball.setPosition(150, 500);
         ball.setOrigin(ball.getX() + ball.getWidth() / 2,
                 ball.getY() + ball.getHeight() / 2);
 
         ball = actorList.get(5);
-        ball.setPosition(900, 500);
+        ball.setPosition(900, 600);
         ball.setOrigin(ball.getX() + ball.getWidth() / 2,
                 ball.getY() + ball.getHeight() / 2);
 
