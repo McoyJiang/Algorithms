@@ -5,9 +5,11 @@ import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.data_structure.Graph;
 import com.danny_jiang.algorithm.views.AlgorithmLine;
@@ -23,9 +25,11 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
     private static final String TAG = BreathFirstSearchAdapter.class.getSimpleName();
     private static final int DEQUEUE = 1;
     private static final int START = 2;
+    private static final int ENQUEUE = 3;
 
     private volatile Graph graph;
 
+    private Label label;
     private List<GraphBall> actorList;
     private Map<Integer, List<AlgorithmLine>> lineMap = new HashMap<>();
     private volatile int currentIndex;
@@ -92,7 +96,14 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         }
 
         // add Queue
-
+        Label.LabelStyle style = new Label.LabelStyle();
+        style.font = new BitmapFont(
+                Gdx.files.internal("font/default.fnt"),
+                Gdx.files.internal("font/default.png"), false);
+        style.fontColor = new Color(1, 0, 0, 1);
+        label = new Label("Queue: []", style);
+        label.setPosition(20, 380);
+        stage.addActor(label);
     }
 
     @Override
@@ -121,41 +132,62 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
 
     @Override
     protected void animation(Message msg) {
+        final int index = msg.arg1;
+        Log.e(TAG, "animation: index is " + index);
+        final LinkedList<Integer> linkedList = (LinkedList<Integer>) msg.obj;
         switch (msg.what) {
-            case DEQUEUE:
-                final int index = msg.arg1;
-                Log.e(TAG, "animation: index is " + index);
-                final LinkedList<Integer> linkedList = (LinkedList<Integer>) msg.obj;
+            case ENQUEUE:
                 Gdx.app.postRunnable(() -> {
-                    RunnableAction iteratorActorRun = Actions.run(() ->
-                            actorList.get(index).iteratorStatus());
-
                     ParallelAction parallel = Actions.parallel();
-                            List<AlgorithmLine> algorithmLines = lineMap.get(index);
-                            for (AlgorithmLine algorithmLine : algorithmLines) {
-                                RunnableAction run1 = Actions.run(() ->
-                                        algorithmLine.setLineColor(Color.GREEN));
-                                RunnableAction run2 = Actions.run(() ->
-                                        algorithmLine.setLineColor(Color.GRAY));
-                                RunnableAction run3 = Actions.run(() ->
-                                        algorithmLine.setLineColor(Color.GREEN));
-                                parallel.addAction(Actions.sequence(run1, Actions.delay(0.3f),
-                                        run2, Actions.delay(0.3f), run3));
-                            }
-                            RunnableAction last = Actions.run(() -> {
-                                for (Integer integer : linkedList) {
-                                    actorList.get(integer).activeStatus();
-                                }
-                                actorList.get(index).deadStatus();
+                    List<AlgorithmLine> algorithmLines = lineMap.get(index);
+                    for (AlgorithmLine algorithmLine : algorithmLines) {
+                        RunnableAction run1 = Actions.run(() ->
+                                algorithmLine.setLineColor(Color.GREEN));
+                        RunnableAction run2 = Actions.run(() ->
+                                algorithmLine.setLineColor(Color.GRAY));
+                        RunnableAction run3 = Actions.run(() ->
+                                algorithmLine.setLineColor(Color.GREEN));
+                        parallel.addAction(Actions.sequence(run1, Actions.delay(0.3f),
+                                run2, Actions.delay(0.3f), run3));
+                    }
+
+                    final StringBuilder stringBuilder = new StringBuilder();
+                    RunnableAction activeRun = Actions.run(() -> {
+                        for (int i = 0; i < linkedList.size(); i++) {
+                            Integer integer = linkedList.get(i);
+                            actorList.get(integer).activeStatus();
+                            stringBuilder.append(i == linkedList.size() - 1 ? integer : integer + ", ");
+                        }
+                        actorList.get(index).deadStatus();
+                    });
+
+                    RunnableAction setLabelRun = Actions.run(() -> {
+                        label.setText("current Queue is " + linkedList.toString());
+                    });
+                    stage.addAction(Actions.sequence(Actions.delay(0.3f), parallel,
+                            Actions.delay(0.5f), activeRun, setLabelRun));
+                });
+                break;
+            case DEQUEUE:
+                Gdx.app.postRunnable(() -> {
+                            RunnableAction iteratorActorRun = Actions.run(() -> {
+                                actorList.get(index).iteratorStatus();
+                                label.setText(index + "is polled from Queue,\n" +
+                                        "find its adjacent vertices,\n" +
+                                        "and put them into Queue");
                             });
 
-                            stage.addAction(Actions.sequence(iteratorActorRun, Actions.delay(0.3f), parallel,
-                                    Actions.delay(0.5f), last));
+                            stage.addAction(Actions.sequence(iteratorActorRun,
+                                    Actions.delay(0.3f)));
                         }
                 );
                 break;
             case START:
-                Gdx.app.postRunnable(() -> actorList.get(0).iteratorStatus());
+                Gdx.app.postRunnable(() -> {
+                    actorList.get(0).iteratorStatus();
+                    label.setText("First dequeue 0 from Queue,\n " +
+                            "and put its adjacent vertices into Queue");
+                });
                 break;
         }
     }
@@ -187,6 +219,13 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         while (queue.size() != 0) {
             // Dequeue a vertex from queue and print it
             currentIndex = start = queue.poll();
+            await((BeforeWaitCallback) () ->
+                    {
+                        Message message = sDecodingThreadHandler.obtainMessage(DEQUEUE, queue);
+                        message.arg1 = currentIndex;
+                        sDecodingThreadHandler.sendMessage(message);
+                    }
+            );
             stringBuilder.append(start + " ");
 
             // Get all adjacent vertices of the dequeued vertex s
@@ -202,7 +241,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
             }
             await((BeforeWaitCallback) () ->
                     {
-                        Message message = sDecodingThreadHandler.obtainMessage(DEQUEUE, queue);
+                        Message message = sDecodingThreadHandler.obtainMessage(ENQUEUE, queue);
                         message.arg1 = currentIndex;
                         sDecodingThreadHandler.sendMessage(message);
                     }
