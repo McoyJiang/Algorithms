@@ -149,15 +149,18 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                                 run2, Actions.delay(0.3f), run3));
                     }
 
+                    final StringBuilder stringBuilder = new StringBuilder();
                     RunnableAction activeRun = Actions.run(() -> {
-                        for (Integer integer : linkedList) {
+                        for (int i = 0; i < linkedList.size(); i++) {
+                            Integer integer = linkedList.get(i);
                             actorList.get(integer).activeStatus();
+                            stringBuilder.append(i == linkedList.size() - 1 ? integer : integer + ", ");
                         }
                         actorList.get(index).deadStatus();
                     });
 
                     RunnableAction setLabelRun = Actions.run(() -> {
-
+                        label.setText("current Queue is " + linkedList.toString());
                     });
                     stage.addAction(Actions.sequence(Actions.delay(0.3f), parallel,
                             Actions.delay(0.5f), activeRun, setLabelRun));
@@ -165,15 +168,24 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                 break;
             case DEQUEUE:
                 Gdx.app.postRunnable(() -> {
-                            RunnableAction iteratorActorRun = Actions.run(() ->
-                                    actorList.get(index).iteratorStatus());
+                            RunnableAction iteratorActorRun = Actions.run(() -> {
+                                actorList.get(index).iteratorStatus();
+                                label.setText(index + "is polled from Queue,\n" +
+                                        "find its adjacent vertices,\n" +
+                                        "and put them into Queue");
+                            });
+
                             stage.addAction(Actions.sequence(iteratorActorRun,
                                     Actions.delay(0.3f)));
                         }
                 );
                 break;
             case START:
-                Gdx.app.postRunnable(() -> actorList.get(0).iteratorStatus());
+                Gdx.app.postRunnable(() -> {
+                    actorList.get(0).iteratorStatus();
+                    label.setText("First dequeue 0 from Queue,\n " +
+                            "and put its adjacent vertices into Queue");
+                });
                 break;
         }
     }
