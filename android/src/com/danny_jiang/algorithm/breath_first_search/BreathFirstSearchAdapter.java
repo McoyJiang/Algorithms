@@ -97,7 +97,9 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
 
         // add Queue
         Label.LabelStyle style = new Label.LabelStyle();
-        style.font = new BitmapFont(Gdx.files.internal("font/default.fnt"));
+        style.font = new BitmapFont(
+                Gdx.files.internal("font/default.fnt"),
+                Gdx.files.internal("font/default.png"), false);
         style.fontColor = new Color(1, 0, 0, 1);
         label = new Label("Queue: []", style);
         label.setPosition(20, 380);
