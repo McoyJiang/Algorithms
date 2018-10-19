@@ -26,6 +26,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
     private static final int DEQUEUE = 1;
     private static final int START = 2;
     private static final int ENQUEUE = 3;
+    private static final int COMPLETE = 4;
 
     private volatile Graph graph;
 
@@ -101,7 +102,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                 Gdx.files.internal("font/default.fnt"),
                 Gdx.files.internal("font/default.png"), false);
         style.fontColor = new Color(1, 0, 0, 1);
-        label = new Label("Queue: []", style);
+        label = new Label("current Queue is [0]", style);
         label.setPosition(20, 380);
         stage.addActor(label);
     }
@@ -172,9 +173,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
                 Gdx.app.postRunnable(() -> {
                             RunnableAction iteratorActorRun = Actions.run(() -> {
                                 actorList.get(index).iteratorStatus();
-                                label.setText(index + "is polled from Queue,\n" +
-                                        "find its adjacent vertices,\n" +
-                                        "and put them into Queue");
+                                label.setText("current Queue is " + linkedList.toString());
                             });
 
                             stage.addAction(Actions.sequence(iteratorActorRun,
@@ -185,9 +184,11 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
             case START:
                 Gdx.app.postRunnable(() -> {
                     actorList.get(0).iteratorStatus();
-                    label.setText("First dequeue 0 from Queue,\n " +
-                            "and put its adjacent vertices into Queue");
+                    label.setText("current Queue is []");
                 });
+                break;
+            case COMPLETE:
+                label.setText("BFS completed ! \nResult is [0, 2, 4, 1, 3, 5]");
                 break;
         }
     }
@@ -208,13 +209,6 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
         // Mark the current node as visited and enqueue it
         visited[start] = true;
         queue.add(start);
-        await((BeforeWaitCallback) () ->
-                {
-                    Message message = sDecodingThreadHandler.obtainMessage(START, queue);
-                    message.arg1 = currentIndex;
-                    sDecodingThreadHandler.sendMessage(message);
-                }
-        );
         StringBuilder stringBuilder = new StringBuilder();
         while (queue.size() != 0) {
             // Dequeue a vertex from queue and print it
@@ -248,5 +242,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
             );
         }
         Log.e(TAG, "search result : " + stringBuilder.toString());
+        Message message = sDecodingThreadHandler.obtainMessage(COMPLETE);
+        sDecodingThreadHandler.sendMessage(message);
     }
 }
