@@ -14,6 +14,7 @@ import com.danny_jiang.algorithm.breath_first_search.BreathFirstSearchAdapter;
 import com.danny_jiang.algorithm.bubble_sort.BubbleSortActivity;
 import com.danny_jiang.algorithm.heap_sort.HeapSortActivity;
 import com.danny_jiang.algorithm.insert_sort.InsertSortAdapter;
+import com.danny_jiang.algorithm.quick_sort.QuickSortActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                         intent.setClass(MainActivity.this, BubbleSortActivity.class);
                         break;
                     case 1:
-                        intent.setClass(MainActivity.this, BubbleSortActivity.class);
+                        intent.setClass(MainActivity.this, QuickSortActivity.class);
                         break;
                     case 2:
                         intent.setClass(MainActivity.this, HeapSortActivity.class);

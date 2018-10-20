@@ -37,6 +37,8 @@
 
         </activity>
 
+        <activity android:name=".quick_sort.QuickSortActivity"/>
+
     </application>
 
 </manifest>
