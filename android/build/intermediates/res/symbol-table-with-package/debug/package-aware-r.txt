@@ -882,6 +882,7 @@ id image
 id info
 id invisible
 id italic
+id item_algorithm
 id item_touch_helper_previous_elevation
 id largeLabel
 id left
@@ -912,6 +913,7 @@ id pin
 id progress_circular
 id progress_horizontal
 id radio
+id recyclerView_Main
 id right
 id right_icon
 id right_side
@@ -1039,6 +1041,8 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout item_algorithm
+layout main_activity
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
