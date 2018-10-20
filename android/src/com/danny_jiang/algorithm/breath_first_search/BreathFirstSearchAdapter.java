@@ -6,12 +6,14 @@ import android.util.Log;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.data_structure.Graph;
+import com.danny_jiang.algorithm.utils.SmartFontGenerator;
 import com.danny_jiang.algorithm.views.AlgorithmLine;
 
 import java.util.ArrayList;
@@ -34,6 +36,18 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
     private List<GraphBall> actorList;
     private Map<Integer, List<AlgorithmLine>> lineMap = new HashMap<>();
     private volatile int currentIndex;
+    private BitmapFont bitmapFont;
+
+    @Override
+    public void create() {
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/font.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 10;
+        parameter.characters = FreeTypeFontGenerator.DEFAULT_CHARS;
+        parameter.flip = false;
+        bitmapFont = generator.generateFont(parameter);
+        super.create();
+    }
 
     @Override
     protected void inflateStage() {
@@ -98,9 +112,11 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
 
         // add Queue
         Label.LabelStyle style = new Label.LabelStyle();
-        style.font = new BitmapFont(
-                Gdx.files.internal("font/default.fnt"),
-                Gdx.files.internal("font/default.png"), false);
+        SmartFontGenerator generator = new SmartFontGenerator();
+        style.font = generator.getCommonFont(50);
+//        style.font = new BitmapFont(
+//                Gdx.files.internal("font/default.fnt"),
+//                Gdx.files.internal("font/default.png"), false);
         style.fontColor = new Color(1, 0, 0, 1);
         label = new Label("current Queue is [0]", style);
         label.setPosition(20, 380);
