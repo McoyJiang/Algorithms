@@ -52,12 +52,15 @@ public class MainActivity extends AppCompatActivity {
                         intent.setClass(MainActivity.this, BubbleSortActivity.class);
                         break;
                     case 1:
-                        intent.setClass(MainActivity.this, QuickSortActivity.class);
+                        intent.setClass(MainActivity.this, BubbleSortActivity.class);
                         break;
                     case 2:
-                        intent.setClass(MainActivity.this, HeapSortActivity.class);
+                        intent.setClass(MainActivity.this, QuickSortActivity.class);
                         break;
                     case 3:
+                        intent.setClass(MainActivity.this, HeapSortActivity.class);
+                        break;
+                    case 4:
                         intent.setClass(MainActivity.this, BreathFirstSearchActivity.class);
                         break;
                 }
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas = new ArrayList<String>();
         mDatas.add("Bubble Sort");
         mDatas.add("Insert Sort");
+        mDatas.add("Quick Sort");
         mDatas.add("Heap Sort");
         mDatas.add("Breath First Search");
     }

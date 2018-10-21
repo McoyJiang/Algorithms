@@ -1,4 +1,4 @@
-#Sat Oct 20 21:11:09 CST 2018
+#Sun Oct 21 20:49:44 CST 2018
 base.0=/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
