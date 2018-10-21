@@ -21,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +68,8 @@
       <file leaf-file-name="QuickSortAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1030">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="203">
+              <caret line="140" column="40" lean-forward="true" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,8 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ITERATOR_FINISH</find>
-      <find>setText</find>
       <find>COMPLETED</find>
       <find>array</find>
       <find>sDecodingThreadHandler</find>
@@ -128,7 +125,6 @@
       <find>activeStatus</find>
       <find>AlgorithmBall</find>
       <find>bitmapFont</find>
-      <find>COMPLETE</find>
       <find>LogUtils</find>
       <find>generateFont</find>
       <find>DEFAULT_CHARS</find>
@@ -136,6 +132,9 @@
       <find>mOnItemClickListener</find>
       <find>await</find>
       <find>TAG</find>
+      <find>PIVOT</find>
+      <find>switchChild</find>
+      <find>COMPLETE</find>
       <find>SWAP</find>
     </findStrings>
     <replaceStrings>
@@ -3330,7 +3329,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java</url>
-          <line>136</line>
+          <line>140</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -3771,8 +3770,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1030">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="203">
+          <caret line="140" column="40" lean-forward="true" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

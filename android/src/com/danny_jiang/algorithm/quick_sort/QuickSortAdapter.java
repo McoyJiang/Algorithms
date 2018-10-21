@@ -5,13 +5,12 @@ import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
+import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
@@ -25,7 +24,8 @@ import java.util.List;
 public class QuickSortAdapter extends AlgorithmAdapter {
     private static final String TAG = QuickSortAdapter.class.getSimpleName();
     private static final int PIVOT = 1;
-    private static final int SWAP = 2;
+    private static final int COMPLETE = 2;
+    private static final int SWAP = 3;
 
     private int sData[] = {10, 80, 30, 90, 40, 50, 70};
 
@@ -79,7 +79,10 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 Gdx.app.postRunnable(() -> actorList.get(pivot).activeStatus());
                 break;
             case SWAP:
-                Gdx.app.postRunnable(() -> switchChild(first, second));
+                Gdx.app.postRunnable(() -> switchChild(first, second, false));
+                break;
+            case COMPLETE:
+                Gdx.app.postRunnable(() -> switchChild(first, second, true));
                 break;
         }
     }
@@ -136,7 +139,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         arr[i + 1] = arr[high];
         arr[high] = temp;
         await((BeforeWaitCallback)() -> {
-            Message message = sDecodingThreadHandler.obtainMessage(SWAP);
+            Message message = sDecodingThreadHandler.obtainMessage(COMPLETE);
             message.arg1 = start;
             message.arg2 = end;
             sDecodingThreadHandler.sendMessage(message);
@@ -165,7 +168,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         Log.e(TAG, "sort completed: " + Arrays.toString(sData));
     }
 
-    private void switchChild(int first, int second) {
+    private void switchChild(int first, int second, boolean complete) {
         final AlgorithmBall actorFirst = actorList.get(first);
         final AlgorithmBall actorSecond = actorList.get(second);
 
@@ -177,13 +180,16 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             actorList.remove(second);
             actorList.add(second, actorFirst);
         });
-        //RunnableAction swapArray = Actions.run(() -> swapArray(first));
-        stage.addAction(Actions.sequence(switchActors));
+        RunnableAction run = Actions.run(() -> {
+            for (AlgorithmBall ball : actorList) {
+                ball.defaultStatus();
+            }
+        });
+        SequenceAction sequence = Actions.sequence(switchActors);
+        if (complete) {
+            sequence.addAction(run);
+        }
+        stage.addAction(sequence);
     }
 
-    private void swapArray(int j) {
-//        int temp = sData[j];
-//        sData[j] = sData[j + 1];
-//        sData[j + 1] = temp;
-    }
 }
