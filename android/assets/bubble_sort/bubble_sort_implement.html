@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title></title>
+	</head>
+	<body style="padding: 10px;">
+		<h2>冒泡排序的实现与优化</h2>
+		<h3>Java实现</h3>
+		<p>通过使用Java 8的Lambda表达式，实现冒泡排序代码如下：</p>
+		<pre>
+void bubbleSort(Integer[] arr) {
+    int n = arr.length;
+    IntStream.range(0, n - 1)
+    .flatMap(i -> IntStream.range(i + 1, n - i))
+    .forEach(j -> {
+        if (arr[j - 1] > arr[j]) {
+            int temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+            }
+     });
+}
+		</pre>
+		<p>Unit Test代码如下：</p>
+		<pre>
+@Test
+public void whenSortedWithBubbleSort_thenGetSortedArray() {
+    Integer[] array = { 2, 1, 4, 6, 3, 5 };
+    Integer[] sortedArray = { 1, 2, 3, 4, 5, 6 };
+    BubbleSort bubbleSort = new BubbleSort();
+    bubbleSort.bubbleSort(array);
+     
+    assertArrayEquals(array, sortedArray);
+}
+		</pre>
+		<h3>复杂度分析</h3>
+		<p>可以看到，以上实现的平均时间复杂度和最坏时间复杂度都是O(n^2) 空间复杂度是O(1)， 
+			因为冒泡排序不需要申请额外的空间，它是在数组原地址上操作的</p>
+		<h3>优化</h3>
+		<p>
+			通过仔细分析以上实现可以发现一个问题：
+			<i>如果在一次遍历之后，并没有发生两个元素进行交换位置的操作，
+			说明现在的数组已经是一个有序排列的数组, 也就是不需要后续的遍历操作了</i>
+			我们拿{4，2，1，6，3，5}为例来说明
+			在第一次遍历之后数组是: {2,1,4,3,5,6}
+			但是在第二次遍历之后的数组是：{1,2,3,4,5,6}
+			可以看到此时数组其实已经是一个有序数组了，并不需要后续的遍历操作
+		</p>
+		<h3>优化实现</h3>
+		<pre>
+public void optimizedBubbleSort(Integer[] arr) {
+    int i = 0, n = arr.length;
+    boolean swapNeeded = true;
+    while (i < n - 1 && swapNeeded) {
+        swapNeeded = false;
+        for (int j = 1; j < n - i; j++) {
+            if (arr[j - 1] > arr[j]) {
+                int temp = arr[j - 1];
+                arr[j - 1] = arr[j];
+                arr[j] = temp;
+                swapNeeded = true;
+            }
+        }
+        if(!swapNeeded) {
+            break;
+        }
+        i++;
+    }
+}
+		</pre>
+	</body>
+</html>

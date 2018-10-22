@@ -27,9 +27,9 @@ public class AnimationUtils {
                 new Vector2(actorFirstX + actorFirstX / 3, actorFirstY + actorFirstY / 6),
                 new Vector2(actorFirstX, actorFirstY)
         );
-        BezierAction bezierFirstAction = BezierAction.createAction(bezierFirst, 1f);
+        BezierAction bezierFirstAction = BezierAction.createAction(bezierFirst, 0.4f);
         bezierFirstAction.setTarget(actorFirst);
-        BezierAction bezierSecondAction = BezierAction.createAction(bezierSecond, 1f);
+        BezierAction bezierSecondAction = BezierAction.createAction(bezierSecond, 0.4f);
         bezierSecondAction.setTarget(actorSecond);
 
         ParallelAction parallel = Actions.parallel(bezierFirstAction, bezierSecondAction);
