@@ -26,6 +26,8 @@
 
         </activity>
 
+        <activity android:name=".insert_sort.InsertionSortActivity" />
+
         <activity android:name=".kruskal_mst.KruskalMSTAlgoActivity">
         </activity>
 

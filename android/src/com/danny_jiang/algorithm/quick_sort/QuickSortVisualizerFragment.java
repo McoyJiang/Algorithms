@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
+import com.danny_jiang.algorithm.insert_sort.TestAdapter;
 
 public class QuickSortVisualizerFragment extends AndroidFragmentApplication {
 
@@ -17,6 +18,6 @@ public class QuickSortVisualizerFragment extends AndroidFragmentApplication {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.numSamples = 4;
-        return initializeForView(new QuickSortAdapter(), config);
+        return initializeForView(new TestAdapter(), config);
     }
 }
