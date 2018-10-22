@@ -45,6 +45,5 @@ public class BubbleSortTutorialFragment extends Fragment {
         String url = "file:///android_asset/bubble_sort/bubble_sort_turorial.html";
         webView.loadUrl(url);
         String path = "file:///android_asset/badlogic.jpg";
-        //webView.loadUrl("javascript:aa(" + path + ")");
     }
 }
