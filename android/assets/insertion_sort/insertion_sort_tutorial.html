@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<title></title>
+		<style type="text/css">
+			.red{
+				color: #c7254e;
+			}
+		</style>
+	</head>
+	<body style="padding: 10px;">
+		<h2>插入排序</h2>
+		<h3>算法思想</h3>
+		<p>插入排序的工作方式非常像人们排序一手扑克牌一样。开始时，我们的左手为空并且桌子上的牌面朝下。然后，
+			我们每次从桌子上拿走一张牌并将它插入左手中正确的位置。为了找到一张牌的正确位置，我们从右到左将它与已在手中的每张牌进行比较，
+			如下图所示：</p>
+		<div id="">
+			<img src="file:///android_asset/insertion_sort/insert_poker.png" style="width: 90%;" />
+		</div>
+		<p>那插曲排序是如何借助上面提到的思想来实现排序的呢？首先我们将数组中的数据分为两个区间，已排序区间和未排序区间。
+			初始已排序区间只有一个元素，就是数组的第一个元素，然后在未排序区间中依次取出元素并插入到已排序区间的合适位置，
+			并保证已排序区间一直是有序。重复这个步骤直到未排序区间元素为空，算法结束。</p>
+		<h3>插入算法步骤</h3>
+		<p>1.从第一个元素开始，该元素可以认为已经被排序</p>
+		<p>2.取出下一个元素，在已经排序的元素序列中从后向前扫描</p>
+		<p>3.如果该元素（已排序）大于新元素，将该元素移到下一位置</p>
+		<p>4.重复步骤3，直到找到已排序的元素小于或者等于新元素的位置</p>
+		<p>5.将新元素插入到该位置后</p>
+		<p>6.重复步骤2~5</p>
+		<p>可以用一张图来理解一下上面的算法步骤：</p>
+		<div id="">
+			<img src="file:///android_asset/insertion_sort/insertionsort.png" style="width: 90%;" />
+		</div>
+		<p>
+			图片来源于<span class="red">GeeksForGeeks</span>
+		</p>
+		<h3>代码实现</h3>
+		<pre>
+			<code>
+// Java实现插入排序
+class InsertionSort 
+{ 
+    /*Function to sort array using insertion sort*/
+    void sort(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i=1; i&lt;n; ++i) 
+        { 
+            int key = arr[i]; 
+            int j = i-1; 
+  
+            /* Move elements of arr[0..i-1], that are 
+               greater than key, to one position ahead 
+               of their current position */
+            while (j&gt;=0 &amp;&amp; arr[j] &gt; key) 
+            { 
+                arr[j+1] = arr[j]; 
+                j = j-1; 
+            } 
+            arr[j+1] = key; 
+        } 
+    } 
+  
+    /* A utility function to print array of size n*/
+    static void printArray(int arr[]) 
+    { 
+        int n = arr.length; 
+        for (int i=0; i&lt;n; ++i) 
+            System.out.print(arr[i] + " "); 
+  
+        System.out.println(); 
+    } 
+  
+    // Driver method 
+    public static void main(String args[]) 
+    {         
+        int arr[] = {12, 11, 13, 5, 6}; 
+  
+        InsertionSort ob = new InsertionSort();         
+        ob.sort(arr); 
+          
+        printArray(arr); 
+    } 
+}
+			</code>
+		</pre>
+		<h3>性能分析</h3>
+		<h4>最坏时间复杂度—Θ(n2)</h4>
+		<p>如果数组是倒序的，每次插入就相当于在数组的第一个位置插入数据。比如将 0 插入到数组[2, 3, 5, 7, 11]中，因为数组中的元素都大于 0 ，所以需要需要与数组中的所有元素进行比较并以此将元素向右移动，最终将0 插入到数组第一个位置。通常来讲，假设数组的length为n，将元素插入到数组的操作称为insert，被插入元素Key需要与数组元素进行比较的此时称为K。 那么在这种情况下，将某一个元素插入到数组时 k = n - 1。综上所述，在插入排序的流程中，第一次进行insert时K = 1，第二次K = 2， 第三次K = 3…最后一次K = n - 1.因此插入排序所用的总的时间为：1 + 2 + 3 + ⋯ (n−1) = (1+2+3+⋯+(n−1)) = n2 / 2 - n / 2 用big-Θ表示法表示就是 <span class="red">Θ(n2)</span>
+		</p>
+		<h4>最好时间复杂度—Θ(n)</h4>
+		<p>那么插入排序可以使用少于Θ(n2) 的时间吗 ？ 答案是肯定的。如果要排序的数据已经是有序的，我们并不需要搬移任何数据。从尾到头在有序数据组里查找插入位置每次只需要比较一个数据就能确定插入的位置，所以这种情况下，最好时间复杂度是<span class="red">Θ(n)</span>
+		</p>
+		<h4>平均时间复杂度</h4>
+		<p>试想一下，如果被插入数组的排序是随机的，那感觉概率学，平均情况下此数组中的每一个元素都会比其它一半的元素小。基于这样的一个概念下，调用insert往数组中插入元素时就需要进行 K/2 次比较。同事插入排序会固定执行 N - 1 此insert操作，所以插入排序的平均时间复杂度也是 <span class="red">Θ(n2)</span>
+		</p>
+	</body>
+</html>
