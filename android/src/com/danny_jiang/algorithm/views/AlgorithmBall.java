@@ -45,6 +45,11 @@ public class AlgorithmBall extends BaseGdxActor {
         setRegion(new TextureRegion(new Texture(Gdx.files.internal("bg/active_ball_bg.png"))));
     }
 
+    public void iteratorStatus() {
+        setRegion(new TextureRegion(new Texture(
+                Gdx.files.internal("bg/iterator_ball_bg.png"))));
+    }
+
     public void deadStatus() {
         setRegion(new TextureRegion(new Texture(Gdx.files.internal("bg/dead_ball_bg.png"))));
         bitmapFont.setColor(Color.WHITE);

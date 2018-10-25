@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
+import com.badlogic.gdx.scenes.scene2d.actions.RepeatAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
@@ -26,6 +28,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     private static final int PIVOT = 1;
     private static final int COMPLETE = 2;
     private static final int SWAP = 3;
+    private static final int ITERATOR = 4;
+    private static final int BOUNCE = 5;
 
     private int sData[] = {10, 80, 40, 90, 30, 50, 70};
 
@@ -83,12 +87,42 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
                 break;
+            case BOUNCE:
+                Gdx.app.postRunnable(() -> {
+                    bounceActor(first);
+                });
+                break;
+            case ITERATOR:
+                Gdx.app.postRunnable(() -> highlightActor(first));
+                break;
             case COMPLETE:
                 Gdx.app.postRunnable(() -> {
                     switchChild(first, second, true);
                 });
                 break;
         }
+    }
+
+    private void bounceActor(int first) {
+        AlgorithmBall ball = actorList.get(first);
+        MoveByAction moveUp = Actions.moveBy(0, 30);
+        moveUp.setDuration(0.5f);
+        MoveByAction moveDown = Actions.moveBy(0, -30);
+        moveDown.setDuration(0.5f);
+        RepeatAction bounceAction = Actions.repeat(2, Actions.sequence(moveUp, moveDown));
+        RunnableAction wait = Actions.run(this::signal);
+        ball.addAction(Actions.sequence(bounceAction, wait));
+    }
+
+    private void highlightActor(int first) {
+        AlgorithmBall ball = actorList.get(first);
+
+        RunnableAction highlight = Actions.run(ball::iteratorStatus);
+        RunnableAction defaultStatus = Actions.run(ball::defaultStatus);
+        SequenceAction highlightSequence = Actions.sequence(highlight, Actions.delay(0.3f), defaultStatus);
+        RepeatAction repeat = Actions.repeat(2, highlightSequence);
+        RunnableAction wait = Actions.run(this::signal);
+        ball.addAction(Actions.sequence(repeat, wait));
     }
 
     @Override
@@ -113,13 +147,16 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         });
         int i = (low - 1); // index of smaller element
         for (int j = low; j < high; j++) {
+            final int end = j;
+            await((BeforeWaitCallback)() -> {
+                Message message = sDecodingThreadHandler.obtainMessage(ITERATOR, end, -1);
+                sDecodingThreadHandler.sendMessage(message);
+            });
             // If current element is smaller than or
             // equal to pivot
             if (arr[j] <= pivot) {
                 Log.e(TAG, "should swap here");
                 final int start = ++i;
-                final int end = j;
-
                 // swap arr[i] and arr[j]
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -133,6 +170,11 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 });
             } else {
                 Log.e(TAG, "should not swap");
+                await((BeforeWaitCallback) () -> {
+                    Message message = sDecodingThreadHandler.obtainMessage(BOUNCE);
+                    message.arg1 = end;
+                    sDecodingThreadHandler.sendMessage(message);
+                });
             }
         }
 
@@ -189,7 +231,10 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         SequenceAction sequence = Actions.sequence(switchActors);
         if (complete) {
             sequence.addAction(run);
+        } else {
+            sequence.addAction(Actions.run(this::signal));
         }
+
         stage.addAction(sequence);
     }
 
