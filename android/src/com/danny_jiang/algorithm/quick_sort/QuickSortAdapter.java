@@ -25,11 +25,12 @@ import java.util.List;
 
 public class QuickSortAdapter extends AlgorithmAdapter {
     private static final String TAG = QuickSortAdapter.class.getSimpleName();
-    private static final int PIVOT = 1;
-    private static final int COMPLETE = 2;
+    private static final int FIND_PIVOT = 1;
+    private static final int PARTITION_COMPLETE = 2;
     private static final int SWAP = 3;
-    private static final int ITERATOR = 4;
+    private static final int ITERATOR_INDEX = 4;
     private static final int BOUNCE = 5;
+    private static final int ITERATION_COMPLETE = 6;
 
     private int sData[] = {10, 80, 40, 90, 30, 50, 70};
 
@@ -78,7 +79,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         final int first = msg.arg1;
         final int second = msg.arg2;
         switch (msg.what) {
-            case PIVOT:
+            case FIND_PIVOT:
                 Gdx.app.postRunnable(() -> {
                     AlgorithmBall ball = actorList.get(first);
                     ball.activeStatus();
@@ -92,10 +93,17 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                     bounceActor(first);
                 });
                 break;
-            case ITERATOR:
+            case ITERATOR_INDEX:
                 Gdx.app.postRunnable(() -> highlightActor(first));
                 break;
-            case COMPLETE:
+            case ITERATION_COMPLETE:
+                Gdx.app.postRunnable(() -> {
+                    // TODO chage description here
+                    AlgorithmBall ball = actorList.get(first);
+                    ball.addAction(Actions.sequence());
+                });
+                break;
+            case PARTITION_COMPLETE:
                 Gdx.app.postRunnable(() -> {
                     switchChild(first, second, true);
                 });
@@ -106,23 +114,48 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     private void bounceActor(int first) {
         AlgorithmBall ball = actorList.get(first);
         MoveByAction moveUp = Actions.moveBy(0, 30);
-        moveUp.setDuration(0.5f);
+        moveUp.setDuration(0.3f);
         MoveByAction moveDown = Actions.moveBy(0, -30);
-        moveDown.setDuration(0.5f);
+        moveDown.setDuration(0.3f);
         RepeatAction bounceAction = Actions.repeat(2, Actions.sequence(moveUp, moveDown));
-        RunnableAction wait = Actions.run(this::signal);
-        ball.addAction(Actions.sequence(bounceAction, wait));
+        SequenceAction sequence = Actions.sequence(bounceAction);
+        sequence.addAction(Actions.run(() -> ball.defaultStatus()));
+        sequence.addAction(Actions.run(this::signal));
+        ball.addAction(sequence);
+    }
+
+    private void switchChild(int first, int second, boolean complete) {
+        final AlgorithmBall actorFirst = actorList.get(first);
+        final AlgorithmBall actorSecond = actorList.get(second);
+
+        Action switchActors = AnimationUtils.curveSwitchActors(actorFirst, actorSecond, () -> {
+            actorFirst.setIndex(second);
+            actorSecond.setIndex(first);
+            actorList.remove(first);
+            actorList.add(first, actorSecond);
+            actorList.remove(second);
+            actorList.add(second, actorFirst);
+        });
+
+        SequenceAction sequence = Actions.sequence(switchActors);
+        if (complete) {
+            RunnableAction run = Actions.run(() -> actorList.get(first).deadStatus());
+            sequence.addAction(run);
+        } else {
+            sequence.addAction(Actions.run(() -> {
+                actorFirst.defaultStatus();
+                actorSecond.defaultStatus();
+            }));
+            sequence.addAction(Actions.run(this::signal));
+        }
+
+        stage.addAction(sequence);
     }
 
     private void highlightActor(int first) {
         AlgorithmBall ball = actorList.get(first);
-
         RunnableAction highlight = Actions.run(ball::iteratorStatus);
-        RunnableAction defaultStatus = Actions.run(ball::defaultStatus);
-        SequenceAction highlightSequence = Actions.sequence(highlight, Actions.delay(0.3f), defaultStatus);
-        RepeatAction repeat = Actions.repeat(2, highlightSequence);
-        RunnableAction wait = Actions.run(this::signal);
-        ball.addAction(Actions.sequence(repeat, wait));
+        ball.addAction(highlight);
     }
 
     @Override
@@ -141,7 +174,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         Log.e(TAG, "partition: arr is " + arr + " low is " + low + " high is " + high);
         final int pivot = arr[high];
         await((BeforeWaitCallback)() -> {
-            Message message = sDecodingThreadHandler.obtainMessage(PIVOT);
+            Message message = sDecodingThreadHandler.obtainMessage(FIND_PIVOT);
             message.arg1 = high;
             sDecodingThreadHandler.sendMessage(message);
         });
@@ -149,7 +182,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         for (int j = low; j < high; j++) {
             final int end = j;
             await((BeforeWaitCallback)() -> {
-                Message message = sDecodingThreadHandler.obtainMessage(ITERATOR, end, -1);
+                Message message = sDecodingThreadHandler.obtainMessage(ITERATOR_INDEX, end, -1);
                 sDecodingThreadHandler.sendMessage(message);
             });
             // If current element is smaller than or
@@ -185,7 +218,13 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         arr[i + 1] = arr[high];
         arr[high] = temp;
         await((BeforeWaitCallback)() -> {
-            Message message = sDecodingThreadHandler.obtainMessage(COMPLETE);
+            Message message = sDecodingThreadHandler.obtainMessage(ITERATION_COMPLETE);
+            message.arg1 = start;
+            message.arg2 = end;
+            sDecodingThreadHandler.sendMessage(message);
+        });
+        await((BeforeWaitCallback)() -> {
+            Message message = sDecodingThreadHandler.obtainMessage(PARTITION_COMPLETE);
             message.arg1 = start;
             message.arg2 = end;
             sDecodingThreadHandler.sendMessage(message);
@@ -213,29 +252,4 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         }
         Log.e(TAG, "sort completed: " + Arrays.toString(sData));
     }
-
-    private void switchChild(int first, int second, boolean complete) {
-        final AlgorithmBall actorFirst = actorList.get(first);
-        final AlgorithmBall actorSecond = actorList.get(second);
-
-        Action switchActors = AnimationUtils.curveSwitchActors(actorFirst, actorSecond, () -> {
-            actorFirst.setIndex(second);
-            actorSecond.setIndex(first);
-            actorList.remove(first);
-            actorList.add(first, actorSecond);
-            actorList.remove(second);
-            actorList.add(second, actorFirst);
-        });
-        RunnableAction run = Actions.run(() -> actorList.get(first).deadStatus());
-
-        SequenceAction sequence = Actions.sequence(switchActors);
-        if (complete) {
-            sequence.addAction(run);
-        } else {
-            sequence.addAction(Actions.run(this::signal));
-        }
-
-        stage.addAction(sequence);
-    }
-
 }
