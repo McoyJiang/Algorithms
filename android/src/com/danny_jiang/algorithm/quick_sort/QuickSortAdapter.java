@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.RepeatAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
@@ -39,6 +41,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
 
     private HorizontalGroup bubbleSortGroup;
     private Label stepDescription;
+    private Image upArrow;
+    private Image downArrow;
     private List<AlgorithmBall> actorList;
 
     @Override
@@ -48,8 +52,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         bubbleSortGroup = new HorizontalGroup();
         bubbleSortGroup.align(Align.center);
         bubbleSortGroup.space(30);
-        bubbleSortGroup.setSize(stage.getWidth(), stage.getHeight() / 4);
-        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4);
+        bubbleSortGroup.setSize(stage.getWidth(), 200);
+        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4 - 200);
         stage.addActor(bubbleSortGroup);
 
         for (int i = 0; i < sData.length; i++) {
@@ -71,6 +75,18 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         stepDescription.setFontScale(2f);
         stepDescription.setPosition(30, 280);
         stage.addActor(stepDescription);
+
+        upArrow = new Image(new Texture("up_arrow.png"));
+        upArrow.setSize(100, 150);
+        upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
+                bubbleSortGroup.getY() - upArrow.getHeight() - 100);
+        stage.addActor(upArrow);
+
+        downArrow = new Image(new Texture("down_arrow.png"));
+        downArrow.setSize(100, 150);
+        downArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
+                bubbleSortGroup.getY() + 160);
+        stage.addActor(downArrow);
     }
 
     @Override
