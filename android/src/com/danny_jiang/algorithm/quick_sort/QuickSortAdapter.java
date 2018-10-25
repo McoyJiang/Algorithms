@@ -27,7 +27,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     private static final int COMPLETE = 2;
     private static final int SWAP = 3;
 
-    private int sData[] = {10, 80, 30, 90, 40, 50, 70};
+    private int sData[] = {10, 80, 40, 90, 30, 50, 70};
 
     private HorizontalGroup bubbleSortGroup;
     private Label stepDescription;
@@ -75,14 +75,18 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         final int second = msg.arg2;
         switch (msg.what) {
             case PIVOT:
-                final int pivot = msg.arg1;
-                Gdx.app.postRunnable(() -> actorList.get(pivot).activeStatus());
+                Gdx.app.postRunnable(() -> {
+                    AlgorithmBall ball = actorList.get(first);
+                    ball.activeStatus();
+                });
                 break;
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
                 break;
             case COMPLETE:
-                Gdx.app.postRunnable(() -> switchChild(first, second, true));
+                Gdx.app.postRunnable(() -> {
+                    switchChild(first, second, true);
+                });
                 break;
         }
     }
@@ -180,11 +184,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             actorList.remove(second);
             actorList.add(second, actorFirst);
         });
-        RunnableAction run = Actions.run(() -> {
-            for (AlgorithmBall ball : actorList) {
-                ball.defaultStatus();
-            }
-        });
+        RunnableAction run = Actions.run(() -> actorList.get(first).deadStatus());
+
         SequenceAction sequence = Actions.sequence(switchActors);
         if (complete) {
             sequence.addAction(run);

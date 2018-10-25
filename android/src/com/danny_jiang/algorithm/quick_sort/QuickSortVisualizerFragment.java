@@ -18,6 +18,6 @@ public class QuickSortVisualizerFragment extends AndroidFragmentApplication {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.numSamples = 4;
-        return initializeForView(new TestAdapter(), config);
+        return initializeForView(new QuickSortAdapter(), config);
     }
 }
