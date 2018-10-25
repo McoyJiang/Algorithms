@@ -31,6 +31,9 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     private static final int ITERATOR_INDEX = 4;
     private static final int BOUNCE = 5;
     private static final int ITERATION_COMPLETE = 6;
+    private static final int RESET_POSITION = 7;
+    private static final int SWAP_SMALL = 8;
+    private static final int SWAP_BIG = 9;
 
     private int sData[] = {10, 80, 40, 90, 30, 50, 70};
 
@@ -58,14 +61,15 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             bubbleSortGroup.addActor(algorithmBall);
         }
 
-        BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal("font/hjd.fnt"));
+        BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal(
+                "quick_sort/quick_sort.fnt"));
         Label.LabelStyle style = new Label.LabelStyle();
         style.font = bitmapFont;
         style.fontColor = new Color(1, 0, 0, 1);
         stepDescription = new Label("", style);
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 2 - 50);
+        stepDescription.setPosition(30, 280);
         stage.addActor(stepDescription);
     }
 
@@ -82,8 +86,26 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             case FIND_PIVOT:
                 Gdx.app.postRunnable(() -> {
                     AlgorithmBall ball = actorList.get(first);
+                    stepDescription.setText("开始Partition, 基准值: " + ball.getText() + "\n点击Next开始遍历");
                     ball.activeStatus();
+                    for (int i = second; i <= first; i++) {
+                        MoveByAction moveByAction = Actions.moveBy(0, -60);
+                        moveByAction.setDuration(0.5f);
+                        actorList.get(i).addAction(moveByAction);
+                    }
                 });
+                break;
+            case SWAP_SMALL:
+                Gdx.app.postRunnable(() -> stepDescription.setText(
+                        "遍历到 " + actorList.get(first).getText() +
+                            ",因为" + actorList.get(first).getText()
+                            + "小于基准值\n" + "需要交换左右下标的元素\n" + "同时将左右下标向右移一位"));
+                break;
+            case SWAP_BIG:
+                Gdx.app.postRunnable(() -> stepDescription.setText(
+                        "遍历到 " + actorList.get(first).getText() +
+                                ",因为" + actorList.get(first).getText() + "大于基准值"
+                                + "\n所以不需要交换元素\n" + "同时只将右下标向右移一位"));
                 break;
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
@@ -98,14 +120,21 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 break;
             case ITERATION_COMPLETE:
                 Gdx.app.postRunnable(() -> {
-                    // TODO chage description here
-                    AlgorithmBall ball = actorList.get(first);
-                    ball.addAction(Actions.sequence());
+                    stepDescription.setText("遍历结束, 交换基准值和左下标的位置,并执行下一次Partition操作");
                 });
                 break;
             case PARTITION_COMPLETE:
                 Gdx.app.postRunnable(() -> {
                     switchChild(first, second, true);
+                });
+                break;
+            case RESET_POSITION:
+                Gdx.app.postRunnable(() -> {
+                    for (int i = second; i <= first; i++) {
+                        MoveByAction moveByAction = Actions.moveBy(0, 60);
+                        moveByAction.setDuration(0.5f);
+                        actorList.get(i).addAction(moveByAction);
+                    }
                 });
                 break;
         }
@@ -155,13 +184,15 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     private void highlightActor(int first) {
         AlgorithmBall ball = actorList.get(first);
         RunnableAction highlight = Actions.run(ball::iteratorStatus);
-        ball.addAction(highlight);
+        RunnableAction wait = Actions.run(this::signal);
+        ball.addAction(Actions.sequence(highlight, wait));
     }
 
     @Override
     protected void algorithm() {
         await();
         sort(sData, 0, sData.length - 1);
+        stepDescription.setText("快速排序结束");
     }
 
     /* This function takes last element as pivot,
@@ -176,6 +207,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         await((BeforeWaitCallback)() -> {
             Message message = sDecodingThreadHandler.obtainMessage(FIND_PIVOT);
             message.arg1 = high;
+            message.arg2 = low;
             sDecodingThreadHandler.sendMessage(message);
         });
         int i = (low - 1); // index of smaller element
@@ -196,6 +228,11 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 arr[j] = temp;
 
                 await((BeforeWaitCallback) () -> {
+                    Message message = sDecodingThreadHandler.obtainMessage(SWAP_SMALL);
+                    message.arg1 = end;
+                    sDecodingThreadHandler.sendMessage(message);
+                });
+                await((BeforeWaitCallback) () -> {
                     Message message = sDecodingThreadHandler.obtainMessage(SWAP);
                     message.arg1 = start;
                     message.arg2 = end;
@@ -203,6 +240,11 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 });
             } else {
                 Log.e(TAG, "should not swap");
+                await((BeforeWaitCallback) () -> {
+                    Message message = sDecodingThreadHandler.obtainMessage(SWAP_BIG);
+                    message.arg1 = end;
+                    sDecodingThreadHandler.sendMessage(message);
+                });
                 await((BeforeWaitCallback) () -> {
                     Message message = sDecodingThreadHandler.obtainMessage(BOUNCE);
                     message.arg1 = end;
@@ -227,6 +269,13 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             Message message = sDecodingThreadHandler.obtainMessage(PARTITION_COMPLETE);
             message.arg1 = start;
             message.arg2 = end;
+            sDecodingThreadHandler.sendMessage(message);
+        });
+
+        await((BeforeWaitCallback)() -> {
+            Message message = sDecodingThreadHandler.obtainMessage(RESET_POSITION);
+            message.arg1 = high;
+            message.arg2 = low;
             sDecodingThreadHandler.sendMessage(message);
         });
 
