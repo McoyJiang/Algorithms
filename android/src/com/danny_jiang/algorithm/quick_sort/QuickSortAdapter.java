@@ -86,7 +86,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             case FIND_PIVOT:
                 Gdx.app.postRunnable(() -> {
                     AlgorithmBall ball = actorList.get(first);
-                    stepDescription.setText("开始Partition, 基准值: " + ball.getText() + "\n点击Next开始遍历");
+                    resetDescription("开始Partition, 基准值: " + ball.getText() + "\n点击Next开始遍历");
                     ball.activeStatus();
                     for (int i = second; i <= first; i++) {
                         MoveByAction moveByAction = Actions.moveBy(0, -60);
@@ -96,32 +96,27 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 });
                 break;
             case SWAP_SMALL:
-                Gdx.app.postRunnable(() -> stepDescription.setText(
-                        "遍历到 " + actorList.get(first).getText() +
-                            ",因为" + actorList.get(first).getText()
-                            + "小于基准值\n" + "需要交换左右下标的元素\n" + "同时将左右下标向右移一位"));
+                Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
+                        ",因为" + actorList.get(first).getText()
+                        + "小于基准值\n" + "需要交换左右下标的元素\n" + "同时将左右下标向右移一位"));
                 break;
             case SWAP_BIG:
-                Gdx.app.postRunnable(() -> stepDescription.setText(
-                        "遍历到 " + actorList.get(first).getText() +
-                                ",因为" + actorList.get(first).getText() + "大于基准值"
-                                + "\n所以不需要交换元素\n" + "同时只将右下标向右移一位"));
+                Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
+                        ",因为" + actorList.get(first).getText() + "大于基准值"
+                        + "\n所以不需要交换元素\n" + "同时只将右下标向右移一位"));
                 break;
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
                 break;
             case BOUNCE:
-                Gdx.app.postRunnable(() -> {
-                    bounceActor(first);
-                });
+                Gdx.app.postRunnable(() -> bounceActor(first));
                 break;
             case ITERATOR_INDEX:
                 Gdx.app.postRunnable(() -> highlightActor(first));
                 break;
             case ITERATION_COMPLETE:
-                Gdx.app.postRunnable(() -> {
-                    stepDescription.setText("遍历结束, 交换基准值和左下标的位置,并执行下一次Partition操作");
-                });
+                Gdx.app.postRunnable(() -> resetDescription(
+                        "遍历结束\n交换基准值和左下标的位置,并执行下一次Partition操作"));
                 break;
             case PARTITION_COMPLETE:
                 Gdx.app.postRunnable(() -> {
@@ -138,6 +133,15 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 });
                 break;
         }
+    }
+
+    private void resetDescription(final String description) {
+        RunnableAction emptyDescription = Actions.run(
+                () -> stepDescription.setText(""));
+        RunnableAction setDescription = Actions.run(
+                () -> stepDescription.setText(description));
+        stepDescription.addAction(Actions.sequence(emptyDescription,
+                Actions.delay(0.3f), setDescription));
     }
 
     private void bounceActor(int first) {
