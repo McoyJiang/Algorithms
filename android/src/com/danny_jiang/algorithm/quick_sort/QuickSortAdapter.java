@@ -114,12 +114,12 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             case SWAP_SMALL:
                 Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
                         ",因为" + actorList.get(first).getText()
-                        + "小于基准值\n" + "需要交换左右下标的元素\n" + "同时将左右下标向右移一位"));
+                        + "小于基准值\n" + "需要交换上下游标指向元素的位置\n" + "同时将上下标都向右移一位"));
                 break;
             case SWAP_BIG:
                 Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
                         ",因为" + actorList.get(first).getText() + "大于基准值"
-                        + "\n所以不需要交换元素\n" + "同时只将右下标向右移一位"));
+                        + "\n所以不需要交换元素\n" + "同时只需将上游标向右移一位"));
                 break;
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
