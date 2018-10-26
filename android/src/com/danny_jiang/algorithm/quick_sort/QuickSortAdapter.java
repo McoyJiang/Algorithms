@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RepeatAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
@@ -53,7 +54,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         bubbleSortGroup.align(Align.center);
         bubbleSortGroup.space(30);
         bubbleSortGroup.setSize(stage.getWidth(), 200);
-        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4 - 200);
+        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4);
         stage.addActor(bubbleSortGroup);
 
         for (int i = 0; i < sData.length; i++) {
@@ -73,18 +74,18 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         stepDescription = new Label("", style);
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, 280);
+        stepDescription.setPosition(30, 250);
         stage.addActor(stepDescription);
 
         upArrow = new Image(new Texture("up_arrow.png"));
-        upArrow.setSize(100, 150);
-        upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
+        upArrow.setSize(70, 100);
+        upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2 + 15,
                 bubbleSortGroup.getY() - upArrow.getHeight() - 100);
         stage.addActor(upArrow);
 
         downArrow = new Image(new Texture("down_arrow.png"));
-        downArrow.setSize(100, 150);
-        downArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
+        downArrow.setSize(70, 100);
+        downArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2 + 15    ,
                 bubbleSortGroup.getY() + 160);
         stage.addActor(downArrow);
     }
@@ -101,6 +102,17 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         switch (msg.what) {
             case FIND_PIVOT:
                 Gdx.app.postRunnable(() -> {
+                    AlgorithmBall lowBall = actorList.get(second);
+                    MoveToAction arrowUp = Actions.moveTo(
+                            lowBall.getX() + 10, upArrow.getY());
+                    arrowUp.setDuration(0.5f);
+                    upArrow.addAction(arrowUp);
+                    MoveToAction arrowDown = Actions.moveTo(
+                            lowBall.getX() + 10, downArrow.getY());
+                    arrowDown.setDuration(0.5f);
+                    downArrow.addAction(arrowDown);
+
+
                     AlgorithmBall ball = actorList.get(first);
                     resetDescription("开始Partition, 基准值: " + ball.getText() + "\n点击Next开始遍历");
                     ball.activeStatus();
@@ -110,6 +122,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                         actorList.get(i).addAction(moveByAction);
                     }
                 });
+
                 break;
             case SWAP_SMALL:
                 Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
@@ -169,6 +182,10 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         RepeatAction bounceAction = Actions.repeat(2, Actions.sequence(moveUp, moveDown));
         SequenceAction sequence = Actions.sequence(bounceAction);
         sequence.addAction(Actions.run(() -> ball.defaultStatus()));
+        RunnableAction moveArrow = Actions.run(() -> {
+            downArrow.moveBy(130, 0);
+        });
+        sequence.addAction(moveArrow);
         sequence.addAction(Actions.run(this::signal));
         ball.addAction(sequence);
     }
@@ -195,9 +212,13 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 actorFirst.defaultStatus();
                 actorSecond.defaultStatus();
             }));
+            RunnableAction moveArrow = Actions.run(() -> {
+                upArrow.moveBy(130, 0);
+                downArrow.moveBy(130, 0);
+            });
+            sequence.addAction(moveArrow);
             sequence.addAction(Actions.run(this::signal));
         }
-
         stage.addAction(sequence);
     }
 
