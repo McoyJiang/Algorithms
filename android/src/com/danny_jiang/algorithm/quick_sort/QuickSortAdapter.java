@@ -77,6 +77,29 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         stepDescription.setPosition(30, 250);
         stage.addActor(stepDescription);
 
+        Label.LabelStyle subStyle = new Label.LabelStyle();
+        subStyle.font = bitmapFont;
+        subStyle.fontColor = new Color(Color.DARK_GRAY);
+        Image arrow1 = new Image(new Texture("up_arrow.png"));
+        arrow1.setSize(50, 80);
+        arrow1.setPosition(stepDescription.getX(),
+                stepDescription.getY() + stepDescription.getHeight() + 30);
+        Label label1 = new Label("上箭头指向第一个大于基准值的元素位置", subStyle);
+        label1.setFontScale(1.5f);
+        label1.setPosition(arrow1.getX() + arrow1.getWidth() + 30, arrow1.getY() + 20);
+
+        Image arrow2 = new Image(new Texture("down_arrow.png"));
+        arrow2.setSize(50, 80);
+        arrow2.setPosition(arrow1.getX(),
+                arrow1.getY() + arrow1.getHeight() + 50);
+        Label label2 = new Label("下箭头指向当前遍历的元素位置", subStyle);
+        label2.setFontScale(1.5f);
+        label2.setPosition(arrow2.getX() + arrow2.getWidth() + 30, arrow2.getY() + 20);
+        stage.addActor(arrow1);
+        stage.addActor(label1);
+        stage.addActor(arrow2);
+        stage.addActor(label2);
+
         upArrow = new Image(new Texture("up_arrow.png"));
         upArrow.setSize(70, 100);
         upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2 + 15,
