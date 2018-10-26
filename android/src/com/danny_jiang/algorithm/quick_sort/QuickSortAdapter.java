@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -13,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.RepeatAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
@@ -39,6 +41,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
 
     private HorizontalGroup bubbleSortGroup;
     private Label stepDescription;
+    private Image upArrow;
+    private Image downArrow;
     private List<AlgorithmBall> actorList;
 
     @Override
@@ -48,8 +52,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         bubbleSortGroup = new HorizontalGroup();
         bubbleSortGroup.align(Align.center);
         bubbleSortGroup.space(30);
-        bubbleSortGroup.setSize(stage.getWidth(), stage.getHeight() / 4);
-        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4);
+        bubbleSortGroup.setSize(stage.getWidth(), 200);
+        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4 - 200);
         stage.addActor(bubbleSortGroup);
 
         for (int i = 0; i < sData.length; i++) {
@@ -71,6 +75,18 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         stepDescription.setFontScale(2f);
         stepDescription.setPosition(30, 280);
         stage.addActor(stepDescription);
+
+        upArrow = new Image(new Texture("up_arrow.png"));
+        upArrow.setSize(100, 150);
+        upArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
+                bubbleSortGroup.getY() - upArrow.getHeight() - 100);
+        stage.addActor(upArrow);
+
+        downArrow = new Image(new Texture("down_arrow.png"));
+        downArrow.setSize(100, 150);
+        downArrow.setPosition(actorList.get(0).getX() + actorList.get(0).getWidth() / 2,
+                bubbleSortGroup.getY() + 160);
+        stage.addActor(downArrow);
     }
 
     @Override
@@ -86,7 +102,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             case FIND_PIVOT:
                 Gdx.app.postRunnable(() -> {
                     AlgorithmBall ball = actorList.get(first);
-                    stepDescription.setText("开始Partition, 基准值: " + ball.getText() + "\n点击Next开始遍历");
+                    resetDescription("开始Partition, 基准值: " + ball.getText() + "\n点击Next开始遍历");
                     ball.activeStatus();
                     for (int i = second; i <= first; i++) {
                         MoveByAction moveByAction = Actions.moveBy(0, -60);
@@ -96,32 +112,27 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 });
                 break;
             case SWAP_SMALL:
-                Gdx.app.postRunnable(() -> stepDescription.setText(
-                        "遍历到 " + actorList.get(first).getText() +
-                            ",因为" + actorList.get(first).getText()
-                            + "小于基准值\n" + "需要交换左右下标的元素\n" + "同时将左右下标向右移一位"));
+                Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
+                        ",因为" + actorList.get(first).getText()
+                        + "小于基准值\n" + "需要交换上下游标指向元素的位置\n" + "同时将上下标都向右移一位"));
                 break;
             case SWAP_BIG:
-                Gdx.app.postRunnable(() -> stepDescription.setText(
-                        "遍历到 " + actorList.get(first).getText() +
-                                ",因为" + actorList.get(first).getText() + "大于基准值"
-                                + "\n所以不需要交换元素\n" + "同时只将右下标向右移一位"));
+                Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
+                        ",因为" + actorList.get(first).getText() + "大于基准值"
+                        + "\n所以不需要交换元素\n" + "同时只需将上游标向右移一位"));
                 break;
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
                 break;
             case BOUNCE:
-                Gdx.app.postRunnable(() -> {
-                    bounceActor(first);
-                });
+                Gdx.app.postRunnable(() -> bounceActor(first));
                 break;
             case ITERATOR_INDEX:
                 Gdx.app.postRunnable(() -> highlightActor(first));
                 break;
             case ITERATION_COMPLETE:
-                Gdx.app.postRunnable(() -> {
-                    stepDescription.setText("遍历结束, 交换基准值和左下标的位置,并执行下一次Partition操作");
-                });
+                Gdx.app.postRunnable(() -> resetDescription(
+                        "遍历结束\n交换基准值和左下标的位置,并执行下一次Partition操作"));
                 break;
             case PARTITION_COMPLETE:
                 Gdx.app.postRunnable(() -> {
@@ -138,6 +149,15 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 });
                 break;
         }
+    }
+
+    private void resetDescription(final String description) {
+        RunnableAction emptyDescription = Actions.run(
+                () -> stepDescription.setText(""));
+        RunnableAction setDescription = Actions.run(
+                () -> stepDescription.setText(description));
+        stepDescription.addAction(Actions.sequence(emptyDescription,
+                Actions.delay(0.3f), setDescription));
     }
 
     private void bounceActor(int first) {
