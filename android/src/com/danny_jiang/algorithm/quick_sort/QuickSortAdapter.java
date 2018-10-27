@@ -50,6 +50,11 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     protected void inflateStage() {
         actorList = new ArrayList<>();
 
+        Image bg = new Image(new Texture("bg/group_bg.png"));
+        bg.setSize(stage.getWidth(), stage.getHeight() * 0.4f);
+        bg.setPosition(0, 900);
+        stage.addActor(bg);
+
         bubbleSortGroup = new HorizontalGroup();
         bubbleSortGroup.align(Align.center);
         bubbleSortGroup.space(30);
