@@ -50,11 +50,6 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     protected void inflateStage() {
         actorList = new ArrayList<>();
 
-        Image bg = new Image(new Texture("bg/group_bg.png"));
-        bg.setSize(stage.getWidth(), stage.getHeight() * 0.4f);
-        bg.setPosition(0, 900);
-        stage.addActor(bg);
-
         bubbleSortGroup = new HorizontalGroup();
         bubbleSortGroup.align(Align.center);
         bubbleSortGroup.space(30);
@@ -88,7 +83,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         Image arrow1 = new Image(new Texture("up_arrow.png"));
         arrow1.setSize(50, 80);
         arrow1.setPosition(stepDescription.getX(),
-                stepDescription.getY() + stepDescription.getHeight() + 30);
+                stepDescription.getY() + stepDescription.getHeight() + 200);
         Label label1 = new Label("上箭头指向第一个大于基准值的元素位置", subStyle);
         label1.setFontScale(1.5f);
         label1.setPosition(arrow1.getX() + arrow1.getWidth() + 30, arrow1.getY() + 20);
@@ -142,7 +137,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
 
 
                     AlgorithmBall ball = actorList.get(first);
-                    resetDescription("开始Partition, 基准值: " + ball.getText() + "\n点击Next开始遍历");
+                    resetDescription("开始Partition, 基准值: " + ball.getText() + "\n将小于基准值的元素排在基准值左侧");
                     ball.activeStatus();
                     for (int i = second; i <= first; i++) {
                         MoveByAction moveByAction = Actions.moveBy(0, -60);
@@ -155,12 +150,14 @@ public class QuickSortAdapter extends AlgorithmAdapter {
             case SWAP_SMALL:
                 Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
                         ",因为" + actorList.get(first).getText()
-                        + "小于基准值\n" + "需要交换上下游标指向元素的位置\n" + "同时将上下标都向右移一位"));
+                        + "小于基准值\n" + "交换上下箭头指向元素的位置\n" + "将" + actorList.get(first).getText()
+                        + "放在基准值左侧\n"
+                        +"同时将上下箭头都向右移一位"));
                 break;
             case SWAP_BIG:
                 Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
                         ",因为" + actorList.get(first).getText() + "大于基准值"
-                        + "\n所以不需要交换元素\n" + "同时只需将上游标向右移一位"));
+                        + "\n所以不需要交换元素\n" + "同时只需将下箭头向右移一位\n" + "继续遍历下一个元素"));
                 break;
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
@@ -173,7 +170,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 break;
             case ITERATION_COMPLETE:
                 Gdx.app.postRunnable(() -> resetDescription(
-                        "遍历结束\n交换基准值和左下标的位置,并执行下一次Partition操作"));
+                        "遍历结束\n交换基准值和上箭头的位置,并执行下一次Partition操作"));
                 break;
             case PARTITION_COMPLETE:
                 Gdx.app.postRunnable(() -> {
