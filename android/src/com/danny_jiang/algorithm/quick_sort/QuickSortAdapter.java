@@ -137,7 +137,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
 
 
                     AlgorithmBall ball = actorList.get(first);
-                    resetDescription("基准值: " + ball.getText() + "\n将小于" + ball.getText() +
+                    resetDescription("基准值Pivot : " + ball.getText() + "\n将小于" + ball.getText() +
                             "的元素排在基准值左侧" + "\n将大于" + ball.getText() + "的元素放置在右侧");
                     ball.activeStatus();
                     for (int i = second; i <= first; i++) {
@@ -149,16 +149,13 @@ public class QuickSortAdapter extends AlgorithmAdapter {
 
                 break;
             case SWAP_SMALL:
-                Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
-                        ",因为" + actorList.get(first).getText()
-                        + "小于基准值\n" + "交换紫色和绿色箭头指向元素的位置\n" + "将" + actorList.get(first).getText()
-                        + "放在基准值左侧\n"
-                        +"同时将紫色和绿色箭头都向右移一位"));
+                Gdx.app.postRunnable(() -> resetDescription(actorList.get(first).getText()
+                        + "小于 Pivot:\n" + "交换紫色和绿色箭头指向的元素\n"
+                        +"然后将紫色和绿色箭头都向右移一位"));
                 break;
             case SWAP_BIG:
-                Gdx.app.postRunnable(() -> resetDescription("遍历到 " + actorList.get(first).getText() +
-                        ",因为" + actorList.get(first).getText() + "大于基准值"
-                        + "\n所以不需要交换元素\n" + "同时只需将绿色箭头向右移一位\n" + "继续遍历下一个元素"));
+                Gdx.app.postRunnable(() -> resetDescription(actorList.get(first).getText()
+                        + "大于 Pivot:\n不需要交换元素\n" + "将绿色箭头向右移一位\n" + "继续遍历下一个元素"));
                 break;
             case SWAP:
                 Gdx.app.postRunnable(() -> switchChild(first, second, false));
@@ -171,12 +168,10 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 break;
             case ITERATION_COMPLETE:
                 Gdx.app.postRunnable(() -> resetDescription(
-                        "遍历结束,交换基准值和紫箭头的位置,\n并执行下一次Partition操作"));
+                        "遍历结束,交换Pivot和紫箭头的位置,\n并执行下一次Partition操作"));
                 break;
             case PARTITION_COMPLETE:
-                Gdx.app.postRunnable(() -> {
-                    switchChild(first, second, true);
-                });
+                Gdx.app.postRunnable(() -> switchChild(first, second, true));
                 break;
             case RESET_POSITION:
                 Gdx.app.postRunnable(() -> {
@@ -243,8 +238,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
                 downArrow.moveBy(130, 0);
             });
             sequence.addAction(moveArrow);
-            sequence.addAction(Actions.run(this::signal));
         }
+        sequence.addAction(Actions.run(this::signal));
         stage.addAction(sequence);
     }
 
