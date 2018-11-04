@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title></title>
     <style type="text/css">
+			.red{
+				color: #c7254e;
+			}
 			ul,li,pre, code {
 				padding: 0;
 				margin: 0;
 			}
-			pre, code 
+			pre, code
 			.box {
 				padding: 10px;
 			}
@@ -29,9 +32,12 @@
 	        	}
         	.content {
         		width: 100%;
+        		height: 420px;
         	}
 	        .content li{
-	        	width: 100%;
+	        	width: 87%;
+	        	height: 400px;
+	        	overflow-y: scroll;
 	        	border:solid 1px #ddd;
 	        	position:absolute;
 	        	display: none;
@@ -42,14 +48,34 @@
 	        	}
 	        .tab .active{
 	        	color: red;
-	        	border: 1px solid #ddd;	
+	        	border: 1px solid #ddd;
 	        	border-bottom: none;
-	        	
-	        	}
 
-    </style>
+	        	}
+		</style>
 </head>
-<body>
+<body style="padding: 5px;">
+<h2>快速排序</h2>
+<h3>简介：</h3>
+<p>快速排序是一种利用分治思想的排序方法。它的最坏情况时间复杂度为O(n2)的排序算法。虽然最坏情况很差，但是快排通常是实际排序应用中最好的选择，因为它的平均性能非常好；它的期望时间复杂度是O(N * LogN)，而且O(N * LogN)中隐含的常数因子非常小。另外它能够进行原址排序。
+</p>
+<h3>基本思想</h3>
+<p>通过一次<span class="red">分区操作(Partition)</span>将需要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别再进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<h3>分区操作(Partition)</h3>
+<p>Partition是实现将数组中的数据按照基准值大小的规律排列的算法。比如我们要排序某数组中下标从p到r之间的一组数据，可以先选择数组中任意元素当做
+    <span class="red">基准值(Pivot)</span>. 一般情况下，我们取数组的最后一个元素当做基准值Pivot. 然后依次遍历从p到r之间的数据，将小于基准值Pivot的数据元素放到基准值Pivot的左边，将大于pivot的值放在其右边，
+    这样就完成了一次<span class="red">分区(Partition)</span>操作。
+</p>
+<p>
+    比如需要排序的数组是 [3, 7, 8, 5, 2, 1, 9, 5, 4] 我们选择数组中最后一个元素<span class="red">4</span>作为基准值Pivot，
+    经过分区操作之后，数组变为 [3, 1, 2, <span class="red">4</span>, 5, 8, 9, 5, 7]。 接下来只需要递归的对
+    <span class="red">4</span> 左右两边的子数组分别再调用Partition操作，一直到子数组的长度为1，数组就完成了所有的排序操作。
+</p>
+<p>这个过程可以参考如下图：</p>
+<div id="">
+    <img src="file:///android_asset/quick_sort/quicksort.jpeg" style="width: 90%;" />
+</div>
+<h3>代码实现</h3>
 <div class="box">
     <ul class="tab">
         <li class="active">C/C++</li>
@@ -62,163 +88,162 @@
 		        	<pre>
 						<code>
 /* C implementation QuickSort */
-#include<stdio.h> 
-  
+#include<stdio.h>
+
 // A utility function to swap two elements
-void swap(int* a, int* b) 
-{ 
-    int t = *a; 
-    *a = *b; 
-    *b = t; 
-} 
-  
-/* This function takes last element as pivot, places 
-   the pivot element at its correct position in sorted 
-    array, and places all smaller (smaller than pivot) 
-   to left of pivot and all greater elements to right 
+void swap(int* a, int* b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
+
+/* This function takes last element as pivot, places
+   the pivot element at its correct position in sorted
+    array, and places all smaller (smaller than pivot)
+   to left of pivot and all greater elements to right
    of pivot */
-int partition (int arr[], int low, int high) 
-{ 
-    int pivot = arr[high];    // pivot 
-    int i = (low - 1);  // Index of smaller element 
-  
-    for (int j = low; j <= high- 1; j++) 
-    { 
-        // If current element is smaller than or 
-        // equal to pivot 
-        if (arr[j] <= pivot) 
-        { 
-            i++;    // increment index of smaller element 
-            swap(&arr[i], &arr[j]); 
-        } 
-    } 
-    swap(&arr[i + 1], &arr[high]); 
-    return (i + 1); 
-} 
-  
-/* The main function that implements QuickSort 
- arr[] --> Array to be sorted, 
-  low  --> Starting index, 
+int partition (int arr[], int low, int high)
+{
+    int pivot = arr[high];    // pivot
+    int i = (low - 1);  // Index of smaller element
+
+    for (int j = low; j <= high- 1; j++)
+    {
+        // If current element is smaller than or
+        // equal to pivot
+        if (arr[j] <= pivot)
+        {
+            i++;    // increment index of smaller element
+            swap(&arr[i], &arr[j]);
+        }
+    }
+    swap(&arr[i + 1], &arr[high]);
+    return (i + 1);
+}
+
+/* The main function that implements QuickSort
+ arr[] --> Array to be sorted,
+  low  --> Starting index,
   high  --> Ending index */
-void quickSort(int arr[], int low, int high) 
-{ 
-    if (low < high) 
-    { 
-        /* pi is partitioning index, arr[p] is now 
+void quickSort(int arr[], int low, int high)
+{
+    if (low < high)
+    {
+        /* pi is partitioning index, arr[p] is now
            at right place */
-        int pi = partition(arr, low, high); 
-  
-        // Separately sort elements before 
-        // partition and after partition 
-        quickSort(arr, low, pi - 1); 
-        quickSort(arr, pi + 1, high); 
-    } 
-} 
-  
+        int pi = partition(arr, low, high);
+
+        // Separately sort elements before
+        // partition and after partition
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+
 /* Function to print an array */
-void printArray(int arr[], int size) 
-{ 
-    int i; 
-    for (i=0; i < size; i++) 
-        printf("%d ", arr[i]); 
-    printf("n"); 
-} 
-  
-// Driver program to test above functions 
-int main() 
-{ 
-    int arr[] = {10, 7, 8, 9, 1, 5}; 
-    int n = sizeof(arr)/sizeof(arr[0]); 
-    quickSort(arr, 0, n-1); 
-    printf("Sorted array: n"); 
-    printArray(arr, n); 
-    return 0; 
-} 
+void printArray(int arr[], int size)
+{
+    int i;
+    for (i=0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("n");
+}
+
+// Driver program to test above functions
+int main()
+{
+    int arr[] = {10, 7, 8, 9, 1, 5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    quickSort(arr, 0, n-1);
+    printf("Sorted array: n");
+    printArray(arr, n);
+    return 0;
+}
 						</code>
 					</pre>
         </li>
         <li>
 		        	<pre>
 						<code>
-							
-// Java program for implementation of QuickSort 
-class QuickSort 
-{ 
-    /* This function takes last element as pivot, 
-       places the pivot element at its correct 
-       position in sorted array, and places all 
-       smaller (smaller than pivot) to left of 
-       pivot and all greater elements to right 
+// Java program for implementation of QuickSort
+class QuickSort
+{
+    /* This function takes last element as pivot,
+       places the pivot element at its correct
+       position in sorted array, and places all
+       smaller (smaller than pivot) to left of
+       pivot and all greater elements to right
        of pivot */
-    int partition(int arr[], int low, int high) 
-    { 
-        int pivot = arr[high];  
-        int i = (low-1); // index of smaller element 
-        for (int j=low; j<high; j++) 
-        { 
-            // If current element is smaller than or 
-            // equal to pivot 
-            if (arr[j] <= pivot) 
-            { 
-                i++; 
-  
-                // swap arr[i] and arr[j] 
-                int temp = arr[i]; 
-                arr[i] = arr[j]; 
-                arr[j] = temp; 
-            } 
-        } 
-  
-        // swap arr[i+1] and arr[high] (or pivot) 
-        int temp = arr[i+1]; 
-        arr[i+1] = arr[high]; 
-        arr[high] = temp; 
-  
-        return i+1; 
-    } 
-  
-  
-    /* The main function that implements QuickSort() 
-      arr[] --> Array to be sorted, 
-      low  --> Starting index, 
+    int partition(int arr[], int low, int high)
+    {
+        int pivot = arr[high];
+        int i = (low-1); // index of smaller element
+        for (int j=low; j<high; j++)
+        {
+            // If current element is smaller than or
+            // equal to pivot
+            if (arr[j] <= pivot)
+            {
+                i++;
+
+                // swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // swap arr[i+1] and arr[high] (or pivot)
+        int temp = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp;
+
+        return i+1;
+    }
+
+
+    /* The main function that implements QuickSort()
+      arr[] --> Array to be sorted,
+      low  --> Starting index,
       high  --> Ending index */
-    void sort(int arr[], int low, int high) 
-    { 
-        if (low < high) 
-        { 
-            /* pi is partitioning index, arr[pi] is  
+    void sort(int arr[], int low, int high)
+    {
+        if (low < high)
+        {
+            /* pi is partitioning index, arr[pi] is
               now at right place */
-            int pi = partition(arr, low, high); 
-  
-            // Recursively sort elements before 
-            // partition and after partition 
-            sort(arr, low, pi-1); 
-            sort(arr, pi+1, high); 
-        } 
-    } 
-  
+            int pi = partition(arr, low, high);
+
+            // Recursively sort elements before
+            // partition and after partition
+            sort(arr, low, pi-1);
+            sort(arr, pi+1, high);
+        }
+    }
+
     /* A utility function to print array of size n */
-    static void printArray(int arr[]) 
-    { 
-        int n = arr.length; 
-        for (int i=0; i<n; ++i) 
-            System.out.print(arr[i]+" "); 
-        System.out.println(); 
-    } 
-  
-    // Driver program 
-    public static void main(String args[]) 
-    { 
-        int arr[] = {10, 7, 8, 9, 1, 5}; 
-        int n = arr.length; 
-  
-        QuickSort ob = new QuickSort(); 
-        ob.sort(arr, 0, n-1); 
-  
-        System.out.println("sorted array"); 
-        printArray(arr); 
-    } 
-} 
+    static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+    }
+
+    // Driver program
+    public static void main(String args[])
+    {
+        int arr[] = {10, 7, 8, 9, 1, 5};
+        int n = arr.length;
+
+        QuickSort ob = new QuickSort();
+        ob.sort(arr, 0, n-1);
+
+        System.out.println("sorted array");
+        printArray(arr);
+    }
+}
 /*This code is contributed by Rajat Mishra */
 						</code>
 					</pre>
@@ -226,151 +251,198 @@ class QuickSort
         <li>
 		        	<pre>
 						<code>
-# Python program for implementation of Quicksort Sort 
-  
-# This function takes last element as pivot, places 
-# the pivot element at its correct position in sorted 
-# array, and places all smaller (smaller than pivot) 
-# to left of pivot and all greater elements to right 
-# of pivot 
-def partition(arr,low,high): 
-    i = ( low-1 )         # index of smaller element 
-    pivot = arr[high]     # pivot 
-  
-    for j in range(low , high): 
-  
-        # If current element is smaller than or 
-        # equal to pivot 
-        if   arr[j] <= pivot: 
-          
-            # increment index of smaller element 
-            i = i+1 
-            arr[i],arr[j] = arr[j],arr[i] 
-  
-    arr[i+1],arr[high] = arr[high],arr[i+1] 
-    return ( i+1 ) 
-  
-# The main function that implements QuickSort 
-# arr[] --> Array to be sorted, 
-# low  --> Starting index, 
-# high  --> Ending index 
-  
-# Function to do Quick sort 
-def quickSort(arr,low,high): 
-    if low < high: 
-  
-        # pi is partitioning index, arr[p] is now 
-        # at right place 
-        pi = partition(arr,low,high) 
-  
-        # Separately sort elements before 
-        # partition and after partition 
-        quickSort(arr, low, pi-1) 
-        quickSort(arr, pi+1, high) 
-  
-# Driver code to test above 
-arr = [10, 7, 8, 9, 1, 5] 
-n = len(arr) 
-quickSort(arr,0,n-1) 
-print ("Sorted array is:") 
-for i in range(n): 
-    print ("%d" %arr[i]), 
-  
-# This code is contributed by Mohit Kumra 
+# Python program for implementation of Quicksort Sort
+
+# This function takes last element as pivot, places
+# the pivot element at its correct position in sorted
+# array, and places all smaller (smaller than pivot)
+# to left of pivot and all greater elements to right
+# of pivot
+def partition(arr,low,high):
+    i = ( low-1 )         # index of smaller element
+    pivot = arr[high]     # pivot
+
+    for j in range(low , high):
+
+        # If current element is smaller than or
+        # equal to pivot
+        if   arr[j] <= pivot:
+
+            # increment index of smaller element
+            i = i+1
+            arr[i],arr[j] = arr[j],arr[i]
+
+    arr[i+1],arr[high] = arr[high],arr[i+1]
+    return ( i+1 )
+
+# The main function that implements QuickSort
+# arr[] --> Array to be sorted,
+# low  --> Starting index,
+# high  --> Ending index
+
+# Function to do Quick sort
+def quickSort(arr,low,high):
+    if low < high:
+
+        # pi is partitioning index, arr[p] is now
+        # at right place
+        pi = partition(arr,low,high)
+
+        # Separately sort elements before
+        # partition and after partition
+        quickSort(arr, low, pi-1)
+        quickSort(arr, pi+1, high)
+
+# Driver code to test above
+arr = [10, 7, 8, 9, 1, 5]
+n = len(arr)
+quickSort(arr,0,n-1)
+print ("Sorted array is:")
+for i in range(n):
+    print ("%d" %arr[i]),
+
+# This code is contributed by Mohit Kumra
 						</code>
 					</pre>
         </li>
         <li>
 		        	<pre>
 						<code>
-// C# program for implementation of QuickSort 
-using System; 
-  
-class GFG { 
-      
-    /* This function takes last element as pivot, 
-    places the pivot element at its correct 
-    position in sorted array, and places all 
-    smaller (smaller than pivot) to left of 
-    pivot and all greater elements to right 
+// C# program for implementation of QuickSort
+using System;
+
+class GFG {
+
+    /* This function takes last element as pivot,
+    places the pivot element at its correct
+    position in sorted array, and places all
+    smaller (smaller than pivot) to left of
+    pivot and all greater elements to right
     of pivot */
-    static int partition(int []arr, int low, 
-                                   int high) 
-    { 
-        int pivot = arr[high];  
-          
-        // index of smaller element 
-        int i = (low - 1);  
-        for (int j = low; j < high; j++) 
-        { 
-            // If current element is smaller  
-            // than or equal to pivot 
-            if (arr[j] <= pivot) 
-            { 
-                i++; 
-  
-                // swap arr[i] and arr[j] 
-                int temp = arr[i]; 
-                arr[i] = arr[j]; 
-                arr[j] = temp; 
-            } 
-        } 
-  
-        // swap arr[i+1] and arr[high] (or pivot) 
-        int temp1 = arr[i+1]; 
-        arr[i+1] = arr[high]; 
-        arr[high] = temp1; 
-  
-        return i+1; 
-    } 
-  
-  
-    /* The main function that implements QuickSort() 
-    arr[] --> Array to be sorted, 
-    low --> Starting index, 
+    static int partition(int []arr, int low,
+                                   int high)
+    {
+        int pivot = arr[high];
+
+        // index of smaller element
+        int i = (low - 1);
+        for (int j = low; j < high; j++)
+        {
+            // If current element is smaller
+            // than or equal to pivot
+            if (arr[j] <= pivot)
+            {
+                i++;
+
+                // swap arr[i] and arr[j]
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+
+        // swap arr[i+1] and arr[high] (or pivot)
+        int temp1 = arr[i+1];
+        arr[i+1] = arr[high];
+        arr[high] = temp1;
+
+        return i+1;
+    }
+
+
+    /* The main function that implements QuickSort()
+    arr[] --> Array to be sorted,
+    low --> Starting index,
     high --> Ending index */
-    static void quickSort(int []arr, int low, int high) 
-    { 
-        if (low < high) 
-        { 
-              
-            /* pi is partitioning index, arr[pi] is  
+    static void quickSort(int []arr, int low, int high)
+    {
+        if (low < high)
+        {
+
+            /* pi is partitioning index, arr[pi] is
             now at right place */
-            int pi = partition(arr, low, high); 
-  
-            // Recursively sort elements before 
-            // partition and after partition 
-            quickSort(arr, low, pi-1); 
-            quickSort(arr, pi+1, high); 
-        } 
-    } 
-  
-    // A utility function to print array of size n 
-    static void printArray(int []arr, int n) 
-    { 
-        for (int i = 0; i < n; ++i) 
-            Console.Write(arr[i] + " "); 
-              
-        Console.WriteLine(); 
-    } 
-  
-    // Driver program 
-    public static void Main() 
-    { 
-        int []arr = {10, 7, 8, 9, 1, 5}; 
-        int n = arr.Length; 
-        quickSort(arr, 0, n-1); 
-        Console.WriteLine("sorted array "); 
-        printArray(arr, n); 
-    } 
-} 
-  
+            int pi = partition(arr, low, high);
+
+            // Recursively sort elements before
+            // partition and after partition
+            quickSort(arr, low, pi-1);
+            quickSort(arr, pi+1, high);
+        }
+    }
+
+    // A utility function to print array of size n
+    static void printArray(int []arr, int n)
+    {
+        for (int i = 0; i < n; ++i)
+            Console.Write(arr[i] + " ");
+
+        Console.WriteLine();
+    }
+
+    // Driver program
+    public static void Main()
+    {
+        int []arr = {10, 7, 8, 9, 1, 5};
+        int n = arr.Length;
+        quickSort(arr, 0, n-1);
+        Console.WriteLine("sorted array ");
+        printArray(arr, n);
+    }
+}
+
 // This code is contributed by Sam007.
 						</code>
 					</pre>
         </li>
     </ul>
 </div>
+<div style="overflow: hidden;">
+    <h3>代码演示</h3>
+    <p>比如我们使用快排对数组 [10, 80, 30, 90, 40, 50, 70] 进行排序, 当遍历到一个比基准值(Pivot)小的元素时，需要交换
+        <span class="red">i, j</span>所指向的元素，将比Pivot小的元素放置在Pivot的左边。具体排序的流程如下所示：</p>
+    <p>原始数组 arr[] = {10, 80, 30, 90, 40, 50, 70}</p>
+    <p>数组中元素下标分别是: 0 1 2 3 4 5 6</p>
+    <p>low = 0, high = 6, pivot = arr[high] = 70</p>
+    <p>定义变量int i = -1， 定义for循环访问变量 int j = low 到 high-1</p>
+    <h3>开始排序</h3>
+    <p>j = 0 : arr[j] <= pivot, 这种情况需要将 i++ 并且交换 i 和 j 指向的元素位置</p>
+    <p>结果： i = 0; arr[] = {10, 80, 30, 90, 40, 50, 70} // 因为i, j都指向0， 元素位置没有发生改变</p>
+    <p>j = 1 : arr[j] > pivot, 这种情况不需要执行任何操作</p>
+    <p>结果： i = 0; arr[] = {10, 80, 30, 90, 40, 50, 70}</p>
+    <p>j = 2 : arr[j] <= pivot, 执行i++操作 并交换arr[i], arr[j]的位置</p>
+    <p>结果：i = 1；arr[] = {10, 30, 80, 90, 40, 50, 70} // 交换80 和 30的位置</p>
+    <p>j = 3 : arr[j] > pivot, 不需要执行任何操作</p>
+    <p>结果：i = 1；arr[] = {10, 30, 80, 90, 40, 50, 70}</p>
+    <p>j = 4 : arr[j] <= pivot, 执行i++操作 并交换arr[i], arr[j]的位置</p>
+    <p>结果：i = 2；arr[] = {10, 30, 40, 90, 80, 50, 70} // 交换80 和 40的位置</p>
+    <p>j = 5 : arr[j] <= pivot, 执行i++操作 并交换arr[i], arr[j]的位置</p>
+    <p>结果：i = 3 ；arr[] = {10, 30, 40, 50, 80, 90, 70} // 交换90 和 50的位置</p>
+    <p>此时 j = 5已经等于high - 1的值，所以for循环执行完毕。这个时候我们需要将arr[i+1] 和 arr[high] (也就是Pivot)位置进行交换，这一步的目的是将Pivot放在所有大于它的数据前面</p>
+    <p>结果：arr[] = {10, 30, 40, 50, 70, 90, 80} // 交换80和70的位置</p>
+    <p>到此我们就将所有小于70(Pivot)的数据放在左边，所有大于等于70(Pivot)的数据放在右边了，后续只要递归再分别对左右两边的子数组进行快排操作即可</p>
+    <h3>性能分析</h3>
+    <h4>最坏时间复杂度</h4>
+    <p>当待排序的数组为正序或逆序排列时，比如 <span class="red">[90, 80, 70, 50, 40, 30, 10]</span>, 我们取数组最后的元素<span class="red">10</span>为Pivot，
+        经过Partition之后的子数组全部在<span class="red">10</span>的右边，结果为<span class="red">[90, 80, 70, 50, 40, 30, 10]</span>。
+        然后再次对<span class="red">[90, 80, 70, 50, 40, 30]</span> 调用Partition操作。假设原始待排序的数组长度为N，那么这种情况下我们需要调用
+        <span class="red">N - 1</span>(从N到2)次Partition操作，并且在每一次Partition操作中都需要执行<span class="red">N - 2</span>次比较大小操作。
+    </p>
+    <p>所以总结一下公式就是如下：</p>
+    <h3>T(N) = n + (n−1) + (n−2) +⋯+ 2 = (n+1)(n/2)−1</h3>
+    <p>因此最坏时间复杂度为 <span class="red">O(n2)</span></p>
+    <h4>最好时间复杂度</h4>
+    <p>​在最优情况下，Partition每次都划分得很均匀，如果排序n个关键字，在每次Partition之后两边数组的长度就为 [log2n]，即仅需递归 log2n 次，需要时间为T(n)的话，第一次Partiation应该是需要对整个数组扫描一遍，做n次比较。然后，获得的枢轴将数组一分为二，那么各自还需要T(n/2)的时间（注意是最好情况，所以平分两半）。于是不断地划分下去，就有了下面的不等式推断：
+    </p>
+    <h3>T[n] = 2^(logn) T[1] + nlogn = n T[1] + nlogn = n + nlogn;</h3>
+    <p>这说明，在最优的情况下，快速排序算法的时间复杂度为 <span class="red">O(nlogn)</span></p>
+    <h4>平均时间复杂度</h4>
+    <p>假设每次分区操作(Partition)都将数组分成大小为9 : 1的两个小区间。套用递归时间复杂度的公式就会变成：</p>
+    <p>T(1) = C; // n = 1, 只需要常量级的执行时间，所以标识为C</p>
+    <p>=> T(n) = T(n/10) + T(9 * n / 10) + n; // n > 1</p>
+    <p>这个公式的递推求解过程比较复杂，可以参考<span class="red">算法导论书</span>中的具体推导构成</p>
+    <p>最后得出平均时间复杂度为 <span class="red">O(nlogn)</span></p>
+</div>
+
 </body>
 <script type="text/javascript">
 	    var tab = document.getElementsByClassName('tab')[0]
@@ -396,10 +468,9 @@ class GFG {
 	        for(var i=0;i<contentCart.length;i++){
 	            if(contentCart[i] != contentCart[index]){
 	                contentCart[i].classList.remove("current")
-	                
+
 	            }
 	        }
 	    })
-
-</script>
+	</script>
 </html>
