@@ -879,6 +879,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_child
 id info
 id invisible
 id italic
@@ -964,6 +965,8 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id text_child
+id text_group
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1042,6 +1045,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout item_algorithm
+layout list_item_algorithm_child
+layout list_item_algorithm_group
 layout main_activity
 layout notification_action
 layout notification_action_tombstone
