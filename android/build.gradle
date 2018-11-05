@@ -57,6 +57,9 @@ dependencies {
     natives "com.badlogicgames.gdx:gdx-freetype:$gdxVersion:natives-x86"
     natives "com.badlogicgames.gdx:gdx-freetype:$gdxVersion:natives-x86_64"
 
+    // Expandable RecyclerView
+    implementation 'com.thoughtbot:expandablecheckrecyclerview:1.4'
+
     testImplementation "junit:junit:4.12"
     testImplementation "org.mockito:mockito-all:1.10.19"
 

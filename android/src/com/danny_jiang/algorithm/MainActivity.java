@@ -18,6 +18,7 @@ import com.danny_jiang.algorithm.insert_sort.InsertionSortActivity;
 import com.danny_jiang.algorithm.quick_sort.QuickSortActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView algorithmListView;
     private AlgorithmAdapter algorithmAdapter;
     private List<String> mDatas;
+    private List<AlgorithmGroup> algorithmGroupList = new ArrayList<>();
+    private ExpandableAlgorithmAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,47 +41,18 @@ public class MainActivity extends AppCompatActivity {
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
         //设置Adapter
         initData();
-        algorithmAdapter = new AlgorithmAdapter(this, mDatas);
-        algorithmAdapter.setOnItemClickListener(new AlgorithmAdapter.OnItemClickListener() {
 
-            @Override
-            public void onLongClick(int position) {
-            }
-
-            @Override
-            public void onClick(int position) {
-                Intent intent = new Intent();
-                switch (position) {
-                    case 0:
-                        intent.setClass(MainActivity.this, BubbleSortActivity.class);
-                        break;
-                    case 1:
-                        intent.setClass(MainActivity.this, InsertionSortActivity.class);
-                        break;
-                    case 2:
-                        intent.setClass(MainActivity.this, QuickSortActivity.class);
-                        break;
-                    case 3:
-                        intent.setClass(MainActivity.this, HeapSortActivity.class);
-                        break;
-                    case 4:
-                        intent.setClass(MainActivity.this, BreathFirstSearchActivity.class);
-                        break;
-                }
-                startActivity(intent);
-            }
-        });
-        algorithmListView.setAdapter(algorithmAdapter);
-        //设置增加或删除条目的动画
-        algorithmListView.setItemAnimator(new DefaultItemAnimator());
+        adapter = new ExpandableAlgorithmAdapter(algorithmGroupList);
+        algorithmListView.setAdapter(adapter);
     }
 
     private void initData() {
-        mDatas = new ArrayList<String>();
-        mDatas.add("Bubble Sort");
-        mDatas.add("Insert Sort");
-        mDatas.add("Quick Sort");
-        mDatas.add("Heap Sort");
-        mDatas.add("Breath First Search");
+        algorithmGroupList.add(new AlgorithmGroup("DS",
+                Arrays.asList(new Algorithm("array", R.drawable.ic_launcher),
+                        new Algorithm("link list", R.drawable.ic_launcher))));
+
+        algorithmGroupList.add(new AlgorithmGroup("sort",
+                Arrays.asList(new Algorithm("quick sort", R.drawable.ic_launcher),
+                        new Algorithm("insert sort", R.drawable.ic_launcher))));
     }
 }
