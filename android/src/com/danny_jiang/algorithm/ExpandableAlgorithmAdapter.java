@@ -1,5 +1,7 @@
 package com.danny_jiang.algorithm;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,15 +67,22 @@ class SubTitleViewHolder extends ChildViewHolder {
 
     private final TextView subTitle;
     private final ImageView icon;
+    private View.OnClickListener titleClickListener = v -> {
+        Intent intent = new Intent();
+        intent.setClass(v.getContext(), ((Class) v.getTag()));
+        v.getContext().startActivity(intent);
+    };
 
     public SubTitleViewHolder(View itemView) {
         super(itemView);
         subTitle = itemView.findViewById(R.id.text_child);
+        subTitle.setOnClickListener(titleClickListener);
         icon = itemView.findViewById(R.id.image_child);
     }
 
     public void setAlgorithm(Algorithm algorithm) {
         subTitle.setText(algorithm.getName());
+        subTitle.setTag(algorithm.getClassName());
         icon.setImageResource((algorithm.getIconRes()));
     }
 }

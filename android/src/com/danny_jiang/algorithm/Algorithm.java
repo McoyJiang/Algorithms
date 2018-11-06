@@ -1,19 +1,30 @@
 package com.danny_jiang.algorithm;
 
+import android.annotation.SuppressLint;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Algorithm implements Parcelable {
+import com.danny_jiang.algorithm.data_structure.array.ArrayActivity;
+
+@SuppressLint("ParcelCreator")
+public enum Algorithm implements Parcelable {
+
+    ARRAY("数组", R.drawable.array, ArrayActivity.class),
+    STACK("栈", R.drawable.bookstack, ArrayActivity.class),
+    LINK_LIST("链表", R.drawable.array, ArrayActivity.class),
+
+    BUBBLE_SORT("冒泡排序", R.drawable.array, ArrayActivity.class),
+    INSERTION_SORT("插入排序", R.drawable.array, ArrayActivity.class),
+    QUICK_SORT("快速排序", R.drawable.array, ArrayActivity.class);
+
     private String name;
     private int iconRes;
+    private Class aClass;
 
-    protected Algorithm(Parcel in) {
-        name = in.readString();
-    }
-
-    public Algorithm(String name, int iconRes) {
+    Algorithm(String name, int iconRes, Class aClass) {
         this.name = name;
         this.iconRes = iconRes;
+        this.aClass = aClass;
     }
 
     public String getName() {
@@ -24,27 +35,12 @@ public class Algorithm implements Parcelable {
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Algorithm)) return false;
-
-        Algorithm artist = (Algorithm) o;
-
-        return getName() != null ? getName().equals(artist.getName())
-                : artist.getName() == null;
-
+    public int getIconRes() {
+        return iconRes;
     }
 
-    @Override
-    public int hashCode() {
-        int result = getName() != null ? getName().hashCode() : 0;
-        return 31 * result;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
+    public void setIconRes(int iconRes) {
+        this.iconRes = iconRes;
     }
 
     @Override
@@ -52,23 +48,12 @@ public class Algorithm implements Parcelable {
         return 0;
     }
 
-    public static final Creator<Algorithm> CREATOR = new Creator<Algorithm>() {
-        @Override
-        public Algorithm createFromParcel(Parcel in) {
-            return new Algorithm(in);
-        }
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
 
-        @Override
-        public Algorithm[] newArray(int size) {
-            return new Algorithm[size];
-        }
-    };
-
-    public int getIconRes() {
-        return iconRes;
     }
 
-    public void setIconRes(int iconRes) {
-        this.iconRes = iconRes;
+    public Class getClassName() {
+        return aClass;
     }
 }

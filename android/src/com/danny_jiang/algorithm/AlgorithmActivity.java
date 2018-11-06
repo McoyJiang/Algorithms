@@ -7,11 +7,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AlgorithmActivity extends FragmentActivity implements AndroidFragmentApplication.Callbacks {
 
-    protected List<Fragment> fragmentList;
+    protected List<Fragment> fragmentList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

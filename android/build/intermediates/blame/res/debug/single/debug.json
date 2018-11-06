@@ -64,6 +64,10 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_array.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/array.png"
+    },
+    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
@@ -1014,6 +1018,10 @@
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/anim_design_bottom_sheet_slide_in.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/res/anim/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_bookstack.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/bookstack.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
