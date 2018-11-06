@@ -22,6 +22,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".data_structure.array.ArrayActivity" />
+
         <activity android:name=".bubble_sort.BubbleSortActivity">
 
         </activity>

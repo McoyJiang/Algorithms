@@ -12,7 +12,6 @@ public class InsertionSortActivity extends AlgorithmActivity {
 
     @Override
     protected void initFragments() {
-        fragmentList = new ArrayList<>();
         fragmentList.add(new InsertionSortTutorialFragment());
         fragmentList.add(new InsertionSortVisualizerFragment());
         fragmentList.add(new InsertionSortQuizFragment());
