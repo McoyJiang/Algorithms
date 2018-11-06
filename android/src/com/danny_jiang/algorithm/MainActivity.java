@@ -21,11 +21,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.danny_jiang.algorithm.Algorithm.ARRAY;
+import static com.danny_jiang.algorithm.Algorithm.BUBBLE_SORT;
+import static com.danny_jiang.algorithm.Algorithm.INSERTION_SORT;
+import static com.danny_jiang.algorithm.Algorithm.LINK_LIST;
+import static com.danny_jiang.algorithm.Algorithm.QUICK_SORT;
+import static com.danny_jiang.algorithm.Algorithm.STACK;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView algorithmListView;
-    private AlgorithmAdapter algorithmAdapter;
-    private List<String> mDatas;
     private List<AlgorithmGroup> algorithmGroupList = new ArrayList<>();
     private ExpandableAlgorithmAdapter adapter;
 
@@ -39,20 +44,18 @@ public class MainActivity extends AppCompatActivity {
         algorithmListView.setLayoutManager(layoutManager);
         //设置为垂直布局，这也是默认的
         layoutManager.setOrientation(OrientationHelper.VERTICAL);
-        //设置Adapter
+        //初始化数据
         initData();
-
+        //设置Adapter
         adapter = new ExpandableAlgorithmAdapter(algorithmGroupList);
         algorithmListView.setAdapter(adapter);
     }
 
     private void initData() {
-        algorithmGroupList.add(new AlgorithmGroup("DS",
-                Arrays.asList(new Algorithm("array", R.drawable.ic_launcher),
-                        new Algorithm("link list", R.drawable.ic_launcher))));
+        algorithmGroupList.add(new AlgorithmGroup("数据结构",
+                Arrays.asList(ARRAY, STACK, LINK_LIST)));
 
-        algorithmGroupList.add(new AlgorithmGroup("sort",
-                Arrays.asList(new Algorithm("quick sort", R.drawable.ic_launcher),
-                        new Algorithm("insert sort", R.drawable.ic_launcher))));
+        algorithmGroupList.add(new AlgorithmGroup("排序",
+                Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
     }
 }

@@ -1159,8 +1159,10 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable array
 drawable avd_hide_password
 drawable avd_show_password
+drawable bookstack
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
