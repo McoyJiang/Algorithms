@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.danny_jiang.algorithm.AlgorithmActivity;
 import com.danny_jiang.algorithm.R;
-import com.danny_jiang.algorithm.insert_sort.InsertionSortTutorialFragment;
 
 public class ArrayActivity extends AlgorithmActivity {
     @Override
