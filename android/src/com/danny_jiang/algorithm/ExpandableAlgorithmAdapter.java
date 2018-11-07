@@ -1,6 +1,5 @@
 package com.danny_jiang.algorithm;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -20,6 +19,9 @@ public class ExpandableAlgorithmAdapter extends ExpandableRecyclerViewAdapter<Ti
 
     public ExpandableAlgorithmAdapter(List<? extends ExpandableGroup> groups) {
         super(groups);
+        for (int i = 0; i < groups.size(); i++) {
+            expandableList.expandedGroupIndexes[i] = true;
+        }
     }
 
     @Override
@@ -49,10 +51,10 @@ public class ExpandableAlgorithmAdapter extends ExpandableRecyclerViewAdapter<Ti
         int backgroundColor = Color.GRAY;
         switch (flatPosition) {
             case 0:
-                backgroundColor = Color.BLUE;
+                backgroundColor = Color.parseColor("#808000");
                 break;
             case 1:
-                backgroundColor = Color.YELLOW;
+                backgroundColor = Color.parseColor("#D2B48C");
                 break;
             case 2:
                 backgroundColor = Color.MAGENTA;
@@ -72,7 +74,7 @@ class TitleViewHolder extends GroupViewHolder {
 
     public TitleViewHolder(View itemView) {
         super(itemView);
-        title =  itemView.findViewById(R.id.text_group);
+        title = itemView.findViewById(R.id.text_group);
     }
 
     public void setGroupTitle(String name) {

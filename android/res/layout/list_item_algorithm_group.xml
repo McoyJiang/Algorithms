@@ -6,7 +6,7 @@
 
     <TextView
         android:id="@+id/text_group"
-        android:textSize="@dimen/dp_35"
+        android:textSize="@dimen/dp_45"
         android:text="GROUP"
         android:textColor="@color/white"
         android:layout_width="match_parent"
@@ -14,7 +14,9 @@
         android:background="@android:color/darker_gray"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="@dimen/dp_8"
-        android:layout_marginTop="@dimen/dp_8"/>
+        android:paddingStart="@dimen/dp_8"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingBottom="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_2"/>
 
 </android.support.constraint.ConstraintLayout>

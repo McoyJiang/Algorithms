@@ -18,7 +18,7 @@ android {
     }
     defaultConfig {
         applicationId "com.danny_jiang.algorithm"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 26
     }
     compileOptions {
