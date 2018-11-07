@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
-import com.danny_jiang.algorithm.insert_sort.InsertSortAdapter;
 
 public class ArrayVisualizerFragment extends AndroidFragmentApplication {
     @Nullable
@@ -17,6 +16,6 @@ public class ArrayVisualizerFragment extends AndroidFragmentApplication {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
         config.numSamples = 4;
-        return initializeForView(new InsertSortAdapter(), config);
+        return initializeForView(new ArrayAdapter(), config);
     }
 }

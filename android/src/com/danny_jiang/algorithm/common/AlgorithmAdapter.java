@@ -62,7 +62,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         next = new BaseGdxActor();
         enableNextButton();
         next.setSize(150, 150);
-        next.setPosition(stage.getWidth() - 250, 10);
+        next.setPosition(stage.getWidth() - 250, 60);
         stage.addActor(next);
         inflateStage();
     }

@@ -7,8 +7,7 @@ public class ArrayTutorialFragment extends TutorialFragment {
     @Override
     public void loadUrl() {
         //访问Android assets文件夹内的
-        String url = "file:///android_asset/insertion_sort/" +
-                "insertion_sort_tutorial.html";
+        String url = "https://blog.csdn.net/zxm317122667/article/details/83781343";
         webView.loadUrl(url);
     }
 }
