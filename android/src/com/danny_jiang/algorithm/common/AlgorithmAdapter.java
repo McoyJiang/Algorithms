@@ -54,9 +54,15 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         initData();
 
         stage = new Stage();
-        Image bg = new Image(new Texture(Gdx.files.internal("bg/visualizer_bg.png")));
+        Image bg = new Image(new Texture(Gdx.files.internal("bg/background.png")));
         bg.setSize(stage.getWidth(), stage.getHeight());
         stage.addActor(bg);
+
+        Image rectangle = new Image(new Texture(Gdx.files.internal("bg/visual_bg.png")));
+        rectangle.setSize(stage.getWidth() - 30, stage.getHeight() / 2 - 20);
+        rectangle.setPosition(15, stage.getHeight() / 2);
+        stage.addActor(rectangle);
+
         Gdx.input.setInputProcessor(stage);
 
         next = new BaseGdxActor();

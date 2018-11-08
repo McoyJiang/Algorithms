@@ -71,6 +71,10 @@ public class AlgorithmBall extends BaseGdxActor {
         return text;
     }
 
+    public void setTextColor(Color color) {
+        bitmapFont.setColor(color);
+    }
+
     @Override
     public String toString() {
         return text;
