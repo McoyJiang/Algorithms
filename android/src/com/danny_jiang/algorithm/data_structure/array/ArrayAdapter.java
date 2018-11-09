@@ -21,6 +21,10 @@ public class ArrayAdapter extends AlgorithmAdapter {
     private static final int INSERT = 0;
     private static final int DELETE = 1;
     private static final int VISIBLE_SIX = 2;
+    private static final int ARRAY_DESCRIBE = 3;
+    private static final int MOVE_OUT_SIX = 4;
+    private static final int TIME_COMPLEXITY = 5;
+    private static final int COMPLETE = 6;
 
     private int[] data = new int[]{2, 5, 8, 9};
     private List<ArrayElement> elementList = new ArrayList<>();
@@ -77,18 +81,37 @@ public class ArrayAdapter extends AlgorithmAdapter {
         await();
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(VISIBLE_SIX)));
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(INSERT)));
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(MOVE_OUT_SIX)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(DELETE)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(TIME_COMPLEXITY)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(COMPLETE)));
     }
 
     @Override
     protected void animation(Message msg) {
         switch (msg.what) {
+            case ARRAY_DESCRIBE:
+                stepDescription.setText("可以通过下标来访问数组中的元素\n" +
+                        "arr[0] = 2\n" +
+                        "arr[1] = 5\n" +
+                        "arr[2] = 8\n" +
+                        "arr[3] = 9");
+                break;
             case INSERT:
                 insertOperation();
             break;
@@ -96,10 +119,23 @@ public class ArrayAdapter extends AlgorithmAdapter {
                 deleteOperation();
             break;
             case VISIBLE_SIX: {
+                stepDescription.setText("在进行插入操作时,\n为了保证内存的连续性\n" +
+                        "需要先将被插入元素位置之后\n的所有元素都向后移一位");
                 emptyElement.setVisible(true);
                 sixElement.setVisible(true);
             }
             break;
+            case MOVE_OUT_SIX:
+                stepDescription.setText("同样在进行删除操作时,\n为了保证内存的连续性\n" +
+                        "需要在删除元素操作之后\n的所有元素都向前移一位");
+                break;
+            case TIME_COMPLEXITY:
+                stepDescription.setText("因此数组插入和删除操作的\n" +
+                        "时间复杂度都为 O(n)");
+                break;
+            case COMPLETE:
+                stepDescription.setText("完成!");
+                break;
         }
     }
 
