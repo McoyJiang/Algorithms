@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initData() {
         algorithmGroupList.add(new AlgorithmGroup("数据结构",
-                Arrays.asList(ARRAY, STACK, LINK_LIST)));
+                Arrays.asList(ARRAY, LINK_LIST, STACK)));
 
         algorithmGroupList.add(new AlgorithmGroup("排序",
                 Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
