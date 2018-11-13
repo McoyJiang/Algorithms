@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
         //设置Adapter
         adapter = new ExpandableAlgorithmAdapter(algorithmGroupList);
         algorithmListView.setAdapter(adapter);
+
+        int[] arr = new int[]{11, 15, 6, 8, 9, 10};
+        pairInArray(arr, arr.length, 45);
+    }
+
+    private boolean pairInArray(int[] arr, int length, int pair) {
+        for (int i = 0; i < length - 1; i++) {
+            for (int j = i + 1; j < length; j++) {
+                if (arr[i] + arr[j] == 45) {
+                    Log.e("AAA", "true");
+                    return true;
+                }
+            }
+        }
+        Log.e("AAA", "false");
+        return false;
     }
 
     private void initData() {

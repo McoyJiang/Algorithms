@@ -24,7 +24,7 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("TUTORIAL"));
         tabLayout.addTab(tabLayout.newTab().setText("VISUALIZER"));
-        tabLayout.addTab(tabLayout.newTab().setText("ANALYSIS"));
+        tabLayout.addTab(tabLayout.newTab().setText("Quiz"));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

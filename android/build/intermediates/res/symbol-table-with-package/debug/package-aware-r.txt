@@ -1426,6 +1426,7 @@ id largeLabel
 id left
 id line1
 id line3
+id linearLayout
 id listMode
 id list_item
 id masked
@@ -1448,6 +1449,7 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id product_scrollview
 id progress_circular
 id progress_horizontal
 id radio
@@ -1483,6 +1485,7 @@ id smallLabel
 id snackbar_action
 id snackbar_text
 id snap
+id snapPage
 id spacer
 id split_action_bar
 id spread
@@ -1524,6 +1527,7 @@ id up
 id useLogo
 id view_offset_helper
 id visible
+id webView_Content
 id withText
 id wrap
 id wrap_content
@@ -1585,6 +1589,11 @@ layout item_algorithm
 layout list_item_algorithm_child
 layout list_item_algorithm_group
 layout main_activity
+layout mcoy_product_content_page
+layout mcoy_produt_detail_layout
+layout mcoy_produt_detail_layout1
+layout mcoy_scroll_snap_layout
+layout mcoy_web_snap_layout
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1600,6 +1609,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout quiz_array
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
