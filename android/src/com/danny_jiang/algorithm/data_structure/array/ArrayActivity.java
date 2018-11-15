@@ -13,9 +13,9 @@ public class ArrayActivity extends AlgorithmActivity {
         fragmentList.add(new ArrayVisualizerFragment());
         fragmentList.add(new ArrayQuizFragment());
 
-        Fragment fragment = fragmentList.get(0);
-        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
-        trans.replace(R.id.algo_content, fragment);
-        trans.commit();
+//        Fragment fragment = fragmentList.get(0);
+//        FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+//        trans.replace(R.id.algo_content, fragment);
+//        trans.commit();
     }
 }
