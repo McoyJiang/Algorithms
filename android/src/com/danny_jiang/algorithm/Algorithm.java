@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.danny_jiang.algorithm.bubble_sort.BubbleSortActivity;
 import com.danny_jiang.algorithm.data_structure.array.ArrayActivity;
 import com.danny_jiang.algorithm.data_structure.linkedlist.LinkListActivity;
 
@@ -14,7 +15,7 @@ public enum Algorithm implements Parcelable {
     LINK_LIST("链表", R.drawable.linklist, LinkListActivity.class),
     STACK("栈", R.drawable.stack, ArrayActivity.class),
 
-    BUBBLE_SORT("冒泡排序", R.drawable.array, ArrayActivity.class),
+    BUBBLE_SORT("冒泡排序", R.drawable.array, BubbleSortActivity.class),
     INSERTION_SORT("插入排序", R.drawable.array, ArrayActivity.class),
     QUICK_SORT("快速排序", R.drawable.array, ArrayActivity.class);
 
