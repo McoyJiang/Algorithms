@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -82,6 +83,11 @@ public class NodeActor extends BaseGdxActor {
             bitmapFont.draw(batch, value + "",
                     getX() + getWidth() / 2 - textWidth / 2 - 3,
                     getY() + textHeight + 10);
+
+            batch.draw(new Texture("data_structure/LinkedList/arrow.png"),
+                    (getX() + getWidth() / 2) < 300 ? 300 : (getX() + getWidth() / 2),
+                    getY() + getHeight() * 3 / 4 - 20,
+                    (getX() + getWidth() / 2) < 300 ? 40 : 0, 40);
         } catch (Exception e) {
             Log.e("BBB", "e is " + e.getMessage());
         }
