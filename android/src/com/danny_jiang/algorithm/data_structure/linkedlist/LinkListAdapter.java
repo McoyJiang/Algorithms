@@ -19,15 +19,26 @@ class LinkListAdapter extends AlgorithmAdapter {
     @Override
     protected void inflateStage() {
         try {
-            NodeActor nodeActor = new NodeActor(4);
-            nodeActor.setSize(150, 150);
-            nodeActor.setPosition(stage.getWidth() / 2 - nodeActor.getWidth() / 2,
-                    stage.getHeight() - nodeActor.getHeight() - 10);
-            stage.addActor(nodeActor);
+            NodeActor nodeActor1 = new NodeActor(4);
+            nodeActor1.setSize(150, 150);
+            nodeActor1.setPosition(stage.getWidth() / 2 - nodeActor1.getWidth() / 2,
+                    stage.getHeight() - nodeActor1.getHeight() - 10);
+            nodeActor1.setRightEdge(300);
 
-            MoveToAction moveToAction = Actions.moveTo(100, stage.getHeight() * 3 / 4);
-            moveToAction.setDuration(1);
-            nodeActor.addAction(moveToAction);
+            NodeActor nodeActor2 = new NodeActor(8);
+            nodeActor2.setSize(150, 150);
+            nodeActor2.setPosition(400, 1500);
+            nodeActor2.setLeftEdge(500);
+            stage.addActor(nodeActor1);
+            stage.addActor(nodeActor2);
+
+            MoveToAction moveToAction1 = Actions.moveTo(100, stage.getHeight() * 3 / 4);
+            moveToAction1.setDuration(1);
+            nodeActor1.addAction(moveToAction1);
+
+            MoveToAction moveToAction2 = Actions.moveTo(700, stage.getHeight() * 3 / 4);
+            moveToAction2.setDuration(1);
+            nodeActor2.addAction(moveToAction2);
         } catch (Exception e) {
             Log.e("BBB", "e here is " + e.getMessage());
         }
