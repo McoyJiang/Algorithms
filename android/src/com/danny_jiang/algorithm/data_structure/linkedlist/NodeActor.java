@@ -18,7 +18,8 @@ public class NodeActor extends BaseGdxActor {
     private float textWidth;
     private float textHeight;
 
-    private float arrowOriginal = 0;
+    private float rightEdge = -1;
+    private float leftEdge = -1;
 
     private final int value;
 
@@ -42,7 +43,6 @@ public class NodeActor extends BaseGdxActor {
     @Override
     public void setPosition(float x, float y) {
         super.setPosition(x, y);
-        arrowOriginal = (x + getWidth()) / 2;
     }
 
     @Override
@@ -69,27 +69,43 @@ public class NodeActor extends BaseGdxActor {
                     getX() + getWidth() - 5.0f, getY() + getHeight() / 2, 5);
 
             // draw little circle pointer
-            renderer.circle((getX() + getWidth() / 2), getY() + getHeight() * 3 / 4, 6);
+            float pointerStartX = getX() + getWidth() / 2;
+            float pointerStartY = getY() + getHeight() * 3 / 4;
+            renderer.circle(pointerStartX, pointerStartY, 6);
 
             // draw arrow line
-            renderer.rectLine((getX() + getWidth() / 2), getY() + getHeight() * 3 / 4,
-                    (getX() + getWidth() / 2) < 300 ? 300 : (getX() + getWidth() / 2),
-                    getY() + getHeight() * 3 / 4, 5);
+            float arrowEndPoint = pointerStartX;
+            if (rightEdge != -1 && pointerStartX < rightEdge) {
+                arrowEndPoint = rightEdge;
+                renderer.triangle(
+                        rightEdge, getY() + getHeight() * 3 / 4 - 15,
+                        rightEdge, getY() + getHeight() * 3 / 4 + 15,
+                        rightEdge + 60, getY() + getHeight() * 3 / 4);
+            } else if (leftEdge != -1 && pointerStartX > leftEdge) {
+                arrowEndPoint = leftEdge;
+                renderer.triangle(
+                        leftEdge, getY() + getHeight() * 3 / 4 - 15,
+                        leftEdge, getY() + getHeight() * 3 / 4 + 15,
+                        leftEdge - 60, getY() + getHeight() * 3 / 4);
+            }
+            renderer.rectLine(pointerStartX, pointerStartY, arrowEndPoint, pointerStartY, 5);
 
             renderer.end();
-
             batch.begin();
 
             bitmapFont.draw(batch, value + "",
                     getX() + getWidth() / 2 - textWidth / 2 - 3,
                     getY() + textHeight + 10);
-
-            batch.draw(new Texture("data_structure/LinkedList/arrow.png"),
-                    (getX() + getWidth() / 2) < 300 ? 300 : (getX() + getWidth() / 2),
-                    getY() + getHeight() * 3 / 4 - 20,
-                    (getX() + getWidth() / 2) < 300 ? 40 : 0, 40);
         } catch (Exception e) {
             Log.e("BBB", "e is " + e.getMessage());
         }
+    }
+
+    public void setRightEdge(float rightEdge) {
+        this.rightEdge = rightEdge;
+    }
+
+    public void setLeftEdge(float leftEdge) {
+        this.leftEdge = leftEdge;
     }
 }
