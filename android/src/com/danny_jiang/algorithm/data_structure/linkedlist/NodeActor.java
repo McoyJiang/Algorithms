@@ -5,10 +5,13 @@ import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
+import com.badlogic.gdx.scenes.scene2d.actions.RepeatAction;
+import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.danny_jiang.algorithm.views.BaseGdxActor;
 
 public class NodeActor extends BaseGdxActor {
@@ -18,8 +21,10 @@ public class NodeActor extends BaseGdxActor {
     private float textWidth;
     private float textHeight;
 
-    private float rightEdge = -1;
-    private float leftEdge = -1;
+    private boolean isTail = true;
+
+    private float rightEdge = 0;
+    private float leftEdge = 0;
 
     private final int value;
 
@@ -38,11 +43,6 @@ public class NodeActor extends BaseGdxActor {
         bitmapFont.getData().scale(0.8f);
 
         this.value = value;
-    }
-
-    @Override
-    public void setPosition(float x, float y) {
-        super.setPosition(x, y);
     }
 
     @Override
@@ -71,24 +71,25 @@ public class NodeActor extends BaseGdxActor {
             // draw little circle pointer
             float pointerStartX = getX() + getWidth() / 2;
             float pointerStartY = getY() + getHeight() * 3 / 4;
-            renderer.circle(pointerStartX, pointerStartY, 6);
-
-            // draw arrow line
-            float arrowEndPoint = pointerStartX;
-            if (rightEdge != -1 && pointerStartX < rightEdge) {
-                arrowEndPoint = rightEdge;
-                renderer.triangle(
-                        rightEdge, getY() + getHeight() * 3 / 4 - 15,
-                        rightEdge, getY() + getHeight() * 3 / 4 + 15,
-                        rightEdge + 60, getY() + getHeight() * 3 / 4);
-            } else if (leftEdge != -1 && pointerStartX > leftEdge) {
-                arrowEndPoint = leftEdge;
-                renderer.triangle(
-                        leftEdge, getY() + getHeight() * 3 / 4 - 15,
-                        leftEdge, getY() + getHeight() * 3 / 4 + 15,
-                        leftEdge - 60, getY() + getHeight() * 3 / 4);
+            if (isTail) {
+                renderer.setColor(Color.RED);
+                renderer.circle(pointerStartX, pointerStartY, 6);
+            } else {
+                renderer.setColor(Color.BLUE);
+                renderer.circle(pointerStartX, pointerStartY, 6);
             }
-            renderer.rectLine(pointerStartX, pointerStartY, arrowEndPoint, pointerStartY, 5);
+
+            renderer.setColor(Color.BLUE);
+            // draw arrow line
+            renderer.rectLine(pointerStartX, pointerStartY,
+                    pointerStartX + rightEdge, pointerStartY, 5);
+            // draw arrow shape
+            if (!isTail) {
+                renderer.triangle(
+                        pointerStartX + rightEdge, getY() + getHeight() * 3 / 4 - 15,
+                        pointerStartX + rightEdge, getY() + getHeight() * 3 / 4 + 15,
+                        pointerStartX + rightEdge + 60, getY() + getHeight() * 3 / 4);
+            }
 
             renderer.end();
             batch.begin();
@@ -101,11 +102,18 @@ public class NodeActor extends BaseGdxActor {
         }
     }
 
-    public void setRightEdge(float rightEdge) {
-        this.rightEdge = rightEdge;
+    public void addNodeToHead(float x, float y) {
+        if (rightEdge >= 150) {
+            return;
+        }
+        RunnableAction run = Actions.run(() -> rightEdge += 2);
+        RepeatAction repeat = Actions.repeat(50, run);
+        MoveToAction moveToAction = Actions.moveTo(x - 180, y);
+        moveToAction.setDuration(1);
+        addAction(Actions.parallel(moveToAction, repeat));
     }
 
-    public void setLeftEdge(float leftEdge) {
-        this.leftEdge = leftEdge;
+    public void setTail(boolean tail) {
+        isTail = tail;
     }
 }
