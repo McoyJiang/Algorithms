@@ -80,15 +80,25 @@ public class NodeActor extends BaseGdxActor {
             }
 
             renderer.setColor(Color.BLUE);
-            // draw arrow line
+            // draw right-arrow line
             renderer.rectLine(pointerStartX, pointerStartY,
                     pointerStartX + rightEdge, pointerStartY, 5);
-            // draw arrow shape
-            if (!isTail) {
+            // draw left-arrow line
+            renderer.rectLine(pointerStartX - leftEdge, pointerStartY,
+                    pointerStartX, pointerStartY, 5);
+            // draw right-arrow shape
+            if (!isTail && rightEdge != 0) {
                 renderer.triangle(
                         pointerStartX + rightEdge, getY() + getHeight() * 3 / 4 - 15,
                         pointerStartX + rightEdge, getY() + getHeight() * 3 / 4 + 15,
                         pointerStartX + rightEdge + 60, getY() + getHeight() * 3 / 4);
+            }
+            // draw left-arrow shape
+            if (leftEdge != 0) {
+                renderer.triangle(
+                        pointerStartX - leftEdge, getY() + getHeight() * 3 / 4 - 15,
+                        pointerStartX - leftEdge, getY() + getHeight() * 3 / 4 + 15,
+                        pointerStartX - leftEdge - 60, getY() + getHeight() * 3 / 4);
             }
 
             renderer.end();
@@ -108,9 +118,16 @@ public class NodeActor extends BaseGdxActor {
         }
         RunnableAction run = Actions.run(() -> rightEdge += 2);
         RepeatAction repeat = Actions.repeat(50, run);
-        MoveToAction moveToAction = Actions.moveTo(x - 180, y);
-        moveToAction.setDuration(1);
-        addAction(Actions.parallel(moveToAction, repeat));
+        addAction(repeat);
+    }
+
+    public void addNodeToLast(float x, float y) {
+        if (leftEdge >= 150) {
+            return;
+        }
+        RunnableAction run = Actions.run(() -> leftEdge += 2);
+        RepeatAction repeat = Actions.repeat(50, run);
+        addAction(repeat);
     }
 
     public void setTail(boolean tail) {

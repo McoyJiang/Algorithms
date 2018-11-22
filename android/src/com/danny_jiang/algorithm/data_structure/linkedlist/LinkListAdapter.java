@@ -4,12 +4,9 @@ import android.os.Message;
 import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
-import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
-import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 
 import java.util.ArrayList;
@@ -17,7 +14,9 @@ import java.util.List;
 
 class LinkListAdapter extends AlgorithmAdapter {
 
-    private static final int ADD = 1;
+    private static final int ADD_TO_HEAD = 1;
+    private static final int ADD_TO_TAIL = 2;
+
     private int[] arr = new int[]{3, 8, 10, 9, 15, 35};
 
     private List<NodeActor> addedActorList = new ArrayList<>();
@@ -45,8 +44,11 @@ class LinkListAdapter extends AlgorithmAdapter {
     @Override
     protected void animation(Message msg) {
         switch (msg.what) {
-            case ADD:
+            case ADD_TO_HEAD:
                 addNodeToHead();
+                break;
+            case ADD_TO_TAIL:
+                addNodeToTail();
                 break;
         }
     }
@@ -62,6 +64,9 @@ class LinkListAdapter extends AlgorithmAdapter {
             nodeActor.setTail(false);
             stage.addActor(nodeActor);
 
+            MoveToAction moveToAction = Actions.moveTo(x - 180, y);
+            moveToAction.setDuration(1);
+            nodeActor.addAction(moveToAction);
             nodeActor.addNodeToHead(x, y);
             for (NodeActor actor : addedActorList) {
                 MoveByAction moveByAction = Actions.moveBy(90, 0);
@@ -72,28 +77,54 @@ class LinkListAdapter extends AlgorithmAdapter {
         });
     }
 
+    private void addNodeToTail() {
+        Gdx.app.postRunnable(() -> {
+            float x = addedActorList.get(addedActorList.size() - 1).getX() + 75;
+            float y = addedActorList.get(0).getY();
+            NodeActor nodeActor = new NodeActor(4);
+            nodeActor.setSize(150, 150);
+            nodeActor.setPosition(stage.getWidth() / 2 - nodeActor.getWidth() / 2,
+                    stage.getHeight() - nodeActor.getHeight() - 10);
+            nodeActor.setTail(true);
+            stage.addActor(nodeActor);
+
+            MoveToAction moveToAction = Actions.moveTo(x + 80, y);
+            moveToAction.setDuration(1);
+            nodeActor.addAction(moveToAction);
+            NodeActor tail = addedActorList.get(addedActorList.size() - 1);
+            tail.setTail(false);
+            tail.addNodeToHead(x, y);
+            for (NodeActor actor : addedActorList) {
+                MoveByAction moveByAction = Actions.moveBy(-90, 0);
+                moveByAction.setDuration(1);
+                actor.addAction(moveByAction);
+            }
+            addedActorList.add(nodeActor);
+        });
+    }
+
     @Override
     protected void algorithm() {
         await();
 
         /**
-         * ADD
+         * ADD_TO_HEAD
          */
         await((BeforeWaitCallback)() -> {
             sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(ADD, 10, -1));
+                    sDecodingThreadHandler.obtainMessage(ADD_TO_HEAD, 10, -1));
         });
         await((BeforeWaitCallback)() -> {
             sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(ADD, 10, -1));
+                    sDecodingThreadHandler.obtainMessage(ADD_TO_HEAD, 10, -1));
         });
         await((BeforeWaitCallback)() -> {
             sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(ADD, 10, -1));
+                    sDecodingThreadHandler.obtainMessage(ADD_TO_TAIL, 10, -1));
         });
         await((BeforeWaitCallback)() -> {
             sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(ADD, 10, -1));
+                    sDecodingThreadHandler.obtainMessage(ADD_TO_TAIL, 10, -1));
         });
     }
 }
