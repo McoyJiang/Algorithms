@@ -1,8 +1,6 @@
 package com.danny_jiang.algorithm.data_structure.linkedlist;
 
 import android.os.Message;
-import android.util.Log;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -29,7 +27,6 @@ class LinkListAdapter extends AlgorithmAdapter {
     protected void inflateStage() {
         BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal(
                 "data_structure/LinkedList/linkedlist.fnt"));
-        bitmapFont.getData().scale(1.5f);
         Label.LabelStyle style = new Label.LabelStyle();
         style.font = bitmapFont;
         style.fontColor = new Color(1, 0, 0, 1);

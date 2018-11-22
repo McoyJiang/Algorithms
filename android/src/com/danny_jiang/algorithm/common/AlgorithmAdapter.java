@@ -13,6 +13,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.danny_jiang.algorithm.views.BaseGdxActor;
 
@@ -39,7 +41,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     private Runnable algorithmRunnable = this::algorithm;
 
     protected Stage stage;
-    protected BaseGdxActor next;
+    protected TextButton next;
     private ClickListener nextClickListener = new ClickListener() {
         @Override
         public void clicked(InputEvent event, float x, float y) {
@@ -65,11 +67,13 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
 
         Gdx.input.setInputProcessor(stage);
 
-        next = new BaseGdxActor();
-        enableNextButton();
-        next.setSize(150, 150);
-        next.setPosition(stage.getWidth() - 250, 60);
+        Skin skin = new Skin(Gdx.files.internal("skin/flat-earth/flat-earth-ui.json"));
+        next = new TextButton("NEXT", skin);
+        next.setSize(180, 100);
+        next.setPosition(stage.getWidth() - 300, 60);
         stage.addActor(next);
+
+        enableNextButton();
         inflateStage();
     }
 
@@ -123,16 +127,10 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     }
 
     public void enableNextButton() {
-        next.setRegion(new TextureRegion(new Texture(
-                Gdx.files.internal("next_step.png")
-        )));
         next.addListener(nextClickListener);
     }
 
     public void disableNextButton() {
-        next.setRegion(new TextureRegion(new Texture(
-                Gdx.files.internal("next_step_disable.png")
-        )));
         next.removeListener(nextClickListener);
     }
 
