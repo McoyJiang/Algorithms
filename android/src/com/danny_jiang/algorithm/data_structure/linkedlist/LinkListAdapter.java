@@ -88,7 +88,7 @@ class LinkListAdapter extends AlgorithmAdapter {
             nodeActor.setTail(true);
             stage.addActor(nodeActor);
 
-            MoveToAction moveToAction = Actions.moveTo(x + 80, y);
+            MoveToAction moveToAction = Actions.moveTo(x + 40, y);
             moveToAction.setDuration(1);
             nodeActor.addAction(moveToAction);
             NodeActor tail = addedActorList.get(addedActorList.size() - 1);
