@@ -69,6 +69,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
 
         Skin skin = new Skin(Gdx.files.internal("skin/flat-earth/flat-earth-ui.json"));
         next = new TextButton("NEXT", skin);
+        next.getLabel().setFontScale(1.5f, 1.5f);
         next.setSize(180, 100);
         next.setPosition(stage.getWidth() - 300, 60);
         stage.addActor(next);
