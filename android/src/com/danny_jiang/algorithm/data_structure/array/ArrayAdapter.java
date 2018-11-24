@@ -5,10 +5,14 @@ import android.os.Message;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
+import com.badlogic.gdx.scenes.scene2d.actions.ScaleByAction;
+import com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction;
+import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
@@ -31,15 +35,46 @@ public class ArrayAdapter extends AlgorithmAdapter {
     private ArrayElement sixElement;
     private ArrayElement emptyElement;
 
+    private List<Label> labelList = new ArrayList<>();
     private Label stepDescription;
 
     @Override
     protected void inflateStage() {
+        BitmapFont bitmapFont = new BitmapFont(
+                Gdx.files.internal("data_structure/Array/array.fnt"));
+        Label.LabelStyle style = new Label.LabelStyle();
+        style.font = bitmapFont;
+        style.fontColor = Color.valueOf("#696969");
+        stepDescription = new Label("", style);
+        stepDescription.setAlignment(Align.topLeft);
+        stepDescription.setSize(stage.getWidth(), stage.getHeight() / 2 - next.getHeight() - 100);
+        stepDescription.setFontScale(2f);
+        stepDescription.setPosition(15, next.getHeight() + 10);
+        stage.addActor(stepDescription);
+        stepDescription.setText("数组是一种线性表结构\n它用一组连续的" +
+                "内存空间\n来存储具有相同类型的数据");
+
         for (int i = 0; i < data.length; i++) {
             ArrayElement element = new ArrayElement("" + data[i]);
             element.setSize(180, 150);
-            element.setPosition(i * 190 + 50, stage.getHeight() * 3 / 4);
+            element.setOrigin(element.getWidth() / 2, element.getHeight() / 2);
+            float elementPositionX = stage.getWidth() + i * 190 + 50;
+            float elementPositionY = stage.getHeight() * 3 / 4 - 50;
+            element.setPosition(elementPositionX, elementPositionY);
             elementList.add(element);
+
+            Label label = new Label("arr[" + i + "]", style);
+            label.setSize(120, 100);
+            label.setFontScale(1.5f);
+            label.setPosition(i * 190 + 50 + element.getWidth() / 2 - 60,
+                    elementPositionY + element.getHeight());
+            label.setVisible(false);
+            labelList.add(label);
+            stage.addActor(label);
+
+            MoveByAction moveByAction = Actions.moveBy(-stage.getWidth(), 0);
+            moveByAction.setDuration(i * 0.25f + 0.25f);
+            element.addAction(moveByAction);
             stage.addActor(element);
         }
 
@@ -56,20 +91,6 @@ public class ArrayAdapter extends AlgorithmAdapter {
                 lastElement.getY());
         stage.addActor(emptyElement);
         emptyElement.setVisible(false);
-
-        BitmapFont bitmapFont = new BitmapFont(
-                Gdx.files.internal("data_structure/Array/array.fnt"));
-        Label.LabelStyle style = new Label.LabelStyle();
-        style.font = bitmapFont;
-        style.fontColor = Color.valueOf("#696969");
-        stepDescription = new Label("", style);
-        stepDescription.setAlignment(Align.topLeft);
-        stepDescription.setSize(stage.getWidth(), stage.getHeight() / 2 - next.getHeight() - 100);
-        stepDescription.setFontScale(2f);
-        stepDescription.setPosition(15, next.getHeight() + 10);
-        stage.addActor(stepDescription);
-        stepDescription.setText("数组是一种线性表结构\n它用一组连续的" +
-                "内存空间\n来存储具有相同类型的数据");
     }
 
     @Override
@@ -106,11 +127,7 @@ public class ArrayAdapter extends AlgorithmAdapter {
     protected void animation(Message msg) {
         switch (msg.what) {
             case ARRAY_DESCRIBE:
-                stepDescription.setText("可以通过下标来访问数组中的元素\n" +
-                        "arr[0] = 2\n" +
-                        "arr[1] = 5\n" +
-                        "arr[2] = 8\n" +
-                        "arr[3] = 9");
+                arrayDescription();
                 break;
             case INSERT:
                 insertOperation();
@@ -137,6 +154,31 @@ public class ArrayAdapter extends AlgorithmAdapter {
                 stepDescription.setText("Complete!");
                 break;
         }
+    }
+
+    private void arrayDescription() {
+        Gdx.app.postRunnable(() -> {
+            stepDescription.setText("可以通过下标来访问数组中的元素");
+            SequenceAction sequence = Actions.sequence();
+            for (int i = 0; i < labelList.size(); i++) {
+                final Label label = labelList.get(i);
+                final ArrayElement element = elementList.get(i);
+                ScaleToAction scaleLarge = Actions.scaleTo(1.1f, 1.1f);
+                scaleLarge.setDuration(0.2f);
+                scaleLarge.setTarget(element);
+                ScaleToAction scaleSmall = Actions.scaleTo(1f, 1f);
+                scaleSmall.setTarget(element);
+                scaleSmall.setDuration(0.2f);
+
+                sequence.addAction(Actions.run(() -> label.setVisible(true)));
+                sequence.addAction(scaleLarge);
+                sequence.addAction(Actions.delay(0.2f));
+                sequence.addAction(scaleSmall);
+                sequence.addAction(Actions.delay(0.2f));
+                sequence.addAction(Actions.run(() -> label.setVisible(false)));
+            }
+            stage.addAction(sequence);
+        });
     }
 
     private void insertOperation() {
