@@ -27,8 +27,7 @@ public class ArrayAdapter extends AlgorithmAdapter {
     private static final int VISIBLE_SIX = 2;
     private static final int ARRAY_DESCRIBE = 3;
     private static final int MOVE_OUT_SIX = 4;
-    private static final int TIME_COMPLEXITY = 5;
-    private static final int COMPLETE = 6;
+    private static final int COMPLETE = 5;
 
     private int[] data = new int[]{2, 5, 8, 9};
     private List<ArrayElement> elementList = new ArrayList<>();
@@ -117,9 +116,6 @@ public class ArrayAdapter extends AlgorithmAdapter {
                 sDecodingThreadHandler.obtainMessage(DELETE)));
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(TIME_COMPLEXITY)));
-
-        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(COMPLETE)));
     }
 
@@ -136,19 +132,13 @@ public class ArrayAdapter extends AlgorithmAdapter {
                 deleteOperation();
             break;
             case VISIBLE_SIX: {
-                stepDescription.setText("在进行插入操作时,\n为了保证内存的连续性,\n" +
-                        "需要先将被插入元素位置之后\n的所有元素都向后移一位");
+                stepDescription.setText("将 6 插入到数组中.\n时间复杂度:O(n)");
                 emptyElement.setVisible(true);
                 sixElement.setVisible(true);
             }
             break;
             case MOVE_OUT_SIX:
-                stepDescription.setText("同样在进行删除操作时,\n为了保证内存的连续性,\n" +
-                        "需要将被删除元素之后的\n所有元素都向前移一位");
-                break;
-            case TIME_COMPLEXITY:
-                stepDescription.setText("因此数组插入和删除操作的\n" +
-                        "时间复杂度都为 O(n)");
+                stepDescription.setText("将 6 从数组中删除,\n时间复杂度:O(n)");
                 break;
             case COMPLETE:
                 stepDescription.setText("Complete!");
