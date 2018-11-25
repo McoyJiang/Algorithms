@@ -13,8 +13,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.danny_jiang.algorithm.views.BaseGdxActor;
 
@@ -34,6 +32,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     public interface BeforeWaitCallback {
         void beforeWait();
     }
+
     public interface WaitFinishCallback {
         void waitInterrupt();
     }
@@ -41,7 +40,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     private Runnable algorithmRunnable = this::algorithm;
 
     protected Stage stage;
-    protected TextButton next;
+    protected BaseGdxActor next;
     private ClickListener nextClickListener = new ClickListener() {
         @Override
         public void clicked(InputEvent event, float x, float y) {
@@ -49,6 +48,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
             nextStep();
         }
     };
+
     @Override
     public void create() {
         super.create();
@@ -59,22 +59,18 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         Image bg = new Image(new Texture(Gdx.files.internal("bg/background.png")));
         bg.setSize(stage.getWidth(), stage.getHeight());
         stage.addActor(bg);
+        Gdx.input.setInputProcessor(stage);
 
         Image rectangle = new Image(new Texture(Gdx.files.internal("bg/visual_bg.png")));
         rectangle.setSize(stage.getWidth() - 30, stage.getHeight() / 2 - 20);
         rectangle.setPosition(15, stage.getHeight() / 2);
         stage.addActor(rectangle);
 
-        Gdx.input.setInputProcessor(stage);
-
-        Skin skin = new Skin(Gdx.files.internal("skin/flat-earth/flat-earth-ui.json"));
-        next = new TextButton("NEXT", skin);
-        next.getLabel().setFontScale(1.5f, 1.5f);
-        next.setSize(180, 100);
-        next.setPosition(stage.getWidth() - 300, 60);
-        stage.addActor(next);
-
+        next = new BaseGdxActor();
         enableNextButton();
+        next.setSize(150, 150);
+        next.setPosition(stage.getWidth() - 250, 10);
+        stage.addActor(next);
         inflateStage();
     }
 
@@ -88,7 +84,8 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
                 animation(msg);
             }
         };
-        new Thread(algorithmRunnable).start();}
+        new Thread(algorithmRunnable).start();
+    }
 
     protected void await() {
         await(null, null);
@@ -102,7 +99,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         await(null, waitFinishCallback);
     }
 
-    protected void await(BeforeWaitCallback beforeWaitCallback, WaitFinishCallback waitFinishCallback){
+    protected void await(BeforeWaitCallback beforeWaitCallback, WaitFinishCallback waitFinishCallback) {
         try {
             sReenterLock.lock();
             if (beforeWaitCallback != null)
@@ -128,10 +125,16 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     }
 
     public void enableNextButton() {
+        next.setRegion(new TextureRegion(new Texture(
+                Gdx.files.internal("next_step.png")
+        )));
         next.addListener(nextClickListener);
     }
 
     public void disableNextButton() {
+        next.setRegion(new TextureRegion(new Texture(
+                Gdx.files.internal("next_step_disable.png")
+        )));
         next.removeListener(nextClickListener);
     }
 
@@ -155,8 +158,10 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     }
 
     protected abstract void animation(Message msg);
+
     protected abstract void algorithm();
 
     protected abstract void inflateStage();
+
     protected abstract void initData();
 }
