@@ -25,9 +25,10 @@ public class ArrayAdapter extends AlgorithmAdapter {
     private static final int INSERT = 0;
     private static final int DELETE = 1;
     private static final int VISIBLE_SIX = 2;
-    private static final int ARRAY_DESCRIBE = 3;
-    private static final int MOVE_OUT_SIX = 4;
-    private static final int COMPLETE = 5;
+    private static final int SHOW_ELEMENT = 3;
+    private static final int ARRAY_DESCRIBE = 4;
+    private static final int MOVE_OUT_SIX = 5;
+    private static final int COMPLETE = 6;
 
     private int[] data = new int[]{2, 5, 8, 9};
     private List<ArrayElement> elementList = new ArrayList<>();
@@ -57,10 +58,11 @@ public class ArrayAdapter extends AlgorithmAdapter {
             ArrayElement element = new ArrayElement("" + data[i]);
             element.setSize(180, 150);
             element.setOrigin(element.getWidth() / 2, element.getHeight() / 2);
-            float elementPositionX = stage.getWidth() + i * 190 + 50;
+            float elementPositionX = i < 2 ? i * 190 + 50 : stage.getWidth() + i * 190 + 50;
             float elementPositionY = stage.getHeight() * 3 / 4 - 50;
             element.setPosition(elementPositionX, elementPositionY);
             elementList.add(element);
+            stage.addActor(element);
 
             Label label = new Label("arr[" + i + "]", style);
             label.setSize(120, 100);
@@ -71,10 +73,6 @@ public class ArrayAdapter extends AlgorithmAdapter {
             labelList.add(label);
             stage.addActor(label);
 
-            MoveByAction moveByAction = Actions.moveBy(-stage.getWidth(), 0);
-            moveByAction.setDuration(i * 0.25f + 0.25f);
-            element.addAction(moveByAction);
-            stage.addActor(element);
         }
 
         sixElement = new ArrayElement("6");
@@ -101,7 +99,22 @@ public class ArrayAdapter extends AlgorithmAdapter {
         await();
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE)));
+                sDecodingThreadHandler.obtainMessage(SHOW_ELEMENT, 2, 0)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(SHOW_ELEMENT, 3, 0)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE, 0, 0)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE, 1, 0)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE, 2, 0)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE, 3, 0)));
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(VISIBLE_SIX)));
@@ -122,8 +135,11 @@ public class ArrayAdapter extends AlgorithmAdapter {
     @Override
     protected void animation(Message msg) {
         switch (msg.what) {
+            case SHOW_ELEMENT:
+                showElement(msg.arg1);
+                break;
             case ARRAY_DESCRIBE:
-                arrayDescription();
+                arrayDescription(msg.arg1);
                 break;
             case INSERT:
                 insertOperation();
@@ -146,27 +162,34 @@ public class ArrayAdapter extends AlgorithmAdapter {
         }
     }
 
-    private void arrayDescription() {
+    private void showElement(int index) {
+        ArrayElement element = elementList.get(index);
+        MoveByAction moveByAction = Actions.moveBy(-stage.getWidth(), 0);
+        moveByAction.setDuration(0.5f);
+        element.addAction(moveByAction);
+        stage.addActor(element);
+    }
+
+    private void arrayDescription(int i) {
         Gdx.app.postRunnable(() -> {
             stepDescription.setText("可以通过下标来访问数组中的元素");
             SequenceAction sequence = Actions.sequence();
-            for (int i = 0; i < labelList.size(); i++) {
-                final Label label = labelList.get(i);
-                final ArrayElement element = elementList.get(i);
-                ScaleToAction scaleLarge = Actions.scaleTo(1.1f, 1.1f);
-                scaleLarge.setDuration(0.2f);
-                scaleLarge.setTarget(element);
-                ScaleToAction scaleSmall = Actions.scaleTo(1f, 1f);
-                scaleSmall.setTarget(element);
-                scaleSmall.setDuration(0.2f);
+            final Label label = labelList.get(i);
+            final ArrayElement element = elementList.get(i);
+            ScaleToAction scaleLarge = Actions.scaleTo(1.1f, 1.1f);
+            scaleLarge.setDuration(0.2f);
+            scaleLarge.setTarget(element);
+            ScaleToAction scaleSmall = Actions.scaleTo(1f, 1f);
+            scaleSmall.setTarget(element);
+            scaleSmall.setDuration(0.2f);
 
-                sequence.addAction(Actions.run(() -> label.setVisible(true)));
-                sequence.addAction(scaleLarge);
-                sequence.addAction(Actions.delay(0.2f));
-                sequence.addAction(scaleSmall);
-                sequence.addAction(Actions.delay(0.2f));
-                sequence.addAction(Actions.run(() -> label.setVisible(false)));
-            }
+            sequence.addAction(Actions.run(() -> label.setVisible(true)));
+            sequence.addAction(scaleLarge);
+            sequence.addAction(Actions.delay(0.2f));
+            sequence.addAction(scaleSmall);
+            sequence.addAction(Actions.delay(0.2f));
+            sequence.addAction(Actions.run(() -> label.setVisible(false)));
+
             stage.addAction(sequence);
         });
     }
