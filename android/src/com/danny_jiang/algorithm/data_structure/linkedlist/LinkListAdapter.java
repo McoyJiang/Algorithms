@@ -68,7 +68,6 @@ class LinkListAdapter extends AlgorithmAdapter {
             case DONE:
                 Gdx.app.postRunnable(() -> {
                     stepDescription.setText("DONE");
-                    next.setText("Done");
                 });
                 break;
         }

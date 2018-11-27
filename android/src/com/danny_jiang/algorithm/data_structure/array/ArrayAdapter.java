@@ -105,6 +105,9 @@ public class ArrayAdapter extends AlgorithmAdapter {
                 sDecodingThreadHandler.obtainMessage(SHOW_ELEMENT, 3, 0)));
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE, -1, 0)));
+
+        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(ARRAY_DESCRIBE, 0, 0)));
 
         await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
@@ -171,27 +174,33 @@ public class ArrayAdapter extends AlgorithmAdapter {
     }
 
     private void arrayDescription(int i) {
-        Gdx.app.postRunnable(() -> {
-            stepDescription.setText("可以通过下标来访问数组中的元素");
-            SequenceAction sequence = Actions.sequence();
-            final Label label = labelList.get(i);
-            final ArrayElement element = elementList.get(i);
-            ScaleToAction scaleLarge = Actions.scaleTo(1.1f, 1.1f);
-            scaleLarge.setDuration(0.2f);
-            scaleLarge.setTarget(element);
-            ScaleToAction scaleSmall = Actions.scaleTo(1f, 1f);
-            scaleSmall.setTarget(element);
-            scaleSmall.setDuration(0.2f);
+        if (i == -1) {
+            stepDescription.setText("可以通过下标来访问数组中的元素\n\n" +
+                    "通过下标访问的时间复杂度: O(1)");
+        } else {
+            Gdx.app.postRunnable(() -> {
+                stepDescription.setText("可以通过下标来访问数组中的元素\n\n" +
+                        "arr[" + i + "] = " + data[i]);
+                SequenceAction sequence = Actions.sequence();
+                final Label label = labelList.get(i);
+                final ArrayElement element = elementList.get(i);
+                ScaleToAction scaleLarge = Actions.scaleTo(1.1f, 1.1f);
+                scaleLarge.setDuration(0.2f);
+                scaleLarge.setTarget(element);
+                ScaleToAction scaleSmall = Actions.scaleTo(1f, 1f);
+                scaleSmall.setTarget(element);
+                scaleSmall.setDuration(0.2f);
 
-            sequence.addAction(Actions.run(() -> label.setVisible(true)));
-            sequence.addAction(scaleLarge);
-            sequence.addAction(Actions.delay(0.2f));
-            sequence.addAction(scaleSmall);
-            sequence.addAction(Actions.delay(0.2f));
-            sequence.addAction(Actions.run(() -> label.setVisible(false)));
+                sequence.addAction(Actions.run(() -> label.setVisible(true)));
+                sequence.addAction(scaleLarge);
+                sequence.addAction(Actions.delay(0.2f));
+                sequence.addAction(scaleSmall);
+                sequence.addAction(Actions.delay(0.2f));
+                sequence.addAction(Actions.run(() -> label.setVisible(false)));
 
-            stage.addAction(sequence);
-        });
+                stage.addAction(sequence);
+            });
+        }
     }
 
     private void insertOperation() {
