@@ -40,7 +40,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     private Runnable algorithmRunnable = this::algorithm;
 
     protected Stage stage;
-    protected BaseGdxActor next;
+    protected AlgorithmButton next;
     private ClickListener nextClickListener = new ClickListener() {
         @Override
         public void clicked(InputEvent event, float x, float y) {
@@ -66,9 +66,9 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         rectangle.setPosition(15, stage.getHeight() / 2);
         stage.addActor(rectangle);
 
-        next = new BaseGdxActor();
+        next = new AlgorithmButton("Next");
         enableNextButton();
-        next.setSize(150, 150);
+        next.setSize(180, 100);
         next.setPosition(stage.getWidth() - 250, 10);
         stage.addActor(next);
         inflateStage();
@@ -125,16 +125,16 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     }
 
     public void enableNextButton() {
-        next.setRegion(new TextureRegion(new Texture(
-                Gdx.files.internal("next_step.png")
-        )));
+//        next.setRegion(new TextureRegion(new Texture(
+//                Gdx.files.internal("next_step.png")
+//        )));
         next.addListener(nextClickListener);
     }
 
     public void disableNextButton() {
-        next.setRegion(new TextureRegion(new Texture(
-                Gdx.files.internal("next_step_disable.png")
-        )));
+//        next.setRegion(new TextureRegion(new Texture(
+//                Gdx.files.internal("next_step_disable.png")
+//        )));
         next.removeListener(nextClickListener);
     }
 
