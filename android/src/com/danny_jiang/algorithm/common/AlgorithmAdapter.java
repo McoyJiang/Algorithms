@@ -66,7 +66,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         rectangle.setPosition(15, stage.getHeight() / 2);
         stage.addActor(rectangle);
 
-        next = new AlgorithmButton("Next");
+        next = new AlgorithmButton("next");
         enableNextButton();
         next.setSize(180, 100);
         next.setPosition(stage.getWidth() - 250, 10);

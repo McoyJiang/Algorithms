@@ -25,14 +25,21 @@ public class AlgorithmButton extends BaseGdxActor {
         renderer.setColor(Color.valueOf("#f15e38"));
 
         this.bitmapFont = new BitmapFont(
-                Gdx.files.internal("quick_sort/quick_sort.fnt"),
-                Gdx.files.internal("quick_sort/quick_sort.png"), false);
+                Gdx.files.internal("font/algorithm_button.fnt"),
+                Gdx.files.internal("font/algorithm_button.png"), false);
         bitmapFont.setColor(Color.WHITE);
-        textWidth = bitmapFont.getData().getGlyph('A').width * (text + "").length();
-        textHeight = bitmapFont.getData().getGlyph('A').height * 1.8f;
-        bitmapFont.getData().scale(0.8f);
+        textWidth = 32 * text.length();
+        textHeight = 32;
 
         this.text = text;
+    }
+
+    public void setBackgroundColor(Color color) {
+        renderer.setColor(color);
+    }
+
+    public void setTextColor(Color color) {
+        bitmapFont.setColor(color);
     }
 
     @Override
@@ -50,9 +57,9 @@ public class AlgorithmButton extends BaseGdxActor {
 
             batch.begin();
 
-            bitmapFont.draw(batch, text + "",
-                    getX() + getWidth() / 2 - textWidth / 2 - 3,
-                    getY() + getHeight() / 2 + textHeight / 2);
+            bitmapFont.draw(batch, text,
+                    getX() + getWidth() / 2 - textWidth / 2 + 5,
+                    getY() + getHeight() / 2 + textHeight / 2 + 5);
         } catch (Exception e) {
             Log.e("AlgorithmButton", "e is " + e.getMessage());
         }
