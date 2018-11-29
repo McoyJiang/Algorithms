@@ -30,6 +30,7 @@ public class StackAdapter extends AlgorithmAdapter {
     private Label popLabel;
     private Label emptyLabel;
     private Label stackLabel;
+    private Label stepDescription;
     private List<AlgorithmButton> buttonList = new ArrayList<>();
 
     @Override
@@ -40,8 +41,22 @@ public class StackAdapter extends AlgorithmAdapter {
                 stage.getHeight() - stackContainer.getHeight() - 380);
         stage.addActor(stackContainer);
 
+        addLabels();
+
+        for (int i = 0; i < dataList.length; i++) {
+            AlgorithmButton button = new AlgorithmButton("" + dataList[i]);
+            button.setVisible(false);
+            button.setSize(250, 100);
+            button.setBackgroundColor(Color.valueOf(colorList[i]));
+            button.setPosition(-250, stage.getHeight() - 300);
+            stage.addActor(button);
+            buttonList.add(button);
+        }
+    }
+
+    private void addLabels() {
         BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal(
-                "data_structure/stack/stack.fnt"));
+                "font/big_size.fnt"));
         Label.LabelStyle style = new Label.LabelStyle();
         style.font = bitmapFont;
         style.fontColor = Color.valueOf("#ca2934");
@@ -71,15 +86,19 @@ public class StackAdapter extends AlgorithmAdapter {
                 stackContainer.getY() - stackLabel.getHeight() - 10);
         stage.addActor(stackLabel);
 
-        for (int i = 0; i < dataList.length; i++) {
-            AlgorithmButton button = new AlgorithmButton("" + dataList[i]);
-            button.setVisible(false);
-            button.setSize(250, 100);
-            button.setBackgroundColor(Color.valueOf(colorList[i]));
-            button.setPosition(-250, stage.getHeight() - 300);
-            stage.addActor(button);
-            buttonList.add(button);
-        }
+        BitmapFont desFont = new BitmapFont(Gdx.files.internal(
+                "data_structure/stack/stack.fnt"));
+        Label.LabelStyle desStyle = new Label.LabelStyle();
+        desStyle.font = desFont;
+        desStyle.fontColor = Color.valueOf("#4A4A4A");
+        stepDescription = new Label("", desStyle);
+        stepDescription.setText("栈也是一种线性表结构\n" +
+                "向栈中插入或者提取数据时遵循:\n" +
+                "先进后出(FILO)的规律");
+        stepDescription.setSize(500, 350);
+        stepDescription.setFontScale(2f);
+        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
+        stage.addActor(stepDescription);
     }
 
     @Override
@@ -91,13 +110,20 @@ public class StackAdapter extends AlgorithmAdapter {
     protected void animation(Message msg) {
         switch (msg.what) {
             case PUSH_VISIBLE:
-                Gdx.app.postRunnable(() -> pushLabel.setVisible(true));
+                Gdx.app.postRunnable(() -> {
+                    stepDescription.setText("将一个元素压入到栈中时,\n" +
+                            "需要将其置于栈顶位置\n" +
+                            "时间复杂度: O(1)");
+                    pushLabel.setVisible(true);
+                });
                 break;
             case PUSH:
                 push(msg.arg1);
                 break;
             case POP_VISIBLE:
                 Gdx.app.postRunnable(() -> {
+                    stepDescription.setText("移除当前栈的栈顶元素\n" +
+                            "时间复杂度: O(1)");
                     popLabel.setVisible(true);
                     pushLabel.setVisible(false);
                 });
@@ -116,7 +142,11 @@ public class StackAdapter extends AlgorithmAdapter {
         secondMove.setDuration(0.5f);
         SequenceAction sequence = Actions.sequence(secondMove, Actions.delay(0.1f, firstMove));
         if (i == 0)
-            sequence.addAction(Actions.run(() -> emptyLabel.setVisible(true)));
+            sequence.addAction(Actions.run(() -> {
+                emptyLabel.setVisible(true);
+                popLabel.setVisible(false);
+                stepDescription.setText("Done!");
+            }));
         button.addAction(sequence);
     }
 
