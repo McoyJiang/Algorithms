@@ -1,11 +1,10 @@
-package com.danny_jiang.algorithm.data_structure.queue;
+package test.com.danny_jiang.algorithm.data_structure.queu;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
 
-public class QueueAdapterTest {
+public class BurgerAdapterTest {
 
     //阻塞队列，FIFO
     private static ConcurrentLinkedQueue<Integer> concurrentLinkedQueue =
