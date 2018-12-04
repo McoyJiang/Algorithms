@@ -40,6 +40,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
     private Runnable algorithmRunnable = this::algorithm;
 
     protected Stage stage;
+    protected Image visualizerBg;
     protected AlgorithmButton next;
     private ClickListener nextClickListener = new ClickListener() {
         @Override
@@ -61,10 +62,10 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         stage.addActor(bg);
         Gdx.input.setInputProcessor(stage);
 
-        Image rectangle = new Image(new Texture(Gdx.files.internal("bg/visual_bg.png")));
-        rectangle.setSize(stage.getWidth() - 30, stage.getHeight() / 2 - 20);
-        rectangle.setPosition(15, stage.getHeight() / 2);
-        stage.addActor(rectangle);
+        visualizerBg = new Image(new Texture(Gdx.files.internal("bg/visual_bg.png")));
+        visualizerBg.setSize(stage.getWidth() - 30, stage.getHeight() / 2 - 20);
+        visualizerBg.setPosition(15, stage.getHeight() / 2);
+        stage.addActor(visualizerBg);
 
         next = new AlgorithmButton("next");
         enableNextButton();
