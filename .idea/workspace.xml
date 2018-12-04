@@ -18,20 +18,15 @@
     <list default="true" id="95903ecf-d556-4cd5-8987-9118fe98856e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/assets/font/big_size.fnt" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/font/big_size.fnt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/assets/font/big_size1.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/font/big_size1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/assets/font/big_size2.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/font/big_size2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/symbols/debug/R.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,12 +58,12 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="QueueAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="83" column="83" selection-start-line="83" selection-start-column="83" selection-end-line="83" selection-end-column="83" />
+            <state relative-caret-position="309">
+              <caret line="218" column="45" selection-start-line="218" selection-start-column="45" selection-end-line="218" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,23 +71,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueueContainer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueContainer.java">
+      <file leaf-file-name="AlgorithmAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="279">
+              <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StackContainer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackContainer.java">
+      <file leaf-file-name="StackAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+            <state relative-caret-position="2398">
+              <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,23 +99,16 @@
       <list>
         <option value="layoutResourceFile_vertical" />
         <option value="JUnit5 Test Class" />
-        <option value="JUnit4 Test Class" />
         <option value="valueResourceFile" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>游标</find>
-      <find>/</find>
-      <find>expandableList</find>
-      <find>expandedGroupIndexes</find>
-      <find>BodyBean</find>
-      <find>DELETE</find>
-      <find>FragmentManager</find>
       <find>defaultRectLineWidth</find>
       <find>shapeType</find>
       <find>bitmapFont</find>
@@ -144,9 +129,16 @@
       <find>c1</find>
       <find>Color.BROWN</find>
       <find>PUSH_VISIBLE</find>
-      <find>POP</find>
-      <find>stepDescription</find>
       <find>STACK</find>
+      <find>stepDescription</find>
+      <find>stackContainer</find>
+      <find>buttonList</find>
+      <find>POP</find>
+      <find>ENQUEUE</find>
+      <find>DEQUEUE_VISIBLE</find>
+      <find>emptyLabel</find>
+      <find>popLabel</find>
+      <find>pushLabel</find>
     </findStrings>
     <replaceStrings>
       <replace>graph</replace>
@@ -156,6 +148,9 @@
       <replace>arrowEnd</replace>
       <replace>renderer</replace>
       <replace>preColor</replace>
+      <replace>queueContainer</replace>
+      <replace>DEQUEUE</replace>
+      <replace>marketLabel</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -2437,7 +2432,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java" />
         <option value="$PROJECT_DIR$/android/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListQuizFragment.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -2473,7 +2467,6 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackVisualizerFragment.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackQuizFragment.java" />
         <option value="$PROJECT_DIR$/android/assets/quick_sort/quick_sort.fnt" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmButton.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/utils/ShapeRendererUtils.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackContainer.java" />
@@ -2487,6 +2480,8 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueContainer.java" />
+        <option value="$PROJECT_DIR$/android/src/test/java/com/danny_jiang/algorithm/data_structure/queue/QueueAdapterTest.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java" />
       </list>
     </option>
@@ -2644,6 +2639,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="EasyAlgorithm" type="58d84e3e:PackageViewProjectNode" />
+              <item name="android" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -2667,17 +2673,6 @@
               <item name="EasyAlgorithm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="android" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="EasyAlgorithm" type="58d84e3e:PackageViewProjectNode" />
-              <item name="android" type="616d4139:PackageViewModuleNode" />
             </path>
           </expand>
           <select />
@@ -2721,20 +2716,7 @@
               <item name="EasyAlgorithm" type="1abcf292:AndroidViewProjectNode" />
               <item name="android" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="algorithm" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="data_structure" type="462c0819:PsiDirectoryNode" />
-              <item name="stack" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="EasyAlgorithm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="EasyAlgorithm" type="1abcf292:AndroidViewProjectNode" />
-              <item name="android" type="feadf853:AndroidModuleNode" />
-              <item name="assets" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="data_structure" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="test" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
               <item name="EasyAlgorithm" type="1abcf292:AndroidViewProjectNode" />
@@ -2745,7 +2727,7 @@
               <item name="EasyAlgorithm" type="1abcf292:AndroidViewProjectNode" />
               <item name="android" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="EasyAlgorithm" type="1abcf292:AndroidViewProjectNode" />
@@ -2768,13 +2750,15 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="device.picker.selection" value="DRGGAM2872203669" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/android/res/drawable-xhdpi" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="device.picker.selection" value="FA71D0304647" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/android/src/test/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.danny_jiang.algorithm.data_structure.queue" />
       <recent name="com.danny_jiang.algorithm.insert_sort" />
       <recent name="com.danny_jiang.algorithm.heap_sort" />
     </key>
@@ -2792,10 +2776,10 @@
       <recent name="com.danny_jiang.algorithm.data_structure" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/android/res/drawable-xhdpi" />
       <recent name="$PROJECT_DIR$/android/assets/data_structure/queue" />
-      <recent name="$PROJECT_DIR$/android/assets/data_structure/stack" />
       <recent name="$PROJECT_DIR$/android/assets/font" />
+      <recent name="$PROJECT_DIR$/android/res/drawable-xhdpi" />
+      <recent name="$PROJECT_DIR$/android/assets/data_structure/stack" />
       <recent name="$PROJECT_DIR$/android/res/drawable-xxxhdpi" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
@@ -2980,52 +2964,6 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
       </Profilers>
     </configuration>
-    <configuration name="algorithm()" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests" temporary="true" nameIsGenerated="true">
-      <module name="android" />
-      <option name="TESTING_TYPE" value="3" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="algorithm" />
-      <option name="CLASS_NAME" value="com.danny_jiang.algorithm.heap_sort.InsertSortAdapterTest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
-      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
-      <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
-      <Profilers>
-        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
-        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sampled (Java)" />
-      </Profilers>
-    </configuration>
     <configuration name="Graph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.danny_jiang.algorithm.data_structure.Graph" />
       <module name="android" />
@@ -3033,6 +2971,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.danny_jiang.algorithm.data_structure.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="QueueAdapterTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.danny_jiang.algorithm.data_structure.queue.QueueAdapterTest" />
+      <module name="android" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.danny_jiang.algorithm.data_structure.queue.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -3097,19 +3046,19 @@
     </configuration>
     <list>
       <item itemvalue="Android App.android" />
-      <item itemvalue="Android Instrumented Tests.algorithm()" />
       <item itemvalue="Android Instrumented Tests.InsertSortAdapterTest" />
       <item itemvalue="Android JUnit.InsertSortAdapterTest.algorithm" />
       <item itemvalue="Android JUnit.InsertSortAdapterTest" />
       <item itemvalue="Application.Graph" />
+      <item itemvalue="Application.QueueAdapterTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.QueueAdapterTest" />
         <item itemvalue="Application.Graph" />
         <item itemvalue="Android JUnit.InsertSortAdapterTest" />
         <item itemvalue="Android JUnit.InsertSortAdapterTest.algorithm" />
         <item itemvalue="Android Instrumented Tests.InsertSortAdapterTest" />
-        <item itemvalue="Android Instrumented Tests.algorithm()" />
       </list>
     </recent_temporary>
   </component>
@@ -3137,16 +3086,15 @@
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1660079" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2681638" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32938075" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32938075" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.34346104" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="10" visible="true" weight="0.34346104" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962519" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.24962519" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.33553502" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
@@ -3161,16 +3109,17 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="7" weight="0.33553502" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1660079" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2681638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.32938075" />
+      <window_info anchor="bottom" id="Android Profiler" order="12" show_stripe_button="false" weight="0.32938075" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
@@ -3179,20 +3128,20 @@
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Preview" order="6" weight="0.23988006" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
       <window_info anchor="right" id="Assistant" order="8" weight="0.3298351" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.34346104" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32938075" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32938075" />
       <window_info anchor="right" id="Gradle" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962519" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24962519" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2655218" />
     </layout-to-restore>
   </component>
@@ -3279,7 +3228,7 @@
           <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="65" />
+      <option name="time" value="66" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -3332,46 +3281,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/scenes/scene2d/ui/Table.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="692" column="16" selection-start-line="692" selection-start-column="16" selection-end-line="692" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/scenes/scene2d/ui/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/scenes/scene2d/ui/TextButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="89" column="13" selection-start-line="89" selection-start-column="13" selection-end-line="89" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/skin/flat-earth/flat-earth-ui.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/skin/flat-earth/font-button-export.fnt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="44" selection-start-column="44" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmBall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/math/Interpolation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -3498,17 +3407,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
-          <folding>
-            <element signature="e#3810#3811#0" expanded="true" />
-            <element signature="e#3834#3835#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-101">
@@ -3544,13 +3442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/font/big_size.fnt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/stack/stack.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3567,9 +3458,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3629,13 +3517,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="27" column="71" selection-start-line="27" selection-start-column="71" selection-end-line="27" selection-end-column="71" />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/BaseGdxActor.java">
@@ -3670,19 +3558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="652">
           <caret line="546" column="4" selection-start-line="546" selection-start-column="4" selection-end-line="546" selection-end-column="4" />
-          <folding>
-            <element signature="e#21740#21741#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3703,18 +3578,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+        <state relative-caret-position="116">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/queue.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/font/big_size2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/font/big_size1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/font/big_size.fnt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/scenes/scene2d/ui/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="80" column="11" selection-start-line="80" selection-start-column="11" selection-end-line="80" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2398">
+          <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/queue.fnt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/test/java/com/danny_jiang/algorithm/data_structure/queue/QueueAdapterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#201#210#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1621#1622#0" expanded="true" />
+            <element signature="e#1661#1662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="67" column="35" selection-start-line="67" selection-start-column="35" selection-end-line="67" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="83" column="83" selection-start-line="83" selection-start-column="83" selection-end-line="83" selection-end-column="83" />
+        <state relative-caret-position="309">
+          <caret line="218" column="45" selection-start-line="218" selection-start-column="45" selection-end-line="218" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
