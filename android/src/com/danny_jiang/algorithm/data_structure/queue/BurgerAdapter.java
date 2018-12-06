@@ -15,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
+import com.danny_jiang.algorithm.common.AlgorithmButton;
 import com.danny_jiang.algorithm.utils.ShapeRendererUtils;
 
 import java.util.ArrayList;
@@ -35,8 +36,8 @@ public class BurgerAdapter extends AlgorithmAdapter {
             "data_structure/queue/burger5.png"
     };
     private QueueHorizontalGroup blockingQueueGroup;
-    private QueueHorizontalGroup produceQueueGroup;
-    private QueueHorizontalGroup consumeQueueGroup;
+    private AlgorithmButton produceQueueGroup;
+    private AlgorithmButton consumeQueueGroup;
 
     @Override
     protected void inflateStage() {
@@ -49,20 +50,25 @@ public class BurgerAdapter extends AlgorithmAdapter {
                 visualizerBg.getY() + blockingQueueGroup.getHeight() - 20);
         blockingQueueGroup.setOriginX(blockingQueueGroup.getX() + blockingQueueGroup.getWidth() / 2);
         blockingQueueGroup.setOriginY(blockingQueueGroup.getY() + blockingQueueGroup.getHeight() / 2);
-        stage.addActor(blockingQueueGroup);
 
-        produceQueueGroup = new QueueHorizontalGroup();
+        produceQueueGroup = new AlgorithmButton("Producer");
         produceQueueGroup.setBackgroundColor(Color.BLUE);
         produceQueueGroup.setSize(360, 260);
         produceQueueGroup.setPosition(blockingQueueGroup.getX(), visualizerBg.getY() + 15);
-        //stage.addActor(produceQueueGroup);
+        produceQueueGroup.setOrigin(produceQueueGroup.getX() + produceQueueGroup.getWidth() / 2,
+                produceQueueGroup.getY() + produceQueueGroup.getHeight() / 2);
+        stage.addActor(produceQueueGroup);
 
-        consumeQueueGroup = new QueueHorizontalGroup();
+        consumeQueueGroup = new AlgorithmButton("Consumer");
         consumeQueueGroup.setBackgroundColor(Color.RED);
         consumeQueueGroup.setSize(360, 260);
         consumeQueueGroup.setPosition(visualizerBg.getX() + visualizerBg.getWidth()
                         - consumeQueueGroup.getWidth() - 50, visualizerBg.getY() + 15);
-        //stage.addActor(consumeQueueGroup);
+        consumeQueueGroup.setOrigin(consumeQueueGroup.getX() + consumeQueueGroup.getWidth() / 2,
+                consumeQueueGroup.getY() + consumeQueueGroup.getHeight() / 2);
+        stage.addActor(consumeQueueGroup);
+
+        stage.addActor(blockingQueueGroup);
     }
 
     @Override
@@ -85,8 +91,11 @@ public class BurgerAdapter extends AlgorithmAdapter {
     private void consume(final int i) {
         Gdx.app.postRunnable(() -> {
             Image button = buttonList.remove(i);
-            MoveByAction firstMove = Actions.moveBy(0,
-                    -blockingQueueGroup.getHeight() / 2);
+//            MoveByAction firstMove = Actions.moveBy(0,
+//                    -blockingQueueGroup.getHeight() / 2);
+            MoveByAction firstMove = Actions.moveBy(
+                    consumeQueueGroup.getOriginX() - button.getX() - button.getWidth() / 2,
+                    consumeQueueGroup.getOriginY() - blockingQueueGroup.getOriginY());
             firstMove.setDuration(0.5f);
             MoveByAction secondMove = Actions.moveBy(stage.getWidth(), 0);
             secondMove.setDuration(0.5f);
@@ -113,12 +122,17 @@ public class BurgerAdapter extends AlgorithmAdapter {
                     return 120;
                 }
             };
+            button.setZIndex(1000);
             buttonList.add(0, button);
             button.setSize(120, 120);
-            button.setPosition(-250, blockingQueueGroup.getY() - button.getHeight() - 10);
+            //button.setPosition(-250, blockingQueueGroup.getY() - button.getHeight() - 10);
+            button.setPosition(produceQueueGroup.getOriginX() - button.getWidth() / 2,
+                    produceQueueGroup.getOriginY() - button.getHeight() / 2);
             stage.addActor(button);
-            MoveToAction firstMove = Actions.moveTo(stage.getWidth() / 2 - button.getWidth() / 2,
-                    button.getY());
+//            MoveToAction firstMove = Actions.moveTo(stage.getWidth() / 2 - button.getWidth() / 2,
+//                    button.getY());
+            MoveToAction firstMove = Actions.moveTo(blockingQueueGroup.getX(),
+                    blockingQueueGroup.getY() - button.getHeight() / 2);
             firstMove.setDuration(0.5f);
 
             Point point = getGroupPosition();
