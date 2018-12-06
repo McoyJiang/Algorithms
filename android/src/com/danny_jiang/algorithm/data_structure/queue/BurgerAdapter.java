@@ -6,17 +6,14 @@ import android.os.Message;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
 import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
-import com.badlogic.gdx.scenes.scene2d.ui.HorizontalGroup;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.common.AlgorithmButton;
-import com.danny_jiang.algorithm.utils.ShapeRendererUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +49,7 @@ public class BurgerAdapter extends AlgorithmAdapter {
         blockingQueueGroup.setOriginY(blockingQueueGroup.getY() + blockingQueueGroup.getHeight() / 2);
 
         produceQueueGroup = new AlgorithmButton("Producer");
-        produceQueueGroup.setBackgroundColor(Color.BLUE);
+        produceQueueGroup.setBackgroundColor(Color.valueOf("#66cdaa"));
         produceQueueGroup.setSize(360, 260);
         produceQueueGroup.setPosition(blockingQueueGroup.getX(), visualizerBg.getY() + 15);
         produceQueueGroup.setOrigin(produceQueueGroup.getX() + produceQueueGroup.getWidth() / 2,
@@ -60,7 +57,7 @@ public class BurgerAdapter extends AlgorithmAdapter {
         stage.addActor(produceQueueGroup);
 
         consumeQueueGroup = new AlgorithmButton("Consumer");
-        consumeQueueGroup.setBackgroundColor(Color.RED);
+        consumeQueueGroup.setBackgroundColor(Color.valueOf("#f97e77"));
         consumeQueueGroup.setSize(360, 260);
         consumeQueueGroup.setPosition(visualizerBg.getX() + visualizerBg.getWidth()
                         - consumeQueueGroup.getWidth() - 50, visualizerBg.getY() + 15);
@@ -125,12 +122,10 @@ public class BurgerAdapter extends AlgorithmAdapter {
             button.setZIndex(1000);
             buttonList.add(0, button);
             button.setSize(120, 120);
-            //button.setPosition(-250, blockingQueueGroup.getY() - button.getHeight() - 10);
             button.setPosition(produceQueueGroup.getOriginX() - button.getWidth() / 2,
                     produceQueueGroup.getOriginY() - button.getHeight() / 2);
             stage.addActor(button);
-//            MoveToAction firstMove = Actions.moveTo(stage.getWidth() / 2 - button.getWidth() / 2,
-//                    button.getY());
+
             MoveToAction firstMove = Actions.moveTo(blockingQueueGroup.getX(),
                     blockingQueueGroup.getY() - button.getHeight() / 2);
             firstMove.setDuration(0.5f);
@@ -138,6 +133,7 @@ public class BurgerAdapter extends AlgorithmAdapter {
             Point point = getGroupPosition();
             MoveToAction secondMove = Actions.moveTo(point.x, point.y);
             secondMove.setDuration(0.5f);
+
             SequenceAction sequence = Actions.sequence(firstMove, Actions.delay(0.1f),
                     secondMove, Actions.run(() -> blockingQueueGroup.addActorAt(0, button)),
                     Actions.run(() -> signal()));
