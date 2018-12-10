@@ -175,8 +175,8 @@ public class QueueIntroGroup extends Group {
         MoveToAction firstMove = Actions.moveTo(stage.getWidth() / 2 - button.getWidth() / 2,
                 button.getY());
         firstMove.setDuration(0.5f);
-        MoveByAction secondMove = Actions.moveBy(0,
-                -(450 - i * 120));
+        MoveToAction secondMove = Actions.moveTo(stage.getWidth() / 2 - button.getWidth() / 2,
+                cashier.getY() + cashier.getHeight() + (button.getHeight() + 10) * i);
         secondMove.setDuration(0.5f);
         SequenceAction sequence = Actions.sequence();
         if (i == 0)
@@ -201,7 +201,7 @@ public class QueueIntroGroup extends Group {
             sequence.addAction(Actions.run(() -> {
                 marketLabel.setVisible(false);
                 popLabel.setVisible(false);
-                stepDescription.setText("Done!");
+                stepDescription.setText("所有元素都已出队!");
             }));
         } else {
             ParallelAction parallel = Actions.parallel();
@@ -222,7 +222,7 @@ public class QueueIntroGroup extends Group {
 
     public void showQueue() {
         Gdx.app.postRunnable(() -> {
-            stepDescription.setText("队列也遵循先进先出(FIFO)原则\n" +
+            stepDescription.setText("这就是先进先出(FIFO)原则\n" +
                     "最先入队的数据最先被访问");
             cashier.setVisible(false);
             marketLabel.setVisible(false);

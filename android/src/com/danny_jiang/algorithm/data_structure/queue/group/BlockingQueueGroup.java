@@ -86,6 +86,9 @@ public class BlockingQueueGroup extends Group {
 
     public void consume(final int i) {
         Gdx.app.postRunnable(() -> {
+            stepDescription.setText("当内部元素size小于5时\n" +
+                    "处于等待状态的插入\n" +
+                    "操作才会继续执行");
             Image button = burgerImageList.remove(i);
             MoveByAction firstMove = Actions.moveBy(
                     consumeQueueGroup.getOriginX() - button.getX() - button.getWidth() / 2,
@@ -152,7 +155,12 @@ public class BlockingQueueGroup extends Group {
     }
 
     public void show() {
-        Gdx.app.postRunnable(() -> setVisible(true));
+        Gdx.app.postRunnable(() -> {
+            setVisible(true);
+            stepDescription.setText("比如一个容量为5的阻塞队列\n" +
+                    "当其内部元素size已经为5时\n" +
+                    "插入操作会进入等待状态");
+        });
     }
 
     public QueueHorizontalGroup getBurgerProcessingQueue() {
