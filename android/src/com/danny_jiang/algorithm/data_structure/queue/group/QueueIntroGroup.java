@@ -26,6 +26,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.common.AlgorithmButton;
+import com.danny_jiang.algorithm.common.AlgorithmGroup;
 import com.danny_jiang.algorithm.data_structure.queue.QueueContainer;
 import com.danny_jiang.algorithm.views.BaseGdxActor;
 
@@ -34,7 +35,7 @@ import java.util.List;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class QueueIntroGroup extends Group {
+public class QueueIntroGroup extends AlgorithmGroup {
     private static final String TAG = QueueIntroGroup.class.getSimpleName();
     public static final int DEMO_IN = 1;
     public static final int DEMO_OUT = 2;
@@ -49,14 +50,9 @@ public class QueueIntroGroup extends Group {
             "data_structure/queue/queue_person3.png",
             "data_structure/queue/queue_person4.png"
     };
-    private final AlgorithmAdapter adapter;
-
-    private Stage stage;
-    private Label stepDescription;
-    private final Image visualizerBg;
 
     private Image cashier;
-    private List<Actor> demoActors = new ArrayList<>();
+    private List<Actor> demoActors;
     // person used to show people in SuperMarket
     private QueueContainer queueContainer;
 
@@ -70,55 +66,14 @@ public class QueueIntroGroup extends Group {
     private Label marketLabel;
     private Label queueLabel;
 
-    private HandlerThread sDecodingThread;
-    private Handler sDecodingThreadHandler;
-    private Runnable algorithmRunnable = this::algorithm;
-    private ReentrantLock sReenterLock = new ReentrantLock(true);
-    private Condition sCondition = sReenterLock.newCondition();
-
-    public QueueIntroGroup(AlgorithmAdapter adapter, Stage stage,
+    public QueueIntroGroup(Stage stage,
                            Label stepDescription, Image visualizerBg) {
-        this.adapter = adapter;
-        this.stage = stage;
-        this.stepDescription = stepDescription;
-        this.visualizerBg = visualizerBg;
-        setTouchable(Touchable.childrenOnly);
-        setSize(stage.getWidth(), stage.getHeight());
-        init();
-
-        initThread();
+        super(stage, stepDescription, visualizerBg);
+        demoActors = new ArrayList<>();
     }
-
-    private void initThread() {
-        sDecodingThread = new HandlerThread("FrameSequence decoding thread",
-                Process.THREAD_PRIORITY_BACKGROUND);
-        sDecodingThread.start();
-        sDecodingThreadHandler = new Handler(sDecodingThread.getLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                animation(msg);
-            }
-        };
-        new Thread(algorithmRunnable).start();
-    }
-
-
-    // Common widget
-    AlgorithmButton nextStepBtn;
 
     public void init() {
-        nextStepBtn = new AlgorithmButton(">");
-        nextStepBtn.setBackgroundColor(Color.valueOf("#36802d"));
-        nextStepBtn.setSize(200, 100);
-        nextStepBtn.setPosition(stage.getWidth() / 2, 10);
-        addActor(nextStepBtn);
-        nextStepBtn.addListener(new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                signal();
-            }
-        });
-
+        super.init();
         cashier = new Image(new TextureRegion(
                 new Texture("data_structure/queue/cashier.png")));
         cashier.setSize(100, 100);
@@ -175,7 +130,7 @@ public class QueueIntroGroup extends Group {
 
     }
 
-    private void algorithm() {
+    public void algorithm() {
         await();
 
         await(() -> sDecodingThreadHandler.sendMessage(
@@ -210,35 +165,6 @@ public class QueueIntroGroup extends Group {
             sDecodingThreadHandler.sendMessage(
                     sDecodingThreadHandler.obtainMessage(DEQUEUE, 2, -1));
         });
-    }
-
-    protected void await() {
-        await(null, null);
-    }
-
-    protected void await(AlgorithmAdapter.BeforeWaitCallback beforeWaitCallback) {
-        await(beforeWaitCallback, null);
-    }
-
-    protected void await(AlgorithmAdapter.BeforeWaitCallback beforeWaitCallback, AlgorithmAdapter.WaitFinishCallback waitFinishCallback) {
-        try {
-            sReenterLock.lock();
-            if (beforeWaitCallback != null)
-                beforeWaitCallback.beforeWait();
-            sCondition.await();
-            if (waitFinishCallback != null)
-                waitFinishCallback.waitInterrupt();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            sReenterLock.unlock();
-        }
-    }
-
-    public void signal() {
-        sReenterLock.lock();
-        sCondition.signal();
-        sReenterLock.unlock();
     }
 
     private void addLabels() {

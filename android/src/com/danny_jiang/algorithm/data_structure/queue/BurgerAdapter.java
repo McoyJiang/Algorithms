@@ -28,10 +28,6 @@ import com.danny_jiang.algorithm.data_structure.queue.group.QueueIntroGroup;
 
 public class BurgerAdapter extends AlgorithmAdapter {
 
-    public static final int PRODUCING = 7;
-    public static final int CONSUMING = 8;
-    public static final int START_BLOCKING_QUEUE = 9;
-
     private Label stepDescription;
 
     private BlockingQueueGroup blockingQueueGroup;
@@ -92,18 +88,16 @@ public class BurgerAdapter extends AlgorithmAdapter {
         scrollPane.setStyle(scrollPaneStyle);
 
         blockingQueueGroup = new BlockingQueueGroup(stage, stepDescription, visualizerBg);
-//        stage.addActor(blockingQueueGroup);
-//        blockingQueueGroup.setVisible(false);
+        blockingQueueGroup.init();
 
-        queueIntroGroup = new QueueIntroGroup(this, stage, stepDescription,  visualizerBg);
-//        stage.addActor(queueIntroGroup);
+        queueIntroGroup = new QueueIntroGroup(stage, stepDescription,  visualizerBg);
+        queueIntroGroup.init();
 
         table.add(queueIntroGroup)
                 .width(stage.getWidth()).height(stage.getHeight());
 
         table.add(blockingQueueGroup)
                 .width(stage.getWidth()).height(stage.getHeight());
-
         stage.addActor(scrollPane);
     }
 
@@ -113,92 +107,19 @@ public class BurgerAdapter extends AlgorithmAdapter {
 
     @Override
     public void animation(Message msg) {
-        switch (msg.what) {
-//            case DEMO_IN:
-//                queueIntroGroup.demoIn();
-//                break;
-//            case DEMO_OUT:
-//                queueIntroGroup.demoOut();
-//                break;
-//            case SHOW_QUEUE:
-//                queueIntroGroup.showQueue();
-//                break;
-//            case ENQUEUE:
-//                queueIntroGroup.enqueue(msg.arg1);
-//                break;
-//            case DEQUEUE_VISIBLE:
-//                queueIntroGroup.showDequeue();
-//                break;
-//            case DEQUEUE:
-//                queueIntroGroup.dequeue(msg.arg1);
-//                break;
-            case START_BLOCKING_QUEUE:
-                showBlockingQueue();
-                break;
-            case PRODUCING:
-                blockingQueueGroup.produce(this);
-                break;
-            case CONSUMING:
-                blockingQueueGroup.consume(msg.arg1);
-                break;
-        }
-
     }
 
     private int currentPageIndex = 0;
     private void nextPage() {
-        Gdx.app.postRunnable(() -> {
-            scrollPane.setScrollX(stage.getWidth() * ++currentPageIndex);
-        });
+        Gdx.app.postRunnable(() ->
+                scrollPane.setScrollX(stage.getWidth() * ++currentPageIndex));
     }
     private void prevPage() {
-        Gdx.app.postRunnable(() -> {
-            scrollPane.setScrollX(stage.getWidth() * --currentPageIndex);
-        });
-    }
-
-    private void showBlockingQueue() {
-        queueIntroGroup.hide();
-        blockingQueueGroup.show();
+        Gdx.app.postRunnable(() ->
+                scrollPane.setScrollX(stage.getWidth() * --currentPageIndex));
     }
 
     @Override
     protected void algorithm() {
-        await();
-
-        await(() -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(START_BLOCKING_QUEUE, 0, -1)));
-
-//        await(() -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1)));
-//        await(() -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(PRODUCING, 1, -1)));
-//        await(() -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(PRODUCING, 2, -1)));
-//        await(() -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(PRODUCING, 3, -1)));
-//        await(() -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(PRODUCING, 4, -1)));
-//
-//        await();
-//
-//        for (int i = 0; i < 30; i++) {
-//            await(() -> {
-//                try {
-//                    sDecodingThreadHandler.sendMessage(
-//                            sDecodingThreadHandler.obtainMessage(CONSUMING,
-//                                    blockingQueueGroup.getBurgerProcessingQueue().getChildren().size - 1, -1));
-//
-//                    Thread.sleep(500);
-//
-//                    sDecodingThreadHandler.sendMessage(
-//                            sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1));
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//
-//
-//            });
-//        }
     }
 }

@@ -39,8 +39,6 @@ public abstract class AlgorithmGroup extends Group {
         this.visualizerBg = visualizerBg;
         setTouchable(Touchable.childrenOnly);
         setSize(stage.getWidth(), stage.getHeight());
-        init();
-
         startThread();
     }
 
