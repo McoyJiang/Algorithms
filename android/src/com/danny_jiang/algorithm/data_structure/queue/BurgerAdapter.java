@@ -56,17 +56,10 @@ public class BurgerAdapter extends AlgorithmAdapter {
             }
         });
 
-        BitmapFont desFont = new BitmapFont(Gdx.files.internal(
-                "data_structure/queue/queue.fnt"));
-        Label.LabelStyle desStyle = new Label.LabelStyle();
-        desStyle.font = desFont;
-        desStyle.fontColor = Color.valueOf("#4A4A4A");
-        stepDescription = new Label("", desStyle);
-        stepDescription.setSize(500, 350);
-        stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
-        stage.addActor(stepDescription);
+        initScrollPane();
+    }
 
+    private void initScrollPane() {
         assetManager = new AssetManager();
         assetManager.load("font/uiskin.json", Skin.class);
         assetManager.finishLoading();
@@ -87,10 +80,10 @@ public class BurgerAdapter extends AlgorithmAdapter {
                         null, null, null);
         scrollPane.setStyle(scrollPaneStyle);
 
-        blockingQueueGroup = new BlockingQueueGroup(stage, stepDescription, visualizerBg);
+        blockingQueueGroup = new BlockingQueueGroup(stage, visualizerBg);
         blockingQueueGroup.init();
 
-        queueIntroGroup = new QueueIntroGroup(stage, stepDescription,  visualizerBg);
+        queueIntroGroup = new QueueIntroGroup(stage, visualizerBg);
         queueIntroGroup.init();
 
         table.add(queueIntroGroup)
@@ -105,11 +98,8 @@ public class BurgerAdapter extends AlgorithmAdapter {
     protected void initData() {
     }
 
-    @Override
-    public void animation(Message msg) {
-    }
-
     private int currentPageIndex = 0;
+
     private void nextPage() {
         Gdx.app.postRunnable(() ->
                 scrollPane.setScrollX(stage.getWidth() * ++currentPageIndex));
@@ -118,8 +108,11 @@ public class BurgerAdapter extends AlgorithmAdapter {
         Gdx.app.postRunnable(() ->
                 scrollPane.setScrollX(stage.getWidth() * --currentPageIndex));
     }
-
     @Override
     protected void algorithm() {
+    }
+
+    @Override
+    public void animation(Message msg) {
     }
 }

@@ -32,10 +32,8 @@ public abstract class AlgorithmGroup extends Group {
     protected Label stepDescription;
     protected final Image visualizerBg;
 
-    public AlgorithmGroup(Stage stage,
-                           Label stepDescription, Image visualizerBg) {
+    public AlgorithmGroup(Stage stage, Image visualizerBg) {
         this.stage = stage;
-        this.stepDescription = stepDescription;
         this.visualizerBg = visualizerBg;
         setTouchable(Touchable.childrenOnly);
         setSize(stage.getWidth(), stage.getHeight());

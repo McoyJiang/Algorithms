@@ -32,8 +32,6 @@ import com.danny_jiang.algorithm.views.BaseGdxActor;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class QueueIntroGroup extends AlgorithmGroup {
     private static final String TAG = QueueIntroGroup.class.getSimpleName();
@@ -66,14 +64,16 @@ public class QueueIntroGroup extends AlgorithmGroup {
     private Label marketLabel;
     private Label queueLabel;
 
-    public QueueIntroGroup(Stage stage,
-                           Label stepDescription, Image visualizerBg) {
-        super(stage, stepDescription, visualizerBg);
+    public QueueIntroGroup(Stage stage, Image visualizerBg) {
+        super(stage, visualizerBg);
+
         demoActors = new ArrayList<>();
     }
 
     public void init() {
         super.init();
+        initDescription();
+
         cashier = new Image(new TextureRegion(
                 new Texture("data_structure/queue/cashier.png")));
         cashier.setSize(100, 100);
@@ -104,6 +104,20 @@ public class QueueIntroGroup extends AlgorithmGroup {
             addActor(button);
             buttonList.add(button);
         }
+    }
+
+    private void initDescription() {
+        BitmapFont desFont = new BitmapFont(Gdx.files.internal(
+                "data_structure/queue/queue.fnt"));
+        Label.LabelStyle desStyle = new Label.LabelStyle();
+        desStyle.font = desFont;
+        desStyle.fontColor = Color.valueOf("#4A4A4A");
+        stepDescription = new Label("", desStyle);
+        stepDescription.setSize(500, 350);
+        stepDescription.setFontScale(2f);
+        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
+        stepDescription.setText("队列的操作就像在超市排队结账\n先到的人先结账走人");
+        addActor(stepDescription);
     }
 
     public void animation(Message msg) {
@@ -168,8 +182,6 @@ public class QueueIntroGroup extends AlgorithmGroup {
     }
 
     private void addLabels() {
-        stepDescription.setText("队列的操作就像在超市排队结账\n先到的人先结账走人");
-
         BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal(
                 "font/big_size.fnt"));
         Label.LabelStyle style = new Label.LabelStyle();
@@ -286,10 +298,6 @@ public class QueueIntroGroup extends AlgorithmGroup {
             sequence.addAction(parallel);
         }
         button.addAction(sequence);
-    }
-
-    public void hide() {
-        Gdx.app.postRunnable(() -> setVisible(false));
     }
 
     public void showQueue() {
