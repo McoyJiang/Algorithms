@@ -17,23 +17,12 @@
   <component name="ChangeListManager">
     <list default="true" id="95903ecf-d556-4cd5-8987-9118fe98856e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/breath_first_search/BreathFirstSearchAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/breath_first_search/BreathFirstSearchAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/QueueIntroGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/QueueIntroGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/heap_sort/HeapSortAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/heap_sort/HeapSortAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/insert_sort/InsertSortAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/insert_sort/InsertSortAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,11 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BurgerAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BurgerAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="843">
-              <caret line="216" column="85" selection-start-line="216" selection-start-column="85" selection-end-line="216" selection-end-column="85" />
+            <state relative-caret-position="52">
+              <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2216#2381#0" expanded="true" />
@@ -82,18 +71,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueueIntroGroup.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueueIntroGroup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/QueueIntroGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="185" column="85" selection-start-line="185" selection-start-column="85" selection-end-line="185" selection-end-column="85" />
+            <state relative-caret-position="218">
+              <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
               <folding>
-                <element signature="e#4202#4365#0" expanded="true" />
-                <element signature="e#4364#4365#0" expanded="true" />
-                <element signature="e#7946#7947#0" expanded="true" />
-                <element signature="e#7979#7980#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#4149#4150#0" expanded="true" />
+                <element signature="e#4195#4196#0" expanded="true" />
+                <element signature="e#4067#4230#0" expanded="true" />
+                <element signature="e#4229#4230#0" expanded="true" />
+                <element signature="e#7028#7029#0" expanded="true" />
+                <element signature="e#7061#7062#0" expanded="true" />
                 <element signature="e#14344#14345#0" expanded="true" />
                 <element signature="e#14405#14406#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlgorithmGroup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-341">
+              <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1824#1987#0" expanded="true" />
+                <element signature="e#1986#1987#0" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
+                <element signature="e#529#530#0" expanded="true" />
+                <element signature="e#2487#2488#0" expanded="true" />
+                <element signature="e#2520#2521#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,8 +112,8 @@
       <file leaf-file-name="AlgorithmAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+            <state relative-caret-position="456">
+              <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
               <folding>
                 <element signature="e#1403#1583#0" expanded="true" />
                 <element signature="e#1582#1583#0" expanded="true" />
@@ -113,26 +123,20 @@
                 <element signature="e#2957#2958#0" expanded="true" />
                 <element signature="e#3024#3025#0" expanded="true" />
                 <element signature="e#3071#3072#0" expanded="true" />
-                <element signature="e#3138#3139#0" expanded="true" />
-                <element signature="e#3185#3186#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlgorithmButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmButton.java">
+      <file leaf-file-name="BlockingQueueGroup.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+            <state relative-caret-position="149">
+              <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1156#1157#0" expanded="true" />
-                <element signature="e#1196#1197#0" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
-                <element signature="e#1283#1284#0" expanded="true" />
-                <element signature="e#1323#1324#0" expanded="true" />
-                <element signature="e#1354#1355#0" expanded="true" />
+                <element signature="e#8829#8830#0" expanded="true" />
+                <element signature="e#8873#8874#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,13 +159,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>columnSizes</find>
-      <find>cellPool</find>
-      <find>algorithmRunnable</find>
-      <find>consumingRunning</find>
       <find>consumeCondition</find>
       <find>drawable</find>
-      <find>sReenterLock</find>
       <find>PRODUCING</find>
       <find>START_CONSUME</find>
       <find>i</find>
@@ -184,7 +183,12 @@
       <find>sDecodingThread</find>
       <find>&gt;&gt;</find>
       <find>scrollPane</find>
+      <find>animation</find>
       <find>next</find>
+      <find>blockingQueueGroup.</find>
+      <find>adapter</find>
+      <find>sReenterLock</find>
+      <find>sDecodingThreadHandler</find>
     </findStrings>
     <replaceStrings>
       <replace>graph</replace>
@@ -2480,7 +2484,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/android/assets/data_structure/LinkedList/robot.xml" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmBall.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortActivity.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/SingleLinkedList.java" />
@@ -2518,8 +2521,6 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueTutorialFragment.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueIntroGroup.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueHorizontalGroup.java" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/quick_sort/QuickSortAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/insert_sort/InsertSortAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/heap_sort/HeapSortAdapter.java" />
@@ -2529,8 +2530,11 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/breath_first_search/BreathFirstSearchAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmButton.java" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/QueueIntroGroup.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java" />
       </list>
     </option>
   </component>
@@ -2728,6 +2732,15 @@
               <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="danny_jiang" type="462c0819:PsiDirectoryNode" />
               <item name="algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="EasyAlgorithm" type="1abcf292:AndroidViewProjectNode" />
+              <item name="android" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="danny_jiang" type="462c0819:PsiDirectoryNode" />
+              <item name="algorithm" type="462c0819:PsiDirectoryNode" />
               <item name="data_structure" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -2818,7 +2831,7 @@
     <property name="DEBUGGABLE_PROCESS" value="com.danny_jiang.algorithm" />
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java&#10;Queue&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java&#10;Link&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListAdapter.java&#10;Android&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml&#10;Algorithm&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.Algorithm&#10;Arr&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java&#10;Insert&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Bubb&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Algor&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/AlgorithmActivity.java&#10;co&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/colors.xml&#10;Qui&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.quick_sort.QuickSortAdapter&#10;Main&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/MainActivity.java&#10;InsertAda&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Bubble&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Ins&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertSortAdapter.java&#10;Insertion&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertionSortTutorialFragment.java&#10;Smar&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/utils/SmartFontGenerator.java&#10;com&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/layout/common_activity_layout.xml" />
+    <property name="SearchEverywhereHistoryKey" value="Block&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java&#10;Queue&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java&#10;Link&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListAdapter.java&#10;Android&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml&#10;Algorithm&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.Algorithm&#10;Arr&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java&#10;Insert&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Bubb&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Algor&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/AlgorithmActivity.java&#10;co&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/colors.xml&#10;Qui&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.quick_sort.QuickSortAdapter&#10;Main&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/MainActivity.java&#10;InsertAda&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Bubble&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Ins&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertSortAdapter.java&#10;Insertion&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertionSortTutorialFragment.java&#10;Smar&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/utils/SmartFontGenerator.java&#10;com&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/layout/common_activity_layout.xml" />
     <property name="android.profiler.active" value="true" />
     <property name="android.project.structure.last.selected" value="android" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -3136,12 +3149,12 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.2681638" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32938075" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32938075" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.47820345" />
+      <window_info anchor="bottom" id="Logcat" order="10" weight="0.19815059" />
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24962519" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.33025098" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.32893" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -3210,7 +3223,7 @@
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.15984148" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.336856" />
     </layout-to-restore>
   </component>
@@ -3304,7 +3317,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java</url>
-          <line>124</line>
+          <line>120</line>
           <properties />
           <option name="timeStamp" value="80" />
         </line-breakpoint>
@@ -3362,13 +3375,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/scenes/scene2d/Stage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="546" column="4" selection-start-line="546" selection-start-column="4" selection-end-line="546" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/queue_person1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3596,22 +3602,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4901#4902#0" expanded="true" />
-            <element signature="e#4951#4952#0" expanded="true" />
-            <element signature="e#5025#5026#0" expanded="true" />
-            <element signature="e#5075#5076#0" expanded="true" />
-            <element signature="e#6804#6805#0" expanded="true" />
-            <element signature="e#6848#6849#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueHorizontalGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="556">
@@ -3716,8 +3706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="73" column="29" selection-start-line="73" selection-start-column="29" selection-end-line="73" selection-end-column="29" />
+        <state relative-caret-position="456">
+          <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
           <folding>
             <element signature="e#1403#1583#0" expanded="true" />
             <element signature="e#1582#1583#0" expanded="true" />
@@ -3727,37 +3717,66 @@
             <element signature="e#2957#2958#0" expanded="true" />
             <element signature="e#3024#3025#0" expanded="true" />
             <element signature="e#3071#3072#0" expanded="true" />
-            <element signature="e#3138#3139#0" expanded="true" />
-            <element signature="e#3185#3186#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java">
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="216" column="85" selection-start-line="216" selection-start-column="85" selection-end-line="216" selection-end-column="85" />
+        <state relative-caret-position="-341">
+          <caret line="34" column="11" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2216#2381#0" expanded="true" />
-            <element signature="e#2380#2381#0" expanded="true" />
-            <element signature="e#2565#2730#0" expanded="true" />
-            <element signature="e#2729#2730#0" expanded="true" />
+            <element signature="e#1824#1987#0" expanded="true" />
+            <element signature="e#1986#1987#0" expanded="true" />
+            <element signature="e#483#484#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+            <element signature="e#2520#2521#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/QueueIntroGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="185" column="85" selection-start-line="185" selection-start-column="85" selection-end-line="185" selection-end-column="85" />
+        <state relative-caret-position="218">
+          <caret line="99" column="16" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
           <folding>
-            <element signature="e#4202#4365#0" expanded="true" />
-            <element signature="e#4364#4365#0" expanded="true" />
-            <element signature="e#7946#7947#0" expanded="true" />
-            <element signature="e#7979#7980#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#4149#4150#0" expanded="true" />
+            <element signature="e#4195#4196#0" expanded="true" />
+            <element signature="e#4067#4230#0" expanded="true" />
+            <element signature="e#4229#4230#0" expanded="true" />
+            <element signature="e#7028#7029#0" expanded="true" />
+            <element signature="e#7061#7062#0" expanded="true" />
             <element signature="e#14344#14345#0" expanded="true" />
             <element signature="e#14405#14406#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="46" column="11" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8829#8830#0" expanded="true" />
+            <element signature="e#8873#8874#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2216#2381#0" expanded="true" />
+            <element signature="e#2380#2381#0" expanded="true" />
+            <element signature="e#2565#2730#0" expanded="true" />
+            <element signature="e#2729#2730#0" expanded="true" />
           </folding>
         </state>
       </provider>

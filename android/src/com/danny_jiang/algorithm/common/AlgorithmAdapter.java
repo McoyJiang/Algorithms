@@ -96,10 +96,6 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         await(beforeWaitCallback, null);
     }
 
-    protected void await(WaitFinishCallback waitFinishCallback) {
-        await(null, waitFinishCallback);
-    }
-
     protected void await(BeforeWaitCallback beforeWaitCallback, WaitFinishCallback waitFinishCallback) {
         try {
             sReenterLock.lock();

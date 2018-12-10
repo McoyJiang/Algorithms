@@ -125,36 +125,36 @@ public class BurgerAdapter extends AlgorithmAdapter {
     @Override
     public void animation(Message msg) {
         switch (msg.what) {
-            case NEXT_PAGE:
-                nextPage();
-                break;
-            case DEMO_IN:
-                queueIntroGroup.demoIn();
-                break;
-            case DEMO_OUT:
-                queueIntroGroup.demoOut();
-                break;
-            case SHOW_QUEUE:
-                queueIntroGroup.showQueue();
-                break;
-            case ENQUEUE:
-                queueIntroGroup.enqueue(msg.arg1);
-                break;
-            case DEQUEUE_VISIBLE:
-                queueIntroGroup.showDequeue();
-                break;
-            case DEQUEUE:
-                queueIntroGroup.dequeue(msg.arg1);
-                break;
-            case START_BLOCKING_QUEUE:
-                showBlockingQueue();
-                break;
-            case PRODUCING:
-                blockingQueueGroup.produce(this);
-                break;
-            case CONSUMING:
-                blockingQueueGroup.consume(msg.arg1);
-                break;
+//            case NEXT_PAGE:
+//                nextPage();
+//                break;
+//            case DEMO_IN:
+//                queueIntroGroup.demoIn();
+//                break;
+//            case DEMO_OUT:
+//                queueIntroGroup.demoOut();
+//                break;
+//            case SHOW_QUEUE:
+//                queueIntroGroup.showQueue();
+//                break;
+//            case ENQUEUE:
+//                queueIntroGroup.enqueue(msg.arg1);
+//                break;
+//            case DEQUEUE_VISIBLE:
+//                queueIntroGroup.showDequeue();
+//                break;
+//            case DEQUEUE:
+//                queueIntroGroup.dequeue(msg.arg1);
+//                break;
+//            case START_BLOCKING_QUEUE:
+//                showBlockingQueue();
+//                break;
+//            case PRODUCING:
+//                blockingQueueGroup.produce(this);
+//                break;
+//            case CONSUMING:
+//                blockingQueueGroup.consume(msg.arg1);
+//                break;
         }
 
     }
@@ -180,72 +180,39 @@ public class BurgerAdapter extends AlgorithmAdapter {
     protected void algorithm() {
         await();
 
-        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(NEXT_PAGE, 0, 0)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(START_BLOCKING_QUEUE, 0, -1)));
 
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(DEMO_IN, 0, 0)));
+//        await(() -> sDecodingThreadHandler.sendMessage(
+//                sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1)));
+//        await(() -> sDecodingThreadHandler.sendMessage(
+//                sDecodingThreadHandler.obtainMessage(PRODUCING, 1, -1)));
+//        await(() -> sDecodingThreadHandler.sendMessage(
+//                sDecodingThreadHandler.obtainMessage(PRODUCING, 2, -1)));
+//        await(() -> sDecodingThreadHandler.sendMessage(
+//                sDecodingThreadHandler.obtainMessage(PRODUCING, 3, -1)));
+//        await(() -> sDecodingThreadHandler.sendMessage(
+//                sDecodingThreadHandler.obtainMessage(PRODUCING, 4, -1)));
 //
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(DEMO_OUT, 0, 0)));
-
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(SHOW_QUEUE, 0, 0)));
+//        await();
 //
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(ENQUEUE, 0, -1)));
+//        for (int i = 0; i < 30; i++) {
+//            await(() -> {
+//                try {
+//                    sDecodingThreadHandler.sendMessage(
+//                            sDecodingThreadHandler.obtainMessage(CONSUMING,
+//                                    blockingQueueGroup.getBurgerProcessingQueue().getChildren().size - 1, -1));
 //
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(ENQUEUE, 1, -1)));
+//                    Thread.sleep(500);
 //
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(ENQUEUE, 2, -1)));
+//                    sDecodingThreadHandler.sendMessage(
+//                            sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1));
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
 //
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(DEQUEUE_VISIBLE, 2, -1)));
 //
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(DEQUEUE, 0, -1)));
-//
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(DEQUEUE, 1, -1)));
-//
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(DEQUEUE, 2, -1)));
-//
-//        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-//                sDecodingThreadHandler.obtainMessage(START_BLOCKING_QUEUE, 0, -1)));
-
-        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1)));
-        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(PRODUCING, 1, -1)));
-        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(PRODUCING, 2, -1)));
-        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(PRODUCING, 3, -1)));
-        await((BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(PRODUCING, 4, -1)));
-
-        await();
-
-        for (int i = 0; i < 30; i++) {
-            await((BeforeWaitCallback) () -> {
-                try {
-                    sDecodingThreadHandler.sendMessage(
-                            sDecodingThreadHandler.obtainMessage(CONSUMING,
-                                    blockingQueueGroup.getBurgerProcessingQueue().getChildren().size - 1, -1));
-
-                    Thread.sleep(500);
-
-                    sDecodingThreadHandler.sendMessage(
-                            sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-
-            });
-        }
+//            });
+//        }
     }
 }

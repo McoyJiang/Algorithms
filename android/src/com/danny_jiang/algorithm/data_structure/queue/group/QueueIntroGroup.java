@@ -97,7 +97,7 @@ public class QueueIntroGroup extends Group {
         sDecodingThreadHandler = new Handler(sDecodingThread.getLooper()) {
             @Override
             public void handleMessage(Message msg) {
-                adapter.animation(msg);
+                animation(msg);
             }
         };
         new Thread(algorithmRunnable).start();
@@ -152,37 +152,61 @@ public class QueueIntroGroup extends Group {
         }
     }
 
+    public void animation(Message msg) {
+        switch (msg.what) {
+            case DEMO_IN:
+                demoIn();
+                break;
+            case DEMO_OUT:
+                demoOut();
+                break;
+            case SHOW_QUEUE:
+                showQueue();
+                break;
+            case ENQUEUE:
+                enqueue(msg.arg1);
+                break;
+            case DEQUEUE_VISIBLE:
+                showDequeue();
+                break;
+            case DEQUEUE:
+                dequeue(msg.arg1);
+                break;
+        }
+
+    }
+
     private void algorithm() {
         await();
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(DEMO_IN, 0, 0)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(DEMO_OUT, 0, 0)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(SHOW_QUEUE, 0, 0)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(ENQUEUE, 0, -1)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(ENQUEUE, 1, -1)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(ENQUEUE, 2, -1)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(DEQUEUE_VISIBLE, 2, -1)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(DEQUEUE, 0, -1)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+        await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(DEQUEUE, 1, -1)));
 
-        await((AlgorithmAdapter.BeforeWaitCallback) () -> {
+        await(() -> {
             Gdx.app.postRunnable(() -> nextStepBtn.setBackgroundColor(Color.valueOf("#b9babd")));
             sDecodingThreadHandler.sendMessage(
                     sDecodingThreadHandler.obtainMessage(DEQUEUE, 2, -1));
