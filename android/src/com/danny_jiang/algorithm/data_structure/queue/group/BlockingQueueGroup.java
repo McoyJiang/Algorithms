@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveByAction;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
@@ -37,7 +38,9 @@ public class BlockingQueueGroup extends Group {
             "data_structure/queue/burger5.png"
     };
 
-    private QueueHorizontalGroup blockingQueueGroup;
+    private List<Image> burgerImageList = new ArrayList<>();
+
+    private QueueHorizontalGroup burgerProcessingQueue;
     private AlgorithmButton produceQueueGroup;
     private AlgorithmButton consumeQueueGroup;
 
@@ -45,28 +48,29 @@ public class BlockingQueueGroup extends Group {
         this.stage = stage;
         this.stepDescription = stepDescription;
         this.visualizerBg = visualizerBg;
+        setTouchable(Touchable.childrenOnly);
+        setSize(stage.getWidth(), stage.getHeight());
+        init();
     }
 
     public void init() {
-        blockingQueueGroup = new QueueHorizontalGroup();
-        blockingQueueGroup.setVisible(false);
-        blockingQueueGroup.setBackgroundColor(Color.valueOf("#B0B2AE"));
-        blockingQueueGroup.space(30);
-        blockingQueueGroup.center();
-        blockingQueueGroup.setSize(visualizerBg.getWidth() - 100, visualizerBg.getHeight() / 2 - 20);
-        blockingQueueGroup.setPosition(visualizerBg.getX() + 50,
-                visualizerBg.getY() + blockingQueueGroup.getHeight() - 20);
-        blockingQueueGroup.setOriginX(blockingQueueGroup.getX() + blockingQueueGroup.getWidth() / 2);
-        blockingQueueGroup.setOriginY(blockingQueueGroup.getY() + blockingQueueGroup.getHeight() / 2);
+        burgerProcessingQueue = new QueueHorizontalGroup();
+        burgerProcessingQueue.setBackgroundColor(Color.valueOf("#B0B2AE"));
+        burgerProcessingQueue.space(30);
+        burgerProcessingQueue.center();
+        burgerProcessingQueue.setSize(visualizerBg.getWidth() - 100, visualizerBg.getHeight() / 2 - 20);
+        burgerProcessingQueue.setPosition(visualizerBg.getX() + 50,
+                visualizerBg.getY() + burgerProcessingQueue.getHeight() - 20);
+        burgerProcessingQueue.setOriginX(burgerProcessingQueue.getX() + burgerProcessingQueue.getWidth() / 2);
+        burgerProcessingQueue.setOriginY(burgerProcessingQueue.getY() + burgerProcessingQueue.getHeight() / 2);
 
         produceQueueGroup = new AlgorithmButton("Producer");
         produceQueueGroup.setBackgroundColor(Color.valueOf("#66cdaa"));
         produceQueueGroup.setSize(360, 260);
-        produceQueueGroup.setPosition(blockingQueueGroup.getX(), visualizerBg.getY() + 15);
+        produceQueueGroup.setPosition(burgerProcessingQueue.getX(), visualizerBg.getY() + 15);
         produceQueueGroup.setOrigin(produceQueueGroup.getX() + produceQueueGroup.getWidth() / 2,
                 produceQueueGroup.getY() + produceQueueGroup.getHeight() / 2);
         addActor(produceQueueGroup);
-        produceQueueGroup.setVisible(false);
 
         consumeQueueGroup = new AlgorithmButton("Consumer");
         consumeQueueGroup.setBackgroundColor(Color.valueOf("#f97e77"));
@@ -76,17 +80,16 @@ public class BlockingQueueGroup extends Group {
         consumeQueueGroup.setOrigin(consumeQueueGroup.getX() + consumeQueueGroup.getWidth() / 2,
                 consumeQueueGroup.getY() + consumeQueueGroup.getHeight() / 2);
         addActor(consumeQueueGroup);
-        consumeQueueGroup.setVisible(false);
 
-        addActor(blockingQueueGroup);
+        addActor(burgerProcessingQueue);
     }
 
     public void consume(final int i) {
         Gdx.app.postRunnable(() -> {
-            Image button = imageList.remove(i);
+            Image button = burgerImageList.remove(i);
             MoveByAction firstMove = Actions.moveBy(
                     consumeQueueGroup.getOriginX() - button.getX() - button.getWidth() / 2,
-                    consumeQueueGroup.getOriginY() - blockingQueueGroup.getOriginY());
+                    consumeQueueGroup.getOriginY() - burgerProcessingQueue.getOriginY());
             firstMove.setDuration(0.5f);
             MoveByAction secondMove = Actions.moveBy(stage.getWidth(), 0);
             secondMove.setDuration(0.5f);
@@ -98,8 +101,6 @@ public class BlockingQueueGroup extends Group {
             button.addAction(sequence);
         });
     }
-
-    private List<Image> imageList = new ArrayList<>();
 
     public void produce(final AlgorithmAdapter adapter) {
         Gdx.app.postRunnable(() -> {
@@ -115,14 +116,14 @@ public class BlockingQueueGroup extends Group {
                 }
             };
             button.setZIndex(1000);
-            imageList.add(0, button);
+            burgerImageList.add(0, button);
             button.setSize(120, 120);
             button.setPosition(produceQueueGroup.getOriginX() - button.getWidth() / 2,
                     produceQueueGroup.getOriginY() - button.getHeight() / 2);
-            stage.addActor(button);
+            addActor(button);
 
-            MoveToAction firstMove = Actions.moveTo(blockingQueueGroup.getX(),
-                    blockingQueueGroup.getY() - button.getHeight() / 2);
+            MoveToAction firstMove = Actions.moveTo(burgerProcessingQueue.getX(),
+                    burgerProcessingQueue.getY() - button.getHeight() / 2);
             firstMove.setDuration(0.5f);
 
             Point point = getGroupPosition();
@@ -130,7 +131,7 @@ public class BlockingQueueGroup extends Group {
             secondMove.setDuration(0.5f);
 
             SequenceAction sequence = Actions.sequence(firstMove, Actions.delay(0.1f),
-                    secondMove, Actions.run(() -> blockingQueueGroup.addActorAt(0, button)),
+                    secondMove, Actions.run(() -> burgerProcessingQueue.addActorAt(0, button)),
                     Actions.run(() -> adapter.signal()));
 
             button.addAction(sequence);
@@ -139,20 +140,22 @@ public class BlockingQueueGroup extends Group {
 
     private Point getGroupPosition() {
         Point position = new Point();
-        if (blockingQueueGroup.getChildren().size == 0) {
-            position.x = (int) blockingQueueGroup.getOriginX() - 60;
-            position.y = (int) blockingQueueGroup.getOriginY() - 60;
+        if (burgerProcessingQueue.getChildren().size == 0) {
+            position.x = (int) burgerProcessingQueue.getOriginX() - 60;
+            position.y = (int) burgerProcessingQueue.getOriginY() - 60;
         } else {
-            Image image = (Image) blockingQueueGroup.getChildren().get(0);
+            Image image = (Image) burgerProcessingQueue.getChildren().get(0);
             position.x = (int) (image.getX() - image.getWidth() / 2);
-            position.y = (int) (blockingQueueGroup.getY() + image.getY());
+            position.y = (int) (burgerProcessingQueue.getY() + image.getY());
         }
         return position;
     }
 
     public void show() {
-        blockingQueueGroup.setVisible(true);
-        produceQueueGroup.setVisible(true);
-        consumeQueueGroup.setVisible(true);
+        Gdx.app.postRunnable(() -> setVisible(true));
+    }
+
+    public QueueHorizontalGroup getBurgerProcessingQueue() {
+        return burgerProcessingQueue;
     }
 }
