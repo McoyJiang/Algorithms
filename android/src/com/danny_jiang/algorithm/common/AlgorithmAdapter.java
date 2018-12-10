@@ -115,7 +115,7 @@ public abstract class AlgorithmAdapter extends ApplicationAdapter {
         }
     }
 
-    protected void signal() {
+    public void signal() {
         sReenterLock.lock();
         sCondition.signal();
         sReenterLock.unlock();
