@@ -90,7 +90,7 @@ public class QueueIntroGroup extends Group {
             button.setSize(250, 100);
             button.setBackgroundColor(Color.valueOf(colorList[i]));
             button.setPosition(-250, stage.getHeight() - 200);
-            stage.addActor(button);
+            addActor(button);
             buttonList.add(button);
         }
     }
