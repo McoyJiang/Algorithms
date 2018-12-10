@@ -1,10 +1,12 @@
 package com.danny_jiang.algorithm.data_structure.queue.group;
 
 import android.graphics.Point;
+import android.os.Message;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -15,19 +17,18 @@ import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.common.AlgorithmButton;
+import com.danny_jiang.algorithm.common.AlgorithmGroup;
 import com.danny_jiang.algorithm.data_structure.queue.QueueHorizontalGroup;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class BlockingQueueGroup extends Group {
+public class BlockingQueueGroup extends AlgorithmGroup {
 
-    private Stage stage;
-    private Label stepDescription;
-    private final Image visualizerBg;
+    public static final int PRODUCING = 7;
+    public static final int CONSUMING = 8;
 
     private Random random = new Random();
     private String[] burger_list = new String[]{
@@ -44,16 +45,13 @@ public class BlockingQueueGroup extends Group {
     private AlgorithmButton produceQueueGroup;
     private AlgorithmButton consumeQueueGroup;
 
-    public BlockingQueueGroup(Stage stage, Label stepDescription, Image visualizerBg) {
-        this.stage = stage;
-        this.stepDescription = stepDescription;
-        this.visualizerBg = visualizerBg;
-        setTouchable(Touchable.childrenOnly);
-        setSize(stage.getWidth(), stage.getHeight());
-        init();
+    public BlockingQueueGroup(Stage stage,  Image visualizerBg) {
+        super(stage, visualizerBg);
     }
 
     public void init() {
+        super.init();
+        initDescription();
         burgerProcessingQueue = new QueueHorizontalGroup();
         burgerProcessingQueue.setBackgroundColor(Color.valueOf("#B0B2AE"));
         burgerProcessingQueue.space(30);
@@ -84,6 +82,71 @@ public class BlockingQueueGroup extends Group {
         addActor(burgerProcessingQueue);
     }
 
+    private void initDescription() {
+        BitmapFont desFont = new BitmapFont(Gdx.files.internal(
+                "data_structure/queue/queue.fnt"));
+        Label.LabelStyle desStyle = new Label.LabelStyle();
+        desStyle.font = desFont;
+        desStyle.fontColor = Color.valueOf("#4A4A4A");
+        stepDescription = new Label("", desStyle);
+        stepDescription.setSize(500, 350);
+        stepDescription.setFontScale(2f);
+        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
+        stepDescription.setText("比如一个容量为5的阻塞队列\n" +
+                "当其内部元素size已经为5时\n" +
+                "插入操作会进入等待状态");
+        addActor(stepDescription);
+    }
+
+    @Override
+    protected void animation(Message msg) {
+        switch (msg.what) {
+            case PRODUCING:
+                produce();
+                break;
+            case CONSUMING:
+                consume(msg.arg1);
+                break;
+        }
+    }
+
+    @Override
+    protected void algorithm() {
+        await();
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(PRODUCING, 1, -1)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(PRODUCING, 2, -1)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(PRODUCING, 3, -1)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(PRODUCING, 4, -1)));
+
+        await();
+
+        for (int i = 0; i < 30; i++) {
+            await(() -> {
+                try {
+                    sDecodingThreadHandler.sendMessage(
+                            sDecodingThreadHandler.obtainMessage(CONSUMING,
+                                    getBurgerProcessingQueue().getChildren().size - 1, -1));
+
+                    Thread.sleep(500);
+
+                    sDecodingThreadHandler.sendMessage(
+                            sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+            });
+        }
+    }
+
     public void consume(final int i) {
         Gdx.app.postRunnable(() -> {
             stepDescription.setText("当内部元素size小于5时\n" +
@@ -105,7 +168,7 @@ public class BlockingQueueGroup extends Group {
         });
     }
 
-    public void produce(final AlgorithmAdapter adapter) {
+    public void produce() {
         Gdx.app.postRunnable(() -> {
             Image button = new Image(new Texture(burger_list[random.nextInt(5)])) {
                 @Override
@@ -135,7 +198,7 @@ public class BlockingQueueGroup extends Group {
 
             SequenceAction sequence = Actions.sequence(firstMove, Actions.delay(0.1f),
                     secondMove, Actions.run(() -> burgerProcessingQueue.addActorAt(0, button)),
-                    Actions.run(() -> adapter.signal()));
+                    Actions.run(() -> signal()));
 
             button.addAction(sequence);
         });
@@ -152,15 +215,6 @@ public class BlockingQueueGroup extends Group {
             position.y = (int) (burgerProcessingQueue.getY() + image.getY());
         }
         return position;
-    }
-
-    public void show() {
-        Gdx.app.postRunnable(() -> {
-            setVisible(true);
-            stepDescription.setText("比如一个容量为5的阻塞队列\n" +
-                    "当其内部元素size已经为5时\n" +
-                    "插入操作会进入等待状态");
-        });
     }
 
     public QueueHorizontalGroup getBurgerProcessingQueue() {

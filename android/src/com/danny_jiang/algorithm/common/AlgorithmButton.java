@@ -42,6 +42,10 @@ public class AlgorithmButton extends BaseGdxActor {
         bitmapFont.setColor(color);
     }
 
+    public void setText(String text) {
+        this.text = text;
+    }
+
     @Override
     public void draw(Batch batch, float parentAlpha) {
         try {

@@ -119,7 +119,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
     }
 
     @Override
-    protected void animation(Message msg) {
+    public void animation(Message msg) {
         final int first = msg.arg1;
         final int second = msg.arg2;
         switch (msg.what) {

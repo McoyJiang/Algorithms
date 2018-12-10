@@ -1,5 +1,9 @@
 package com.danny_jiang.algorithm.data_structure.queue.group;
 
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
+import android.os.Process;
 import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
@@ -9,6 +13,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -18,16 +23,25 @@ import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.common.AlgorithmButton;
+import com.danny_jiang.algorithm.common.AlgorithmGroup;
 import com.danny_jiang.algorithm.data_structure.queue.QueueContainer;
 import com.danny_jiang.algorithm.views.BaseGdxActor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueueIntroGroup extends Group {
-
+public class QueueIntroGroup extends AlgorithmGroup {
     private static final String TAG = QueueIntroGroup.class.getSimpleName();
+    public static final int DEMO_IN = 1;
+    public static final int DEMO_OUT = 2;
+    public static final int SHOW_QUEUE = 3;
+    public static final int ENQUEUE = 4;
+    public static final int DEQUEUE_VISIBLE = 5;
+    public static final int DEQUEUE = 6;
+
     private static final String[] person_list = new String[]{
             "data_structure/queue/queue_person1.png",
             "data_structure/queue/queue_person2.png",
@@ -35,12 +49,8 @@ public class QueueIntroGroup extends Group {
             "data_structure/queue/queue_person4.png"
     };
 
-    private Stage stage;
-    private Label stepDescription;
-    private final Image visualizerBg;
-
     private Image cashier;
-    private List<Actor> demoActors = new ArrayList<>();
+    private List<Actor> demoActors;
     // person used to show people in SuperMarket
     private QueueContainer queueContainer;
 
@@ -54,15 +64,16 @@ public class QueueIntroGroup extends Group {
     private Label marketLabel;
     private Label queueLabel;
 
-    public QueueIntroGroup(Stage stage, Label stepDescription, Image visualizerBg) {
-        this.stage = stage;
-        this.stepDescription = stepDescription;
-        this.visualizerBg = visualizerBg;
-        setTouchable(Touchable.childrenOnly);
-        setSize(stage.getWidth(), stage.getHeight());
-        init();
+    public QueueIntroGroup(Stage stage, Image visualizerBg) {
+        super(stage, visualizerBg);
+
+        demoActors = new ArrayList<>();
     }
+
     public void init() {
+        super.init();
+        initDescription();
+
         cashier = new Image(new TextureRegion(
                 new Texture("data_structure/queue/cashier.png")));
         cashier.setSize(100, 100);
@@ -95,9 +106,82 @@ public class QueueIntroGroup extends Group {
         }
     }
 
-    private void addLabels() {
+    private void initDescription() {
+        BitmapFont desFont = new BitmapFont(Gdx.files.internal(
+                "data_structure/queue/queue.fnt"));
+        Label.LabelStyle desStyle = new Label.LabelStyle();
+        desStyle.font = desFont;
+        desStyle.fontColor = Color.valueOf("#4A4A4A");
+        stepDescription = new Label("", desStyle);
+        stepDescription.setSize(500, 350);
+        stepDescription.setFontScale(2f);
+        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
         stepDescription.setText("队列的操作就像在超市排队结账\n先到的人先结账走人");
+        addActor(stepDescription);
+    }
 
+    public void animation(Message msg) {
+        switch (msg.what) {
+            case DEMO_IN:
+                demoIn();
+                break;
+            case DEMO_OUT:
+                demoOut();
+                break;
+            case SHOW_QUEUE:
+                showQueue();
+                break;
+            case ENQUEUE:
+                enqueue(msg.arg1);
+                break;
+            case DEQUEUE_VISIBLE:
+                showDequeue();
+                break;
+            case DEQUEUE:
+                dequeue(msg.arg1);
+                break;
+        }
+
+    }
+
+    public void algorithm() {
+        await();
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEMO_IN, 0, 0)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEMO_OUT, 0, 0)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(SHOW_QUEUE, 0, 0)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ENQUEUE, 0, -1)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ENQUEUE, 1, -1)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ENQUEUE, 2, -1)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEQUEUE_VISIBLE, 2, -1)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEQUEUE, 0, -1)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEQUEUE, 1, -1)));
+
+        await(() -> {
+            Gdx.app.postRunnable(() -> nextStepBtn.setBackgroundColor(Color.valueOf("#b9babd")));
+            sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(DEQUEUE, 2, -1));
+        });
+    }
+
+    private void addLabels() {
         BitmapFont bitmapFont = new BitmapFont(Gdx.files.internal(
                 "font/big_size.fnt"));
         Label.LabelStyle style = new Label.LabelStyle();
@@ -214,10 +298,6 @@ public class QueueIntroGroup extends Group {
             sequence.addAction(parallel);
         }
         button.addAction(sequence);
-    }
-
-    public void hide() {
-        Gdx.app.postRunnable(() -> setVisible(false));
     }
 
     public void showQueue() {

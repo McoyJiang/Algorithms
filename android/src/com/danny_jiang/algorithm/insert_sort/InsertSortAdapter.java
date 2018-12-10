@@ -82,7 +82,7 @@ public class InsertSortAdapter extends AlgorithmAdapter{
     }
 
     @Override
-    protected void animation(Message msg) {
+    public void animation(Message msg) {
         final int index = msg.arg1;
         final int second = msg.arg2;
         Object obj = msg.obj;

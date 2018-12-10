@@ -107,7 +107,7 @@ public class StackAdapter extends AlgorithmAdapter {
     }
 
     @Override
-    protected void animation(Message msg) {
+    public void animation(Message msg) {
         switch (msg.what) {
             case PUSH_VISIBLE:
                 Gdx.app.postRunnable(() -> {
