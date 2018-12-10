@@ -145,7 +145,7 @@ public class BreathFirstSearchAdapter extends AlgorithmAdapter{
     }
 
     @Override
-    protected void animation(Message msg) {
+    public void animation(Message msg) {
         final int index = msg.arg1;
         Log.e(TAG, "animation: index is " + index);
         final LinkedList<Integer> linkedList = (LinkedList<Integer>) msg.obj;

@@ -1,5 +1,9 @@
 package com.danny_jiang.algorithm.data_structure.queue.group;
 
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Message;
+import android.os.Process;
 import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
@@ -9,6 +13,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -18,12 +23,23 @@ import com.badlogic.gdx.scenes.scene2d.actions.ParallelAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.common.AlgorithmButton;
 import com.danny_jiang.algorithm.data_structure.queue.QueueContainer;
 import com.danny_jiang.algorithm.views.BaseGdxActor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
+import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEMO_IN;
+import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEMO_OUT;
+import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEQUEUE;
+import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEQUEUE_VISIBLE;
+import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.ENQUEUE;
+import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.SHOW_QUEUE;
 
 public class QueueIntroGroup extends Group {
 
@@ -34,6 +50,7 @@ public class QueueIntroGroup extends Group {
             "data_structure/queue/queue_person3.png",
             "data_structure/queue/queue_person4.png"
     };
+    private final AlgorithmAdapter adapter;
 
     private Stage stage;
     private Label stepDescription;
@@ -54,15 +71,55 @@ public class QueueIntroGroup extends Group {
     private Label marketLabel;
     private Label queueLabel;
 
-    public QueueIntroGroup(Stage stage, Label stepDescription, Image visualizerBg) {
+    private HandlerThread sDecodingThread;
+    private Handler sDecodingThreadHandler;
+    private Runnable algorithmRunnable = this::algorithm;
+    private ReentrantLock sReenterLock = new ReentrantLock(true);
+    private Condition sCondition = sReenterLock.newCondition();
+
+    public QueueIntroGroup(AlgorithmAdapter adapter, Stage stage,
+                           Label stepDescription, Image visualizerBg) {
+        this.adapter = adapter;
         this.stage = stage;
         this.stepDescription = stepDescription;
         this.visualizerBg = visualizerBg;
         setTouchable(Touchable.childrenOnly);
         setSize(stage.getWidth(), stage.getHeight());
         init();
+
+        initThread();
     }
+
+    private void initThread() {
+        sDecodingThread = new HandlerThread("FrameSequence decoding thread",
+                Process.THREAD_PRIORITY_BACKGROUND);
+        sDecodingThread.start();
+        sDecodingThreadHandler = new Handler(sDecodingThread.getLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+                adapter.animation(msg);
+            }
+        };
+        new Thread(algorithmRunnable).start();
+    }
+
+
+    // Common widget
+    AlgorithmButton nextStepBtn;
+
     public void init() {
+        nextStepBtn = new AlgorithmButton(">");
+        nextStepBtn.setBackgroundColor(Color.valueOf("#36802d"));
+        nextStepBtn.setSize(200, 100);
+        nextStepBtn.setPosition(stage.getWidth() / 2, 10);
+        addActor(nextStepBtn);
+        nextStepBtn.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                signal();
+            }
+        });
+
         cashier = new Image(new TextureRegion(
                 new Texture("data_structure/queue/cashier.png")));
         cashier.setSize(100, 100);
@@ -93,6 +150,72 @@ public class QueueIntroGroup extends Group {
             addActor(button);
             buttonList.add(button);
         }
+    }
+
+    private void algorithm() {
+        await();
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEMO_IN, 0, 0)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEMO_OUT, 0, 0)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(SHOW_QUEUE, 0, 0)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ENQUEUE, 0, -1)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ENQUEUE, 1, -1)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(ENQUEUE, 2, -1)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEQUEUE_VISIBLE, 2, -1)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEQUEUE, 0, -1)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DEQUEUE, 1, -1)));
+
+        await((AlgorithmAdapter.BeforeWaitCallback) () -> {
+            Gdx.app.postRunnable(() -> nextStepBtn.setBackgroundColor(Color.valueOf("#b9babd")));
+            sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(DEQUEUE, 2, -1));
+        });
+    }
+
+    protected void await() {
+        await(null, null);
+    }
+
+    protected void await(AlgorithmAdapter.BeforeWaitCallback beforeWaitCallback) {
+        await(beforeWaitCallback, null);
+    }
+
+    protected void await(AlgorithmAdapter.BeforeWaitCallback beforeWaitCallback, AlgorithmAdapter.WaitFinishCallback waitFinishCallback) {
+        try {
+            sReenterLock.lock();
+            if (beforeWaitCallback != null)
+                beforeWaitCallback.beforeWait();
+            sCondition.await();
+            if (waitFinishCallback != null)
+                waitFinishCallback.waitInterrupt();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            sReenterLock.unlock();
+        }
+    }
+
+    public void signal() {
+        sReenterLock.lock();
+        sCondition.signal();
+        sReenterLock.unlock();
     }
 
     private void addLabels() {

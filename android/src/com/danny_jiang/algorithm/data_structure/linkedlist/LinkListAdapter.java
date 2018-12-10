@@ -54,7 +54,7 @@ class LinkListAdapter extends AlgorithmAdapter {
     }
 
     @Override
-    protected void animation(Message msg) {
+    public void animation(Message msg) {
         switch (msg.what) {
             case ADD_TO_HEAD:
                 addNodeToHead(msg.arg1);

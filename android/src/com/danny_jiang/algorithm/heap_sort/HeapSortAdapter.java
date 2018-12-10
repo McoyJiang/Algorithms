@@ -46,7 +46,7 @@ public class HeapSortAdapter extends AlgorithmAdapter{
     }
 
     @Override
-    protected void animation(Message msg) {
+    public void animation(Message msg) {
 
     }
 
