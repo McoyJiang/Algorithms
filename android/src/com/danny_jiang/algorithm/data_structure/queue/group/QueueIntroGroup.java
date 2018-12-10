@@ -34,16 +34,15 @@ import java.util.List;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEMO_IN;
-import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEMO_OUT;
-import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEQUEUE;
-import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.DEQUEUE_VISIBLE;
-import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.ENQUEUE;
-import static com.danny_jiang.algorithm.data_structure.queue.BurgerAdapter.SHOW_QUEUE;
-
 public class QueueIntroGroup extends Group {
-
     private static final String TAG = QueueIntroGroup.class.getSimpleName();
+    public static final int DEMO_IN = 1;
+    public static final int DEMO_OUT = 2;
+    public static final int SHOW_QUEUE = 3;
+    public static final int ENQUEUE = 4;
+    public static final int DEQUEUE_VISIBLE = 5;
+    public static final int DEQUEUE = 6;
+
     private static final String[] person_list = new String[]{
             "data_structure/queue/queue_person1.png",
             "data_structure/queue/queue_person2.png",

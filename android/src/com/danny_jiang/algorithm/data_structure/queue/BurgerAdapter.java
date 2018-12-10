@@ -26,22 +26,11 @@ import com.danny_jiang.algorithm.common.AlgorithmButton;
 import com.danny_jiang.algorithm.data_structure.queue.group.BlockingQueueGroup;
 import com.danny_jiang.algorithm.data_structure.queue.group.QueueIntroGroup;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 public class BurgerAdapter extends AlgorithmAdapter {
 
-    public static final int DEMO_IN = 1;
-    public static final int DEMO_OUT = 2;
-    public static final int SHOW_QUEUE = 3;
-    public static final int ENQUEUE = 4;
-    public static final int DEQUEUE_VISIBLE = 5;
-    public static final int DEQUEUE = 6;
     public static final int PRODUCING = 7;
     public static final int CONSUMING = 8;
     public static final int START_BLOCKING_QUEUE = 9;
-    public static final int NEXT_PAGE = 10;
 
     private Label stepDescription;
 
@@ -125,9 +114,6 @@ public class BurgerAdapter extends AlgorithmAdapter {
     @Override
     public void animation(Message msg) {
         switch (msg.what) {
-//            case NEXT_PAGE:
-//                nextPage();
-//                break;
 //            case DEMO_IN:
 //                queueIntroGroup.demoIn();
 //                break;
@@ -146,15 +132,15 @@ public class BurgerAdapter extends AlgorithmAdapter {
 //            case DEQUEUE:
 //                queueIntroGroup.dequeue(msg.arg1);
 //                break;
-//            case START_BLOCKING_QUEUE:
-//                showBlockingQueue();
-//                break;
-//            case PRODUCING:
-//                blockingQueueGroup.produce(this);
-//                break;
-//            case CONSUMING:
-//                blockingQueueGroup.consume(msg.arg1);
-//                break;
+            case START_BLOCKING_QUEUE:
+                showBlockingQueue();
+                break;
+            case PRODUCING:
+                blockingQueueGroup.produce(this);
+                break;
+            case CONSUMING:
+                blockingQueueGroup.consume(msg.arg1);
+                break;
         }
 
     }
