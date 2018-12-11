@@ -7,7 +7,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -17,6 +19,8 @@ import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.danny_jiang.algorithm.common.AlgorithmButton;
 import com.danny_jiang.algorithm.common.AlgorithmGroup;
 import com.danny_jiang.algorithm.data_structure.queue.QueueHorizontalGroup;
@@ -27,8 +31,13 @@ import java.util.Random;
 
 public class BlockingQueueGroup extends AlgorithmGroup {
 
-    public static final int PRODUCING = 7;
-    public static final int CONSUMING = 8;
+    public static final int PRODUCING = 1;
+    public static final int CONSUMING = 2;
+    private static final int DES_1 = 3;
+    private static final int DES_2 = 4;
+    private static final int START_PRODUCING = 5;
+    private static final int FINISH = 6;
+    private static final int BEFORE_FINISH = 7;
 
     private Random random = new Random();
     private String[] burger_list = new String[]{
@@ -41,6 +50,8 @@ public class BlockingQueueGroup extends AlgorithmGroup {
 
     private List<Image> burgerImageList = new ArrayList<>();
 
+    private Image blockingQueueImage;
+    private Image muiltThreadImage;
     private QueueHorizontalGroup burgerProcessingQueue;
     private AlgorithmButton produceQueueGroup;
     private AlgorithmButton consumeQueueGroup;
@@ -80,9 +91,40 @@ public class BlockingQueueGroup extends AlgorithmGroup {
         addActor(consumeQueueGroup);
 
         addActor(burgerProcessingQueue);
+
+        blockingQueueImage = new Image(new TextureRegion(
+                new Texture("data_structure/queue/blocking-queue.png")));
+        blockingQueueImage.setSize(visualizerBg.getWidth() - 20,
+                visualizerBg.getHeight() / 2);
+        blockingQueueImage.setPosition(visualizerBg.getX() + 10,
+                visualizerBg.getY() + visualizerBg.getHeight() / 4);
+        addActor(blockingQueueImage);
+        muiltThreadImage = new Image(new TextureRegion(
+                new Texture("data_structure/queue/multi-thread.jpeg")));
+        muiltThreadImage.setSize(visualizerBg.getWidth() - 20,
+                visualizerBg.getHeight() - 200);
+        muiltThreadImage.setPosition(visualizerBg.getX() + 10,
+                visualizerBg.getY() + 100);
+        addActor(muiltThreadImage);
+        muiltThreadImage.setVisible(false);
+
+        produceQueueGroup.setVisible(false);
+        consumeQueueGroup.setVisible(false);
+        burgerProcessingQueue.setVisible(false);
     }
 
     private void initDescription() {
+        BitmapFont bigFont = new BitmapFont(Gdx.files.internal(
+                "font/big_size.fnt"));
+        Label.LabelStyle bigStyle = new Label.LabelStyle();
+        bigStyle.font = bigFont;
+        bigStyle.fontColor = Color.valueOf("#6f8694");
+        Label blockingQueueLabel = new Label("Blocking Queue", bigStyle);
+        blockingQueueLabel.setSize(200, 100);
+        blockingQueueLabel.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - blockingQueueLabel.getHeight() - 15);
+        addActor(blockingQueueLabel);
+
         BitmapFont desFont = new BitmapFont(Gdx.files.internal(
                 "data_structure/queue/queue.fnt"));
         Label.LabelStyle desStyle = new Label.LabelStyle();
@@ -91,21 +133,74 @@ public class BlockingQueueGroup extends AlgorithmGroup {
         stepDescription = new Label("", desStyle);
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
-        stepDescription.setText("比如一个容量为5的阻塞队列\n" +
-                "当其内部元素size已经为5时\n" +
-                "插入操作会进入等待状态");
+        stepDescription.setPosition(visualizerBg.getX(),
+                blockingQueueLabel.getY() - stepDescription.getHeight() - 5);
+
+
+        stepDescription.setText("阻塞队列(BlockingQueue)是Java5\n" +
+                "并发新特性中的内容,它提供了\n" +
+                "两个附加操作:put()和take()");
         addActor(stepDescription);
     }
 
     @Override
     protected void animation(Message msg) {
         switch (msg.what) {
+            case DES_1:
+                Gdx.app.postRunnable(() -> {
+                    stepDescription.setText("当队列中没有数据的情况下,\n" +
+                            "take操作会被自动阻塞(挂起),\n" +
+                            "直到有数据放入队列\n" +
+                            "线程被自动唤醒");
+                    blockingQueueImage.setDrawable(new TextureRegionDrawable(
+                            new TextureRegion(new Texture(
+                                    "data_structure/queue/take_block.jpeg"))));
+                });
+                break;
+            case DES_2:
+                Gdx.app.postRunnable(() -> {
+                    stepDescription.setText("当队列中填满数据的情况下,\n" +
+                            "put操作会被自动阻塞(挂起),\n" +
+                            "直到队列中有空的位置,\n" +
+                            "线程被自动唤醒");
+                    blockingQueueImage.setDrawable(new TextureRegionDrawable(
+                            new TextureRegion(new Texture(
+                                    "data_structure/queue/put_block.jpeg"))));
+                });
+                break;
+            case START_PRODUCING:
+                blockingQueueImage.setVisible(false);
+                produceQueueGroup.setVisible(true);
+                consumeQueueGroup.setVisible(true);
+                burgerProcessingQueue.setVisible(true);
+                stepDescription.setText("比如一个容量为5的阻塞队列,\n" +
+                        "当其内部元素已经为5个,\n" +
+                        "插入操作会进入等待状态");
+                break;
             case PRODUCING:
-                produce();
+                produce(msg.arg1);
                 break;
             case CONSUMING:
                 consume(msg.arg1);
+                break;
+            case BEFORE_FINISH:
+                enableNextBtn();
+                break;
+            case FINISH:
+                blockingQueueImage.setVisible(false);
+                produceQueueGroup.setVisible(false);
+                consumeQueueGroup.setVisible(false);
+                burgerProcessingQueue.setVisible(false);
+                muiltThreadImage.setVisible(true);
+                stepDescription.setText(
+                        "\n\n" +
+                        "多线程环境中,通过队列可以很容易\n" +
+                        "实现数据共享.这也是我们在多线程\n" +
+                        "环境下,使用BlockingQueue的原因.\n" +
+                        "作为BlockingQueue的使用者\n" +
+                        "我们再也不需要关心什么时候需\n" +
+                        "要阻塞线程什么时候需要唤醒线程\n" +
+                        "这一切BlockingQueue都一手包办了");
                 break;
         }
     }
@@ -114,6 +209,12 @@ public class BlockingQueueGroup extends AlgorithmGroup {
     protected void algorithm() {
         await();
 
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DES_1, 0, -1)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DES_2, 0, -1)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(START_PRODUCING, 0, -1)));
         await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1)));
         await(() -> sDecodingThreadHandler.sendMessage(
@@ -127,7 +228,7 @@ public class BlockingQueueGroup extends AlgorithmGroup {
 
         await();
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 5; i++) {
             await(() -> {
                 try {
                     sDecodingThreadHandler.sendMessage(
@@ -145,6 +246,16 @@ public class BlockingQueueGroup extends AlgorithmGroup {
 
             });
         }
+
+        await(() -> {
+            sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(BEFORE_FINISH, 0, -1));
+        });
+
+        await(() -> {
+            sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(FINISH, 0, -1));
+        });
     }
 
     public void consume(final int i) {
@@ -168,8 +279,13 @@ public class BlockingQueueGroup extends AlgorithmGroup {
         });
     }
 
-    public void produce() {
+    public void produce(int index) {
         Gdx.app.postRunnable(() -> {
+            if (index == 4) {
+                enableNextBtn();
+            } else {
+                disableNextBtn();
+            }
             Image button = new Image(new Texture(burger_list[random.nextInt(5)])) {
                 @Override
                 public float getPrefWidth() {

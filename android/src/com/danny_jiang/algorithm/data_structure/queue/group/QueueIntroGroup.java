@@ -235,7 +235,7 @@ public class QueueIntroGroup extends AlgorithmGroup {
     public void demoOut() {
         Gdx.app.postRunnable(() -> {
             for (int i = person_list.length - 1; i >= 0; i--) {
-                Actor actor = demoActors.get(i);
+                final Actor actor = demoActors.get(i);
                 addActor(actor);
                 MoveToAction firstMove = Actions.moveTo(stage.getWidth() / 2 - actor.getWidth() / 2,
                         queueContainer.getY() + 5);
@@ -244,6 +244,7 @@ public class QueueIntroGroup extends AlgorithmGroup {
                 secondMove.setDuration(0.5f);
                 SequenceAction sequence = Actions.sequence(Actions.delay(i * 0.3f),
                         firstMove, secondMove);
+                sequence.addAction(Actions.run(() -> actor.remove()));
                 actor.addAction(sequence);
             }
         });
@@ -275,7 +276,7 @@ public class QueueIntroGroup extends AlgorithmGroup {
     public void dequeue(int i) {
         stepDescription.setText("从队列中取出元素时,\n" +
                 "先进入队列的元素优先被访问");
-        AlgorithmButton button = buttonList.get(i);
+        final AlgorithmButton button = buttonList.get(i);
         MoveByAction firstMove = Actions.moveBy(stage.getWidth() + button.getWidth(), 0);
         firstMove.setDuration(0.5f);
         MoveToAction secondMove = Actions.moveTo(button.getX(), queueContainer.getY() - button.getHeight() - 10);
@@ -297,6 +298,7 @@ public class QueueIntroGroup extends AlgorithmGroup {
             }
             sequence.addAction(parallel);
         }
+        sequence.addAction(Actions.run(() -> button.remove()));
         button.addAction(sequence);
     }
 
