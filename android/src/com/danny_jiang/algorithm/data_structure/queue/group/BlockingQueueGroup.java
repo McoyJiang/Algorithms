@@ -27,8 +27,10 @@ import java.util.Random;
 
 public class BlockingQueueGroup extends AlgorithmGroup {
 
-    public static final int PRODUCING = 7;
-    public static final int CONSUMING = 8;
+    public static final int PRODUCING = 1;
+    public static final int CONSUMING = 2;
+    private static final int DES_1 = 3;
+    private static final int DES_2 = 4;
 
     private Random random = new Random();
     private String[] burger_list = new String[]{
@@ -83,6 +85,17 @@ public class BlockingQueueGroup extends AlgorithmGroup {
     }
 
     private void initDescription() {
+        BitmapFont bigFont = new BitmapFont(Gdx.files.internal(
+                "font/big_size.fnt"));
+        Label.LabelStyle bigStyle = new Label.LabelStyle();
+        bigStyle.font = bigFont;
+        bigStyle.fontColor = Color.valueOf("#6f8694");
+        Label blockingQueueLabel = new Label("Blocking Queue", bigStyle);
+        blockingQueueLabel.setSize(200, 100);
+        blockingQueueLabel.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - blockingQueueLabel.getHeight() - 15);
+        addActor(blockingQueueLabel);
+
         BitmapFont desFont = new BitmapFont(Gdx.files.internal(
                 "data_structure/queue/queue.fnt"));
         Label.LabelStyle desStyle = new Label.LabelStyle();
@@ -91,16 +104,31 @@ public class BlockingQueueGroup extends AlgorithmGroup {
         stepDescription = new Label("", desStyle);
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
-        stepDescription.setText("比如一个容量为5的阻塞队列\n" +
-                "当其内部元素size已经为5时\n" +
-                "插入操作会进入等待状态");
+        stepDescription.setPosition(visualizerBg.getX(),
+                blockingQueueLabel.getY() - stepDescription.getHeight() - 15);
+
+
+        stepDescription.setText("阻塞队列(BlockingQueue)是Java5\n" +
+                "并发新特性中的内容,它提供了\n" +
+                "两个附加操作:put()和take()");
         addActor(stepDescription);
     }
 
     @Override
     protected void animation(Message msg) {
         switch (msg.what) {
+            case DES_1:
+                stepDescription.setText("当队列中没有数据的情况下,\n" +
+                        "消费者端的线程会被自动阻塞(挂起),\n" +
+                        "直到有数据放入队列\n" +
+                        "线程被自动唤醒");
+                break;
+            case DES_2:
+                stepDescription.setText("当队列中填满数据的情况下,\n" +
+                                "生产者端的线程会被自动阻塞(挂起),\n" +
+                        "直到队列中有空的位置,\n" +
+                        "线程被自动唤醒");
+                break;
             case PRODUCING:
                 produce();
                 break;
@@ -114,6 +142,10 @@ public class BlockingQueueGroup extends AlgorithmGroup {
     protected void algorithm() {
         await();
 
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DES_1, 0, -1)));
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(DES_2, 0, -1)));
         await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(PRODUCING, 0, -1)));
         await(() -> sDecodingThreadHandler.sendMessage(
@@ -170,6 +202,10 @@ public class BlockingQueueGroup extends AlgorithmGroup {
 
     public void produce() {
         Gdx.app.postRunnable(() -> {
+            stepDescription.setText("比如一个容量为5的阻塞队列\n" +
+                    "当其内部元素size已经为5时\n" +
+                    "插入操作会进入等待状态");
+
             Image button = new Image(new Texture(burger_list[random.nextInt(5)])) {
                 @Override
                 public float getPrefWidth() {
