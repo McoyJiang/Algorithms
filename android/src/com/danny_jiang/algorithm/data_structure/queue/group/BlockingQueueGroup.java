@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
@@ -18,6 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.danny_jiang.algorithm.common.AlgorithmButton;
 import com.danny_jiang.algorithm.common.AlgorithmGroup;
@@ -34,6 +36,8 @@ public class BlockingQueueGroup extends AlgorithmGroup {
     private static final int DES_1 = 3;
     private static final int DES_2 = 4;
     private static final int START_PRODUCING = 5;
+    private static final int FINISH = 6;
+    private static final int BEFORE_FINISH = 7;
 
     private Random random = new Random();
     private String[] burger_list = new String[]{
@@ -47,6 +51,7 @@ public class BlockingQueueGroup extends AlgorithmGroup {
     private List<Image> burgerImageList = new ArrayList<>();
 
     private Image blockingQueueImage;
+    private Image muiltThreadImage;
     private QueueHorizontalGroup burgerProcessingQueue;
     private AlgorithmButton produceQueueGroup;
     private AlgorithmButton consumeQueueGroup;
@@ -94,6 +99,14 @@ public class BlockingQueueGroup extends AlgorithmGroup {
         blockingQueueImage.setPosition(visualizerBg.getX() + 10,
                 visualizerBg.getY() + visualizerBg.getHeight() / 4);
         addActor(blockingQueueImage);
+        muiltThreadImage = new Image(new TextureRegion(
+                new Texture("data_structure/queue/multi-thread.jpeg")));
+        muiltThreadImage.setSize(visualizerBg.getWidth() - 20,
+                visualizerBg.getHeight() - 200);
+        muiltThreadImage.setPosition(visualizerBg.getX() + 10,
+                visualizerBg.getY() + 100);
+        addActor(muiltThreadImage);
+        muiltThreadImage.setVisible(false);
 
         produceQueueGroup.setVisible(false);
         consumeQueueGroup.setVisible(false);
@@ -160,15 +173,34 @@ public class BlockingQueueGroup extends AlgorithmGroup {
                 produceQueueGroup.setVisible(true);
                 consumeQueueGroup.setVisible(true);
                 burgerProcessingQueue.setVisible(true);
-                stepDescription.setText("比如一个容量为5的阻塞队列\n" +
-                        "当其内部元素size已经为5时\n" +
+                stepDescription.setText("比如一个容量为5的阻塞队列,\n" +
+                        "当其内部元素已经为5个,\n" +
                         "插入操作会进入等待状态");
                 break;
             case PRODUCING:
-                produce();
+                produce(msg.arg1);
                 break;
             case CONSUMING:
                 consume(msg.arg1);
+                break;
+            case BEFORE_FINISH:
+                enableNextBtn();
+                break;
+            case FINISH:
+                blockingQueueImage.setVisible(false);
+                produceQueueGroup.setVisible(false);
+                consumeQueueGroup.setVisible(false);
+                burgerProcessingQueue.setVisible(false);
+                muiltThreadImage.setVisible(true);
+                stepDescription.setText(
+                        "\n\n" +
+                        "多线程环境中,通过队列可以很容易\n" +
+                        "实现数据共享.这也是我们在多线程\n" +
+                        "环境下,使用BlockingQueue的原因.\n" +
+                        "作为BlockingQueue的使用者\n" +
+                        "我们再也不需要关心什么时候需\n" +
+                        "要阻塞线程什么时候需要唤醒线程\n" +
+                        "这一切BlockingQueue都一手包办了");
                 break;
         }
     }
@@ -196,7 +228,7 @@ public class BlockingQueueGroup extends AlgorithmGroup {
 
         await();
 
-        for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 5; i++) {
             await(() -> {
                 try {
                     sDecodingThreadHandler.sendMessage(
@@ -214,6 +246,16 @@ public class BlockingQueueGroup extends AlgorithmGroup {
 
             });
         }
+
+        await(() -> {
+            sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(BEFORE_FINISH, 0, -1));
+        });
+
+        await(() -> {
+            sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(FINISH, 0, -1));
+        });
     }
 
     public void consume(final int i) {
@@ -237,8 +279,13 @@ public class BlockingQueueGroup extends AlgorithmGroup {
         });
     }
 
-    public void produce() {
+    public void produce(int index) {
         Gdx.app.postRunnable(() -> {
+            if (index == 4) {
+                enableNextBtn();
+            } else {
+                disableNextBtn();
+            }
             Image button = new Image(new Texture(burger_list[random.nextInt(5)])) {
                 @Override
                 public float getPrefWidth() {

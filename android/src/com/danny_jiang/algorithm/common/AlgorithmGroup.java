@@ -54,6 +54,21 @@ public abstract class AlgorithmGroup extends Group {
         });
     }
 
+    protected void enableNextBtn() {
+        nextStepBtn.setBackgroundColor(Color.valueOf("#36802d"));
+        nextStepBtn.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                signal();
+            }
+        });
+    }
+
+    public void disableNextBtn() {
+        nextStepBtn.setBackgroundColor(Color.valueOf("#b9babd"));
+        nextStepBtn.clearListeners();
+    }
+
     protected void startThread() {
         sDecodingThread = new HandlerThread("FrameSequence decoding thread",
                 Process.THREAD_PRIORITY_BACKGROUND);
