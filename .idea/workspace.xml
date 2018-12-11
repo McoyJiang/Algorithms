@@ -18,13 +18,11 @@
     <list default="true" id="95903ecf-d556-4cd5-8987-9118fe98856e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/assets/data_structure/queue/queue.fnt" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/data_structure/queue/queue.fnt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/assets/data_structure/queue/queue.png" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/data_structure/queue/queue.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/assets/data_structure/queue/blocking-queue.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -89,12 +87,12 @@
       <file leaf-file-name="BlockingQueueGroup.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="202" column="44" selection-start-line="202" selection-start-column="42" selection-end-line="202" selection-end-column="45" />
+            <state relative-caret-position="147">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1804#1805#0" expanded="true" />
-                <element signature="e#1848#1849#0" expanded="true" />
+                <element signature="e#2377#2378#0" expanded="true" />
+                <element signature="e#2419#2420#0" expanded="true" />
                 <element signature="e#12963#12964#0" expanded="true" />
                 <element signature="e#13007#13008#0" expanded="true" />
               </folding>
@@ -106,13 +104,11 @@
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+              <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1716#1879#0" expanded="true" />
                 <element signature="e#1878#1879#0" expanded="true" />
-                <element signature="e#2025#2188#0" expanded="true" />
-                <element signature="e#2187#2188#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -3132,9 +3128,9 @@
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24962519" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962519" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32893" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.15984148" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
@@ -3164,6 +3160,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2681638" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.15059446" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32938075" />
@@ -3516,16 +3513,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6419">
-          <caret line="308" column="11" selection-start-line="308" selection-start-column="11" selection-end-line="308" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java" />
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueTutorialFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -3659,14 +3647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
           <caret line="694" column="35" lean-forward="true" selection-start-line="694" selection-start-column="35" selection-end-line="694" selection-end-column="35" />
-          <folding>
-            <element signature="e#14614#14615#0" expanded="true" />
-            <element signature="e#14647#14648#0" expanded="true" />
-            <element signature="e#14843#14844#0" expanded="true" />
-            <element signature="e#14872#14873#0" expanded="true" />
-            <element signature="e#21445#21446#0" expanded="true" />
-            <element signature="e#21480#21481#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3688,16 +3668,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/queue.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/blocking_queue_bg.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/blocking-queue.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -3750,25 +3720,33 @@
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="56" column="22" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
+          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1716#1879#0" expanded="true" />
             <element signature="e#1878#1879#0" expanded="true" />
-            <element signature="e#2025#2188#0" expanded="true" />
-            <element signature="e#2187#2188#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/blocking_queue_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/queue/blocking-queue.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="202" column="44" selection-start-line="202" selection-start-column="42" selection-end-line="202" selection-end-column="45" />
+        <state relative-caret-position="147">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1804#1805#0" expanded="true" />
-            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#2377#2378#0" expanded="true" />
+            <element signature="e#2419#2420#0" expanded="true" />
             <element signature="e#12963#12964#0" expanded="true" />
             <element signature="e#13007#13008#0" expanded="true" />
           </folding>

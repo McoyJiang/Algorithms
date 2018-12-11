@@ -93,7 +93,7 @@ public class BlockingQueueGroup extends AlgorithmGroup {
         addActor(burgerProcessingQueue);
 
         blockingQueueImage = new Image(new TextureRegion(
-                new Texture("data_structure/queue/blocking-queue.png")));
+                new Texture("data_structure/queue/blocking-queue.jpeg")));
         blockingQueueImage.setSize(visualizerBg.getWidth() - 20,
                 visualizerBg.getHeight() / 2);
         blockingQueueImage.setPosition(visualizerBg.getX() + 10,
