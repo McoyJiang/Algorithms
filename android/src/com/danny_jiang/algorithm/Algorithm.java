@@ -9,6 +9,7 @@ import com.danny_jiang.algorithm.data_structure.array.ArrayActivity;
 import com.danny_jiang.algorithm.data_structure.linkedlist.LinkListActivity;
 import com.danny_jiang.algorithm.data_structure.queue.QueueActivity;
 import com.danny_jiang.algorithm.data_structure.stack.StackActivity;
+import com.danny_jiang.algorithm.data_structure.tree.TreeIntroActivity;
 import com.danny_jiang.algorithm.insert_sort.InsertionSortActivity;
 import com.danny_jiang.algorithm.quick_sort.QuickSortActivity;
 
@@ -21,13 +22,17 @@ public enum Algorithm implements Parcelable {
     STACK("栈", R.drawable.stack, StackActivity.class),
     QUEUE("队列", R.drawable.queue, QueueActivity.class),
 
+    // Tree structure
+    TREE("树", R.drawable.ic_array, TreeIntroActivity.class),
+    BINARY_TREE("二叉树", R.drawable.linklist, LinkListActivity.class),
+    BINARY_SEARCH_TREE("二叉搜索树", R.drawable.stack, StackActivity.class),
+    RED_BLACK_TREE("红黑树", R.drawable.queue, QueueActivity.class),
+    // Graph algorithm
+
     // sort algorithm
     BUBBLE_SORT("冒泡排序", R.drawable.array, BubbleSortActivity.class),
     INSERTION_SORT("插入排序", R.drawable.array, InsertionSortActivity.class),
     QUICK_SORT("快速排序", R.drawable.array, QuickSortActivity.class);
-
-    // Tree structure
-    // Graph algorithm
 
     private String name;
     private int iconRes;

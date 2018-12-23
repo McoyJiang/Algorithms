@@ -26,6 +26,7 @@
         <activity android:name=".data_structure.linkedlist.LinkListActivity" />
         <activity android:name=".data_structure.stack.StackActivity" />
         <activity android:name=".data_structure.queue.QueueActivity" />
+        <activity android:name=".data_structure.tree.TreeIntroActivity" />
 
         <activity android:name=".bubble_sort.BubbleSortActivity">
 

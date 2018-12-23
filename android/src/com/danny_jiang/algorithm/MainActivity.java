@@ -13,12 +13,16 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.danny_jiang.algorithm.Algorithm.ARRAY;
+import static com.danny_jiang.algorithm.Algorithm.BINARY_SEARCH_TREE;
+import static com.danny_jiang.algorithm.Algorithm.BINARY_TREE;
 import static com.danny_jiang.algorithm.Algorithm.BUBBLE_SORT;
 import static com.danny_jiang.algorithm.Algorithm.INSERTION_SORT;
 import static com.danny_jiang.algorithm.Algorithm.LINK_LIST;
 import static com.danny_jiang.algorithm.Algorithm.QUEUE;
 import static com.danny_jiang.algorithm.Algorithm.QUICK_SORT;
+import static com.danny_jiang.algorithm.Algorithm.RED_BLACK_TREE;
 import static com.danny_jiang.algorithm.Algorithm.STACK;
+import static com.danny_jiang.algorithm.Algorithm.TREE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -63,7 +67,13 @@ public class MainActivity extends AppCompatActivity {
         algorithmGroupList.add(new AlgorithmGroup("数据结构",
                 Arrays.asList(ARRAY, LINK_LIST, STACK, QUEUE)));
 
+        algorithmGroupList.add(new AlgorithmGroup("树 Tree",
+                Arrays.asList(TREE, BINARY_TREE, BINARY_SEARCH_TREE, RED_BLACK_TREE)));
+
         algorithmGroupList.add(new AlgorithmGroup("排序",
+                Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
+
+        algorithmGroupList.add(new AlgorithmGroup("图算法",
                 Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
     }
 }
