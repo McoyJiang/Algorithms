@@ -9,6 +9,9 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+/**
+ * @author danny.jiang
+ */
 public class AlgorithmBall extends BaseGdxActor {
 
     private char A = 'A';

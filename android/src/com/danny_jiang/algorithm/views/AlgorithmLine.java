@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 /**
- * Created by ext.danny.jiang on 17/4/17.
+ * Created by danny.jiang on 17/4/17.
  * <p>
  * A widget used to draw a specific color line
  */
