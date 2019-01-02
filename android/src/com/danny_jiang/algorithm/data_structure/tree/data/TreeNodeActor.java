@@ -32,7 +32,7 @@ public class TreeNodeActor extends Actor {
         sr = new ShapeRenderer();
         sr.setColor(Color.RED);
         lineShader = new ShapeRenderer();
-        lineShader.setColor(Color.ORANGE);
+        lineShader.setColor(Color.valueOf("#cfcfca"));
 
         this.bitmapFont = new BitmapFont(
                 Gdx.files.internal("font/default.fnt"),
@@ -40,26 +40,8 @@ public class TreeNodeActor extends Actor {
         bitmapFont.setColor(Color.WHITE);
 
         text = String.valueOf(number);
-        setSize(100, 100);
+        setSize(150, 150);
         setOrigin(getWidth() / 2, getHeight() / 2);
-    }
-
-    public void addLeft(String number) {
-        TreeNodeActor treeNodeActor = new TreeNodeActor();
-        treeNodeActor.setLineColor(Color.BLACK);
-        treeNodeActor.setText(number);
-        treeNodeActor.setPosition(getX() - getWidth(),
-                getY() - getHeight());
-        getStage().addActor(treeNodeActor);
-    }
-
-    public void addRight(String number) {
-        TreeNodeActor treeNodeActor = new TreeNodeActor();
-        treeNodeActor.setLineColor(Color.BLACK);
-        treeNodeActor.setText(number);
-        treeNodeActor.setPosition(getX() + getWidth() / 2 + 50,
-                getY() - getHeight());
-        getStage().addActor(treeNodeActor);
     }
 
     @Override
@@ -127,15 +109,9 @@ public class TreeNodeActor extends Actor {
         this.lineWidth = lineWidth;
     }
 
-    public void setLineColor(Color lineColor) {
+    public void setColor(Color lineColor) {
         if (sr != null) {
             sr.setColor(lineColor);
-        }
-    }
-
-    public void setBranchColor(Color lineColor) {
-        if (lineShader != null) {
-            lineShader.setColor(lineColor);
         }
     }
 

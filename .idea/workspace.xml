@@ -21,8 +21,6 @@
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java" afterDir="false" />
     </list>
@@ -57,53 +55,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TreeAdapter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TreeAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="272">
+              <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Algorithm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StackAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="178" selection-start-line="178" selection-end-line="178" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeNodeActor.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TreeNodeActor.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+            <state relative-caret-position="597">
+              <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#734#735#0" expanded="true" />
@@ -114,63 +79,19 @@
                 <element signature="e#2906#2907#0" expanded="true" />
                 <element signature="e#2955#2956#0" expanded="true" />
                 <element signature="e#2997#2998#0" expanded="true" />
-                <element signature="e#4710#4711#0" expanded="true" />
-                <element signature="e#4742#4743#0" expanded="true" />
-                <element signature="e#4799#4800#0" expanded="true" />
-                <element signature="e#4841#4842#0" expanded="true" />
-                <element signature="e#4885#4886#0" expanded="true" />
-                <element signature="e#4918#4919#0" expanded="true" />
-                <element signature="e#4977#4978#0" expanded="true" />
-                <element signature="e#5021#5022#0" expanded="true" />
-                <element signature="e#5109#5110#0" expanded="true" />
-                <element signature="e#5138#5139#0" expanded="true" />
-                <element signature="e#5189#5190#0" expanded="true" />
-                <element signature="e#5225#5226#0" expanded="true" />
+                <element signature="e#4323#4324#0" expanded="true" />
+                <element signature="e#4355#4356#0" expanded="true" />
+                <element signature="e#4412#4413#0" expanded="true" />
+                <element signature="e#4454#4455#0" expanded="true" />
+                <element signature="e#4498#4499#0" expanded="true" />
+                <element signature="e#4531#4532#0" expanded="true" />
+                <element signature="e#4590#4591#0" expanded="true" />
+                <element signature="e#4634#4635#0" expanded="true" />
+                <element signature="e#4678#4679#0" expanded="true" />
+                <element signature="e#4711#4712#0" expanded="true" />
+                <element signature="e#4766#4767#0" expanded="true" />
+                <element signature="e#4806#4807#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlgorithmBall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmBall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-              <folding>
-                <element signature="e#2153#2154#0" expanded="true" />
-                <element signature="e#2180#2181#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlgorithmLine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmLine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-              <folding>
-                <element signature="e#802#803#0" expanded="true" />
-                <element signature="e#838#839#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BreathFirstSearchAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/breath_first_search/BreathFirstSearchAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeTutorialFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeTutorialFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -2566,9 +2487,9 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmLine.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNode.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java" />
       </list>
     </option>
   </component>
@@ -2847,7 +2768,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="device.picker.selection" value="FA71D0304647" />
+    <property name="device.picker.selection" value="DRGGAM2872203669" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/android/src/test/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -3163,7 +3084,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24962519" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.15059446" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.15059446" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -3327,20 +3248,8 @@
           <option name="timeStamp" value="86" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java</url>
-          <line>47</line>
-          <properties />
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java</url>
-          <line>56</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java</url>
-          <line>44</line>
+          <line>99</line>
           <properties />
           <option name="timeStamp" value="91" />
         </line-breakpoint>
@@ -3649,13 +3558,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeTutorialFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/bg/default_ball_bg.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -3673,24 +3575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/breath_first_search/BreathFirstSearchAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-          <folding>
-            <element signature="e#802#803#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeVisualizerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -3705,17 +3589,6 @@
           <folding>
             <element signature="e#1635#1636#0" expanded="true" />
             <element signature="e#1671#1672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmBall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-          <folding>
-            <element signature="e#2153#2154#0" expanded="true" />
-            <element signature="e#2180#2181#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3745,23 +3618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="178" selection-start-line="178" selection-end-line="178" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -3769,10 +3625,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java">
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="286">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -3786,10 +3642,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/stack/StackAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmBall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding>
+            <element signature="e#2153#2154#0" expanded="true" />
+            <element signature="e#2180#2181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/views/AlgorithmLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="135" column="5" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+          <folding>
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/breath_first_search/BreathFirstSearchAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeTutorialFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+        <state relative-caret-position="597">
+          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#734#735#0" expanded="true" />
@@ -3800,19 +3702,26 @@
             <element signature="e#2906#2907#0" expanded="true" />
             <element signature="e#2955#2956#0" expanded="true" />
             <element signature="e#2997#2998#0" expanded="true" />
-            <element signature="e#4710#4711#0" expanded="true" />
-            <element signature="e#4742#4743#0" expanded="true" />
-            <element signature="e#4799#4800#0" expanded="true" />
-            <element signature="e#4841#4842#0" expanded="true" />
-            <element signature="e#4885#4886#0" expanded="true" />
-            <element signature="e#4918#4919#0" expanded="true" />
-            <element signature="e#4977#4978#0" expanded="true" />
-            <element signature="e#5021#5022#0" expanded="true" />
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#5138#5139#0" expanded="true" />
-            <element signature="e#5189#5190#0" expanded="true" />
-            <element signature="e#5225#5226#0" expanded="true" />
+            <element signature="e#4323#4324#0" expanded="true" />
+            <element signature="e#4355#4356#0" expanded="true" />
+            <element signature="e#4412#4413#0" expanded="true" />
+            <element signature="e#4454#4455#0" expanded="true" />
+            <element signature="e#4498#4499#0" expanded="true" />
+            <element signature="e#4531#4532#0" expanded="true" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4634#4635#0" expanded="true" />
+            <element signature="e#4678#4679#0" expanded="true" />
+            <element signature="e#4711#4712#0" expanded="true" />
+            <element signature="e#4766#4767#0" expanded="true" />
+            <element signature="e#4806#4807#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
         </state>
       </provider>
     </entry>
