@@ -22,7 +22,6 @@ import static com.danny_jiang.algorithm.Algorithm.QUEUE;
 import static com.danny_jiang.algorithm.Algorithm.QUICK_SORT;
 import static com.danny_jiang.algorithm.Algorithm.RED_BLACK_TREE;
 import static com.danny_jiang.algorithm.Algorithm.STACK;
-import static com.danny_jiang.algorithm.Algorithm.TREE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Arrays.asList(ARRAY, LINK_LIST, STACK, QUEUE)));
 
         algorithmGroupList.add(new AlgorithmGroup("树 Tree",
-                Arrays.asList(TREE, BINARY_TREE, BINARY_SEARCH_TREE, RED_BLACK_TREE)));
+                Arrays.asList(BINARY_TREE, BINARY_SEARCH_TREE, RED_BLACK_TREE)));
 
         algorithmGroupList.add(new AlgorithmGroup("排序",
                 Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));

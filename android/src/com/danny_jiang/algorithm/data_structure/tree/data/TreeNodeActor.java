@@ -1,6 +1,7 @@
 package com.danny_jiang.algorithm.data_structure.tree.data;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -15,26 +16,21 @@ public class TreeNodeActor extends Actor {
     private BitmapFont bitmapFont;
     private String text;
 
-    private float x1;
-    private float y1;
-    private float x2;
-    private float y2;
-    private float lineWidth;
+    private float lineWidth = 10;
 
     private ShapeRenderer sr;
     private ShapeRenderer lineShader;
 
-    public TreeNodeActor() {
-        this(0, 0, 0, 0, 10);
-    }
+    private TreeNodeActor parentNode;
+    private TreeNodeActor leftChild;
+    private TreeNodeActor rightChild;
 
-    public TreeNodeActor(float x1, float y1, float x2, float y2, float lineWidth) {
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-        this.lineWidth = lineWidth;
+    public TreeNodeActor() {
+        this(0);
+    }
+    public TreeNodeActor(int number) {
         sr = new ShapeRenderer();
+        sr.setColor(Color.RED);
         lineShader = new ShapeRenderer();
         lineShader.setColor(Color.ORANGE);
 
@@ -43,6 +39,7 @@ public class TreeNodeActor extends Actor {
                 Gdx.files.internal("font/default.png"), false);
         bitmapFont.setColor(Color.WHITE);
 
+        text = String.valueOf(number);
         setSize(100, 100);
         setOrigin(getWidth() / 2, getHeight() / 2);
     }
@@ -85,12 +82,19 @@ public class TreeNodeActor extends Actor {
             lineShader.translate(getX(), getY(), 0);
 
             lineShader.begin(ShapeRenderer.ShapeType.Filled);
-            lineShader.rectLine(getOriginX(), getOriginY(), -100, -100, lineWidth);
-            lineShader.rectLine(getOriginX(), getOriginY(), getWidth() + 100, -100, lineWidth);
+            if (leftChild != null) {
+                Log.e("CCC", "left != null");
+                lineShader.rectLine(getOriginX(), getOriginY(), leftChild.getX() + getOriginX() - getX(),
+                        leftChild.getY() + getOriginY() - getY(), lineWidth);
+            }
+            if (rightChild != null) {
+                lineShader.rectLine(getOriginX(), getOriginY(), rightChild.getX() + getOriginX() - getX(),
+                        rightChild.getY() + getOriginY() - getY(), lineWidth);
+            }
             lineShader.end();
 
             sr.begin(ShapeRenderer.ShapeType.Filled);
-            sr.circle(getOriginX(), getOriginY(), getWidth() / 2);
+            sr.circle(getOriginX(), getOriginY(), getWidth() / 2 * getScaleX());
             sr.end();
 
             Gdx.gl.glLineWidth(1);
@@ -105,38 +109,6 @@ public class TreeNodeActor extends Actor {
             }
         }
 
-    }
-
-    public float getX1() {
-        return x1;
-    }
-
-    public void setX1(float x1) {
-        this.x1 = x1;
-    }
-
-    public float getY1() {
-        return y1;
-    }
-
-    public void setY1(float y1) {
-        this.y1 = y1;
-    }
-
-    public float getX2() {
-        return x2;
-    }
-
-    public void setX2(float x2) {
-        this.x2 = x2;
-    }
-
-    public float getY2() {
-        return y2;
-    }
-
-    public void setY2(float y2) {
-        this.y2 = y2;
     }
 
     public void setText(String text) {
@@ -165,5 +137,29 @@ public class TreeNodeActor extends Actor {
         if (lineShader != null) {
             lineShader.setColor(lineColor);
         }
+    }
+
+    public TreeNodeActor getLeftChild() {
+        return leftChild;
+    }
+
+    public void setLeftChild(TreeNodeActor leftChild) {
+        this.leftChild = leftChild;
+    }
+
+    public TreeNodeActor getRightChild() {
+        return rightChild;
+    }
+
+    public void setRightChild(TreeNodeActor rightChild) {
+        this.rightChild = rightChild;
+    }
+
+    public TreeNodeActor getParentNode() {
+        return parentNode;
+    }
+
+    public void setParentNode(TreeNodeActor parent) {
+        this.parentNode = parent;
     }
 }
