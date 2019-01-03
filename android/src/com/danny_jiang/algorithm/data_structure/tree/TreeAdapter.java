@@ -11,13 +11,14 @@ import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.data_structure.tree.data.TreeNodeActor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TreeAdapter extends AlgorithmAdapter {
     
     private static final int HIGHLIGHT_ROOT_NODE = 0;
-    private static final int INSERT_LEFT_NODE = 1;
-    private static final int INSERT_RIGHT_NODE = 2;
+    private static final int HIGHLIGHT_PARENT_NODE = 1;
+    private static final int HIGHLIGHT_LEAF_NODE = 2;
 
     private List<TreeNodeActor> actorList = new ArrayList<>();
 
@@ -38,7 +39,7 @@ public class TreeAdapter extends AlgorithmAdapter {
                 stage.getHeight() - rootNode.getHeight() * 2);
 
         // 10
-        tenNode = new TreeNodeActor(6);
+        tenNode = new TreeNodeActor(10);
         tenNode.setColor(Color.valueOf("#e4dd51"));
         tenNode.setPosition(rootNode.getX() - 200, rootNode.getY() - 200);
 
@@ -110,25 +111,23 @@ public class TreeAdapter extends AlgorithmAdapter {
         int number = msg.arg1;
         switch (msg.what) {
             case HIGHLIGHT_ROOT_NODE:
-                Gdx.app.postRunnable(() -> {
-                    highlightNode(60);
-                });
+                Gdx.app.postRunnable(() -> highlightNode(Arrays.asList(60)));
                 break;
-            case INSERT_LEFT_NODE:
-                Gdx.app.postRunnable(() -> {
-                });
+            case HIGHLIGHT_PARENT_NODE:
+                Gdx.app.postRunnable(() -> Gdx.app.postRunnable(()
+                        -> highlightNode(Arrays.asList(10, 45, 57))));
                 break;
-            case INSERT_RIGHT_NODE:
-                Gdx.app.postRunnable(() -> {
-                });
+            case HIGHLIGHT_LEAF_NODE:
+                Gdx.app.postRunnable(() -> Gdx.app.postRunnable(()
+                        -> highlightNode(Arrays.asList(45, 57, 80, 71))));
                 break;
         }
     }
 
-    private void highlightNode(int number) {
+    private void highlightNode(List numberList) {
         for (int i = 0; i < actorList.size(); i++) {
             TreeNodeActor actor = actorList.get(i);
-            if (actor.getNumber() == number) {
+            if (numberList.contains(actor.getNumber())) {
                 actor.reset();
                 ScaleToAction scaleLarge = Actions.scaleTo(1.2f, 1.2f, 0.5f);
                 ScaleToAction scaleSmall = Actions.scaleTo(0.9f, 0.9f, 0.5f);
@@ -153,12 +152,12 @@ public class TreeAdapter extends AlgorithmAdapter {
 
         await(() -> {
             sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(INSERT_LEFT_NODE, 9, -1));
+                    sDecodingThreadHandler.obtainMessage(HIGHLIGHT_PARENT_NODE, 9, -1));
         });
 
         await(() -> {
             sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(INSERT_RIGHT_NODE, 9, -1));
+                    sDecodingThreadHandler.obtainMessage(HIGHLIGHT_LEAF_NODE, 9, -1));
         });
     }
 
