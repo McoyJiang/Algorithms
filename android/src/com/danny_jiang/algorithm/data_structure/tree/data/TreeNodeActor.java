@@ -10,10 +10,13 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
+import javax.microedition.khronos.opengles.GL10;
+
 public class TreeNodeActor extends Actor {
 
     private char A = 'A';
     private BitmapFont bitmapFont;
+    private int number;
     private String text;
 
     private float lineWidth = 10;
@@ -24,6 +27,8 @@ public class TreeNodeActor extends Actor {
     private TreeNodeActor parentNode;
     private TreeNodeActor leftChild;
     private TreeNodeActor rightChild;
+    private Color circleColor;
+    private Color lineColor = Color.valueOf("#cfcfca");
 
     public TreeNodeActor() {
         this(0);
@@ -32,21 +37,27 @@ public class TreeNodeActor extends Actor {
         sr = new ShapeRenderer();
         sr.setColor(Color.RED);
         lineShader = new ShapeRenderer();
-        lineShader.setColor(Color.valueOf("#cfcfca"));
+        lineShader.setColor(lineColor);
 
         this.bitmapFont = new BitmapFont(
                 Gdx.files.internal("font/default.fnt"),
                 Gdx.files.internal("font/default.png"), false);
         bitmapFont.setColor(Color.WHITE);
 
+        this.number = number;
         text = String.valueOf(number);
         setSize(150, 150);
         setOrigin(getWidth() / 2, getHeight() / 2);
     }
 
-    @Override
-    public void act(float delta) {
-        super.act(delta);
+    private boolean blur = false;
+    public void blur() {
+        blur = true;
+        circleColor.a = 0.5f;
+    }
+
+    public void reset() {
+        blur = false;
     }
 
     @Override
@@ -55,6 +66,8 @@ public class TreeNodeActor extends Actor {
 
         if (sr != null) {
             batch.end();
+            Gdx.gl.glEnable(GL10.GL_BLEND);
+            Gdx.gl.glBlendFunc(GL10.GL_SRC_ALPHA, GL10.GL_ONE_MINUS_SRC_ALPHA);
 
             sr.setProjectionMatrix(batch.getProjectionMatrix());
             sr.setTransformMatrix(batch.getTransformMatrix());
@@ -64,8 +77,11 @@ public class TreeNodeActor extends Actor {
             lineShader.translate(getX(), getY(), 0);
 
             lineShader.begin(ShapeRenderer.ShapeType.Filled);
+            if (blur)
+                lineShader.setColor(lineColor.r, lineColor.g, lineColor.b, 0.15f);
+            else
+                lineShader.setColor(lineColor.r, lineColor.g, lineColor.b, 1f);
             if (leftChild != null) {
-                Log.e("CCC", "left != null");
                 lineShader.rectLine(getOriginX(), getOriginY(), leftChild.getX() + getOriginX() - getX(),
                         leftChild.getY() + getOriginY() - getY(), lineWidth);
             }
@@ -75,12 +91,18 @@ public class TreeNodeActor extends Actor {
             }
             lineShader.end();
 
+            if (blur)
+                sr.setColor(circleColor.r, circleColor.g, circleColor.b, 0.15f);
+            else
+                sr.setColor(circleColor.r, circleColor.g, circleColor.b, 1f);
             sr.begin(ShapeRenderer.ShapeType.Filled);
             sr.circle(getOriginX(), getOriginY(), getWidth() / 2 * getScaleX());
             sr.end();
 
             Gdx.gl.glLineWidth(1);
             batch.begin();
+
+            Gdx.gl.glDisable(GL10.GL_BLEND);
 
             if (!TextUtils.isEmpty(text)) {
                 int textWidth = bitmapFont.getData().getGlyph(A).width * text.length();
@@ -109,9 +131,10 @@ public class TreeNodeActor extends Actor {
         this.lineWidth = lineWidth;
     }
 
-    public void setColor(Color lineColor) {
+    public void setColor(Color color) {
         if (sr != null) {
-            sr.setColor(lineColor);
+            sr.setColor(color);
+            circleColor = color;
         }
     }
 
@@ -137,5 +160,9 @@ public class TreeNodeActor extends Actor {
 
     public void setParentNode(TreeNodeActor parent) {
         this.parentNode = parent;
+    }
+
+    public int getNumber() {
+        return number;
     }
 }

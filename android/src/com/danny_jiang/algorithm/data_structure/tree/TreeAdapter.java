@@ -4,24 +4,27 @@ import android.os.Message;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.actions.ScaleByAction;
 import com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.data_structure.tree.data.TreeNodeActor;
-import com.danny_jiang.algorithm.views.AlgorithmLine;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TreeAdapter extends AlgorithmAdapter {
     
-    private static final int INSERT_ROOT_NODE = 0;
+    private static final int HIGHLIGHT_ROOT_NODE = 0;
     private static final int INSERT_LEFT_NODE = 1;
     private static final int INSERT_RIGHT_NODE = 2;
 
-    private int[] nodeData = new int[]{60, 10, 39, 45, 57, 60, 71};
+    private List<TreeNodeActor> actorList = new ArrayList<>();
+
     TreeNodeActor rootNode;
     TreeNodeActor tenNode;
     TreeNodeActor thirtyNineNode;
-    TreeNodeActor fourtyFiveNode;
+    TreeNodeActor fortyFiveNode;
     TreeNodeActor fiftySevenNode;
     TreeNodeActor eightyNineNode;
     TreeNodeActor seventyOneNineNode;
@@ -45,17 +48,17 @@ public class TreeAdapter extends AlgorithmAdapter {
         thirtyNineNode.setPosition(rootNode.getX() * 2 - tenNode.getX(), rootNode.getY() - 200);
 
         // 45
-        fourtyFiveNode = new TreeNodeActor(45);
-        fourtyFiveNode.setColor(Color.valueOf("#d199e1"));
-        fourtyFiveNode.setPosition(700, 800);
+        fortyFiveNode = new TreeNodeActor(45);
+        fortyFiveNode.setColor(Color.valueOf("#d199e1"));
+        fortyFiveNode.setPosition(700, 800);
         // x + 50 x2 + 50 = (x + 50) * 2
-        fourtyFiveNode.setPosition(tenNode.getX() - 100, tenNode.getY() - 200);
+        fortyFiveNode.setPosition(tenNode.getX() - 100, tenNode.getY() - 200);
 
         // 57
         fiftySevenNode = new TreeNodeActor(57);
         fiftySevenNode.setColor(Color.valueOf("#6a4734"));
         fiftySevenNode.setPosition(700, 800);
-        fiftySevenNode.setPosition(tenNode.getX() * 2 - fourtyFiveNode.getX(),
+        fiftySevenNode.setPosition(tenNode.getX() * 2 - fortyFiveNode.getX(),
                 tenNode.getY() - 200);
 
         // 80
@@ -72,10 +75,17 @@ public class TreeAdapter extends AlgorithmAdapter {
         stage.addActor(rootNode);
         stage.addActor(tenNode);
         stage.addActor(thirtyNineNode);
-        stage.addActor(fourtyFiveNode);
+        stage.addActor(fortyFiveNode);
         stage.addActor(fiftySevenNode);
         stage.addActor(eightyNineNode);
         stage.addActor(seventyOneNineNode);
+        actorList.add(rootNode);
+        actorList.add(tenNode);
+        actorList.add(thirtyNineNode);
+        actorList.add(fortyFiveNode);
+        actorList.add(fiftySevenNode);
+        actorList.add(eightyNineNode);
+        actorList.add(seventyOneNineNode);
 
         /**
          * construct the Tree
@@ -83,7 +93,7 @@ public class TreeAdapter extends AlgorithmAdapter {
         rootNode.setLeftChild(tenNode);
         rootNode.setRightChild(thirtyNineNode);
 
-        tenNode.setLeftChild(fourtyFiveNode);
+        tenNode.setLeftChild(fortyFiveNode);
         tenNode.setRightChild(fiftySevenNode);
 
         thirtyNineNode.setLeftChild(eightyNineNode);
@@ -99,9 +109,9 @@ public class TreeAdapter extends AlgorithmAdapter {
     public void animation(Message msg) {
         int number = msg.arg1;
         switch (msg.what) {
-            case INSERT_ROOT_NODE:
+            case HIGHLIGHT_ROOT_NODE:
                 Gdx.app.postRunnable(() -> {
-                    addRoot();
+                    highlightNode(60);
                 });
                 break;
             case INSERT_LEFT_NODE:
@@ -115,12 +125,21 @@ public class TreeAdapter extends AlgorithmAdapter {
         }
     }
 
-    private void addRoot() {
-        ScaleToAction scaleLarge = Actions.scaleTo(1.5f, 1.5f, 0.5f);
-        ScaleToAction scaleSmall = Actions.scaleTo(0.9f, 0.9f, 0.5f);
-        ScaleToAction scaleNormal = Actions.scaleTo(1, 1, 0.3f);
-        rootNode.addAction(Actions.sequence(scaleLarge, scaleSmall, scaleNormal, Actions.delay(0.3f),
-                Actions.run(() -> rootNode.setColor(Color.BLACK))));
+    private void highlightNode(int number) {
+        for (int i = 0; i < actorList.size(); i++) {
+            TreeNodeActor actor = actorList.get(i);
+            if (actor.getNumber() == number) {
+                actor.reset();
+                ScaleToAction scaleLarge = Actions.scaleTo(1.2f, 1.2f, 0.5f);
+                ScaleToAction scaleSmall = Actions.scaleTo(0.9f, 0.9f, 0.5f);
+                ScaleToAction scaleNormal = Actions.scaleTo(1, 1, 0.5f);
+                actor.addAction(Actions.repeat(100,
+                        Actions.sequence(scaleLarge, scaleSmall, scaleNormal)));
+            } else {
+                actor.clearActions();
+                actor.blur();
+            }
+        }
     }
 
     @Override
@@ -129,7 +148,7 @@ public class TreeAdapter extends AlgorithmAdapter {
 
         await(() -> {
             sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(INSERT_ROOT_NODE, 9, -1));
+                    sDecodingThreadHandler.obtainMessage(HIGHLIGHT_ROOT_NODE, 9, -1));
         });
 
         await(() -> {

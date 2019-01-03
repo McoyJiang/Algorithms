@@ -55,42 +55,100 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TreeAdapter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TreeAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+            <state relative-caret-position="267">
+              <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TreeNodeActor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AlgorithmAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+              <folding>
+                <element signature="e#1403#1583#0" expanded="true" />
+                <element signature="e#1582#1583#0" expanded="true" />
+                <element signature="e#2784#2785#0" expanded="true" />
+                <element signature="e#2830#2831#0" expanded="true" />
+                <element signature="e#2924#2925#0" expanded="true" />
+                <element signature="e#2957#2958#0" expanded="true" />
+                <element signature="e#3024#3025#0" expanded="true" />
+                <element signature="e#3071#3072#0" expanded="true" />
+                <element signature="e#3745#3746#0" expanded="true" />
+                <element signature="e#3769#3770#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TreeNodeActor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+            <state relative-caret-position="429">
+              <caret line="94" column="77" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#734#735#0" expanded="true" />
                 <element signature="e#753#754#0" expanded="true" />
-                <element signature="e#2946#2947#0" expanded="true" />
-                <element signature="e#2973#2974#0" expanded="true" />
-                <element signature="e#2874#2875#0" expanded="true" />
-                <element signature="e#2906#2907#0" expanded="true" />
-                <element signature="e#2955#2956#0" expanded="true" />
-                <element signature="e#2997#2998#0" expanded="true" />
-                <element signature="e#4323#4324#0" expanded="true" />
-                <element signature="e#4355#4356#0" expanded="true" />
-                <element signature="e#4412#4413#0" expanded="true" />
-                <element signature="e#4454#4455#0" expanded="true" />
-                <element signature="e#4498#4499#0" expanded="true" />
-                <element signature="e#4531#4532#0" expanded="true" />
-                <element signature="e#4590#4591#0" expanded="true" />
-                <element signature="e#4634#4635#0" expanded="true" />
-                <element signature="e#4678#4679#0" expanded="true" />
-                <element signature="e#4711#4712#0" expanded="true" />
-                <element signature="e#4766#4767#0" expanded="true" />
-                <element signature="e#4806#4807#0" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
+                <element signature="e#1478#1479#0" expanded="true" />
+                <element signature="e#3718#3719#0" expanded="true" />
+                <element signature="e#3750#3751#0" expanded="true" />
+                <element signature="e#3781#3782#0" expanded="true" />
+                <element signature="e#3808#3809#0" expanded="true" />
+                <element signature="e#3843#3844#0" expanded="true" />
+                <element signature="e#3875#3876#0" expanded="true" />
+                <element signature="e#3924#3925#0" expanded="true" />
+                <element signature="e#3966#3967#0" expanded="true" />
+                <element signature="e#4132#4133#0" expanded="true" />
+                <element signature="e#4164#4165#0" expanded="true" />
+                <element signature="e#4221#4222#0" expanded="true" />
+                <element signature="e#4263#4264#0" expanded="true" />
+                <element signature="e#4307#4308#0" expanded="true" />
+                <element signature="e#4340#4341#0" expanded="true" />
+                <element signature="e#4399#4400#0" expanded="true" />
+                <element signature="e#4443#4444#0" expanded="true" />
+                <element signature="e#4487#4488#0" expanded="true" />
+                <element signature="e#4520#4521#0" expanded="true" />
+                <element signature="e#4575#4576#0" expanded="true" />
+                <element signature="e#4615#4616#0" expanded="true" />
+                <element signature="e#4645#4646#0" expanded="true" />
+                <element signature="e#4674#4675#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShapeRenderer.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+              <folding>
+                <element signature="e#4088#4089#0" expanded="true" />
+                <element signature="e#4105#4106#0" expanded="true" />
+                <element signature="e#4669#4670#0" expanded="true" />
+                <element signature="e#4697#4698#0" expanded="true" />
+                <element signature="e#4819#4820#0" expanded="true" />
+                <element signature="e#4852#4853#0" expanded="true" />
+                <element signature="e#4881#4882#0" expanded="true" />
+                <element signature="e#4900#4901#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/Color.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="333" column="42" selection-start-line="333" selection-start-column="42" selection-end-line="333" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#756#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2472,7 +2530,6 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/breath_first_search/BreathFirstSearchAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmButton.java" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/group/QueueIntroGroup.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/BurgerAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmGroup.java" />
@@ -2488,8 +2545,9 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNode.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java" />
       </list>
     </option>
   </component>
@@ -3249,16 +3307,51 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java</url>
-          <line>99</line>
+          <line>109</line>
           <properties />
           <option name="timeStamp" value="91" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java</url>
+          <line>128</line>
+          <properties />
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java</url>
+          <line>131</line>
+          <properties />
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java</url>
+          <line>138</line>
+          <properties />
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java</url>
+          <line>134</line>
+          <properties />
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="92" />
+      <option name="time" value="98" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>lineColor.a</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>msg.arg1</expression-string>
         <language-id>JAVA</language-id>
@@ -3299,21 +3392,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>consumeQueueGroup.getX() + consumeQueueGroup.getWidth() / 2</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueTutorialFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueVisualizerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -3413,13 +3494,6 @@
             <element signature="e#1323#1324#0" expanded="true" />
             <element signature="e#1354#1355#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/scenes/scene2d/Actor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="694" column="35" lean-forward="true" selection-start-line="694" selection-start-column="35" selection-end-line="694" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -3593,35 +3667,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="120" selection-start-line="120" selection-end-line="120" />
-          <folding>
-            <element signature="e#1403#1583#0" expanded="true" />
-            <element signature="e#1582#1583#0" expanded="true" />
-            <element signature="e#2784#2785#0" expanded="true" />
-            <element signature="e#2830#2831#0" expanded="true" />
-            <element signature="e#2924#2925#0" expanded="true" />
-            <element signature="e#2957#2958#0" expanded="true" />
-            <element signature="e#3024#3025#0" expanded="true" />
-            <element signature="e#3071#3072#0" expanded="true" />
-            <element signature="e#3769#3770#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/android/os/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="323" column="25" selection-start-line="323" selection-start-column="25" selection-end-line="323" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="827" column="9" selection-start-line="827" selection-start-column="9" selection-end-line="827" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -3688,40 +3737,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/scenes/scene2d/Actor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="42" column="22" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
+        <state relative-caret-position="199">
+          <caret line="279" column="22" lean-forward="true" selection-start-line="279" selection-start-column="22" selection-end-line="279" selection-end-column="22" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#2946#2947#0" expanded="true" />
-            <element signature="e#2973#2974#0" expanded="true" />
-            <element signature="e#2874#2875#0" expanded="true" />
-            <element signature="e#2906#2907#0" expanded="true" />
-            <element signature="e#2955#2956#0" expanded="true" />
-            <element signature="e#2997#2998#0" expanded="true" />
-            <element signature="e#4323#4324#0" expanded="true" />
-            <element signature="e#4355#4356#0" expanded="true" />
-            <element signature="e#4412#4413#0" expanded="true" />
-            <element signature="e#4454#4455#0" expanded="true" />
-            <element signature="e#4498#4499#0" expanded="true" />
-            <element signature="e#4531#4532#0" expanded="true" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4634#4635#0" expanded="true" />
-            <element signature="e#4678#4679#0" expanded="true" />
-            <element signature="e#4711#4712#0" expanded="true" />
-            <element signature="e#4766#4767#0" expanded="true" />
-            <element signature="e#4806#4807#0" expanded="true" />
+            <element signature="e#20993#20994#0" expanded="true" />
+            <element signature="e#21012#21013#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/glutils/ShapeRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="130" column="21" selection-start-line="130" selection-start-column="21" selection-end-line="130" selection-end-column="21" />
+          <folding>
+            <element signature="e#4088#4089#0" expanded="true" />
+            <element signature="e#4105#4106#0" expanded="true" />
+            <element signature="e#4669#4670#0" expanded="true" />
+            <element signature="e#4697#4698#0" expanded="true" />
+            <element signature="e#4819#4820#0" expanded="true" />
+            <element signature="e#4852#4853#0" expanded="true" />
+            <element signature="e#4881#4882#0" expanded="true" />
+            <element signature="e#4900#4901#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.6/7d903ecd6b0df2ec334814b8e70618e4c93fd37c/gdx-1.9.6-sources.jar!/com/badlogic/gdx/graphics/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="333" column="42" selection-start-line="333" selection-start-column="42" selection-end-line="333" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#756#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="146" column="5" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+          <folding>
+            <element signature="e#1403#1583#0" expanded="true" />
+            <element signature="e#1582#1583#0" expanded="true" />
+            <element signature="e#2784#2785#0" expanded="true" />
+            <element signature="e#2830#2831#0" expanded="true" />
+            <element signature="e#2924#2925#0" expanded="true" />
+            <element signature="e#2957#2958#0" expanded="true" />
+            <element signature="e#3024#3025#0" expanded="true" />
+            <element signature="e#3071#3072#0" expanded="true" />
+            <element signature="e#3745#3746#0" expanded="true" />
+            <element signature="e#3769#3770#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/TreeAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="34" column="60" selection-start-line="34" selection-start-column="60" selection-end-line="34" selection-end-column="60" />
+        <state relative-caret-position="267">
+          <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/tree/data/TreeNodeActor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="94" column="77" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+            <element signature="e#3718#3719#0" expanded="true" />
+            <element signature="e#3750#3751#0" expanded="true" />
+            <element signature="e#3781#3782#0" expanded="true" />
+            <element signature="e#3808#3809#0" expanded="true" />
+            <element signature="e#3843#3844#0" expanded="true" />
+            <element signature="e#3875#3876#0" expanded="true" />
+            <element signature="e#3924#3925#0" expanded="true" />
+            <element signature="e#3966#3967#0" expanded="true" />
+            <element signature="e#4132#4133#0" expanded="true" />
+            <element signature="e#4164#4165#0" expanded="true" />
+            <element signature="e#4221#4222#0" expanded="true" />
+            <element signature="e#4263#4264#0" expanded="true" />
+            <element signature="e#4307#4308#0" expanded="true" />
+            <element signature="e#4340#4341#0" expanded="true" />
+            <element signature="e#4399#4400#0" expanded="true" />
+            <element signature="e#4443#4444#0" expanded="true" />
+            <element signature="e#4487#4488#0" expanded="true" />
+            <element signature="e#4520#4521#0" expanded="true" />
+            <element signature="e#4575#4576#0" expanded="true" />
+            <element signature="e#4615#4616#0" expanded="true" />
+            <element signature="e#4645#4646#0" expanded="true" />
+            <element signature="e#4674#4675#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
