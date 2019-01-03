@@ -14,7 +14,6 @@ import java.util.List;
 
 import static com.danny_jiang.algorithm.Algorithm.ARRAY;
 import static com.danny_jiang.algorithm.Algorithm.BINARY_SEARCH_TREE;
-import static com.danny_jiang.algorithm.Algorithm.BINARY_TREE;
 import static com.danny_jiang.algorithm.Algorithm.BUBBLE_SORT;
 import static com.danny_jiang.algorithm.Algorithm.INSERTION_SORT;
 import static com.danny_jiang.algorithm.Algorithm.LINK_LIST;
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 Arrays.asList(ARRAY, LINK_LIST, STACK, QUEUE)));
 
         algorithmGroupList.add(new AlgorithmGroup("树 Tree",
-                Arrays.asList(BINARY_TREE, BINARY_SEARCH_TREE, RED_BLACK_TREE)));
+                Arrays.asList(BINARY_SEARCH_TREE, RED_BLACK_TREE)));
 
         algorithmGroupList.add(new AlgorithmGroup("排序",
                 Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
