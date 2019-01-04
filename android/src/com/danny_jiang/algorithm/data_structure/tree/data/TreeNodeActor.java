@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.math.Bezier;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
 import javax.microedition.khronos.opengles.GL10;
@@ -21,8 +23,19 @@ public class TreeNodeActor extends Actor {
 
     private float lineWidth = 10;
 
+    private boolean shouldAnimation = false;
+    private float x1;
+    private float y1;
+    private float x2;
+    private float y2;
+    private Bezier<Vector2> bezier;
+    float t;
+    float speed = 0.8f;
+    private Vector2 tmpV;
+
     private ShapeRenderer sr;
     private ShapeRenderer lineShader;
+    private ShapeRenderer animationShader;
 
     private TreeNodeActor parentNode;
     private TreeNodeActor leftChild;
@@ -38,6 +51,8 @@ public class TreeNodeActor extends Actor {
         sr.setColor(Color.RED);
         lineShader = new ShapeRenderer();
         lineShader.setColor(lineColor);
+        animationShader = new ShapeRenderer();
+        animationShader.setColor(Color.valueOf("e1e9b7"));
 
         this.bitmapFont = new BitmapFont(
                 Gdx.files.internal("font/default.fnt"),
@@ -48,6 +63,11 @@ public class TreeNodeActor extends Actor {
         text = String.valueOf(number);
         setSize(150, 150);
         setOrigin(getWidth() / 2, getHeight() / 2);
+
+        x1 = x2 = getOriginX();
+        y1 = y2 = getOriginY();
+        bezier = new Bezier<>(new Vector2(x1, y1), new Vector2(x2, y2));
+        tmpV= new Vector2(x1, y1);
     }
 
     private boolean blur = false;
@@ -58,6 +78,20 @@ public class TreeNodeActor extends Actor {
 
     public void reset() {
         blur = false;
+    }
+
+    public void animatingLeftLine() {
+        x1 = getOriginX();
+        y1 = getOriginY();
+        x2 = leftChild.getX() + getOriginX() - getX();
+        y2 = leftChild.getY() + getOriginY() - getY();
+        bezier = new Bezier<>(new Vector2(x1, y1), new Vector2(x2, y2));
+        tmpV= new Vector2(x1, y1);
+        shouldAnimation = true;
+    }
+
+    public void animatingRightLine() {
+        shouldAnimation = true;
     }
 
     @Override
@@ -75,6 +109,9 @@ public class TreeNodeActor extends Actor {
             lineShader.setProjectionMatrix(batch.getProjectionMatrix());
             lineShader.setTransformMatrix(batch.getTransformMatrix());
             lineShader.translate(getX(), getY(), 0);
+            animationShader.setProjectionMatrix(batch.getProjectionMatrix());
+            animationShader.setTransformMatrix(batch.getTransformMatrix());
+            animationShader.translate(getX(), getY(), 0);
 
             lineShader.begin(ShapeRenderer.ShapeType.Filled);
             if (blur)
@@ -90,6 +127,14 @@ public class TreeNodeActor extends Actor {
                         rightChild.getY() + getOriginY() - getY(), lineWidth);
             }
             lineShader.end();
+
+            animationShader.begin(ShapeRenderer.ShapeType.Filled);
+            if (shouldAnimation && y1 > y2 && tmpV.y > y2) {
+                t += speed * Gdx.graphics.getDeltaTime();
+                bezier.valueAt(tmpV, t);
+            }
+            animationShader.rectLine(getOriginX(), getOriginY(), tmpV.x, tmpV.y, 20);
+            animationShader.end();
 
             if (blur)
                 sr.setColor(circleColor.r, circleColor.g, circleColor.b, 0.15f);

@@ -174,10 +174,10 @@ public class TreeAdapter extends AlgorithmAdapter {
                 algorithmRect.setVisible(true);
                 stepDescription.setText("比如上图中,根节点是64.\n" +
                         "在64的左子树中, 所有的结点值\n" +
-                        "50、10、15、9、30都小于64\"");
+                        "50、10、15、9、30都小于64");
                 break;
             case HIGHLIGHT_ROOT_NODE:
-                Gdx.app.postRunnable(() -> highlightNode(Arrays.asList(60)));
+                Gdx.app.postRunnable(() -> rootNode.animatingLeftLine());
                 break;
             case HIGHLIGHT_PARENT_NODE:
                 Gdx.app.postRunnable(() -> Gdx.app.postRunnable(()
@@ -219,15 +219,10 @@ public class TreeAdapter extends AlgorithmAdapter {
                 sDecodingThreadHandler.obtainMessage(
                         BINARY_SEARCH_TREE_INTRO_2, 9, -1)));
 
-        await(() -> {
-            sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(HIGHLIGHT_PARENT_NODE, 9, -1));
-        });
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(
+                        HIGHLIGHT_ROOT_NODE, 9, -1)));
 
-        await(() -> {
-            sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(HIGHLIGHT_LEAF_NODE, 9, -1));
-        });
     }
 
 
