@@ -215,10 +215,6 @@ public class TreeNodeActor extends Actor {
         }
     }
 
-    public TreeNodeActor getLeftChild() {
-        return leftChild;
-    }
-
     public TreeNodeActor setLeftChild(int number) {
         this.leftChild = new TreeNodeActor(number);
         leftChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
@@ -251,6 +247,10 @@ public class TreeNodeActor extends Actor {
 
     public TreeNodeActor getParentNode() {
         return parentNode;
+    }
+
+    public TreeNodeActor getLeftChild() {
+        return leftChild;
     }
 
     public void setParentNode(TreeNodeActor parent) {
