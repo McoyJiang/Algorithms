@@ -45,6 +45,7 @@ public class TreeNodeActor extends Actor {
     private ShapeRenderer sr;
     private ShapeRenderer lineShader;
     private ShapeRenderer animationShader;
+    private boolean dim = false;
 
     private TreeNodeActor parentNode;
     private TreeNodeActor leftChild;
@@ -55,6 +56,7 @@ public class TreeNodeActor extends Actor {
     public TreeNodeActor() {
         this(0);
     }
+
     public TreeNodeActor(int number) {
         sr = new ShapeRenderer();
         sr.setColor(circleColor);
@@ -75,15 +77,12 @@ public class TreeNodeActor extends Actor {
 
         clearAnimation();
     }
-
-    private boolean blur = false;
-    public void blur() {
-        blur = true;
-        circleColor.a = 0.5f;
+    public void dimNode() {
+        dim = true;
     }
 
     public void reset() {
-        blur = false;
+        dim = false;
     }
 
     public void animatingLeftLine() {
@@ -140,7 +139,7 @@ public class TreeNodeActor extends Actor {
             animationShader.translate(getX(), getY(), 0);
 
             lineShader.begin(ShapeRenderer.ShapeType.Filled);
-            if (blur)
+            if (dim)
                 lineShader.setColor(lineColor.r, lineColor.g, lineColor.b, 0.15f);
             else
                 lineShader.setColor(lineColor.r, lineColor.g, lineColor.b, 1f);
@@ -168,7 +167,7 @@ public class TreeNodeActor extends Actor {
             animationShader.rectLine(getOriginX(), getOriginY(), rightTmpV.x, rightTmpV.y, 20);
             animationShader.end();
 
-            if (blur)
+            if (dim)
                 sr.setColor(circleColor.r, circleColor.g, circleColor.b, 0.15f);
             else
                 sr.setColor(circleColor.r, circleColor.g, circleColor.b, 1f);
