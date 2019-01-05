@@ -26,7 +26,6 @@ public class AlgorithmRect extends Actor {
         super.draw(batch, parentAlpha);
 
         if (sr != null) {
-            Log.e("CCC", "AlgorithmRect: draw");
             batch.end();
 
             sr.setProjectionMatrix(batch.getProjectionMatrix());
