@@ -166,7 +166,8 @@ public class TreeAdapter extends AlgorithmAdapter {
     }
 
     private void addSubNode(int number) {
-        addChild(currentParentNode.key, number);
+        TreeNodeActor parent = findTreeNodeByKey(currentParentNode.key);
+        actorList.add(parent.addChild(number));
     }
 
     private void addRootNode(int number) {
@@ -179,20 +180,11 @@ public class TreeAdapter extends AlgorithmAdapter {
         actorList.add(rootNode);
     }
 
-    private void addChild(int parentKey, int childKey) {
-        TreeNodeActor parent = findTreeNodeByKey(parentKey);
-        actorList.add(parent.addChild(childKey));
-    }
-
     private TreeNodeActor findTreeNodeByKey(int key) {
         for (TreeNodeActor nodeActor : actorList) {
             if (nodeActor.getNumber() == key) return nodeActor;
         }
         return null;
-    }
-
-    private void addChild(TreeNodeActor parent, TreeNodeActor leftChild) {
-        parent.addChild(leftChild);
     }
 
     private void findThirtyNode() {

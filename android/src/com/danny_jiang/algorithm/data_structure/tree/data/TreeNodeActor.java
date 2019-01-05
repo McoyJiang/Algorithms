@@ -11,6 +11,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Bezier;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
+import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -108,6 +111,13 @@ public class TreeNodeActor extends Actor {
         rightBezier = new Bezier<>(new Vector2(srcX, srcY), new Vector2(rightDstX, rightDstY));
         leftTmpV = rightTmpV = new Vector2(srcX, srcY);
         tLeft = tRight = 0;
+    }
+
+    public TreeNodeActor addChild(int number) {
+        if (getNumber() > number)
+            return setLeftChild(number);
+        else
+            return setRightChild(number);
     }
 
     @Override
@@ -209,32 +219,29 @@ public class TreeNodeActor extends Actor {
         return leftChild;
     }
 
-    public TreeNodeActor addChild(int number) {
-        if (getNumber() > number)
-            return setLeftChild(new TreeNodeActor(number));
-        else
-            return setRightChild(new TreeNodeActor(number));
-    }
-
-    public void addChild(TreeNodeActor child) {
-        if (getNumber() < child.getNumber())
-            setLeftChild(child);
-        else
-            setRightChild(child);
-    }
-    public TreeNodeActor setLeftChild(TreeNodeActor leftChild) {
-        this.leftChild = leftChild;
-        this.leftChild.setPosition(getX() - (isRoot ? 200 : 100),
-                getY() - (isRoot ? 100 : 200));
+    public TreeNodeActor setLeftChild(int number) {
+        this.leftChild = new TreeNodeActor(number);
+        leftChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
+                getStage().getHeight() / 2 + getHeight());
         getStage().addActor(leftChild);
+        float dstX = getX() - (isRoot ? 200 : 100);
+        float dstY = getY() - (isRoot ? 100 : 200);
+        MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
+        moveToAction.setDuration(1);
+        this.leftChild.addAction(moveToAction);
         return this.leftChild;
     }
 
-    public TreeNodeActor setRightChild(TreeNodeActor rightChild) {
-        this.rightChild = rightChild;
-        this.rightChild.setPosition(getX() * 2 - leftChild.getX(),
-                getY() - (isRoot ? 100 : 200));
+    public TreeNodeActor setRightChild(int number) {
+        this.rightChild = new TreeNodeActor(number);
+        rightChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
+                getStage().getHeight() / 2 + getHeight());
         getStage().addActor(rightChild);
+        float dstX = getX() * 2 - leftChild.getX();
+        float dstY = getY() - (isRoot ? 100 : 200);
+        MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
+        moveToAction.setDuration(1);
+        this.rightChild.addAction(moveToAction);
         return this.rightChild;
     }
 
