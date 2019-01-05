@@ -223,7 +223,8 @@ public class TreeNodeActor extends Actor {
         float dstY = getY() - (isRoot ? 100 : 200);
         MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
         moveToAction.setDuration(1);
-        this.leftChild.addAction(moveToAction);
+        this.leftChild.addAction(Actions.sequence(
+                Actions.delay(0.3f), moveToAction));
         return this.leftChild;
     }
 
@@ -236,7 +237,8 @@ public class TreeNodeActor extends Actor {
         float dstY = getY() - (isRoot ? 100 : 200);
         MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
         moveToAction.setDuration(1);
-        this.rightChild.addAction(moveToAction);
+        this.rightChild.addAction(Actions.sequence(
+                Actions.delay(0.3f), moveToAction));
         return this.rightChild;
     }
 

@@ -24,9 +24,11 @@ import java.util.List;
 public class TreeAdapter extends AlgorithmAdapter {
     
     private static final int BINARY_SEARCH_TREE_INTRO = 0;
-    private static final int ADD_ROOT_NODE = 1;
-    private static final int ADD_SUB_NODE = 2;
-    private static final int CLEAR_NODE_ANIMATION = 6;
+    private static final int INSERT_OPERATION = 1;
+    private static final int ADD_ROOT_NODE = 2;
+    private static final int ADD_SUB_NODE = 3;
+    private static final int CLEAR_NODE_ANIMATION = 4;
+    private static final int FIND_OPERATION = 5;
 
     private List<TreeNodeActor> actorList = new ArrayList<>();
 
@@ -72,6 +74,17 @@ public class TreeAdapter extends AlgorithmAdapter {
                 stepDescription.setText("二叉搜索树的特点\n" +
                         "父结点大于左子树任何结点的值\n" +
                         "父结点小于右子树任何结点的值");
+                break;
+            case INSERT_OPERATION:
+                bstIntroImage.setVisible(false);
+                stepDescription.setText("二叉搜索树插入操作:\n\n" +
+                        "将如下数组插入到二叉搜索树中\n" +
+                        Arrays.toString(arr));
+                break;
+            case FIND_OPERATION:
+                stepDescription.setText("二叉搜索树查找操作:\n\n" +
+                        "查找[" + number + "]");
+                findTreeNodeByKey(number);
                 break;
             case ADD_ROOT_NODE:
                 Gdx.app.postRunnable(() -> addRootNode(number));
@@ -139,6 +152,8 @@ public class TreeAdapter extends AlgorithmAdapter {
         await(() -> sDecodingThreadHandler.sendEmptyMessage(
                 BINARY_SEARCH_TREE_INTRO));
 
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                INSERT_OPERATION));
         for (int i = 0; i < arr.length; i++) {
             if (i == 0) {
                 insertRoot(arr[i]);
@@ -146,12 +161,21 @@ public class TreeAdapter extends AlgorithmAdapter {
                 insert(arr[i]);
             }
         }
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(
+                        FIND_OPERATION, 30, -1)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(
+                        FIND_OPERATION, 71, -1)));
+
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(
+                        FIND_OPERATION, 90, -1)));
     }
 
     private void insertRoot(int key) {
-        bstIntroImage.setVisible(false);
-        stepDescription.setText("构建二叉搜索树:\n" +
-                "[ " + Arrays.toString(arr) + " ]");
         root = new Node(key);
         await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(
@@ -161,7 +185,6 @@ public class TreeAdapter extends AlgorithmAdapter {
     Node root;
     public void insert(int key) {
         root = insertRec(root, key);
-        Log.e("DDD", "inserted " + root.key);
     }
 
     private Node currentParentNode = null;
