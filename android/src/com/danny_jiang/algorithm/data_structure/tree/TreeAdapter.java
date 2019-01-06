@@ -1,7 +1,6 @@
 package com.danny_jiang.algorithm.data_structure.tree;
 
 import android.os.Message;
-import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -9,9 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
-import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction;
-import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
@@ -19,7 +16,9 @@ import com.danny_jiang.algorithm.data_structure.tree.data.TreeNodeActor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 public class TreeAdapter extends AlgorithmAdapter {
     
@@ -28,13 +27,33 @@ public class TreeAdapter extends AlgorithmAdapter {
     private static final int ADD_ROOT_NODE = 2;
     private static final int ADD_SUB_NODE = 3;
     private static final int CLEAR_NODE_ANIMATION = 4;
-    private static final int FIND_OPERATION = 5;
+    private static final int FIND_LEFT_OPERATION = 5;
+    private static final int FIND_RIGHT_OPERATION = 6;
+    private static final int NOT_FOUND_OPERATION = 7;
+    private static final int FOUND_OPERATION = 8;
+    private static final int BINARY_SEARCH_TREE_PROPERTY = 9;
+
+    private String[] insertionImageList = new String[]{
+            "data_structure/tree/tree_insertion_0.jpeg",
+            "data_structure/tree/tree_insertion_1.jpeg",
+            "data_structure/tree/tree_insertion_2.jpeg",
+            "data_structure/tree/tree_insertion_3.jpeg",
+            "data_structure/tree/tree_insertion_4.jpeg",
+            "data_structure/tree/tree_insertion_5.jpeg",
+            "data_structure/tree/tree_insertion_6.jpeg",
+            "data_structure/tree/tree_insertion_7.jpeg",
+            "data_structure/tree/tree_insertion_8.jpeg",
+            "data_structure/tree/tree_insertion_9.jpeg",
+    };
+    Map<Integer, Image> imageMap = new Hashtable<>();
 
     private List<TreeNodeActor> actorList = new ArrayList<>();
 
     TreeNodeActor rootNode;
 
     private Image bstIntroImage;
+    private Image treeIntroText;
+    private Image treePropertyText;
     private Label stepDescription;
 
     @Override
@@ -45,20 +64,39 @@ public class TreeAdapter extends AlgorithmAdapter {
         bstIntroImage.setPosition(visualizerBg.getX(), visualizerBg.getY());
         stage.addActor(bstIntroImage);
 
-        BitmapFont desFont = new BitmapFont(Gdx.files.internal(
-                "data_structure/tree/binary_search_tree.fnt"));
-        Label.LabelStyle desStyle = new Label.LabelStyle();
-        desStyle.font = desFont;
-        desStyle.fontColor = Color.valueOf("#4A4A4A");
-        stepDescription = new Label("", desStyle);
-        stepDescription.setText("二叉搜索树是以二叉树来组织的.\n" +
-                "树的每个结点中包含一个value值,\n" +
-                "以及left和right两个指针,它们\n" +
-                "分别指向左子结点和右子结点.");
-        stepDescription.setSize(500, 350);
-        stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
-        stage.addActor(stepDescription);
+        treeIntroText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/tree_intro.jpeg")
+        ));
+        treeIntroText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * treeIntroText.getPrefHeight()
+                        / treeIntroText.getPrefWidth());
+        treeIntroText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - treeIntroText.getHeight() - 20);
+        stage.addActor(treeIntroText);
+
+        treePropertyText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/tree_property.jpeg")
+        ));
+        treePropertyText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * treePropertyText.getPrefHeight()
+                        / treePropertyText.getPrefWidth());
+        treePropertyText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - treePropertyText.getHeight() - 20);
+        stage.addActor(treePropertyText);
+        treePropertyText.setVisible(false);
+
+        for (int i = 0; i < insertionImageList.length; i++) {
+            Image image = new Image(new TextureRegion(
+                    new Texture(insertionImageList[i])));
+            image.setSize(visualizerBg.getWidth(),
+                    visualizerBg.getWidth() * image.getPrefHeight()
+                            / treePropertyText.getPrefWidth());
+            image.setPosition(visualizerBg.getX(),
+                    visualizerBg.getY() - image.getHeight() - 20);
+            imageMap.put(i, image);
+            stage.addActor(image);
+            image.setVisible(false);
+        }
     }
 
     @Override
@@ -69,28 +107,46 @@ public class TreeAdapter extends AlgorithmAdapter {
     @Override
     public void animation(Message msg) {
         int number = msg.arg1;
+        int insertionIndex = msg.arg2;
         switch (msg.what) {
             case BINARY_SEARCH_TREE_INTRO:
-                stepDescription.setText("二叉搜索树的特点\n" +
-                        "父结点大于左子树任何结点的值\n" +
-                        "父结点小于右子树任何结点的值");
+                treeIntroText.remove();
+                treePropertyText.setVisible(true);
                 break;
             case INSERT_OPERATION:
+                treePropertyText.remove();
                 bstIntroImage.setVisible(false);
-                stepDescription.setText("二叉搜索树插入操作:\n\n" +
-                        "将如下数组插入到二叉搜索树中\n" +
-                        Arrays.toString(arr));
+                imageMap.get(0).setVisible(true);
                 break;
-            case FIND_OPERATION:
-                stepDescription.setText("二叉搜索树查找操作:\n\n" +
-                        "查找[" + number + "]");
-                findTreeNodeByKey(number);
+            case FIND_LEFT_OPERATION:
+                Gdx.app.postRunnable(() -> {
+                    findTreeNodeByKey(number).animatingLeftLine();
+                    signal();
+                });
+                break;
+            case FIND_RIGHT_OPERATION:
+                Gdx.app.postRunnable(() -> {
+                    findTreeNodeByKey(number).animatingRightLine();
+                    signal();
+                });
+                break;
+            case NOT_FOUND_OPERATION:
+                break;
+            case FOUND_OPERATION:
                 break;
             case ADD_ROOT_NODE:
-                Gdx.app.postRunnable(() -> addRootNode(number));
+                Gdx.app.postRunnable(() -> {
+                    addRootNode(number);
+                    imageMap.get(insertionIndex).remove();
+                    imageMap.get(insertionIndex + 1).setVisible(true);
+                });
                 break;
             case ADD_SUB_NODE:
-                Gdx.app.postRunnable(() -> addSubNode(number));
+                Gdx.app.postRunnable(() -> {
+                    addSubNode(number);
+                    imageMap.get(insertionIndex).remove();
+                    imageMap.get(insertionIndex + 1).setVisible(true);
+                });
                 break;
             case CLEAR_NODE_ANIMATION:
                 Gdx.app.postRunnable(() -> clearAllNodesAnimation());
@@ -156,56 +212,74 @@ public class TreeAdapter extends AlgorithmAdapter {
                 INSERT_OPERATION));
         for (int i = 0; i < arr.length; i++) {
             if (i == 0) {
-                insertRoot(arr[i]);
+                insertRoot(arr[i], i);
             } else {
-                insert(arr[i]);
+                insert(arr[i], i);
             }
         }
 
-        await(() -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(
-                        FIND_OPERATION, 30, -1)));
-
-        await(() -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(
-                        FIND_OPERATION, 71, -1)));
-
-        await(() -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(
-                        FIND_OPERATION, 90, -1)));
+        search(root, 30);
     }
 
-    private void insertRoot(int key) {
+    public void search(Node root, int key) {
+        // Base Cases: root is null or key is present at root
+        if (root == null) {
+            await(() -> sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(
+                            NOT_FOUND_OPERATION, 30, -1)));
+        }
+
+        if (root.key == key) {
+            await(() -> sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(
+                            FOUND_OPERATION, 30, -1)));
+        }
+
+        // val is greater than root's key
+        if (root.key > key) {
+            await(() -> sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(
+                            FIND_LEFT_OPERATION, root.key, -1)));
+            search(root.left, key);
+        } else {
+            search(root.right, key);
+            await(() -> sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(
+                            FIND_RIGHT_OPERATION, root.key, -1)));
+        }
+    }
+
+    private void insertRoot(int key, int insertionIndex) {
         root = new Node(key);
         await(() -> sDecodingThreadHandler.sendMessage(
                 sDecodingThreadHandler.obtainMessage(
-                        ADD_ROOT_NODE, key, -1)));
+                        ADD_ROOT_NODE, key, insertionIndex)));
     }
 
     Node root;
-    public void insert(int key) {
-        root = insertRec(root, key);
+    public void insert(int key, int insertionIndex) {
+        root = insertRec(root, key, insertionIndex);
     }
 
     private Node currentParentNode = null;
     /* A recursive function to insert a new key in BST */
-    private Node insertRec(Node root, int key) {
+    private Node insertRec(Node root, int key, int insertionIndex) {
 
         /* If the tree is empty, return a new node */
         if (root == null) {
             root = new Node(key);
             await(() -> sDecodingThreadHandler.sendMessage(
                     sDecodingThreadHandler.obtainMessage(
-                            ADD_SUB_NODE, key, -1)));
+                            ADD_SUB_NODE, key, insertionIndex)));
             return root;
         }
 
         currentParentNode = root;
         /* Otherwise, recur down the tree */
         if (key < root.key)
-            root.left = insertRec(root.left, key);
+            root.left = insertRec(root.left, key, insertionIndex);
         else if (key > root.key)
-            root.right = insertRec(root.right, key);
+            root.right = insertRec(root.right, key, insertionIndex);
 
         /* return the (unchanged) node pointer */
         return root;
