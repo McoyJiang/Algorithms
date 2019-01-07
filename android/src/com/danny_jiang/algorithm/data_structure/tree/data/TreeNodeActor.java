@@ -13,7 +13,6 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
-import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -50,7 +49,7 @@ public class TreeNodeActor extends Actor {
     private TreeNodeActor parentNode;
     private TreeNodeActor leftChild;
     private TreeNodeActor rightChild;
-    private Color circleColor = Color.valueOf("59c3b1");
+    private Color circleColor = Color.valueOf("3984b0");
     private Color lineColor = Color.valueOf("#cfcfca");
 
     public TreeNodeActor() {
@@ -102,6 +101,7 @@ public class TreeNodeActor extends Actor {
     }
 
     public void clearAnimation() {
+        setColor(Color.valueOf("3984b0"));
         shouldAnimation = false;
 
         srcX = leftDstX = rightDstX = getOriginX();
@@ -222,7 +222,7 @@ public class TreeNodeActor extends Actor {
         float dstX = getX() - (isRoot ? 200 : 100);
         float dstY = getY() - (isRoot ? 100 : 200);
         MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
-        moveToAction.setDuration(1);
+        moveToAction.setDuration(0.7f);
         this.leftChild.addAction(Actions.sequence(
                 Actions.delay(0.3f), moveToAction));
         return this.leftChild;
@@ -236,7 +236,7 @@ public class TreeNodeActor extends Actor {
         float dstX = getX() * 2 - leftChild.getX();
         float dstY = getY() - (isRoot ? 100 : 200);
         MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
-        moveToAction.setDuration(1);
+        moveToAction.setDuration(0.7f);
         this.rightChild.addAction(Actions.sequence(
                 Actions.delay(0.3f), moveToAction));
         return this.rightChild;

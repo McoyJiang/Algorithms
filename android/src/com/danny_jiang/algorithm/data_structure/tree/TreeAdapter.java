@@ -8,7 +8,9 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction;
+import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
@@ -26,13 +28,13 @@ public class TreeAdapter extends AlgorithmAdapter {
     private static final int INSERT_OPERATION = 1;
     private static final int ADD_ROOT_NODE = 2;
     private static final int ADD_SUB_NODE = 3;
-    private static final int CLEAR_NODE_ANIMATION = 4;
-    private static final int FIND_LEFT_OPERATION = 5;
-    private static final int FIND_RIGHT_OPERATION = 6;
-    private static final int NOT_FOUND_OPERATION = 7;
-    private static final int FOUND_OPERATION = 8;
-    private static final int BINARY_SEARCH_TREE_PROPERTY = 9;
+    private static final int FIND_LEFT_OPERATION = 4;
+    private static final int FIND_RIGHT_OPERATION = 5;
+    private static final int FIND_THIRTY_NODE = 6;
+    private static final int FIND_NINETY_NODE = 7;
+    private static final int TREE_SUMMARY = 8;
 
+    private int[] arr = new int[]{64, 50, 79, 71, 10, 60, 9, 88, 30};
     private String[] insertionImageList = new String[]{
             "data_structure/tree/tree_insertion_0.jpeg",
             "data_structure/tree/tree_insertion_1.jpeg",
@@ -54,7 +56,9 @@ public class TreeAdapter extends AlgorithmAdapter {
     private Image bstIntroImage;
     private Image treeIntroText;
     private Image treePropertyText;
-    private Label stepDescription;
+    private Image findThirtyText;
+    private Image findNinetyText;
+    private Image treeSummaryText;
 
     @Override
     protected void inflateStage() {
@@ -97,6 +101,39 @@ public class TreeAdapter extends AlgorithmAdapter {
             stage.addActor(image);
             image.setVisible(false);
         }
+
+        findThirtyText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/search_30.jpeg")
+        ));
+        findThirtyText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * findThirtyText.getPrefHeight()
+                        / treePropertyText.getPrefWidth());
+        findThirtyText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - findThirtyText.getHeight() - 20);
+        stage.addActor(findThirtyText);
+        findThirtyText.setVisible(false);
+
+        findNinetyText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/search_90.jpeg")
+        ));
+        findNinetyText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * findNinetyText.getPrefHeight()
+                        / treePropertyText.getPrefWidth());
+        findNinetyText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - findNinetyText.getHeight() - 20);
+        stage.addActor(findNinetyText);
+        findNinetyText.setVisible(false);
+
+        treeSummaryText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/bst_summary.jpeg")
+        ));
+        treeSummaryText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * treeSummaryText.getPrefHeight()
+                        / treeSummaryText.getPrefWidth());
+        treeSummaryText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - treeSummaryText.getHeight() - 50);
+        stage.addActor(treeSummaryText);
+        treeSummaryText.setVisible(false);
     }
 
     @Override
@@ -118,6 +155,12 @@ public class TreeAdapter extends AlgorithmAdapter {
                 bstIntroImage.setVisible(false);
                 imageMap.get(0).setVisible(true);
                 break;
+            case FIND_THIRTY_NODE:
+                findThirtyNode();
+                break;
+            case FIND_NINETY_NODE:
+                findNinetyNode();
+                break;
             case FIND_LEFT_OPERATION:
                 Gdx.app.postRunnable(() -> {
                     findTreeNodeByKey(number).animatingLeftLine();
@@ -129,10 +172,6 @@ public class TreeAdapter extends AlgorithmAdapter {
                     findTreeNodeByKey(number).animatingRightLine();
                     signal();
                 });
-                break;
-            case NOT_FOUND_OPERATION:
-                break;
-            case FOUND_OPERATION:
                 break;
             case ADD_ROOT_NODE:
                 Gdx.app.postRunnable(() -> {
@@ -148,15 +187,22 @@ public class TreeAdapter extends AlgorithmAdapter {
                     imageMap.get(insertionIndex + 1).setVisible(true);
                 });
                 break;
-            case CLEAR_NODE_ANIMATION:
-                Gdx.app.postRunnable(() -> clearAllNodesAnimation());
+            case TREE_SUMMARY:
+                Gdx.app.postRunnable(() -> {
+                    clearAllNodesAnimation();
+                    findNinetyText.setVisible(false);
+                    treeSummaryText.setVisible(true);
+                });
                 break;
         }
     }
 
     private void addSubNode(int number) {
+        disableNextButton();
         TreeNodeActor parent = findTreeNodeByKey(currentParentNode.key);
         actorList.add(parent.addChild(number));
+        stage.addAction(Actions.delay(1,
+                Actions.run(() -> enableNextButton())));
     }
 
     private void addRootNode(int number) {
@@ -174,6 +220,57 @@ public class TreeAdapter extends AlgorithmAdapter {
             if (nodeActor.getNumber() == key) return nodeActor;
         }
         return null;
+    }
+
+    private void findNinetyNode() {
+        clearAllNodesAnimation();
+        findThirtyText.setVisible(false);
+        findNinetyText.setVisible(true);
+
+        RunnableAction run1 = Actions.run(() -> {
+            rootNode.animatingRightLine();
+        });
+
+        RunnableAction run2 = Actions.run(() -> {
+            findTreeNodeByKey(79).animatingRightLine();
+        });
+
+        RunnableAction run3 = Actions.run(() -> findTreeNodeByKey(88)
+                .setColor(Color.valueOf("f96161")));
+
+        SequenceAction sequence = Actions.sequence(run1, Actions.delay(0.8f),
+                run2, Actions.delay(0.8f), run3, Actions.delay(0.8f));
+        stage.addAction(sequence);
+    }
+
+    private void findThirtyNode() {
+        imageMap.get(9).setVisible(false);
+        findThirtyText.setVisible(true);
+
+        RunnableAction run1 = Actions.run(() -> {
+            rootNode.animatingLeftLine();
+        });
+
+        RunnableAction run2 = Actions.run(() -> {
+            findTreeNodeByKey(50).animatingLeftLine();
+        });
+
+        RunnableAction run3 = Actions.run(() -> {
+            findTreeNodeByKey(10).animatingRightLine();
+        });
+
+        RunnableAction run4 = Actions.run(() -> findTreeNodeByKey(30)
+                .setColor(Color.valueOf("118730")));
+
+        ScaleToAction scaleLarge = Actions.scaleTo(1.2f, 1.2f, 0.3f);
+        ScaleToAction scaleSmall = Actions.scaleTo(0.9f, 0.9f, 0.3f);
+        ScaleToAction scaleNormal = Actions.scaleTo(1, 1, 0.3f);
+        SequenceAction scaleAnimation = Actions.sequence(scaleLarge, scaleSmall, scaleNormal);
+
+        SequenceAction sequence = Actions.sequence(run1, Actions.delay(0.8f),
+                run2, Actions.delay(0.8f), run3, Actions.delay(0.8f),
+                run4, scaleAnimation);
+        findTreeNodeByKey(30).addAction(sequence);
     }
 
     private void clearAllNodesAnimation() {
@@ -199,8 +296,6 @@ public class TreeAdapter extends AlgorithmAdapter {
         }
     }
 
-    private int[] arr = new int[]{64, 50, 79, 71, 10, 60, 9, 88, 30};
-
     @Override
     protected void algorithm() {
         await();
@@ -218,35 +313,14 @@ public class TreeAdapter extends AlgorithmAdapter {
             }
         }
 
-        search(root, 30);
-    }
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                FIND_THIRTY_NODE));
 
-    public void search(Node root, int key) {
-        // Base Cases: root is null or key is present at root
-        if (root == null) {
-            await(() -> sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(
-                            NOT_FOUND_OPERATION, 30, -1)));
-        }
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                FIND_NINETY_NODE));
 
-        if (root.key == key) {
-            await(() -> sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(
-                            FOUND_OPERATION, 30, -1)));
-        }
-
-        // val is greater than root's key
-        if (root.key > key) {
-            await(() -> sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(
-                            FIND_LEFT_OPERATION, root.key, -1)));
-            search(root.left, key);
-        } else {
-            search(root.right, key);
-            await(() -> sDecodingThreadHandler.sendMessage(
-                    sDecodingThreadHandler.obtainMessage(
-                            FIND_RIGHT_OPERATION, root.key, -1)));
-        }
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                TREE_SUMMARY));
     }
 
     private void insertRoot(int key, int insertionIndex) {
