@@ -11,6 +11,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Bezier;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.MoveToAction;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -23,36 +25,44 @@ public class TreeNodeActor extends Actor {
 
     private float lineWidth = 10;
 
+    private boolean isRoot = false;
     private boolean shouldAnimation = false;
-    private float x1;
-    private float y1;
-    private float x2;
-    private float y2;
-    private Bezier<Vector2> bezier;
-    float t;
-    float speed = 0.8f;
-    private Vector2 tmpV;
+    private float srcX;
+    private float srcY;
+    private float leftDstX;
+    private float leftDstY;
+    private float rightDstX;
+    private float rightDstY;
+    private Bezier<Vector2> leftBezier;
+    private Bezier<Vector2> rightBezier;
+    float tLeft;
+    float tRight;
+    float speed = 1.5f;
+    private Vector2 leftTmpV;
+    private Vector2 rightTmpV;
 
     private ShapeRenderer sr;
     private ShapeRenderer lineShader;
     private ShapeRenderer animationShader;
+    private boolean dim = false;
 
     private TreeNodeActor parentNode;
     private TreeNodeActor leftChild;
     private TreeNodeActor rightChild;
-    private Color circleColor;
+    private Color circleColor = Color.valueOf("3984b0");
     private Color lineColor = Color.valueOf("#cfcfca");
 
     public TreeNodeActor() {
         this(0);
     }
+
     public TreeNodeActor(int number) {
         sr = new ShapeRenderer();
-        sr.setColor(Color.RED);
+        sr.setColor(circleColor);
         lineShader = new ShapeRenderer();
         lineShader.setColor(lineColor);
         animationShader = new ShapeRenderer();
-        animationShader.setColor(Color.valueOf("e1e9b7"));
+        animationShader.setColor(Color.RED);
 
         this.bitmapFont = new BitmapFont(
                 Gdx.files.internal("font/default.fnt"),
@@ -64,34 +74,49 @@ public class TreeNodeActor extends Actor {
         setSize(150, 150);
         setOrigin(getWidth() / 2, getHeight() / 2);
 
-        x1 = x2 = getOriginX();
-        y1 = y2 = getOriginY();
-        bezier = new Bezier<>(new Vector2(x1, y1), new Vector2(x2, y2));
-        tmpV= new Vector2(x1, y1);
+        clearAnimation();
     }
-
-    private boolean blur = false;
-    public void blur() {
-        blur = true;
-        circleColor.a = 0.5f;
+    public void dimNode() {
+        dim = true;
     }
 
     public void reset() {
-        blur = false;
+        dim = false;
     }
 
     public void animatingLeftLine() {
-        x1 = getOriginX();
-        y1 = getOriginY();
-        x2 = leftChild.getX() + getOriginX() - getX();
-        y2 = leftChild.getY() + getOriginY() - getY();
-        bezier = new Bezier<>(new Vector2(x1, y1), new Vector2(x2, y2));
-        tmpV= new Vector2(x1, y1);
+        leftDstX = leftChild.getX() + getOriginX() - getX();
+        leftDstY = leftChild.getY() + getOriginY() - getY();
+        leftBezier = new Bezier<>(new Vector2(srcX, srcY), new Vector2(leftDstX, leftDstY));
+        leftTmpV = new Vector2(srcX, srcY);
         shouldAnimation = true;
     }
 
     public void animatingRightLine() {
+        rightDstX = rightChild.getX() + getOriginX() - getX();
+        rightDstY = rightChild.getY() + getOriginY() - getY();
+        rightBezier = new Bezier<>(new Vector2(srcX, srcY), new Vector2(rightDstX, rightDstY));
+        rightTmpV = new Vector2(srcX, srcY);
         shouldAnimation = true;
+    }
+
+    public void clearAnimation() {
+        setColor(Color.valueOf("3984b0"));
+        shouldAnimation = false;
+
+        srcX = leftDstX = rightDstX = getOriginX();
+        srcY = leftDstY = rightDstY = getOriginY();
+        leftBezier = new Bezier<>(new Vector2(srcX, srcY), new Vector2(leftDstX, leftDstY));
+        rightBezier = new Bezier<>(new Vector2(srcX, srcY), new Vector2(rightDstX, rightDstY));
+        leftTmpV = rightTmpV = new Vector2(srcX, srcY);
+        tLeft = tRight = 0;
+    }
+
+    public TreeNodeActor addChild(int number) {
+        if (getNumber() > number)
+            return setLeftChild(number);
+        else
+            return setRightChild(number);
     }
 
     @Override
@@ -114,7 +139,7 @@ public class TreeNodeActor extends Actor {
             animationShader.translate(getX(), getY(), 0);
 
             lineShader.begin(ShapeRenderer.ShapeType.Filled);
-            if (blur)
+            if (dim)
                 lineShader.setColor(lineColor.r, lineColor.g, lineColor.b, 0.15f);
             else
                 lineShader.setColor(lineColor.r, lineColor.g, lineColor.b, 1f);
@@ -129,14 +154,20 @@ public class TreeNodeActor extends Actor {
             lineShader.end();
 
             animationShader.begin(ShapeRenderer.ShapeType.Filled);
-            if (shouldAnimation && y1 > y2 && tmpV.y > y2) {
-                t += speed * Gdx.graphics.getDeltaTime();
-                bezier.valueAt(tmpV, t);
+            if (shouldAnimation && srcY > leftDstY && leftTmpV.y > leftDstY) {
+                tLeft += speed * Gdx.graphics.getDeltaTime();
+                leftBezier.valueAt(leftTmpV, tLeft);
             }
-            animationShader.rectLine(getOriginX(), getOriginY(), tmpV.x, tmpV.y, 20);
+
+            if (shouldAnimation && srcX < rightDstX && rightTmpV.x < rightDstX) {
+                tRight += speed * Gdx.graphics.getDeltaTime();
+                rightBezier.valueAt(rightTmpV, tRight);
+            }
+            animationShader.rectLine(getOriginX(), getOriginY(), leftTmpV.x, leftTmpV.y, 20);
+            animationShader.rectLine(getOriginX(), getOriginY(), rightTmpV.x, rightTmpV.y, 20);
             animationShader.end();
 
-            if (blur)
+            if (dim)
                 sr.setColor(circleColor.r, circleColor.g, circleColor.b, 0.15f);
             else
                 sr.setColor(circleColor.r, circleColor.g, circleColor.b, 1f);
@@ -183,24 +214,44 @@ public class TreeNodeActor extends Actor {
         }
     }
 
-    public TreeNodeActor getLeftChild() {
-        return leftChild;
+    public TreeNodeActor setLeftChild(int number) {
+        this.leftChild = new TreeNodeActor(number);
+        leftChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
+                getStage().getHeight() / 2 + getHeight());
+        getStage().addActor(leftChild);
+        float dstX = getX() - (isRoot ? 200 : 100);
+        float dstY = getY() - (isRoot ? 100 : 200);
+        MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
+        moveToAction.setDuration(0.7f);
+        this.leftChild.addAction(Actions.sequence(
+                Actions.delay(0.3f), moveToAction));
+        return this.leftChild;
     }
 
-    public void setLeftChild(TreeNodeActor leftChild) {
-        this.leftChild = leftChild;
+    public TreeNodeActor setRightChild(int number) {
+        this.rightChild = new TreeNodeActor(number);
+        rightChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
+                getStage().getHeight() / 2 + getHeight());
+        getStage().addActor(rightChild);
+        float dstX = getX() * 2 - leftChild.getX();
+        float dstY = getY() - (isRoot ? 100 : 200);
+        MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
+        moveToAction.setDuration(0.7f);
+        this.rightChild.addAction(Actions.sequence(
+                Actions.delay(0.3f), moveToAction));
+        return this.rightChild;
     }
 
     public TreeNodeActor getRightChild() {
         return rightChild;
     }
 
-    public void setRightChild(TreeNodeActor rightChild) {
-        this.rightChild = rightChild;
-    }
-
     public TreeNodeActor getParentNode() {
         return parentNode;
+    }
+
+    public TreeNodeActor getLeftChild() {
+        return leftChild;
     }
 
     public void setParentNode(TreeNodeActor parent) {
@@ -209,5 +260,13 @@ public class TreeNodeActor extends Actor {
 
     public int getNumber() {
         return number;
+    }
+
+    public boolean isRoot() {
+        return isRoot;
+    }
+
+    public void setRoot(boolean root) {
+        isRoot = root;
     }
 }

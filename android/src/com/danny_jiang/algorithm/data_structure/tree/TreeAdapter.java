@@ -4,157 +4,136 @@ import android.os.Message;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.RunnableAction;
 import com.badlogic.gdx.scenes.scene2d.actions.ScaleToAction;
+import com.badlogic.gdx.scenes.scene2d.actions.SequenceAction;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.danny_jiang.algorithm.common.AlgorithmAdapter;
 import com.danny_jiang.algorithm.data_structure.tree.data.TreeNodeActor;
-import com.danny_jiang.algorithm.views.AlgorithmRect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 public class TreeAdapter extends AlgorithmAdapter {
     
-    private static final int BINARY_SEARCH_TREE_INTRO_1 = 0;
-    private static final int BINARY_SEARCH_TREE_INTRO_2 = 1;
-    private static final int HIGHLIGHT_ROOT_NODE = 2;
-    private static final int HIGHLIGHT_PARENT_NODE = 3;
-    private static final int HIGHLIGHT_LEAF_NODE = 4;
+    private static final int BINARY_SEARCH_TREE_INTRO = 0;
+    private static final int INSERT_OPERATION = 1;
+    private static final int ADD_ROOT_NODE = 2;
+    private static final int ADD_SUB_NODE = 3;
+    private static final int FIND_LEFT_OPERATION = 4;
+    private static final int FIND_RIGHT_OPERATION = 5;
+    private static final int FIND_THIRTY_NODE = 6;
+    private static final int FIND_NINETY_NODE = 7;
+    private static final int TREE_SUMMARY = 8;
+
+    private int[] arr = new int[]{64, 50, 79, 71, 10, 60, 9, 88, 30};
+    private String[] insertionImageList = new String[]{
+            "data_structure/tree/tree_insertion_0.jpeg",
+            "data_structure/tree/tree_insertion_1.jpeg",
+            "data_structure/tree/tree_insertion_2.jpeg",
+            "data_structure/tree/tree_insertion_3.jpeg",
+            "data_structure/tree/tree_insertion_4.jpeg",
+            "data_structure/tree/tree_insertion_5.jpeg",
+            "data_structure/tree/tree_insertion_6.jpeg",
+            "data_structure/tree/tree_insertion_7.jpeg",
+            "data_structure/tree/tree_insertion_8.jpeg",
+            "data_structure/tree/tree_insertion_9.jpeg",
+    };
+    Map<Integer, Image> imageMap = new Hashtable<>();
 
     private List<TreeNodeActor> actorList = new ArrayList<>();
 
     TreeNodeActor rootNode;
-    TreeNodeActor fiftyNode;
-    TreeNodeActor seventyNineNode;
-    TreeNodeActor tenNode;
-    TreeNodeActor sixtyNode;
-    TreeNodeActor seventyOneNode;
-    TreeNodeActor thirtyNode;
-    TreeNodeActor nineNode;
-    TreeNodeActor eightyEightNode;
 
-    AlgorithmRect algorithmRect;
-
-    private Label stepDescription;
+    private Image bstIntroImage;
+    private Image treeIntroText;
+    private Image treePropertyText;
+    private Image findThirtyText;
+    private Image findNinetyText;
+    private Image treeSummaryText;
 
     @Override
     protected void inflateStage() {
-        // root 64
-        rootNode = new TreeNodeActor(64);
-        rootNode.setColor(Color.valueOf("#5e6fec"));
-        rootNode.setPosition(stage.getWidth() / 2 - rootNode.getWidth() / 2,
-                stage.getHeight() - rootNode.getHeight() * 1.5f);
+        bstIntroImage = new Image(new TextureRegion(
+                new Texture("data_structure/tree/bst_demo.jpeg")));
+        bstIntroImage.setSize(visualizerBg.getWidth(), visualizerBg.getHeight());
+        bstIntroImage.setPosition(visualizerBg.getX(), visualizerBg.getY());
+        stage.addActor(bstIntroImage);
 
-        // 50
-        fiftyNode = new TreeNodeActor(50);
-        fiftyNode.setColor(Color.valueOf("#6aaf6a"));
-        fiftyNode.setPosition(rootNode.getX() - 200, rootNode.getY() - 200);
+        treeIntroText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/tree_intro.jpeg")
+        ));
+        treeIntroText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * treeIntroText.getPrefHeight()
+                        / treeIntroText.getPrefWidth());
+        treeIntroText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - treeIntroText.getHeight() - 20);
+        stage.addActor(treeIntroText);
 
-        // 79
-        seventyNineNode = new TreeNodeActor(79);
-        seventyNineNode.setColor(Color.valueOf("#dc143c"));
-        seventyNineNode.setPosition(rootNode.getX() * 2 - fiftyNode.getX(), rootNode.getY() - 200);
+        treePropertyText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/tree_property.jpeg")
+        ));
+        treePropertyText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * treePropertyText.getPrefHeight()
+                        / treePropertyText.getPrefWidth());
+        treePropertyText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - treePropertyText.getHeight() - 20);
+        stage.addActor(treePropertyText);
+        treePropertyText.setVisible(false);
 
-        // 10
-        tenNode = new TreeNodeActor(10);
-        tenNode.setColor(Color.valueOf("#1ca1f2"));
-        tenNode.setPosition(700, 800);
-        tenNode.setPosition(fiftyNode.getX() - 100, fiftyNode.getY() - 200);
+        for (int i = 0; i < insertionImageList.length; i++) {
+            Image image = new Image(new TextureRegion(
+                    new Texture(insertionImageList[i])));
+            image.setSize(visualizerBg.getWidth(),
+                    visualizerBg.getWidth() * image.getPrefHeight()
+                            / treePropertyText.getPrefWidth());
+            image.setPosition(visualizerBg.getX(),
+                    visualizerBg.getY() - image.getHeight() - 20);
+            imageMap.put(i, image);
+            stage.addActor(image);
+            image.setVisible(false);
+        }
 
-        // 60
-        sixtyNode = new TreeNodeActor(60);
-        sixtyNode.setColor(Color.valueOf("#c3c0d2"));
-        sixtyNode.setPosition(700, 800);
-        sixtyNode.setPosition(fiftyNode.getX() * 2 - tenNode.getX(),
-                fiftyNode.getY() - 200);
+        findThirtyText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/search_30.jpeg")
+        ));
+        findThirtyText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * findThirtyText.getPrefHeight()
+                        / treePropertyText.getPrefWidth());
+        findThirtyText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - findThirtyText.getHeight() - 20);
+        stage.addActor(findThirtyText);
+        findThirtyText.setVisible(false);
 
-        // 71
-        seventyOneNode = new TreeNodeActor(71);
-        seventyOneNode.setColor(Color.valueOf("#850838"));
-        seventyOneNode.setPosition(seventyNineNode.getX() - 100, seventyNineNode.getY() - 200);
+        findNinetyText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/search_90.jpeg")
+        ));
+        findNinetyText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * findNinetyText.getPrefHeight()
+                        / treePropertyText.getPrefWidth());
+        findNinetyText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - findNinetyText.getHeight() - 20);
+        stage.addActor(findNinetyText);
+        findNinetyText.setVisible(false);
 
-        // 88
-        eightyEightNode = new TreeNodeActor(88);
-        eightyEightNode.setColor(Color.valueOf("#ecde9b"));
-        eightyEightNode.setPosition(seventyNineNode.getX() * 2 - seventyOneNode.getX(),
-                seventyNineNode.getY() - 200);
-
-        // 9
-        nineNode = new TreeNodeActor(9);
-        nineNode.setColor(Color.valueOf("#d199e1"));
-        nineNode.setPosition(tenNode.getX() - 100, tenNode.getY() - 200);
-
-        // 30
-        thirtyNode = new TreeNodeActor(30);
-        thirtyNode.setColor(Color.valueOf("#6a4734"));
-        thirtyNode.setPosition(700, 800);
-        thirtyNode.setPosition(tenNode.getX() * 2 - nineNode.getX(),
-                tenNode.getY() - 200);
-
-        stage.addActor(rootNode);
-        stage.addActor(fiftyNode);
-        stage.addActor(seventyNineNode);
-        stage.addActor(tenNode);
-        stage.addActor(sixtyNode);
-        stage.addActor(seventyOneNode);
-        stage.addActor(eightyEightNode);
-        stage.addActor(nineNode);
-        stage.addActor(thirtyNode);
-
-        actorList.add(rootNode);
-        actorList.add(fiftyNode);
-        actorList.add(seventyNineNode);
-        actorList.add(tenNode);
-        actorList.add(sixtyNode);
-        actorList.add(seventyOneNode);
-        actorList.add(eightyEightNode);
-        actorList.add(nineNode);
-        actorList.add(thirtyNode);
-
-        /**
-         * construct the Tree
-         */
-        rootNode.setLeftChild(fiftyNode);
-        rootNode.setRightChild(seventyNineNode);
-
-        fiftyNode.setLeftChild(tenNode);
-        fiftyNode.setRightChild(sixtyNode);
-
-        seventyNineNode.setLeftChild(seventyOneNode);
-        seventyNineNode.setRightChild(eightyEightNode);
-
-        tenNode.setLeftChild(nineNode);
-        tenNode.setRightChild(thirtyNode);
-
-        algorithmRect = new AlgorithmRect();
-        algorithmRect.setPosition(nineNode.getX() - 20,
-                nineNode.getY() - 20);
-        algorithmRect.setSize(
-                sixtyNode.getX() + sixtyNode.getWidth()
-                        - nineNode.getX() + 40,
-                fiftyNode.getY() + fiftyNode.getHeight()
-                        - nineNode.getY() + 40);
-        stage.addActor(algorithmRect);
-        algorithmRect.setVisible(false);
-
-        BitmapFont desFont = new BitmapFont(Gdx.files.internal(
-                "data_structure/tree/binary_search_tree.fnt"));
-        Label.LabelStyle desStyle = new Label.LabelStyle();
-        desStyle.font = desFont;
-        desStyle.fontColor = Color.valueOf("#4A4A4A");
-        stepDescription = new Label("", desStyle);
-        stepDescription.setText("如上图中所示:\n\n" +
-                "二叉搜索树是以二叉树来组织的.\n" +
-                "树的每个结点中包含一个value值,\n" +
-                "以及left和right两个指针,它们\n" +
-                "分别指向左子结点和右子结点.");
-        stepDescription.setSize(500, 350);
-        stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
-        stage.addActor(stepDescription);
+        treeSummaryText = new Image(new TextureRegion(
+                new Texture("data_structure/tree/bst_summary.jpeg")
+        ));
+        treeSummaryText.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * treeSummaryText.getPrefHeight()
+                        / treeSummaryText.getPrefWidth());
+        treeSummaryText.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - treeSummaryText.getHeight() - 50);
+        stage.addActor(treeSummaryText);
+        treeSummaryText.setVisible(false);
     }
 
     @Override
@@ -164,29 +143,139 @@ public class TreeAdapter extends AlgorithmAdapter {
 
     @Override
     public void animation(Message msg) {
+        int number = msg.arg1;
+        int insertionIndex = msg.arg2;
         switch (msg.what) {
-            case BINARY_SEARCH_TREE_INTRO_1:
-                stepDescription.setText("二叉搜索树的特点,对任何结点x\n" +
-                        "其左子树中的value值不能大于x.value\n" +
-                        "其右子树中的value值不能小于x.value");
+            case BINARY_SEARCH_TREE_INTRO:
+                treeIntroText.remove();
+                treePropertyText.setVisible(true);
                 break;
-            case BINARY_SEARCH_TREE_INTRO_2:
-                algorithmRect.setVisible(true);
-                stepDescription.setText("比如上图中,根节点是64.\n" +
-                        "在64的左子树中, 所有的结点值\n" +
-                        "50、10、15、9、30都小于64");
+            case INSERT_OPERATION:
+                treePropertyText.remove();
+                bstIntroImage.setVisible(false);
+                imageMap.get(0).setVisible(true);
                 break;
-            case HIGHLIGHT_ROOT_NODE:
-                Gdx.app.postRunnable(() -> rootNode.animatingLeftLine());
+            case FIND_THIRTY_NODE:
+                findThirtyNode();
                 break;
-            case HIGHLIGHT_PARENT_NODE:
-                Gdx.app.postRunnable(() -> Gdx.app.postRunnable(()
-                        -> highlightNode(Arrays.asList(10, 45, 57))));
+            case FIND_NINETY_NODE:
+                findNinetyNode();
                 break;
-            case HIGHLIGHT_LEAF_NODE:
-                Gdx.app.postRunnable(() -> Gdx.app.postRunnable(()
-                        -> highlightNode(Arrays.asList(45, 57, 80, 71))));
+            case FIND_LEFT_OPERATION:
+                Gdx.app.postRunnable(() -> {
+                    findTreeNodeByKey(number).animatingLeftLine();
+                    signal();
+                });
                 break;
+            case FIND_RIGHT_OPERATION:
+                Gdx.app.postRunnable(() -> {
+                    findTreeNodeByKey(number).animatingRightLine();
+                    signal();
+                });
+                break;
+            case ADD_ROOT_NODE:
+                Gdx.app.postRunnable(() -> {
+                    addRootNode(number);
+                    imageMap.get(insertionIndex).remove();
+                    imageMap.get(insertionIndex + 1).setVisible(true);
+                });
+                break;
+            case ADD_SUB_NODE:
+                Gdx.app.postRunnable(() -> {
+                    addSubNode(number);
+                    imageMap.get(insertionIndex).remove();
+                    imageMap.get(insertionIndex + 1).setVisible(true);
+                });
+                break;
+            case TREE_SUMMARY:
+                Gdx.app.postRunnable(() -> {
+                    clearAllNodesAnimation();
+                    findNinetyText.setVisible(false);
+                    treeSummaryText.setVisible(true);
+                });
+                break;
+        }
+    }
+
+    private void addSubNode(int number) {
+        disableNextButton();
+        TreeNodeActor parent = findTreeNodeByKey(currentParentNode.key);
+        actorList.add(parent.addChild(number));
+        stage.addAction(Actions.delay(1,
+                Actions.run(() -> enableNextButton())));
+    }
+
+    private void addRootNode(int number) {
+        // root 64
+        rootNode = new TreeNodeActor(number);
+        rootNode.setRoot(true);
+        rootNode.setPosition(stage.getWidth() / 2 - rootNode.getWidth() / 2,
+                stage.getHeight() - rootNode.getHeight() * 1.5f);
+        stage.addActor(rootNode);
+        actorList.add(rootNode);
+    }
+
+    private TreeNodeActor findTreeNodeByKey(int key) {
+        for (TreeNodeActor nodeActor : actorList) {
+            if (nodeActor.getNumber() == key) return nodeActor;
+        }
+        return null;
+    }
+
+    private void findNinetyNode() {
+        clearAllNodesAnimation();
+        findThirtyText.setVisible(false);
+        findNinetyText.setVisible(true);
+
+        RunnableAction run1 = Actions.run(() -> {
+            rootNode.animatingRightLine();
+        });
+
+        RunnableAction run2 = Actions.run(() -> {
+            findTreeNodeByKey(79).animatingRightLine();
+        });
+
+        RunnableAction run3 = Actions.run(() -> findTreeNodeByKey(88)
+                .setColor(Color.valueOf("f96161")));
+
+        SequenceAction sequence = Actions.sequence(run1, Actions.delay(0.8f),
+                run2, Actions.delay(0.8f), run3, Actions.delay(0.8f));
+        stage.addAction(sequence);
+    }
+
+    private void findThirtyNode() {
+        imageMap.get(9).setVisible(false);
+        findThirtyText.setVisible(true);
+
+        RunnableAction run1 = Actions.run(() -> {
+            rootNode.animatingLeftLine();
+        });
+
+        RunnableAction run2 = Actions.run(() -> {
+            findTreeNodeByKey(50).animatingLeftLine();
+        });
+
+        RunnableAction run3 = Actions.run(() -> {
+            findTreeNodeByKey(10).animatingRightLine();
+        });
+
+        RunnableAction run4 = Actions.run(() -> findTreeNodeByKey(30)
+                .setColor(Color.valueOf("118730")));
+
+        ScaleToAction scaleLarge = Actions.scaleTo(1.2f, 1.2f, 0.3f);
+        ScaleToAction scaleSmall = Actions.scaleTo(0.9f, 0.9f, 0.3f);
+        ScaleToAction scaleNormal = Actions.scaleTo(1, 1, 0.3f);
+        SequenceAction scaleAnimation = Actions.sequence(scaleLarge, scaleSmall, scaleNormal);
+
+        SequenceAction sequence = Actions.sequence(run1, Actions.delay(0.8f),
+                run2, Actions.delay(0.8f), run3, Actions.delay(0.8f),
+                run4, scaleAnimation);
+        findTreeNodeByKey(30).addAction(sequence);
+    }
+
+    private void clearAllNodesAnimation() {
+        for (TreeNodeActor actor : actorList) {
+            actor.clearAnimation();
         }
     }
 
@@ -202,7 +291,7 @@ public class TreeAdapter extends AlgorithmAdapter {
                         Actions.sequence(scaleLarge, scaleSmall, scaleNormal)));
             } else {
                 actor.clearActions();
-                actor.blur();
+                actor.dimNode();
             }
         }
     }
@@ -211,19 +300,72 @@ public class TreeAdapter extends AlgorithmAdapter {
     protected void algorithm() {
         await();
 
-        await(() -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(
-                        BINARY_SEARCH_TREE_INTRO_1, 9, -1)));
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                BINARY_SEARCH_TREE_INTRO));
 
-        await(() -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(
-                        BINARY_SEARCH_TREE_INTRO_2, 9, -1)));
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                INSERT_OPERATION));
+        for (int i = 0; i < arr.length; i++) {
+            if (i == 0) {
+                insertRoot(arr[i], i);
+            } else {
+                insert(arr[i], i);
+            }
+        }
 
-        await(() -> sDecodingThreadHandler.sendMessage(
-                sDecodingThreadHandler.obtainMessage(
-                        HIGHLIGHT_ROOT_NODE, 9, -1)));
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                FIND_THIRTY_NODE));
 
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                FIND_NINETY_NODE));
+
+        await(() -> sDecodingThreadHandler.sendEmptyMessage(
+                TREE_SUMMARY));
     }
 
+    private void insertRoot(int key, int insertionIndex) {
+        root = new Node(key);
+        await(() -> sDecodingThreadHandler.sendMessage(
+                sDecodingThreadHandler.obtainMessage(
+                        ADD_ROOT_NODE, key, insertionIndex)));
+    }
 
+    Node root;
+    public void insert(int key, int insertionIndex) {
+        root = insertRec(root, key, insertionIndex);
+    }
+
+    private Node currentParentNode = null;
+    /* A recursive function to insert a new key in BST */
+    private Node insertRec(Node root, int key, int insertionIndex) {
+
+        /* If the tree is empty, return a new node */
+        if (root == null) {
+            root = new Node(key);
+            await(() -> sDecodingThreadHandler.sendMessage(
+                    sDecodingThreadHandler.obtainMessage(
+                            ADD_SUB_NODE, key, insertionIndex)));
+            return root;
+        }
+
+        currentParentNode = root;
+        /* Otherwise, recur down the tree */
+        if (key < root.key)
+            root.left = insertRec(root.left, key, insertionIndex);
+        else if (key > root.key)
+            root.right = insertRec(root.right, key, insertionIndex);
+
+        /* return the (unchanged) node pointer */
+        return root;
+    }
+
+    public static class Node {
+        public int key;
+        public Node left, right;
+
+        public Node(int item) {
+            key = item;
+            left = right = null;
+        }
+    }
 }

@@ -23,8 +23,8 @@ public enum Algorithm implements Parcelable {
     QUEUE("队列", R.drawable.queue, QueueActivity.class),
 
     // Tree structure
-    BINARY_SEARCH_TREE("二叉搜索树", R.drawable.stack, TreeIntroActivity.class),
-    RED_BLACK_TREE("红黑树", R.drawable.queue, QueueActivity.class),
+    BINARY_SEARCH_TREE("二叉搜索树", R.drawable.bst, TreeIntroActivity.class),
+    RED_BLACK_TREE("红黑树", R.drawable.red_black_tree, QueueActivity.class),
     // Graph algorithm
 
     // sort algorithm
