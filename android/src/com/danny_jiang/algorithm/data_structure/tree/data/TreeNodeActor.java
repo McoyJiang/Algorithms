@@ -53,10 +53,18 @@ public class TreeNodeActor extends Actor {
     private Color lineColor = Color.valueOf("#cfcfca");
 
     public TreeNodeActor() {
-        this(0);
+        this(0, 150, 150);
     }
 
     public TreeNodeActor(int number) {
+        this(number, 150, 150);
+    }
+
+    public TreeNodeActor(int width, int height) {
+        this(0, width, height);
+    }
+
+    public TreeNodeActor(int number, int width, int height) {
         sr = new ShapeRenderer();
         sr.setColor(circleColor);
         lineShader = new ShapeRenderer();
@@ -71,7 +79,7 @@ public class TreeNodeActor extends Actor {
 
         this.number = number;
         text = String.valueOf(number);
-        setSize(150, 150);
+        setSize(width, height);
         setOrigin(getWidth() / 2, getHeight() / 2);
 
         clearAnimation();
@@ -113,10 +121,14 @@ public class TreeNodeActor extends Actor {
     }
 
     public TreeNodeActor addChild(int number) {
+        return addChild(number, false);
+    }
+
+    public TreeNodeActor addChild(int number, boolean shouldAnimation) {
         if (getNumber() > number)
-            return setLeftChild(number);
+            return setLeftChild(number, shouldAnimation);
         else
-            return setRightChild(number);
+            return setRightChild(number, shouldAnimation);
     }
 
     @Override
@@ -214,32 +226,56 @@ public class TreeNodeActor extends Actor {
         }
     }
 
-    public TreeNodeActor setLeftChild(int number) {
+    public TreeNodeActor setLeftChild(int number, boolean shouldAnimation) {
         this.leftChild = new TreeNodeActor(number);
-        leftChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
-                getStage().getHeight() / 2 + getHeight());
-        getStage().addActor(leftChild);
         float dstX = getX() - (isRoot ? 200 : 100);
         float dstY = getY() - (isRoot ? 100 : 200);
-        MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
-        moveToAction.setDuration(0.7f);
-        this.leftChild.addAction(Actions.sequence(
-                Actions.delay(0.3f), moveToAction));
+        getStage().addActor(leftChild);
+        if (shouldAnimation) {
+            leftChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
+                    getStage().getHeight() / 2 + getHeight());
+            MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
+            moveToAction.setDuration(0.7f);
+            this.leftChild.addAction(Actions.sequence(
+                    Actions.delay(0.3f), moveToAction));
+        } else {
+            leftChild.setPosition(dstX, dstY);
+        }
         return this.leftChild;
     }
 
-    public TreeNodeActor setRightChild(int number) {
+    public TreeNodeActor setRightChild(int number, boolean shouldAnimation) {
         this.rightChild = new TreeNodeActor(number);
-        rightChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
-                getStage().getHeight() / 2 + getHeight());
-        getStage().addActor(rightChild);
         float dstX = getX() * 2 - leftChild.getX();
         float dstY = getY() - (isRoot ? 100 : 200);
-        MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
-        moveToAction.setDuration(0.7f);
-        this.rightChild.addAction(Actions.sequence(
-                Actions.delay(0.3f), moveToAction));
+        getStage().addActor(rightChild);
+        if (shouldAnimation) {
+            rightChild.setPosition(getStage().getWidth() / 2 - getWidth() / 2,
+                    getStage().getHeight() / 2 + getHeight());
+            MoveToAction moveToAction = Actions.moveTo(dstX, dstY);
+            moveToAction.setDuration(0.7f);
+            this.rightChild.addAction(Actions.sequence(
+                    Actions.delay(0.3f), moveToAction));
+        } else {
+            rightChild.setPosition(dstX, dstY);
+        }
         return this.rightChild;
+    }
+
+    public void emptyLeft() {
+        leftChild = null;
+    }
+
+    public TreeNodeActor setNilLeft(int number) {
+        leftChild = new TreeNodeActor(number);
+        leftChild.setText("NIL");
+        float dstX = getX() - (isRoot ? 200 : 100);
+        float dstY = getY() - (isRoot ? 100 : 200);
+        leftChild.setPosition(dstX, dstY);
+        leftChild.setColor(Color.BLACK);
+        getStage().addActor(leftChild);
+
+        return leftChild;
     }
 
     public TreeNodeActor getRightChild() {
