@@ -279,23 +279,6 @@ public class TreeAdapter extends AlgorithmAdapter {
         }
     }
 
-    private void highlightNode(List numberList) {
-        for (int i = 0; i < actorList.size(); i++) {
-            TreeNodeActor actor = actorList.get(i);
-            if (numberList.contains(actor.getNumber())) {
-                actor.reset();
-                ScaleToAction scaleLarge = Actions.scaleTo(1.2f, 1.2f, 0.5f);
-                ScaleToAction scaleSmall = Actions.scaleTo(0.9f, 0.9f, 0.5f);
-                ScaleToAction scaleNormal = Actions.scaleTo(1, 1, 0.5f);
-                actor.addAction(Actions.repeat(100,
-                        Actions.sequence(scaleLarge, scaleSmall, scaleNormal)));
-            } else {
-                actor.clearActions();
-                actor.dimNode();
-            }
-        }
-    }
-
     @Override
     protected void algorithm() {
         await();
