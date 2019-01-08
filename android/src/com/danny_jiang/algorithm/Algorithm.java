@@ -9,6 +9,7 @@ import com.danny_jiang.algorithm.data_structure.array.ArrayActivity;
 import com.danny_jiang.algorithm.data_structure.linkedlist.LinkListActivity;
 import com.danny_jiang.algorithm.data_structure.queue.QueueActivity;
 import com.danny_jiang.algorithm.data_structure.stack.StackActivity;
+import com.danny_jiang.algorithm.data_structure.tree.RBTreeActivity;
 import com.danny_jiang.algorithm.data_structure.tree.TreeIntroActivity;
 import com.danny_jiang.algorithm.insert_sort.InsertionSortActivity;
 import com.danny_jiang.algorithm.quick_sort.QuickSortActivity;
@@ -24,7 +25,7 @@ public enum Algorithm implements Parcelable {
 
     // Tree structure
     BINARY_SEARCH_TREE("二叉搜索树", R.drawable.bst, TreeIntroActivity.class),
-    RED_BLACK_TREE("红黑树", R.drawable.red_black_tree, QueueActivity.class),
+    RED_BLACK_TREE("红黑树", R.drawable.red_black_tree, RBTreeActivity.class),
     // Graph algorithm
 
     // sort algorithm
