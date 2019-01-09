@@ -29,6 +29,7 @@ public class RBTreeAdapter extends AlgorithmAdapter {
             "data_structure/tree/rb_condition3.jpeg",
             "data_structure/tree/rb_condition4.jpeg"
     };
+    private Image redBlackTreeDef;
     private Image rbTreeTitle;
     private TreeNodeActor rootNode;
     private TreeNodeActor nil;
@@ -38,6 +39,17 @@ public class RBTreeAdapter extends AlgorithmAdapter {
 
     @Override
     protected void inflateStage() {
+        redBlackTreeDef = new Image(new TextureRegion(
+                new Texture("data_structure/tree/red_black_tree.jpeg")));
+        redBlackTreeDef.setSize(visualizerBg.getWidth(),
+                visualizerBg.getWidth() * redBlackTreeDef.getPrefHeight()
+                        / redBlackTreeDef.getPrefWidth());
+        redBlackTreeDef.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - redBlackTreeDef.getHeight() - 20);
+        stage.addActor(redBlackTreeDef);
+        redBlackTreeDef.addAction(Actions.sequence(
+                Actions.alpha(0), Actions.alpha(1, 1)));
+
         rbTreeTitle = new Image(new TextureRegion(
                 new Texture("data_structure/tree/rb_condition_title.jpeg")));
         rbTreeTitle.setSize(visualizerBg.getWidth(),
@@ -151,6 +163,7 @@ public class RBTreeAdapter extends AlgorithmAdapter {
         int index = msg.arg1;
         switch (msg.what) {
             case SHOW_CONDITION_TITLE:
+                redBlackTreeDef.setVisible(false);
                 rbTreeTitle.setVisible(true);
                 break;
             case SHOT_CONDITION:

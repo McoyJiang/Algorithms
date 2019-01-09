@@ -1,7 +1,6 @@
 package com.danny_jiang.algorithm.data_structure.tree.data;
 
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -53,11 +52,11 @@ public class TreeNodeActor extends Actor {
     private Color lineColor = Color.valueOf("#cfcfca");
 
     public TreeNodeActor() {
-        this(0, 150, 150);
+        this(0, 120, 120);
     }
 
     public TreeNodeActor(int number) {
-        this(number, 150, 150);
+        this(number, 120, 120);
     }
 
     public TreeNodeActor(int width, int height) {
