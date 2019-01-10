@@ -150,7 +150,8 @@ public class BubbleSortAdapter extends AlgorithmAdapter {
         stepDescription = new Label("", style);
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 2 - upArrow.getHeight());
+        stepDescription.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - stepDescription.getHeight() - 20);
         stage.addActor(stepDescription);
     }
 
