@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title></title>
     <style type="text/css">
+            @font-face {
+                font-family: SketchRockwell;
+                src: url('HYXuJingXingKaiW.ttf');
+            }
 			.red{
 				color: #c7254e;
 			}
@@ -61,6 +65,7 @@
                 overflow: auto;
             }
             .highlight {
+                font-family: SketchRockwell;
                 font-weight:bold;
                 font-size:18px;
                 color: #d46d6e;
@@ -76,10 +81,6 @@
                 font-size:20px;
                 color: #32384e;
             }
-            @font-face {
-                font-family: SketchRockwell;
-                src: url('HYXuJingXingKaiW.ttf');
-            }
             .SketchRockwell {
                 font-family: SketchRockwell;
                 font-size: 20px;
@@ -89,7 +90,7 @@
 <body style="padding: 5px;">
 <p class="main_title">简介</p>
 <p>数组(Array)是一种线性表结构，它用一组<span class="highlight">连续内存</span>来存储一组具有<span class="highlight">相同类型</span>的数据。
-    通过<span class="highlight">下标</span>可以访问数组中的数据元素。</p>
+    通过下标来访问数组中的数据元素。</p>
 
 <p class="sub_title">连续内存</p>
 <p>就如同我们去电影院看电影时，你跟你女朋友一定会选两个连在一起的座位, 而不是分开来坐。</p>
@@ -101,29 +102,30 @@
 <blockquote>
     <p><font size="3">int[] array = new int[10];  // 申请一块可以容纳10个int类型的连续内存空间</font></p>
 </blockquote>
-<p class="main_title">优势与劣势</p>
-<p class="sub_title">劣势：空间使用率不高</p>
+<p class="main_title">数组优缺点</p>
+<p class="sub_title">缺点：空间使用率不高</p>
 <ol>
 <li>即使我们只在数组中存储一个数字，也需要为所有的数据预先分配内存。
-    这将造成一定的内存浪费，你没有使用，别人也无法使用。用更通俗的话来讲就是占着茅坑不拉屎！
-    因此数组的空间效率不是很好， 经常会有空闲的区域没有得到充分利用。</li>
-    <img src="zhanzuo.jpg" width="400"><br><br><br>
+    这将造成一定的内存浪费。就如同大学自习室里的位置，别人只要放本书在桌子上，就说明已经被占了。</li>
+    <img src="space_waste.jpeg" width="450"><br><br><br>
 <li>假设我们需要给数组申请一块10个单元的空间大小，虽然内存条中可用剩余空间超过10个单元，
-    但是并没有一块连续的10个单元，这种情况将会申请失败，也就无法使用数组结构来存储数据了。
+    但是并没有一块连续的10个单元，这种情况将会申请失败<br>
     还是用选电影票举例: 我们想选一个3个连在一起的座位。下图虽然剩余可选座位有6个，但是
     并没有一个3个座位连在一起，也就没有办法在这个电影院看了</li><br><br>
     <img src="seat.jpeg" width="400">
 </ol>
-<p class="sub_title">优势：访问极快</p>
+<p class="sub_title">优点：访问极快</p>
 <p>计算机会给每个内存单元分配一个物理地址，然后计算机通过这些物理地址来访问内存中的数据。
-    比如下图中地址1000的地址上是“兔子”, 而每一个单元占8个单位，所以狮子的地址我们可以很容易
-    的计算出来 1000 + 8 = 1008，也就是说array[1008] = ‘狮子'。</p>
+    比如下图中地址1000的地址上是“兔子”, 而每一个单元占8个单位，所以"狮子"的地址我们可以很容易
+    的计算出来 1000 + 8*2 = 1016，也就是说array[1016] = "狮子"。</p>
 <img src="animals.jpeg" width="600">
 <p>同样，由于数组中的内存是连续的，并且类型是固定的，所以可以在O(1)时间内，
     通过下标读取数组中的任何元素，因此它的时间效率是很高的。
 
-具体实现原理就是，当声明数组时，数组会保存一个基地址base_address，当计算机需要访问数组中的某个元素是，就可以通过下面的寻址公式，计算出该元素的内存地址：
-arr[i]_address = base_address + i * data_type_size
+具体实现原理就是，当声明数组时，数组会保存一个基地址 base_address，当计算机需要访问数组中的某个元素是，就可以通过下面的寻址公式，计算出该元素的内存地址：
+<blockquote>
+<p><font size="3">arr[i]_address = base_address + i * data_type_size</font></p>
+</blockquote>
 其中i 代表需要访问的元素下标，base_address代表首地址，data_type_size_代表每个元素占用的内存大小，比如数组中存储的是java的int类型，所以data_type_size_也就是4个字节。
 </p>
 <p class="SketchRockwell">注意：</p>
