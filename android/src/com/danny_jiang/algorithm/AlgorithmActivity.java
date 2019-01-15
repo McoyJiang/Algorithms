@@ -6,13 +6,23 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
+import com.danny_jiang.algorithm.utils.JPushEventUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import cn.jiguang.analytics.android.api.BrowseEvent;
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+import cn.jpush.android.api.JPushInterface;
 
 public abstract class AlgorithmActivity extends FragmentActivity implements AndroidFragmentApplication.Callbacks {
+
+    private static final String TAG = AlgorithmActivity.class.getSimpleName();
 
     protected List<Fragment> fragmentList = new ArrayList<>();
     protected TabLayout tabLayout;
@@ -35,8 +45,13 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+//                int position = tab.getPosition();
+//                showFragment(fragmentList.get(position));
                 int position = tab.getPosition();
-                showFragment(fragmentList.get(position));
+                Fragment fragment = fragmentList.get(position);
+                FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+                trans.replace(R.id.algo_content, fragment);
+                trans.commit();
             }
 
             @Override
@@ -66,6 +81,22 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
                 transaction.show(fragment).commit();
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        JPushInterface.onResume(this);
+        String simpleName = getClass().getSimpleName();
+        JAnalyticsInterface.onPageStart(this, simpleName);
+        JPushEventUtils.onBrowseEvent(this, simpleName);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        JPushInterface.onPause(this);
+        String simpleName = getClass().getSimpleName();
+        JAnalyticsInterface.onPageEnd(this, simpleName);
     }
 
     protected abstract void initFragments();

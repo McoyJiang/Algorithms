@@ -1313,6 +1313,10 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_array
 drawable ic_launcher
+drawable jpush_ic_richpush_actionbar_back
+drawable jpush_ic_richpush_actionbar_divider
+drawable jpush_richpush_btn_selector
+drawable jpush_richpush_progressbar
 drawable linklist
 drawable navigation_empty_icon
 drawable notification_action_background
@@ -1356,6 +1360,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_text
+id actionbarLayoutId
 id actions
 id activity_chooser_view_content
 id add
@@ -1410,6 +1415,7 @@ id fill_horizontal
 id fill_vertical
 id fixed
 id forever
+id fullWebView
 id ghost_view
 id gone
 id groups
@@ -1420,6 +1426,8 @@ id icon_group
 id ifRoom
 id image
 id image_child
+id imgRichpushBtnBack
+id imgView
 id info
 id invisible
 id italic
@@ -1452,14 +1460,17 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id popLayoutId
 id product_scrollview
 id progress_circular
 id progress_horizontal
+id pushPrograssBar
 id radio
 id recyclerView_Main
 id right
 id right_icon
 id right_side
+id rlRichpushTitleBar
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1525,6 +1536,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id tvRichpushTitle
 id uniform
 id up
 id useLogo
@@ -1534,6 +1546,7 @@ id webView_Content
 id withText
 id wrap
 id wrap_content
+id wvPopwin
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1589,6 +1602,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout item_algorithm
+layout jpush_popwin_layout
+layout jpush_webview_layout
 layout list_item_algorithm_child
 layout list_item_algorithm_group
 layout main_activity
@@ -1825,6 +1840,7 @@ style Base_Widget_AppCompat_Toolbar_Button_Navigation
 style Base_Widget_Design_AppBarLayout
 style Base_Widget_Design_TabLayout
 style GdxTheme
+style MyDialogStyle
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_ThemeOverlay_AppCompat
