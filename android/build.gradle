@@ -20,6 +20,17 @@ android {
         applicationId "com.danny_jiang.algorithm"
         minSdkVersion 21
         targetSdkVersion 26
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a',
+                    'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "4365b6d84cc660221a665a3b", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
         aaptOptions { cruncherEnabled = false }
     }
     compileOptions {
@@ -67,4 +78,7 @@ dependencies {
 
     androidTestImplementation "junit:junit:4.12"
     androidTestImplementation "org.mockito:mockito-core:2.13.0"
+
+    compile 'cn.jiguang.sdk:jpush:3.1.6'  // 此处以JPush 3.1.6 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.2.5'  // 此处以JCore 1.2.5 版本为例。
 }
