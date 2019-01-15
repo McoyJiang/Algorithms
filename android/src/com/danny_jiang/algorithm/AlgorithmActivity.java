@@ -6,13 +6,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.jiguang.analytics.android.api.JAnalyticsInterface;
+import cn.jpush.android.api.JPushInterface;
+
 public abstract class AlgorithmActivity extends FragmentActivity implements AndroidFragmentApplication.Callbacks {
+
+    private static final String TAG = AlgorithmActivity.class.getSimpleName();
 
     protected List<Fragment> fragmentList = new ArrayList<>();
     protected TabLayout tabLayout;
@@ -66,6 +72,19 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
                 transaction.show(fragment).commit();
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String simpleName = getClass().getSimpleName();
+        JAnalyticsInterface.onPageStart(this, simpleName);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        String simpleName = getClass().getSimpleName();
+        JAnalyticsInterface.onPageEnd(this, simpleName);
     }
 
     protected abstract void initFragments();

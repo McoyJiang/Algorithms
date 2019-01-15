@@ -79,6 +79,7 @@ dependencies {
     androidTestImplementation "junit:junit:4.12"
     androidTestImplementation "org.mockito:mockito-core:2.13.0"
 
+    compile 'cn.jiguang.sdk:janalytics:1.1.1' // 此处以JAnalytics 1.1.1 版本为例。
     compile 'cn.jiguang.sdk:jpush:3.1.6'  // 此处以JPush 3.1.6 版本为例。
     compile 'cn.jiguang.sdk:jcore:1.2.5'  // 此处以JCore 1.2.5 版本为例。
 }
