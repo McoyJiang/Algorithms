@@ -41,8 +41,13 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+//                int position = tab.getPosition();
+//                showFragment(fragmentList.get(position));
                 int position = tab.getPosition();
-                showFragment(fragmentList.get(position));
+                Fragment fragment = fragmentList.get(position);
+                FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+                trans.replace(R.id.algo_content, fragment);
+                trans.commit();
             }
 
             @Override
