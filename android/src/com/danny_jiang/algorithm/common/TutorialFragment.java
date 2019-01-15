@@ -45,6 +45,9 @@ public abstract class TutorialFragment extends Fragment {
         webSettings.setDefaultTextEncodingName("utf-8");
         webView.setWebChromeClient(new WebChromeClient());
 
+        // 自适应屏幕
+        webView.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        webView.getSettings().setLoadWithOverviewMode(true);
         loadUrl();
     }
 

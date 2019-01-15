@@ -9,4 +9,5 @@ public class ArrayActivity extends AlgorithmActivity {
         fragmentList.add(new ArrayVisualizerFragment());
         fragmentList.add(new ArrayQuizFragment());
     }
+
 }

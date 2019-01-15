@@ -74,7 +74,8 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         stepDescription = new Label("", style);
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, 250);
+        stepDescription.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - stepDescription.getHeight() - 20);
         stage.addActor(stepDescription);
 
         Label.LabelStyle subStyle = new Label.LabelStyle();

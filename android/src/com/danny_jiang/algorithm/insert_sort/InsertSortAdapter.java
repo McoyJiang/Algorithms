@@ -73,7 +73,8 @@ public class InsertSortAdapter extends AlgorithmAdapter{
                 "无序数组: [17, 23, 5, 76, 10, 4]");
         stepDescription.setSize(500, 350);
         stepDescription.setFontScale(2f);
-        stepDescription.setPosition(30, stage.getHeight() / 3 - 100);
+        stepDescription.setPosition(visualizerBg.getX(),
+                visualizerBg.getY() - stepDescription.getHeight() - 20);
         stage.addActor(stepDescription);
     }
 

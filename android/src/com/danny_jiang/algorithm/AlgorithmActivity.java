@@ -15,6 +15,7 @@ import java.util.List;
 public abstract class AlgorithmActivity extends FragmentActivity implements AndroidFragmentApplication.Callbacks {
 
     protected List<Fragment> fragmentList = new ArrayList<>();
+    protected TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,11 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
         manager = getSupportFragmentManager();
         initFragments();
 
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        initTabs();
+    }
+
+    protected void initTabs() {
+        tabLayout = findViewById(R.id.tab_layout);
         tabLayout.addTab(tabLayout.newTab().setText("TUTORIAL"));
         tabLayout.addTab(tabLayout.newTab().setText("VISUALIZER"));
         //tabLayout.addTab(tabLayout.newTab().setText("Quiz"));

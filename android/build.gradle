@@ -20,6 +20,7 @@ android {
         applicationId "com.danny_jiang.algorithm"
         minSdkVersion 21
         targetSdkVersion 26
+        aaptOptions { cruncherEnabled = false }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

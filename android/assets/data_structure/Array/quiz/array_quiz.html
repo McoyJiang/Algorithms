@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>快速判断某一个数组是否是另一个数组的子集</title>
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+
+    </style>
+</head>
+<!-- nodata 第三栏接口无数据时样式不变 -->
+<body class="nodata ">
+<div class="container clearfix" id="mainBox">
+    <div class="recommend-right">
+        <ul class="recommend-fixed-box">
+
+        </ul>
+    </div>
+    <main>
+        <div class="blog-content-box">
+            <div class="article-header-box">
+                <div class="article-header">
+                    <div class="article-title-box">
+                        <h1 class="title-article">快速判断某一个数组是否是另一个数组的子集</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <article class="baidu_pl">
+            <div id="article_content" class="article_content clearfix csdn-tracking-statistics"
+                 data-pid="blog" data-mod=popu_307 data-dsm="post">
+                <div class="article-copyright">
+
+                    版权声明：本文为博主原创文章，未经博主允许不得转载。
+                    https://blog.csdn.net/zxm317122667/article/details/83999828
+                </div>
+                <div id="content_views" class="markdown_views prism-atom-one-dark">
+                    <!-- flowchart 箭头图标 勿删 -->
+                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block"
+                              style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+                    </svg>
+                    <h2><a id="arr10m1__arr20n1_arr2arr1_0"></a>给定两个无序数组：数组arr1[0…m-1] 和
+                        数组arr2[0…n-1] ,判断数组arr2是否是arr1的子集。</h2>
+                    <p>比如</p>
+                    <blockquote>
+                        <p>arr1[] = {11, 1, 13, 21, 3, 7}<br>
+                            arr2[] = {11, 3, 7, 1}</p>
+                    </blockquote>
+                    <p>输出<code>true</code></p>
+                    <blockquote>
+                        <p>arr1[] = {1, 2, 3, 4, 5, 6},<br>
+                            arr2[] = {1, 2, 4}</p>
+                    </blockquote>
+                    <p>输出<code>true</code></p>
+                    <blockquote>
+                        <p>arr1[] = {10, 5, 2, 23, 19}<br>
+                            arr2[] = {19, 5, 3}</p>
+                    </blockquote>
+                    <p>输出<code>false</code></p>
+                    <h2><a id="1_17"></a>方法1</h2>
+                    <p>
+                        使用两个for循环。外部循环挑选出arr2[]的每一个元素赋值为value；然后再内部循环中，搜索在arr1[]中是否存在value。如果arr2[]中的每一个元素都可以在arr1[]中被找到，则返回<code>true</code>，否则返回<code>false</code>。具体代码如下：
+                    </p>
+                    <pre><code>boolean isSubset(int arr1[],
+                int arr2[], int m, int n)
+    {
+        int i = 0;
+        int j = 0;
+        for (i = 0; i &lt; n; i++)
+        {
+            for (j = 0; j &lt; m; j++)
+                if(arr2[i] == arr1[j])
+                    break;
+
+            /* If the above inner loop
+            was not broken at all then
+            arr2[i] is not present in
+            arr1[] */
+            if (j == m)
+                return false;
+        }
+
+        /* If we reach here then all
+        elements of arr2[] are present
+        in arr1[] */
+        return true;
+}
+</code></pre>
+                    <h2><a id="2_45"></a>方法2</h2>
+                    <p>1 先将两个数组分别进行排序<br>
+                        2 然后用Merge Type(合并类型)的过程, 判断arr2[]是否是arr1[]的子集</p>
+                    <pre><code>boolean isSubset(int arr1[], int arr2[], int m, int n)
+    {
+        int i = 0, j = 0;
+
+        if(m &lt; n)
+        return false;
+
+        Arrays.sort(arr1); //sorts arr1
+        Arrays.sort(arr2); // sorts arr2
+
+        while( i &lt; n &amp;&amp; j &lt; m )
+        {
+            if( arr1[j] &lt; arr2[i] )
+                j++;
+            else if( arr1[j] == arr2[i] )
+            {
+                j++;
+                i++;
+            }
+            else if( arr1[j] &gt; arr2[i] )
+                return false;
+        }
+
+        if( i &lt; n )
+            return false;
+        else
+            return true;
+}
+</code></pre>
+                    <p>因为要对两个数组分别进行排序，所以时间复杂度为<font color="red">O(mLogm + nLogn)</font></p>
+                    <h2><a id="3HashSet_79"></a>方法3(使用HashSet)</h2>
+                    <p>1 创建一个HashSet，并将数组arr1[]中的所有元素保存到此HashSet中<br>
+                        2 遍历arr2[], 并在HashSet中搜索arr2[]的每一个元素. 如果某一个元素没有找到则返回0.<br>
+                        3 如果arr2[]中的每一个元素都可以在HashSet中找到，则返回1</p>
+                    <pre><code>boolean isSubset(int arr1[], int arr2[], int m, int n)
+    {
+        HashSet&lt;Integer&gt; hset= new HashSet&lt;&gt;();
+
+        // hset stores all the values of arr1
+        for(int i = 0; i &lt; m; i++)
+        {
+            if(!hset.contains(arr1[i]))
+                hset.add(arr1[i]);
+        }
+
+        // loop to check if all elements of arr2 also
+        // lies in arr1
+        for(int i = 0; i &lt; n; i++)
+        {
+            if(!hset.contains(arr2[i]))
+                return false;
+        }
+        return true;
+}
+</code></pre>
+
+                </div>
+                <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-df60374684.css"
+                      rel="stylesheet">
+            </div>
+        </article>
+</div>
+</div>
+</main>
+
+</div>
+</body>
+</html>
