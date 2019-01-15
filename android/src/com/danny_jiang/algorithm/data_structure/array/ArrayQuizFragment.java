@@ -9,33 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.danny_jiang.algorithm.R;
+import com.danny_jiang.algorithm.common.TutorialFragment;
 
 import material.danny_jiang.com.mcoysnaplibrary.page.McoyWebSnapPage;
 import material.danny_jiang.com.mcoysnaplibrary.widget.McoySnapPageLayout;
 
-public class ArrayQuizFragment extends Fragment {
-
-    private McoySnapPageLayout pageLayout;
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.quiz_array, container, false);
-        return view;
-    }
+public class ArrayQuizFragment extends TutorialFragment {
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        pageLayout = view.findViewById(R.id.snapPage);
-
-        McoyWebSnapPage w1 = new McoyWebSnapPage(getContext(),
-                "https://blog.csdn.net/zxm317122667/article/details/83962270");
-        McoyWebSnapPage w2 = new McoyWebSnapPage(getContext(),
-                "https://blog.csdn.net/zxm317122667/article/details/83999828");
-
-        pageLayout.addSnapPage(w1);
-        pageLayout.addSnapPage(w2);
+    public void loadUrl() {
+        webView.loadUrl("file:///android_asset/data_structure/Array/quiz/array_quiz.html");
     }
 }
