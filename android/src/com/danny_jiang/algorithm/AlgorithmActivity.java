@@ -9,10 +9,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
 import com.badlogic.gdx.backends.android.AndroidFragmentApplication;
+import com.danny_jiang.algorithm.utils.JPushEventUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import cn.jiguang.analytics.android.api.BrowseEvent;
 import cn.jiguang.analytics.android.api.JAnalyticsInterface;
 import cn.jpush.android.api.JPushInterface;
 
@@ -82,12 +86,15 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
     @Override
     protected void onResume() {
         super.onResume();
+        JPushInterface.onResume(this);
         String simpleName = getClass().getSimpleName();
         JAnalyticsInterface.onPageStart(this, simpleName);
+        JPushEventUtils.onBrowseEvent(this, simpleName);
     }
     @Override
     protected void onPause() {
         super.onPause();
+        JPushInterface.onPause(this);
         String simpleName = getClass().getSimpleName();
         JAnalyticsInterface.onPageEnd(this, simpleName);
     }

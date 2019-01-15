@@ -4,9 +4,6 @@ ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidMa
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-78:12
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-78:12
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-78:12
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:2:1-44:12
-MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:2:1-134:12
-MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.thoughtbot:expandablecheckrecyclerview:1.4] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/expandablecheckrecyclerview-1.4.aar/e14d3ae8ced7b7b7b7d29d04228fb080/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.McoyJiang:McoySnap:v2.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/AndroidManifest.xml:2:1-17:12
@@ -14,6 +11,9 @@ MERGED from [com.thoughtbot:expandablerecyclerview:1.3] /Users/danny.jiang/.grad
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/1dba33dfc6cf063494863fd4f96f4b86/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/b1b2a2bc065c4373136911dcc76d2215/AndroidManifest.xml:17:1-22:12
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:2:1-44:12
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:2:1-134:12
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:2:1-14:12
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5542dfca641497763c3c1c8c92011da4/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/90809b8dc345edb5df1059b355d3edc7/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/3665d4bb9e4d10cb4fd1343bd835fcb2/AndroidManifest.xml:17:1-22:12
@@ -60,150 +60,150 @@ MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/trans
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:14:22-87
 uses-permission#android.permission.RECEIVE_USER_PRESENT
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:15:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:11:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:11:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:11:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:11:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:17:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:17:5-79
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:15:22-76
 uses-permission#android.permission.INTERNET
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:16:5-67
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:12:5-67
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:12:5-67
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:12:5-67
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:12:5-67
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:18:5-67
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:18:5-67
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:16:22-64
 uses-permission#android.permission.READ_PHONE_STATE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:17:5-75
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:14:5-75
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:14:5-75
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:14:5-75
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:14:5-75
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:20:5-75
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:20:5-75
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:17:22-72
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:18:5-81
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:15:5-81
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:15:5-81
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:15:5-81
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:15:5-81
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:21:5-81
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:21:5-81
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:18:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:19:5-80
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:16:5-80
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:16:5-80
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:16:5-80
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:16:5-80
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:22:5-80
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:22:5-80
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:19:22-77
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:20:5-84
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:19:5-84
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:19:5-84
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:19:5-84
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:19:5-84
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:25:5-84
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:25:5-84
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:20:22-81
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:21:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:20:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:20:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:20:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:20:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:26:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:26:5-79
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:21:22-76
 uses-permission#android.permission.WRITE_SETTINGS
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:22:5-73
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:17:5-73
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:17:5-73
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:17:5-73
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:17:5-73
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:23:5-73
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:23:5-73
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:22:22-70
 uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:23:5-76
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:21:5-76
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:21:5-76
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:21:5-76
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:21:5-76
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:27:5-76
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:27:5-76
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:23:22-73
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:26:5-78
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:24:5-78
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:24:5-78
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:24:5-78
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:24:5-78
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:30:5-78
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:30:5-78
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:26:22-75
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:27:5-81
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:25:5-81
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:25:5-81
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:25:5-81
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:25:5-81
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:31:5-81
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:31:5-81
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:27:22-78
 uses-permission#android.permission.CHANGE_WIFI_STATE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:28:5-76
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:26:5-76
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:26:5-76
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:26:5-76
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:26:5-76
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:32:5-76
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:32:5-76
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:28:22-73
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:29:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:27:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:27:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:27:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:27:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:33:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:33:5-79
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:29:22-76
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:30:5-89
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:28:5-89
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:28:5-89
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:28:5-89
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:28:5-89
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:34:5-89
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:34:5-89
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:30:22-86
 uses-permission#android.permission.CHANGE_NETWORK_STATE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:31:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:29:5-79
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:29:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:29:5-79
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:29:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:35:5-79
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:35:5-79
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:31:22-76
 uses-permission#android.permission.GET_TASKS
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:32:5-68
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:30:5-68
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:30:5-68
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:30:5-68
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:30:5-68
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:32:22-65
 uses-permission#android.permission.VIBRATE
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:33:5-66
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:18:5-66
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:18:5-66
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:18:5-66
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:18:5-66
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:24:5-66
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:24:5-66
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:33:22-63
 application
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:35:5-76:19
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:32:5-42:19
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:32:5-42:19
-MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:37:5-132:19
-MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:37:5-132:19
-MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:11:5-12:19
-MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:11:5-12:19
 MERGED from [com.github.McoyJiang:McoySnap:v2.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.McoyJiang:McoySnap:v2.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/1dba33dfc6cf063494863fd4f96f4b86/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/1dba33dfc6cf063494863fd4f96f4b86/AndroidManifest.xml:9:5-20
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:32:5-42:19
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:32:5-42:19
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:37:5-132:19
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:37:5-132:19
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:11:5-12:19
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:11:5-12:19
 	android:supportsRtl
 		ADDED from [com.github.McoyJiang:McoySnap:v2.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/AndroidManifest.xml:14:9-35
 	android:label
@@ -284,12 +284,6 @@ uses-sdk
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:7:5-9:41
-MERGED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:7:5-9:41
-MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:7:5-9:41
-MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:7:5-9:41
-MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:7:5-9:41
-MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/AndroidManifest.xml:20:5-44
 MERGED from [com.thoughtbot:expandablecheckrecyclerview:1.4] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/expandablecheckrecyclerview-1.4.aar/e14d3ae8ced7b7b7b7d29d04228fb080/AndroidManifest.xml:8:5-10:41
@@ -304,6 +298,12 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/dann
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/1dba33dfc6cf063494863fd4f96f4b86/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/b1b2a2bc065c4373136911dcc76d2215/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/b1b2a2bc065c4373136911dcc76d2215/AndroidManifest.xml:20:5-44
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:7:5-9:41
+MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5542dfca641497763c3c1c8c92011da4/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5542dfca641497763c3c1c8c92011da4/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/90809b8dc345edb5df1059b355d3edc7/AndroidManifest.xml:20:5-44
@@ -341,27 +341,27 @@ INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/Androi
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:13:5-68
+ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:13:5-68
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:19:5-68
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:19:5-68
 	android:name
-		ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:13:22-65
+		ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:13:22-65
 meta-data#JPUSH_CHANNEL
-ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:35:9-37:48
+ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:35:9-37:48
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:125:9-127:48
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:125:9-127:48
 	android:value
-		ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:37:13-45
+		ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:37:13-45
 	android:name
-		ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:36:13-41
+		ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:36:13-41
 meta-data#JPUSH_APPKEY
-ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:38:9-40:47
+ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:38:9-40:47
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:128:9-130:47
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:128:9-130:47
 	android:value
-		ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:40:13-44
+		ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:40:13-44
 	android:name
-		ADDED from [cn.jiguang.sdk:janalytics:1.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.1.1.aar/3a1bbea81ece647bf8791087687f4f5f/AndroidManifest.xml:39:13-40
+		ADDED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:39:13-40
 permission#${JPUSH_PKGNAME}.permission.JPUSH_MESSAGE
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:11:5-13:47
 uses-permission#${JPUSH_PKGNAME}.permission.JPUSH_MESSAGE
