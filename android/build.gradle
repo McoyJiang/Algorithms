@@ -20,6 +20,8 @@ android {
         applicationId "com.danny_jiang.algorithm"
         minSdkVersion 21
         targetSdkVersion 26
+        versionCode 24
+        versionName "1.1.2"
         ndk {
             //选择要添加的对应 cpu 类型的 .so 库。
             abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a',
