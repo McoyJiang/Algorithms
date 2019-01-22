@@ -5,7 +5,7 @@ import com.danny_jiang.algorithm.common.TutorialFragment;
 public class LinkListTutorialFragment extends TutorialFragment {
     @Override
     public void loadUrl() {
-        String url = "https://mp.weixin.qq.com/s/kw212wNMAkdBjifuo1qd_A";
+        String url = "https://mp.weixin.qq.com/s/khwVnI9KktwKDQCemFm7KA";
         webView.loadUrl(url);
     }
 }
