@@ -6,7 +6,7 @@ public class ArrayActivity extends AlgorithmActivity {
     @Override
     protected void initFragments() {
         fragmentList.add(new ArrayTutorialFragment());
-        //fragmentList.add(new ArrayVisualizerFragment());
+        fragmentList.add(new ArrayVisualizerFragment());
         fragmentList.add(new ArrayQuizFragment());
     }
 

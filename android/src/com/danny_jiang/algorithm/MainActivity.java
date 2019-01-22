@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         algorithmGroupList.add(new AlgorithmGroup("排序",
                 Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
 
-        algorithmGroupList.add(new AlgorithmGroup("图算法",
-                Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
+//        algorithmGroupList.add(new AlgorithmGroup("图算法",
+//                Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
     }
 }
