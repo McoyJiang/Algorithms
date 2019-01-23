@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cdc.sed.yff.AdManager;
+
 import static com.danny_jiang.algorithm.Algorithm.ARRAY;
 import static com.danny_jiang.algorithm.Algorithm.BINARY_SEARCH_TREE;
 import static com.danny_jiang.algorithm.Algorithm.BUBBLE_SORT;
@@ -31,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        AdManager.getInstance(this).init("70f1a3abd7d63f3f",
+                "3b3e1e460ceea249", true);
         setContentView(R.layout.main_activity);
         algorithmListView = findViewById(R.id.recyclerView_Main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
