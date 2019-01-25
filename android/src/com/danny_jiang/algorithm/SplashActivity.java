@@ -10,6 +10,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
+import java.util.LinkedList;
+
 import cdc.sed.yff.AdManager;
 import cdc.sed.yff.nm.cm.ErrorCode;
 import cdc.sed.yff.nm.sp.SplashViewSettings;
@@ -185,9 +187,10 @@ public class SplashActivity extends BaseActivity {
 			                    }
 		                    });
 	}
-	
+
 	@Override
 	protected void onDestroy() {
+		LinkedList
 		super.onDestroy();
 		// 开屏展示界面的 onDestroy() 回调方法中调用
 		SpotManager.getInstance(mContext).onDestroy();

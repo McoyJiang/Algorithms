@@ -1322,26 +1322,6 @@ drawable design_snackbar_background
 drawable ic_array
 drawable ic_launcher
 drawable icon
-drawable ifly_ad_jz_bottom_progress
-drawable ifly_ad_jz_bottom_seek_progress
-drawable ifly_ad_jz_bottom_seek_thumb
-drawable ifly_ad_jz_click_pause_selector
-drawable ifly_ad_jz_click_play_selector
-drawable ifly_ad_jz_close_volume
-drawable ifly_ad_jz_enlarge
-drawable ifly_ad_jz_loading
-drawable ifly_ad_jz_loading_bg
-drawable ifly_ad_jz_open_volume
-drawable ifly_ad_jz_pause_normal
-drawable ifly_ad_jz_pause_pressed
-drawable ifly_ad_jz_play_normal
-drawable ifly_ad_jz_play_pressed
-drawable ifly_ad_jz_restart_normal
-drawable ifly_ad_jz_restart_pressed
-drawable ifly_ad_jz_seek_thumb_normal
-drawable ifly_ad_jz_seek_thumb_pressed
-drawable ifly_ad_jz_shrink
-drawable ifly_ad_jz_square_bg
 drawable jpush_ic_richpush_actionbar_back
 drawable jpush_ic_richpush_actionbar_divider
 drawable jpush_richpush_btn_selector
@@ -1457,24 +1437,6 @@ id homeAsUp
 id icon
 id icon_group
 id ifRoom
-id ifly_ad_bottom_seek_bar
-id ifly_ad_cur_time
-id ifly_ad_details
-id ifly_ad_full_volume_btn
-id ifly_ad_fullscreen_btn
-id ifly_ad_layout_bottom
-id ifly_ad_layout_retry
-id ifly_ad_layout_start
-id ifly_ad_layout_top
-id ifly_ad_loading_progress
-id ifly_ad_retry_btn
-id ifly_ad_skip
-id ifly_ad_start_btn
-id ifly_ad_surface_container
-id ifly_ad_thumb
-id ifly_ad_thumb_web
-id ifly_ad_total_time
-id ifly_ad_volume_btn
 id image
 id image_child
 id imgRichpushBtnBack
@@ -1588,7 +1550,6 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id tutorial_ad_layout
 id tvRichpushTitle
 id uniform
 id up
@@ -1656,7 +1617,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout ifly_ad_jz_layout_standard
 layout item_algorithm
 layout jpush_popwin_layout
 layout jpush_webview_layout
@@ -2169,4 +2129,3 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
-xml file_paths

@@ -17,47 +17,98 @@
   <component name="ChangeListManager">
     <list default="true" id="95903ecf-d556-4cd5-8987-9118fe98856e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/generated/source/buildConfig/debug/com/danny_jiang/algorithm/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/generated/source/buildConfig/debug/com/danny_jiang/algorithm/BuildConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/2oBxsHPXGV9EJNXsTJI5Hg5EAAo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/FD_LbnW_VpOrhkPGcpyUczpjKVk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/cVsIAmEXKCm3H+eMBn3psSPi96Y=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/eNrFScC1YGy6uYP1rs54ZHEkxtg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/l8XoE8UAMd0RupMvJLFmzj9SRMM=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/rgQ2WaNA3JrM5i5VDDM5qkP9wgg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJavaRes/zip-cache/uGfSmcoPx_kQ3bVJ_lYZX0GwqNE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/merge-state" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/2oBxsHPXGV9EJNXsTJI5Hg5EAAo=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/FD_LbnW_VpOrhkPGcpyUczpjKVk=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/cVsIAmEXKCm3H+eMBn3psSPi96Y=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/eNrFScC1YGy6uYP1rs54ZHEkxtg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/l8XoE8UAMd0RupMvJLFmzj9SRMM=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/rgQ2WaNA3JrM5i5VDDM5qkP9wgg=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/debug-mergeJniLibs/zip-cache/uGfSmcoPx_kQ3bVJ_lYZX0GwqNE=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/fN2CB_I87Zr7qNahRZfWV9le1Qw=" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/fN2CB_I87Zr7qNahRZfWV9le1Qw=" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugShaders/merger.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/fN2CB_I87Zr7qNahRZfWV9le1Qw=" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/arm64-v8a/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/arm64-v8a/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/armeabi-v7a/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/armeabi-v7a/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/armeabi/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/armeabi/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/x86/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/x86/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/x86_64/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/jniLibs/debug/x86_64/libgdx.so" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/symbols/debug/R.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/10.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/10.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/11.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/11.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/16.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/16.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/18.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/18.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/3.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/3.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/4.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/4.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/5.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/7.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/7.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/8.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/8.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/9.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/9.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/__content__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJavaRes/debug/0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJavaRes/debug/0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/apk/debug/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/10.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/18.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexBuilder/debug/__content__.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dexMerger/debug/__content__.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/externalLibsDexMerger/debug/0/classes.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/externalLibsDexMerger/debug/__content__.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJavaRes/debug/0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/arm64-v8a/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/arm64-v8a/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi-v7a/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/armeabi/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86_64/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/0/lib/x86_64/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/mergeJniLibs/debug/__content__.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/arm64-v8a/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/arm64-v8a/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/armeabi-v7a/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/armeabi-v7a/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/armeabi/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/armeabi/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/x86/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/x86/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/x86_64/libgdx-box2d.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/0/lib/x86_64/libgdx.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/stripDebugSymbol/debug/__content__.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/android-debug.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/debug/output.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/release/algorithm.apk" beforeDir="false" afterPath="$PROJECT_DIR$/android/release/algorithm.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/release/output.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/res/layout/bubble_sort_tutorial_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/res/layout/bubble_sort_tutorial_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_bottom_progress.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_bottom_seek_progress.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_bottom_seek_thumb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_click_pause_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_click_play_selector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_loading.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_seek_thumb_normal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_seek_thumb_pressed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_square_bg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/SplashActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/SplashActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -103,8 +154,8 @@
       <file leaf-file-name="TutorialFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+            <state relative-caret-position="264">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -134,7 +185,7 @@
         <entry file="file://$PROJECT_DIR$/android/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="181">
-              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -142,8 +193,17 @@
       <file leaf-file-name="SplashActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/SplashActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="137" column="42" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
+            <state relative-caret-position="226">
+              <caret line="192" column="16" selection-start-line="192" selection-start-column="16" selection-end-line="192" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LinkedList.java" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/java/util/LinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="196" column="24" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -155,14 +215,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bubble_sort_tutorial_fragment.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bubble_sort_tutorial_fragment.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/res/layout/bubble_sort_tutorial_fragment.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="52" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="53" />
+            <state relative-caret-position="242">
+              <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -2559,20 +2619,20 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayTutorialFragment.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListTutorialFragment.java" />
         <option value="$PROJECT_DIR$/android/res/layout/bubble_sort_tutorial_fragment.xml" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java" />
         <option value="$PROJECT_DIR$/android/res/values-zh-rCN/strings.xml" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MainActivity.java" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/PermissionHelper.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/BaseActivity.java" />
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/SplashActivity.java" />
         <option value="$PROJECT_DIR$/android/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java" />
+        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/SplashActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="56" />
-    <option name="y" value="23" />
+    <option name="y" value="24" />
     <option name="width" value="1376" />
     <option name="height" value="877" />
   </component>
@@ -3201,7 +3261,8 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="23" width="1376" height="877" extended-state="0" />
+    <frame x="56" y="24" width="1376" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.32938075" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -3218,9 +3279,9 @@
       <window_info id="Captures" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993395" weight="0.24962519" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.28401586" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.15984148" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993395" visible="true" weight="0.24962519" />
+      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.28401586" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.15984148" />
       <window_info anchor="right" id="Gradle" order="5" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="4" side_tool="true" />
@@ -3434,12 +3495,6 @@
           <option name="timeStamp" value="127" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java</url>
-          <line>81</line>
-          <properties />
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/android/libs/Ad_Android_SDK.jar!/com/iflytek/voiceads/IFLYBannerAd.class</url>
           <line>32</line>
           <properties />
@@ -3486,12 +3541,6 @@
           <line>47</line>
           <properties />
           <option name="timeStamp" value="136" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java</url>
-          <line>82</line>
-          <properties />
-          <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$PROJECT_DIR$/android/libs/Ad_Android_SDK.jar!/com/iflytek/voiceads/IFLYBannerAd.class</url>
@@ -3558,16 +3607,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/android/res/drawable-hdpi/ic_launcher.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/Array/brown.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/Array/tutorial/content_toolbar.css" />
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/Array/tutorial/detail-312775a663.min.css" />
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/Array/tutorial/array.html" />
@@ -3806,13 +3845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/res/values-zh-rCN/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -3875,14 +3907,17 @@
     <entry file="file://$PROJECT_DIR$/android/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/SplashActivity.java">
+    <entry file="file://$PROJECT_DIR$/android/res/drawable/ifly_ad_jz_click_pause_selector.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="137" column="42" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -3891,8 +3926,29 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="52" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="53" />
+        <state relative-caret-position="242">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/SplashActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="192" column="16" selection-start-line="192" selection-start-column="16" selection-end-line="192" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Android/sdk/sources/android-27/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="196" column="24" selection-start-line="196" selection-start-column="24" selection-end-line="196" selection-end-column="24" />
         </state>
       </provider>
     </entry>
