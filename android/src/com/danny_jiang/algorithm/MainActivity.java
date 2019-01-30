@@ -1,12 +1,19 @@
 package com.danny_jiang.algorithm;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,14 +31,39 @@ import static com.danny_jiang.algorithm.Algorithm.STACK;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Toolbar toolbar;
     private RecyclerView algorithmListView;
     private List<AlgorithmGroup> algorithmGroupList = new ArrayList<>();
     private ExpandableAlgorithmAdapter adapter;
+
+    private Toolbar.OnMenuItemClickListener onMenuItemClick = menuItem -> {
+        Intent intent = new Intent();
+        switch (menuItem.getItemId()) {
+            case R.id.help_feedback:
+                intent.setClass(getApplicationContext(), FeedbackActivity.class);
+                break;
+            case R.id.folk_on_github:
+                Uri uri = Uri.parse("https://github.com/McoyJiang/Algorithms");
+                intent = new Intent(Intent.ACTION_VIEW, uri);
+                break;
+        }
+        startActivity(intent);
+        return true;
+    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+
+        toolbar = findViewById(R.id.toolBar);
+        toolbar.setLogo(R.drawable.ic_launcher);
+
+        //设置导航图标要在setSupportActionBar方法之后
+        setSupportActionBar(toolbar);
+
+        toolbar.setOnMenuItemClickListener(onMenuItemClick);
+
         algorithmListView = findViewById(R.id.recyclerView_Main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         //设置布局管理器
@@ -73,5 +105,11 @@ public class MainActivity extends AppCompatActivity {
 
 //        algorithmGroupList.add(new AlgorithmGroup("图算法",
 //                Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
     }
 }

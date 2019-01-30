@@ -1333,9 +1333,11 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable queue
 drawable red_black_tree
+drawable service_num
 drawable stack
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable wechat_num
 id ALT
 id CTRL
 id FUNCTION
@@ -1369,6 +1371,7 @@ id algo_content
 id all
 id always
 id async
+id author_intro
 id auto
 id barrier
 id beginning
@@ -1414,11 +1417,13 @@ id fill
 id fill_horizontal
 id fill_vertical
 id fixed
+id folk_on_github
 id forever
 id fullWebView
 id ghost_view
 id gone
 id groups
+id help_feedback
 id home
 id homeAsUp
 id icon
@@ -1491,6 +1496,7 @@ id search_plate
 id search_src_text
 id search_voice_btn
 id select_dialog_listview
+id service_qr_code
 id shortcut
 id showCustom
 id showHome
@@ -1528,6 +1534,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolBar
 id top
 id topPanel
 id touch_outside
@@ -1543,6 +1550,8 @@ id useLogo
 id view_offset_helper
 id visible
 id webView_Content
+id wechat_description
+id wechat_qr_code
 id withText
 id wrap
 id wrap_content
@@ -1584,6 +1593,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_feedback
 layout bubble_sort_analyze_fragment
 layout bubble_sort_tutorial_fragment
 layout common_activity_layout
@@ -1632,6 +1642,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menu_main
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1665,6 +1676,8 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_pattern
+string folk_on_github
+string help_feedback
 string next
 string password_toggle_content_description
 string path_password_eye
@@ -1673,6 +1686,8 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
 string status_bar_notification_info_overflow
+string wechat_description
+string wechat_number
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog

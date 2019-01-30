@@ -3,5 +3,9 @@
 
     <string name="app_name">Algorithm</string>
     <string name="next">NEXT</string>
+    <string name="help_feedback">帮助与反馈</string>
+    <string name="folk_on_github">folk on github</string>
+    <string name="wechat_description">更多细节可以搜索并关注\n公众号\"算法详解\"</string>
+    <string name="wechat_number">如有问题或者建议欢迎添加\n个人微信号 \"18562570522\"反馈</string>
 
 </resources>
