@@ -24,6 +24,7 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
 
     private static final String TAG = AlgorithmActivity.class.getSimpleName();
 
+    private String[] titleList;
     protected List<Fragment> fragmentList = new ArrayList<>();
     protected TabLayout tabLayout;
 
@@ -38,10 +39,11 @@ public abstract class AlgorithmActivity extends FragmentActivity implements Andr
     }
 
     protected void initTabs() {
+        titleList = getResources().getStringArray(R.array.tabs);
         tabLayout = findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("TUTORIAL"));
-        tabLayout.addTab(tabLayout.newTab().setText("VISUALIZER"));
-        //tabLayout.addTab(tabLayout.newTab().setText("Quiz"));
+        for (int i = 0; i < fragmentList.size(); i++) {
+            tabLayout.addTab(tabLayout.newTab().setText(titleList[i]));
+        }
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

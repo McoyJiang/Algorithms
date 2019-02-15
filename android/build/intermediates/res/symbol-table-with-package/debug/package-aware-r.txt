@@ -16,6 +16,7 @@ anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
 animator design_appbar_state_list_animator
+array tabs
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme

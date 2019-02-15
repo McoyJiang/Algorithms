@@ -7,6 +7,5 @@ public class QueueActivity extends AlgorithmActivity {
     protected void initFragments() {
         fragmentList.add(new QueueTutorialFragment());
         fragmentList.add(new QueueVisualizerFragment());
-        fragmentList.add(new QueueQuizFragment());
     }
 }
