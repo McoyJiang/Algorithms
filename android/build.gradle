@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     buildToolsVersion '28.0.3'
@@ -29,9 +30,9 @@ android {
         }
 
         manifestPlaceholders = [
-                JPUSH_PKGNAME : applicationId,
+                JPUSH_PKGNAME: applicationId,
                 JPUSH_APPKEY : "4365b6d84cc660221a665a3b", //JPush 上注册的包名对应的 Appkey.
-                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
         aaptOptions { cruncherEnabled = false }
     }
@@ -84,4 +85,5 @@ dependencies {
     implementation 'cn.jiguang.sdk:janalytics:1.2.2'
     implementation 'cn.jiguang.sdk:jpush:3.1.6'
     implementation 'cn.jiguang.sdk:jcore:1.2.5'
+    implementation 'com.google.firebase:firebase-auth:16.0.3'
 }
