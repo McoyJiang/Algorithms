@@ -8,6 +8,5 @@ public class StackActivity extends AlgorithmActivity {
     protected void initFragments() {
         fragmentList.add(new StackTutorialFragment());
         fragmentList.add(new StackVisualizerFragment());
-        fragmentList.add(new StackQuizFragment());
     }
 }
