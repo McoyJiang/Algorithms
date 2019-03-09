@@ -1371,6 +1371,7 @@ id alertTitle
 id algo_content
 id all
 id always
+id arrayQuestionList
 id async
 id author_intro
 id auto
@@ -1471,6 +1472,8 @@ id product_scrollview
 id progress_circular
 id progress_horizontal
 id pushPrograssBar
+id questionName
+id questionTitle
 id quiz_list_fragment
 id radio
 id recyclerView_Main
@@ -1613,6 +1616,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_quiz_array
 layout fragment_quiz_list
 layout item_algorithm
 layout jpush_popwin_layout
@@ -1640,6 +1644,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout question_item
 layout quiz_array
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

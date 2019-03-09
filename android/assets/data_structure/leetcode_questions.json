@@ -1,0 +1,28 @@
+{
+  "array": [
+    {
+      "title": "LeetCode 1",
+      "name": "2 Sum"
+    },
+    {
+      "title": "LeetCode 11",
+      "name": "Container With Most Water"
+    },
+    {
+      "title": "LeetCode 15",
+      "name": "3Sum"
+    },
+    {
+      "title": "LeetCode 26",
+      "name": "Remove Duplicates from Sorted Array"
+    },
+    {
+      "title": "LeetCode 27",
+      "name": "Remove Element"
+    },
+    {
+      "title": "LeetCode 31",
+      "name": "Next Permutation"
+    }
+  ]
+}
