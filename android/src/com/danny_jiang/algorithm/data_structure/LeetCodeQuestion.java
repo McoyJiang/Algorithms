@@ -14,7 +14,7 @@ public class LeetCodeQuestion {
         this.array = array;
     }
 
-    public static class ArrayBean {
+    public static class BaseBean {
         /**
          * title : LeetCode 1
          * name : 2 Sum
@@ -48,5 +48,9 @@ public class LeetCodeQuestion {
         public void setUrl(String url) {
             this.url = url;
         }
+    }
+
+    public static class ArrayBean extends BaseBean{
+
     }
 }
