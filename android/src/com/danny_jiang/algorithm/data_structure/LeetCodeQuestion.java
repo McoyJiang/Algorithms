@@ -18,10 +18,12 @@ public class LeetCodeQuestion {
         /**
          * title : LeetCode 1
          * name : 2 Sum
+         * url : website for this Question
          */
 
         private String title;
         private String name;
+        private String url;
 
         public String getTitle() {
             return title;
@@ -37,6 +39,14 @@ public class LeetCodeQuestion {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
         }
     }
 }

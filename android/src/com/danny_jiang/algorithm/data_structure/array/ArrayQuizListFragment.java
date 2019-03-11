@@ -36,8 +36,13 @@ public class ArrayQuizListFragment extends Fragment {
     private View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(getContext(), QuestionDisplayActivity.class);
-            startActivity(intent);
+            ViewHolder holder = (ViewHolder) v.getTag();
+            if (holder != null) {
+                String url = arrayQuestions.get(holder.currentPosition).getUrl();
+                Intent intent = new Intent(getContext(), QuestionDisplayActivity.class);
+                intent.putExtra("url", url);
+                startActivity(intent);
+            }
         }
     };
 
@@ -127,12 +132,14 @@ public class ArrayQuizListFragment extends Fragment {
             LeetCodeQuestion.ArrayBean arrayBean = arrayQuestions.get(position);
             holder.questionTitle.setText(arrayBean.getTitle());
             holder.questionName.setText(arrayBean.getName());
+            holder.currentPosition = position;
             convertView.setOnClickListener(clickListener);
             return convertView;
         }
     }
 
     class ViewHolder {
+        public int currentPosition;
         public TextView questionTitle;
         public TextView questionName;
     }
