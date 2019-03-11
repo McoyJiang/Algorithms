@@ -5,6 +5,7 @@ import java.util.List;
 public class LeetCodeQuestion {
 
     private List<ArrayBean> array;
+    private List<LinklistBean> linklist;
 
     public List<ArrayBean> getArray() {
         return array;
@@ -14,11 +15,19 @@ public class LeetCodeQuestion {
         this.array = array;
     }
 
+    public List<LinklistBean> getLinklist() {
+        return linklist;
+    }
+
+    public void setLinklist(List<LinklistBean> linklist) {
+        this.linklist = linklist;
+    }
+
     public static class BaseBean {
         /**
          * title : LeetCode 1
          * name : 2 Sum
-         * url : website for this Question
+         * url : https://mp.weixin.qq.com/s?__biz=MzU3Mjc5NjAzMw==&mid=2247483794&idx=1&sn=8d846ec57f5475d4c2548904490b7015&chksm=fcca3c7ccbbdb56aac76d8ae715c02499e0ad07a3b140786a05ca91affcf694fafff67203ffe&token=2141675310&lang=zh_CN#rd
          */
 
         private String title;
@@ -51,6 +60,8 @@ public class LeetCodeQuestion {
     }
 
     public static class ArrayBean extends BaseBean{
+    }
 
+    public static class LinklistBean extends BaseBean{
     }
 }
