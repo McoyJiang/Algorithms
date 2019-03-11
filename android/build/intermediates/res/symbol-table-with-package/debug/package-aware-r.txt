@@ -1474,6 +1474,7 @@ id progress_horizontal
 id pushPrograssBar
 id questionName
 id questionTitle
+id questionWebView
 id quiz_list_fragment
 id radio
 id recyclerView_Main
@@ -1599,6 +1600,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_feedback
+layout activity_question_display
 layout bubble_sort_analyze_fragment
 layout bubble_sort_tutorial_fragment
 layout common_activity_layout

@@ -1,6 +1,7 @@
 package com.danny_jiang.algorithm.data_structure.array;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import com.danny_jiang.algorithm.R;
 import com.danny_jiang.algorithm.data_structure.LeetCodeQuestion;
+import com.danny_jiang.algorithm.data_structure.QuestionDisplayActivity;
 import com.google.gson.Gson;
 
 import java.io.BufferedReader;
@@ -30,6 +32,14 @@ public class ArrayQuizListFragment extends Fragment {
 
     private ListView arrayListView;
     private ArrayQuestionAdapter adapter;
+
+    private View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(getContext(), QuestionDisplayActivity.class);
+            startActivity(intent);
+        }
+    };
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,6 +127,7 @@ public class ArrayQuizListFragment extends Fragment {
             LeetCodeQuestion.ArrayBean arrayBean = arrayQuestions.get(position);
             holder.questionTitle.setText(arrayBean.getTitle());
             holder.questionName.setText(arrayBean.getName());
+            convertView.setOnClickListener(clickListener);
             return convertView;
         }
     }
