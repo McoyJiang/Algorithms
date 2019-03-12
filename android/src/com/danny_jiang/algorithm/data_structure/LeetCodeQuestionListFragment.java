@@ -51,7 +51,7 @@ public abstract class LeetCodeQuestionListFragment<T extends LeetCodeQuestion.Ba
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_quiz_array, null, false);
+        View view = inflater.inflate(R.layout.fragment_leetcode_list, null, false);
         return view;
     }
 

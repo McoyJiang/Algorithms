@@ -1475,7 +1475,6 @@ id pushPrograssBar
 id questionName
 id questionTitle
 id questionWebView
-id quiz_list_fragment
 id radio
 id recyclerView_Main
 id right
@@ -1618,8 +1617,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fragment_quiz_array
-layout fragment_quiz_list
+layout fragment_leetcode_list
 layout item_algorithm
 layout jpush_popwin_layout
 layout jpush_webview_layout
