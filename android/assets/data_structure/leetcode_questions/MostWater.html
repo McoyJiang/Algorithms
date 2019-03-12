@@ -1,0 +1,87 @@
+<html>
+<h1>11. Container With Most Water</h1>
+<div>
+    <p>Given n non-negative integers a1, a2, ..., an ,
+        where each represents a point at coordinate (i, ai).
+        n vertical lines are drawn such that the two endpoints
+        of line i is at (i, ai) and (i, 0). Find two lines,
+        which together with x-axis forms a container,
+        such that the container contains the most water.</p>
+    <p>Note: You may not slant the container and n is at least 2.</p>
+</div>
+<h3>Example:</h3>
+<pre style="background-color:#f3f3f3"><code>
+    Input: [1,8,6,2,5,4,8,3,7]
+    Output: 49
+
+</code></pre>
+<br>
+<pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span
+        style="color: #000066; font-weight: bold;">int</span><span
+        style="color: #009900;">[</span><span style="color: #009900;">]</span> twoSum<span
+        style="color: #009900;">(</span><span
+        style="color: #000066; font-weight: bold;">int</span><span
+        style="color: #009900;">[</span><span style="color: #009900;">]</span> nums, <span
+        style="color: #000066; font-weight: bold;">int</span> target<span
+        style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+    <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>nums<span
+            style="color: #339933;">==</span><span
+            style="color: #000066; font-weight: bold;">null</span> <span
+            style="color: #339933;">||</span> nums.<span style="color: #006633;">length</span><span
+            style="color: #339933;">&lt;</span><span style="color: #cc66cc;">2</span><span
+            style="color: #009900;">)</span>
+        <span style="color: #000000; font-weight: bold;">return</span> <span
+            style="color: #000000; font-weight: bold;">new</span> <span
+            style="color: #000066; font-weight: bold;">int</span><span
+            style="color: #009900;">[</span><span style="color: #009900;">]</span><span
+            style="color: #009900;">{</span><span style="color: #cc66cc;">0</span>,<span
+            style="color: #cc66cc;">0</span><span style="color: #009900;">}</span><span
+            style="color: #339933;">;</span>
+&nbsp;
+    HashMap<span style="color: #339933;">&lt;</span><span style="color: #003399;">Integer</span>, Integer<span
+            style="color: #339933;">&gt;</span> map <span style="color: #339933;">=</span> <span
+            style="color: #000000; font-weight: bold;">new</span> HashMap<span
+            style="color: #339933;">&lt;</span><span style="color: #003399;">Integer</span>, Integer<span
+            style="color: #339933;">&gt;</span><span style="color: #009900;">(</span><span
+            style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #000000; font-weight: bold;">for</span><span
+            style="color: #009900;">(</span><span
+            style="color: #000066; font-weight: bold;">int</span> i<span
+            style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span
+            style="color: #339933;">;</span> i<span style="color: #339933;">&lt;</span>nums.<span
+            style="color: #006633;">length</span><span style="color: #339933;">;</span> i<span
+            style="color: #339933;">++</span><span style="color: #009900;">)</span><span
+            style="color: #009900;">{</span>
+        <span style="color: #000000; font-weight: bold;">if</span><span
+            style="color: #009900;">(</span>map.<span
+            style="color: #006633;">containsKey</span><span
+            style="color: #009900;">(</span>nums<span style="color: #009900;">[</span>i<span
+            style="color: #009900;">]</span><span style="color: #009900;">)</span><span
+            style="color: #009900;">)</span><span style="color: #009900;">{</span>
+            <span style="color: #000000; font-weight: bold;">return</span> <span
+            style="color: #000000; font-weight: bold;">new</span> <span
+            style="color: #000066; font-weight: bold;">int</span><span
+            style="color: #009900;">[</span><span style="color: #009900;">]</span><span
+            style="color: #009900;">{</span>map.<span style="color: #006633;">get</span><span
+            style="color: #009900;">(</span>nums<span style="color: #009900;">[</span>i<span
+            style="color: #009900;">]</span><span style="color: #009900;">)</span>, i<span
+            style="color: #009900;">}</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span><span
+            style="color: #000000; font-weight: bold;">else</span><span
+            style="color: #009900;">{</span>
+            map.<span style="color: #006633;">put</span><span style="color: #009900;">(</span>target<span
+            style="color: #339933;">-</span>nums<span style="color: #009900;">[</span>i<span
+            style="color: #009900;">]</span>, i<span style="color: #009900;">)</span><span
+            style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+    <span style="color: #009900;">}</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">return</span> <span
+            style="color: #000000; font-weight: bold;">new</span> <span
+            style="color: #000066; font-weight: bold;">int</span><span
+            style="color: #009900;">[</span><span style="color: #009900;">]</span><span
+            style="color: #009900;">{</span><span style="color: #cc66cc;">0</span>,<span
+            style="color: #cc66cc;">0</span><span style="color: #009900;">}</span><span
+            style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre>
+</html>
