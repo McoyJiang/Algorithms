@@ -4,10 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeetCode题解 #11 Container With Most Water-leetcode</title>
 
-
-    <meta name="author" content="TMY">
     <meta name="applicable-device" content="pc,mobile">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://www.tianmaying.com/tutorial/LC11"/>
@@ -27,54 +24,40 @@
 
 
 
-
-
-
     </script>
-
-
 </head>
 
 <body>
 
-<div class="wrapper">
+<div class="tmy-panel tmy-panel-bordered tutorial-content">
 
-    <div id="tutorial">
+    <div class="page-header">
+        <h1 id="tutorial-title">11. Container With Most Water</h1>
+    </div>
+    <div class="md" id="content">
 
-        <div class="container item-page" data-js="tutorial/item">
-
-            <div class="row content-row">
-                <div class="col-md-9">
-                    <div class="tmy-panel tmy-panel-bordered tutorial-content">
-
-                        <div class="page-header">
-                            <h1 id="tutorial-title">11. Container With Most Water</h1>
-                        </div>
-                        <div class="md" id="content">
-
-                            <p>
-                                题目大意：平面上有若干与y轴平行的线段，这些线段的一个端点一定在x轴上，另一个端点一定在第一象限。对于任意两条线段，其都与x轴一起形成一个“容器”，“容器”可以用来装水，水的高度等于较短侧边的高度。现在问所有“容器”中容量最大的是多少。</p>
-                            <p>关键字：最优化剪枝</p>
-                            <h4><strong>题目描述</strong></h4>
-                            <blockquote>
-                                <p>Given n non-negative integers a1, a2, ..., an, where each
-                                    represents a point at coordinate (i, ai). n vertical lines are
-                                    drawn such that the two endpoints of line i is at (i, ai) and
-                                    (i, 0). Find two lines, which together with x-axis forms a
-                                    container, such that the container contains the most water.</p>
-                                <p>Note: You may not slant the container.</p>
-                            </blockquote>
-                            <h4><strong>解法1：朴素</strong></h4>
-                            <p>最简单的朴素方法便是枚举容器的两条边，即所有的O(n^2)种可能，然后在这其中找到最优的一组边为最优解。</p>
-                            <h4><strong>解法2：最优化剪枝</strong></h4>
-                            <p>考虑改变枚举容器的顺序，首先看编号为0和n-1的两条边组成的容器，令其为当前最优解。</p>
-                            <p>不妨设height[0] &lt;
-                                height[n-1]，那么所有左边界为0的容器一定都比当前最优解要差（水的高度相同但是宽度变小），于是可以忽略这样的方案。</p>
-                            <p>
-                                所以问题规模缩小了1（变为在编号为1..n-1的边中找两条边来组成容器），依次类推，每次将问题的规模缩小1，最后只需要统计O(n)个容器的最优解即可。</p>
-                            <div class="copyable-code"><a
-                                    class="btn btn-default btn-xs zero-clipboard-btn"
-                                    data-clipboard-text="class Solution {
+        <p>
+            题目大意：平面上有若干与y轴平行的线段，这些线段的一个端点一定在x轴上，另一个端点一定在第一象限。对于任意两条线段，其都与x轴一起形成一个“容器”，“容器”可以用来装水，水的高度等于较短侧边的高度。现在问所有“容器”中容量最大的是多少。</p>
+        <h4><strong>题目描述</strong></h4>
+        <blockquote>
+            <p>Given n non-negative integers a1, a2, ..., an, where each
+                represents a point at coordinate (i, ai). n vertical lines are
+                drawn such that the two endpoints of line i is at (i, ai) and
+                (i, 0). Find two lines, which together with x-axis forms a
+                container, such that the container contains the most water.</p>
+            <p>Note: You may not slant the container.</p>
+        </blockquote>
+        <h4><strong>解法1：朴素</strong></h4>
+        <p>最简单的朴素方法便是枚举容器的两条边，即所有的O(n^2)种可能，然后在这其中找到最优的一组边为最优解。</p>
+        <h4><strong>解法2：最优化剪枝</strong></h4>
+        <p>考虑改变枚举容器的顺序，首先看编号为0和n-1的两条边组成的容器，令其为当前最优解。</p>
+        <p>不妨设height[0] &lt;
+            height[n-1]，那么所有左边界为0的容器一定都比当前最优解要差（水的高度相同但是宽度变小），于是可以忽略这样的方案。</p>
+        <p>
+            所以问题规模缩小了1（变为在编号为1..n-1的边中找两条边来组成容器），依次类推，每次将问题的规模缩小1，最后只需要统计O(n)个容器的最优解即可。</p>
+        <div class="copyable-code"><a
+                class="btn btn-default btn-xs zero-clipboard-btn"
+                data-clipboard-text="class Solution {
 public:
     int maxArea(vector&lt;int&gt;&amp; height) {
         // 全局最优解和初始问题
@@ -96,8 +79,8 @@ public:
     }
 };
 " data-hover-class="active"><i class="fa fa-copy"></i></a>
-                                <pre><code><span class="tmy-code"><span class="line"><span
-                                        class="hljs-keyword">class</span> Solution {</span>
+            <pre><code><span class="tmy-code"><span class="line"><span
+                    class="hljs-keyword">class</span> Solution {</span>
 <span class="line"><span class="hljs-keyword">public</span>:</span>
 <span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span
         class="hljs-title">maxArea</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;<span
@@ -124,20 +107,9 @@ public:
 <span class="line">        <span class="hljs-keyword">return</span> ans;</span>
 <span class="line">    }</span>
 <span class="line">};</span></span></code></pre>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-            </div>
         </div>
-
     </div>
 
 </div>
-
 </body>
 </html>
