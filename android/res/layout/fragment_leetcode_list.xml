@@ -6,6 +6,7 @@
     <ListView
         android:id="@+id/arrayQuestionList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:dividerHeight="@dimen/dp_3"/>
 
 </android.support.constraint.ConstraintLayout>

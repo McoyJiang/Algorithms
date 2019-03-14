@@ -33,6 +33,8 @@ public class LeetCodeQuestion {
         private String title;
         private String name;
         private String url;
+        private String sequence;
+        private String tag;
 
         public String getTitle() {
             return title;
@@ -56,6 +58,22 @@ public class LeetCodeQuestion {
 
         public void setUrl(String url) {
             this.url = url;
+        }
+
+        public String getSequence() {
+            return sequence;
+        }
+
+        public void setSequence(String sequence) {
+            this.sequence = sequence;
+        }
+
+        public String getTag() {
+            return tag;
+        }
+
+        public void setTag(String tag) {
+            this.tag = tag;
         }
     }
 

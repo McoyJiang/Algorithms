@@ -121,14 +121,16 @@ public abstract class LeetCodeQuestionListFragment<T extends LeetCodeQuestion.Ba
                 convertView = getLayoutInflater()
                         .inflate(R.layout.question_item, null, false);
                 holder = new ViewHolder();
-                holder.questionTitle = convertView.findViewById(R.id.questionTitle);
                 holder.questionName = convertView.findViewById(R.id.questionName);
+                holder.questionTag = convertView.findViewById(R.id.questionTag);
+                holder.questionSequence = convertView.findViewById(R.id.questionSequence);
                 convertView.setTag(holder);
             }
 
             LeetCodeQuestion.BaseBean baseBean = questionsDataList.get(position);
-            holder.questionTitle.setText(baseBean.getTitle());
             holder.questionName.setText(baseBean.getName());
+            holder.questionTag.setText(baseBean.getTag());
+            holder.questionSequence.setText(baseBean.getSequence());
             holder.currentPosition = position;
             convertView.setOnClickListener(clickListener);
             return convertView;
@@ -137,7 +139,8 @@ public abstract class LeetCodeQuestionListFragment<T extends LeetCodeQuestion.Ba
 
     class ViewHolder {
         public int currentPosition;
-        public TextView questionTitle;
         public TextView questionName;
+        public TextView questionTag;
+        public TextView questionSequence;
     }
 }

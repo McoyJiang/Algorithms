@@ -2,26 +2,46 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/questionTitle"
-        android:text="title"
-        android:textSize="@dimen/dp_20"
-        android:textAppearance="@android:style/TextAppearance.Medium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_5"
-        android:layout_marginTop="@dimen/dp_5"/>
-
-    <TextView
-        android:id="@+id/questionName"
-        android:text="name"
-        android:textSize="@dimen/dp_25"
+        android:id="@+id/questionSequence"
+        android:text="001"
+        android:textSize="@dimen/dp_35"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:textAppearance="@android:style/TextAppearance.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dp_5"
-        android:layout_marginTop="@dimen/dp_5"/>
+        android:layout_weight="1"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/questionName"
+            android:text="title"
+            android:textSize="@dimen/dp_20"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"/>
+
+        <TextView
+            android:id="@+id/questionTag"
+            android:text="tag"
+            android:textSize="@dimen/dp_18"
+            android:textAppearance="@android:style/TextAppearance.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_5"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

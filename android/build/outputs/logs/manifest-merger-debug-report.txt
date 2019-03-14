@@ -14,6 +14,7 @@ MERGED from [com.android.support:support-v4:27.1.1] /Users/danny.jiang/.gradle/c
 MERGED from [cn.jiguang.sdk:janalytics:1.2.2] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/janalytics-1.2.2.aar/df8ae9d070ef534f42342bf7bcfec6b6/AndroidManifest.xml:2:1-44:12
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:2:1-134:12
 MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/9a65d8066bfed40de6f4ecc242746045/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5542dfca641497763c3c1c8c92011da4/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/90809b8dc345edb5df1059b355d3edc7/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/3665d4bb9e4d10cb4fd1343bd835fcb2/AndroidManifest.xml:17:1-22:12
@@ -312,6 +313,8 @@ MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/trans
 MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jpush-3.1.6.aar/271b868f472bcfce2090417ea691461e/AndroidManifest.xml:7:5-9:41
 MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:7:5-9:41
 MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/jcore-1.2.5.aar/128b3c33ab3f4d7975667fb4217e5e83/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/9a65d8066bfed40de6f4ecc242746045/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/cardview-v7-27.1.1.aar/9a65d8066bfed40de6f4ecc242746045/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5542dfca641497763c3c1c8c92011da4/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/5542dfca641497763c3c1c8c92011da4/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/90809b8dc345edb5df1059b355d3edc7/AndroidManifest.xml:20:5-44
