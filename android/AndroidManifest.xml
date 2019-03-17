@@ -40,12 +40,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DataStructureActivity" />
 
         <activity android:name=".data_structure.array.ArrayActivity" />
         <activity android:name=".data_structure.linkedlist.LinkListActivity" />

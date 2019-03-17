@@ -1398,6 +1398,9 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btn_algorithm
+id btn_data
+id btn_leetcode
 id bubble_sort_analyze_webview
 id bubble_sort_tutorial_webview
 id buttonPanel
@@ -1559,7 +1562,6 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
-id toolBar
 id top
 id topPanel
 id touch_outside
@@ -1620,6 +1622,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_feedback
 layout activity_question_display
+layout activity_weicome
 layout bubble_sort_analyze_fragment
 layout bubble_sort_tutorial_fragment
 layout common_activity_layout

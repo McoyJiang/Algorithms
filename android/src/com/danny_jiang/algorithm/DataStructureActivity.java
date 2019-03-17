@@ -29,9 +29,8 @@ import static com.danny_jiang.algorithm.Algorithm.QUICK_SORT;
 import static com.danny_jiang.algorithm.Algorithm.RED_BLACK_TREE;
 import static com.danny_jiang.algorithm.Algorithm.STACK;
 
-public class MainActivity extends AppCompatActivity {
+public class DataStructureActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private RecyclerView algorithmListView;
     private List<AlgorithmGroup> algorithmGroupList = new ArrayList<>();
     private ExpandableAlgorithmAdapter adapter;
@@ -55,14 +54,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
-        toolbar = findViewById(R.id.toolBar);
-        toolbar.setLogo(R.drawable.ic_launcher);
-
-        //设置导航图标要在setSupportActionBar方法之后
-        setSupportActionBar(toolbar);
-
-        toolbar.setOnMenuItemClickListener(onMenuItemClick);
 
         algorithmListView = findViewById(R.id.recyclerView_Main);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
@@ -102,9 +93,6 @@ public class MainActivity extends AppCompatActivity {
 
         algorithmGroupList.add(new AlgorithmGroup("排序",
                 Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
-
-//        algorithmGroupList.add(new AlgorithmGroup("图算法",
-//                Arrays.asList(BUBBLE_SORT, INSERTION_SORT, QUICK_SORT)));
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
