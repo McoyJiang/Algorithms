@@ -1,0 +1,128 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.tianmaying.com/tutorial/LC11"/>
+    <link rel="shortcut icon" href="https://oc5je3pwu.qnssl.com/favicon.ico">
+    <link rel="stylesheet"
+          href="https://tmy-assets.oss-cn-beijing.aliyuncs.com/css/tmy.9eee9def1069a37f5f376beccbbac653.css">
+    <script src="https://tmy-assets.oss-cn-beijing.aliyuncs.com/js/tmy.669ece8c162208774c6efa891554c881.js"></script>
+
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?f02c3bb44e74e96fb85d8f3084f4ce6e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+
+
+
+    </script>
+</head>
+
+<body>
+<div class="page-header">
+    <h1 id="tutorial-title">26. Remove Duplicates from Sorted Array</h1>
+</div>
+<div>
+    <p style="font-size:20">Given a sorted array nums, remove the duplicates <font color="#617d81"><strong>in-place</strong></font> such
+        that each element appear only once and return the new length.</p>
+    <p style="font-size:20">Do not allocate extra space for another array, you must do this by
+        modifying the input array in-place with O(1) extra memory.</p>
+</div>
+<h3>Example 1:</h3>
+<pre style="background-color:#f3f3f3"><code>
+    Given nums = [1,1,2],
+
+    Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
+
+    It doesn't matter what you leave beyond the returned length.
+
+</code></pre>
+<h3>Example 2:</h3>
+<pre style="background-color:#f3f3f3"><code>
+    Given nums = [0,0,1,1,1,2,2,3,3,4],
+
+    Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.
+
+    It doesn't matter what values are set beyond the returned length.
+
+</code></pre>
+
+<h4><strong>Solution：</strong></h4>
+<pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span
+        style="color: #000066; font-weight: bold;">int</span><span
+        style="color: #009900;">[</span><span style="color: #009900;">]</span> twoSum<span
+        style="color: #009900;">(</span><span
+        style="color: #000066; font-weight: bold;">int</span><span
+        style="color: #009900;">[</span><span style="color: #009900;">]</span> nums, <span
+        style="color: #000066; font-weight: bold;">int</span> target<span
+        style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+    <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>nums<span
+            style="color: #339933;">==</span><span
+            style="color: #000066; font-weight: bold;">null</span> <span
+            style="color: #339933;">||</span> nums.<span style="color: #006633;">length</span><span
+            style="color: #339933;">&lt;</span><span style="color: #cc66cc;">2</span><span
+            style="color: #009900;">)</span>
+        <span style="color: #000000; font-weight: bold;">return</span> <span
+            style="color: #000000; font-weight: bold;">new</span> <span
+            style="color: #000066; font-weight: bold;">int</span><span
+            style="color: #009900;">[</span><span style="color: #009900;">]</span><span
+            style="color: #009900;">{</span><span style="color: #cc66cc;">0</span>,<span
+            style="color: #cc66cc;">0</span><span style="color: #009900;">}</span><span
+            style="color: #339933;">;</span>
+&nbsp;
+    HashMap<span style="color: #339933;">&lt;</span><span style="color: #003399;">Integer</span>, Integer<span
+            style="color: #339933;">&gt;</span> map <span style="color: #339933;">=</span> <span
+            style="color: #000000; font-weight: bold;">new</span> HashMap<span
+            style="color: #339933;">&lt;</span><span style="color: #003399;">Integer</span>, Integer<span
+            style="color: #339933;">&gt;</span><span style="color: #009900;">(</span><span
+            style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    <span style="color: #000000; font-weight: bold;">for</span><span
+            style="color: #009900;">(</span><span
+            style="color: #000066; font-weight: bold;">int</span> i<span
+            style="color: #339933;">=</span><span style="color: #cc66cc;">0</span><span
+            style="color: #339933;">;</span> i<span style="color: #339933;">&lt;</span>nums.<span
+            style="color: #006633;">length</span><span style="color: #339933;">;</span> i<span
+            style="color: #339933;">++</span><span style="color: #009900;">)</span><span
+            style="color: #009900;">{</span>
+        <span style="color: #000000; font-weight: bold;">if</span><span
+            style="color: #009900;">(</span>map.<span
+            style="color: #006633;">containsKey</span><span
+            style="color: #009900;">(</span>nums<span style="color: #009900;">[</span>i<span
+            style="color: #009900;">]</span><span style="color: #009900;">)</span><span
+            style="color: #009900;">)</span><span style="color: #009900;">{</span>
+            <span style="color: #000000; font-weight: bold;">return</span> <span
+            style="color: #000000; font-weight: bold;">new</span> <span
+            style="color: #000066; font-weight: bold;">int</span><span
+            style="color: #009900;">[</span><span style="color: #009900;">]</span><span
+            style="color: #009900;">{</span>map.<span style="color: #006633;">get</span><span
+            style="color: #009900;">(</span>nums<span style="color: #009900;">[</span>i<span
+            style="color: #009900;">]</span><span style="color: #009900;">)</span>, i<span
+            style="color: #009900;">}</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span><span
+            style="color: #000000; font-weight: bold;">else</span><span
+            style="color: #009900;">{</span>
+            map.<span style="color: #006633;">put</span><span style="color: #009900;">(</span>target<span
+            style="color: #339933;">-</span>nums<span style="color: #009900;">[</span>i<span
+            style="color: #009900;">]</span>, i<span style="color: #009900;">)</span><span
+            style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+    <span style="color: #009900;">}</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">return</span> <span
+            style="color: #000000; font-weight: bold;">new</span> <span
+            style="color: #000066; font-weight: bold;">int</span><span
+            style="color: #009900;">[</span><span style="color: #009900;">]</span><span
+            style="color: #009900;">{</span><span style="color: #cc66cc;">0</span>,<span
+            style="color: #cc66cc;">0</span><span style="color: #009900;">}</span><span
+            style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre>
+</body>
+</html>

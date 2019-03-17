@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.tianmaying.com/tutorial/LC11"/>
+    <link rel="shortcut icon" href="https://oc5je3pwu.qnssl.com/favicon.ico">
+    <link rel="stylesheet"
+          href="https://tmy-assets.oss-cn-beijing.aliyuncs.com/css/tmy.9eee9def1069a37f5f376beccbbac653.css">
+    <script src="https://tmy-assets.oss-cn-beijing.aliyuncs.com/js/tmy.669ece8c162208774c6efa891554c881.js"></script>
+
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?f02c3bb44e74e96fb85d8f3084f4ce6e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+<div class="container mt15" style="position:relative">
+
+    <div class="article fmt article__content" data-id="1190000003802755"
+         data-license="cc">
+
+        <h1>Remove Element</h1>
+        <blockquote>
+            <p>Given an array and a value, remove all instances of that value in place
+                and return the new length.</p>
+            <p>The order of elements can be changed. It doesn't matter what you leave
+                beyond the new length.</p>
+        </blockquote>
+        <h3>思路</h3>
+        <p>用一个指针记录不含给定数字的数组边界，另一个指针记录当前遍历到的数组位置。只有不等于给定数字的数，才会被拷贝到子数组的边界上。</p>
+        <h3>代码</h3>
+        <pre><code>public class Solution {
+    public int removeElement(int[] nums, int val) {
+        int pos = 0;
+        for(int i = 0; i &lt; nums.length; i++){
+            // 只拷贝非给定数字的元素
+            if(nums[i] != val){
+                nums[pos] = nums[i];
+                pos++;
+            }
+        }
+        return pos;
+    }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+</body>
+</html>

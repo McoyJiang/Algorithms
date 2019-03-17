@@ -1,0 +1,48 @@
+{
+  "array": [
+    {
+      "title": "LeetCode 1",
+      "name": "2 Sum",
+      "sequence":"001",
+      "tag":"array, HashTable",
+      "url": "file:///android_asset/data_structure/leetcode_questions/2sum.html"
+    },
+    {
+      "title": "LeetCode 11",
+      "name": "Container With Most Water",
+      "sequence":"011",
+      "tag":"array, HashTable",
+      "url": "file:///android_asset/data_structure/leetcode_questions/MostWater.html"
+    },
+    {
+      "title": "LeetCode 15",
+      "name": "3 Sum",
+      "sequence":"015",
+      "tag":"array, HashTable",
+      "url": "file:///android_asset/data_structure/leetcode_questions/3sum.html"
+    },
+    {
+      "title": "LeetCode 26",
+      "name": "Remove Duplicates from Sorted Array",
+      "sequence":"026",
+      "tag":"array, HashTable",
+      "url": "file:///android_asset/data_structure/leetcode_questions/remove_duplicate_array.html"
+    },
+    {
+      "title": "LeetCode 27",
+      "name": "Remove Element",
+      "sequence":"027",
+      "tag":"array, HashTable",
+      "url": "file:///android_asset/data_structure/leetcode_questions/remove_element.html"
+    },
+    {
+      "title": "LeetCode 31",
+      "name": "Next Permutation",
+      "sequence":"031",
+      "tag":"array, HashTable",
+      "url": "file:///android_asset/data_structure/leetcode_questions/next_permutation.html"
+    }
+  ],
+  "linklist": [
+  ]
+}

@@ -1,0 +1,97 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.tianmaying.com/tutorial/LC11"/>
+    <link rel="shortcut icon" href="https://oc5je3pwu.qnssl.com/favicon.ico">
+    <link rel="stylesheet"
+          href="https://tmy-assets.oss-cn-beijing.aliyuncs.com/css/tmy.9eee9def1069a37f5f376beccbbac653.css">
+    <script src="https://tmy-assets.oss-cn-beijing.aliyuncs.com/js/tmy.669ece8c162208774c6efa891554c881.js"></script>
+
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?f02c3bb44e74e96fb85d8f3084f4ce6e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+
+
+
+    </script>
+</head>
+
+<body>
+
+<div class="container mt15" style="position:relative">
+    <div class="article fmt article__content" data-id="1190000003802755"
+         data-license="cc">
+        <h1>Next Permutation</h1>
+        <blockquote>
+            <p>Implement <strong>next permutation</strong>, which rearranges numbers into the
+                lexicographically next greater permutation of numbers.</p>
+
+            <p>If such arrangement is not possible, it must rearrange it as the
+                lowest possible order (ie, sorted in ascending order).</p>
+
+            <p>The replacement must be in-place and use only constant extra memory.</p>
+
+            <p>Here are some examples. Inputs are in the left-hand column and its
+                corresponding outputs are in the right-hand column.</p>
+
+            <p>1,2,3 → 1,3,2
+                3,2,1 → 1,2,3
+                1,1,5 → 1,5,1</p>
+        </blockquote>
+        <h3>思路</h3>
+        <p>首先我们来思考下，什么是next permutation<br>比如<code>124651</code>这个序列，我们如果只想它变大一点点，应该尽可能的不去增加高位。因为增加高位会带来更大的增益。所以对于一个长为n的序列，我们增加第n位的前提是，前n-1位已经达到了最大排列方法。所以我们从后往前看：</p>
+        <pre><code>1
+51
+651
+</code></pre>
+        <p>前面三位已经是各自最大的情况，不可能再变大，而到万位的时候<code>4651</code>，可以将4移到后面来来增大。但是问题在于，把谁移到4的位置。因为是找下一个数，所以我们要找一个比4小却尽可能大的数，所以找到5。把5换到4的位置后，后三位仍然是个降序的排列。然而这时候，因为已经将万位增大了，我们要将前三位尽可能的变小，做成一个以5开头最小的序列，而这个序列应该是升序的，所以我们直接把后三位倒置一下，就从降序变成升序了。</p>
+        <h3>注意</h3>
+        <ul><li><p>找第一个下降点的循环和着第一个比下降点稍大的数的循环，其判断条件都要包含<code>=</code></p></li></ul>
+        <h3>代码</h3>
+        <pre>
+            <code>
+class Solution {
+    public void nextPermutation(int[] nums) {
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if(nums[i] < nums[i + 1]) {
+                for (int j = nums.length - 1; j > i; j--) {
+                    if (nums[j] > nums[i]) {
+                        swap(nums, i, j);
+                        reverse(nums, i + 1, nums.length - 1);
+                        return;
+                    }
+                }
+            }
+        }
+        reverse(nums, 0, nums.length - 1);
+    }
+
+    public void swap(int[] nums, int start, int end) {
+        int temp = nums[start];
+        nums[start] = nums[end];
+        nums[end] = temp;
+    }
+
+    public void reverse(int[] nums, int start, int end) {
+        while(start < end) swap(nums, start++, end--);
+    }
+}
+</code>
+        </pre>
+    </div>
+
+</div>
+
+
+</body>
+</html>
