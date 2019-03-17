@@ -2,8 +2,8 @@
 <resources>
 
     <string-array name="tabs" >
-        <item>TUTORIAL</item>
-        <item>VISUALIZER</item>
+        <item>Tutorial</item>
+        <item>Visualizer</item>
         <item>Quiz</item>
     </string-array>
 
