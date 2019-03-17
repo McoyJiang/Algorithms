@@ -10,53 +10,39 @@
     {
       "title": "LeetCode 11",
       "name": "Container With Most Water",
-      "sequence":"001",
+      "sequence":"011",
       "tag":"array, HashTable",
       "url": "file:///android_asset/data_structure/leetcode_questions/MostWater.html"
     },
     {
       "title": "LeetCode 15",
       "name": "3 Sum",
-      "sequence":"001",
+      "sequence":"015",
       "tag":"array, HashTable",
       "url": "file:///android_asset/data_structure/leetcode_questions/3sum.html"
     },
     {
       "title": "LeetCode 26",
       "name": "Remove Duplicates from Sorted Array",
-      "sequence":"001",
+      "sequence":"026",
       "tag":"array, HashTable",
       "url": "file:///android_asset/data_structure/leetcode_questions/remove_duplicate_array.html"
     },
     {
       "title": "LeetCode 27",
       "name": "Remove Element",
-      "sequence":"001",
+      "sequence":"027",
       "tag":"array, HashTable",
       "url": "file:///android_asset/data_structure/leetcode_questions/remove_element.html"
     },
     {
       "title": "LeetCode 31",
       "name": "Next Permutation",
-      "sequence":"001",
+      "sequence":"031",
       "tag":"array, HashTable",
       "url": "file:///android_asset/data_structure/leetcode_questions/next_permutation.html"
     }
   ],
   "linklist": [
-    {
-      "title": "LeetCode 27",
-      "name": "Remove Element",
-      "sequence":"001",
-      "tag":"array, HashTable",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzU3Mjc5NjAzMw==&mid=2247483794&idx=1&sn=8d846ec57f5475d4c2548904490b7015&chksm=fcca3c7ccbbdb56aac76d8ae715c02499e0ad07a3b140786a05ca91affcf694fafff67203ffe&token=2141675310&lang=zh_CN#rd"
-    },
-    {
-      "title": "LeetCode 31",
-      "name": "Next Permutation",
-      "sequence":"001",
-      "tag":"array, HashTable",
-      "url": "https://mp.weixin.qq.com/s?__biz=MzU3Mjc5NjAzMw==&mid=2247483794&idx=1&sn=8d846ec57f5475d4c2548904490b7015&chksm=fcca3c7ccbbdb56aac76d8ae715c02499e0ad07a3b140786a05ca91affcf694fafff67203ffe&token=2141675310&lang=zh_CN#rd"
-    }
   ]
 }
