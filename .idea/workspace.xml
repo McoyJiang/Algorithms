@@ -16,8 +16,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95903ecf-d556-4cd5-8987-9118fe98856e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,18 +65,18 @@
         <counts>
           <entry key="dummy" value="33" />
           <entry key="gradle" value="8" />
-          <entry key="html" value="966" />
+          <entry key="html" value="976" />
           <entry key="java" value="1722" />
-          <entry key="json" value="384" />
+          <entry key="json" value="390" />
           <entry key="xml" value="618" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="8" />
-          <entry key="HTML" value="966" />
+          <entry key="HTML" value="976" />
           <entry key="JAVA" value="1722" />
-          <entry key="JSON" value="384" />
+          <entry key="JSON" value="390" />
           <entry key="PLAIN_TEXT" value="33" />
           <entry key="XML" value="618" />
         </counts>
@@ -104,6 +102,9 @@
         </counts>
       </usages-collector>
     </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="EasyAlgorithm" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -150,20 +151,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
+            <state relative-caret-position="494">
+              <caret line="73" column="49" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/remove_duplicates_from_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            <state relative-caret-position="44">
+              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding>
                 <element signature="e#1638#1664#0" expanded="true" />
                 <element signature="e#1718#1748#0" expanded="true" />
@@ -238,8 +239,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/merge_two_lists.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+            <state relative-caret-position="392">
+              <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -2526,8 +2527,8 @@
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayTutorialFragment.java" />
         <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/merge_two_lists.html" />
-        <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" />
         <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/remove_duplicates_from_list.html" />
+        <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" />
       </list>
     </option>
   </component>
@@ -3070,12 +3071,12 @@
     <frame x="46" y="23" width="1394" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4993395" weight="0.2928994" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49868765" weight="0.2928994" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.5006605" side_tool="true" weight="0.24962519" />
       <window_info id="Captures" order="4" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Favorites" order="5" sideWeight="0.5013123" side_tool="true" weight="0.2928994" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -3683,13 +3684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/add_two_numbers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -3706,15 +3700,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/merge_two_lists.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+        <state relative-caret-position="392">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/remove_duplicates_from_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        <state relative-caret-position="44">
+          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding>
             <element signature="e#1638#1664#0" expanded="true" />
             <element signature="e#1718#1748#0" expanded="true" />
@@ -3782,6 +3776,13 @@
             <element signature="e#4748#4753#0" expanded="true" />
             <element signature="e#4753#4758#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="73" column="49" selection-start-line="73" selection-start-column="49" selection-end-line="73" selection-end-column="49" />
         </state>
       </provider>
     </entry>

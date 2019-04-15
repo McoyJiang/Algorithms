@@ -65,10 +65,16 @@
       "url": "file:///android_asset/data_structure/leetcode_questions/merge_two_lists.html"
     },
     {
-      "name":"Remove Duplicates from Sorted List",
+      "name":"Remove Duplicates from Sorted List I",
       "sequence":"004",
       "tag":"LinkedList",
       "url": "file:///android_asset/data_structure/leetcode_questions/remove_duplicates_from_list.html"
+    },
+    {
+      "name":"Remove Duplicates from Sorted List II",
+      "sequence":"005",
+      "tag":"LinkedList",
+      "url": "file:///android_asset/data_structure/leetcode_questions/remove_duplicates_from_list_second.html"
     }
   ]
 }
