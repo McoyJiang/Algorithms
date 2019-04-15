@@ -41,12 +41,14 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity android:name=".WelcomeActivity">
+
+        </activity>
+        <activity android:name=".DataStructureActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DataStructureActivity" />
 
         <activity android:name=".data_structure.array.ArrayActivity" />
         <activity android:name=".data_structure.linkedlist.LinkListActivity" />

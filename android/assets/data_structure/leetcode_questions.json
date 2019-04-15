@@ -44,5 +44,19 @@
     }
   ],
   "linklist": [
+    {
+      "title": "LeetCode 2",
+      "name": "Add Two Numbers",
+      "sequence":"002",
+      "tag":"linklist",
+      "url": "file:///android_asset/data_structure/leetcode_questions/remove_element.html"
+    },
+    {
+      "title": "LeetCode 31",
+      "name": "Remove Nth Node From End of List",
+      "sequence":"019",
+      "tag":"linklist",
+      "url": "file:///android_asset/data_structure/leetcode_questions/next_permutation.html"
+    }
   ]
 }
