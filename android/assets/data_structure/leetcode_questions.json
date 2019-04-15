@@ -53,10 +53,10 @@
     },
     {
       "title": "LeetCode 31",
-      "name": "Reorder List",
+      "name": "Linked List Cycle",
       "sequence":"002",
       "tag":"linklist",
-      "url": "file:///android_asset/data_structure/leetcode_questions/next_permutation.html"
+      "url": "file:///android_asset/data_structure/leetcode_questions/link_list_cycle.html"
     }
   ]
 }

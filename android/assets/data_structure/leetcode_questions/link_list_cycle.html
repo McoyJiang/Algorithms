@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.tianmaying.com/tutorial/LC11"/>
+    <link rel="shortcut icon" href="https://oc5je3pwu.qnssl.com/favicon.ico">
+    <link rel="stylesheet"
+          href="https://tmy-assets.oss-cn-beijing.aliyuncs.com/css/tmy.9eee9def1069a37f5f376beccbbac653.css">
+    <script src="https://tmy-assets.oss-cn-beijing.aliyuncs.com/js/tmy.669ece8c162208774c6efa891554c881.js"></script>
+
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?f02c3bb44e74e96fb85d8f3084f4ce6e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+<div class="container mt15" style="position:relative">
+
+    <div class="article fmt article__content" data-id="1190000003802755"
+         data-license="cc">
+
+        <h1>Linked List Cycle</h1>
+        <blockquote>
+            <p>Given a linked list, determine if it has a cycle in it.</p>
+        </blockquote>
+
+        <h3>Analysis</h3>
+        <p><strong>
+            If we have 2 pointers - fast and slow. It is guaranteed that the fast one will meet the slow one if there exists a circle.
+        </strong></p>
+
+        <h3>Java Solution</h3>
+        <div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> Solution <span style="color: #009900;">{</span>
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> hasCycle<span style="color: #009900;">(</span>ListNode head<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+        ListNode fast <span style="color: #339933;">=</span> head<span style="color: #339933;">;</span>
+        ListNode slow <span style="color: #339933;">=</span> head<span style="color: #339933;">;</span>
+&nbsp;
+        <span style="color: #000000; font-weight: bold;">while</span><span style="color: #009900;">(</span>fast <span style="color: #339933;">!=</span> <span style="color: #000066; font-weight: bold;">null</span> <span style="color: #339933;">&amp;&amp;</span> fast.<span style="color: #006633;">next</span> <span style="color: #339933;">!=</span> <span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+            slow <span style="color: #339933;">=</span> slow.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+            fast <span style="color: #339933;">=</span> fast.<span style="color: #006633;">next</span>.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+&nbsp;
+            <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>slow <span style="color: #339933;">==</span> fast<span style="color: #009900;">)</span>
+                <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+&nbsp;
+        <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">false</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">}</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">public class Solution {
+            public boolean hasCycle(ListNode head) {
+            ListNode fast = head;
+            ListNode slow = head;
+            while(fast != null &amp;&amp; fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast)
+            return true;
+            }
+            return false;
+            }
+            }</p></div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
