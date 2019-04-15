@@ -35,28 +35,62 @@
     <div class="article fmt article__content" data-id="1190000003802755"
          data-license="cc">
 
-        <h1>Remove Element</h1>
+        <h1>Add Two Numbers</h1>
         <blockquote>
-            <p>Given an array and a value, remove all instances of that value in place
-                and return the new length.</p>
-            <p>The order of elements can be changed. It doesn't matter what you leave
-                beyond the new length.</p>
+            <p>You are given two linked lists representing two non-negative numbers.</p>
+            <p>The digits are stored in reverse order and each of their nodes contain a single digit.
+                Add the two numbers and return it as a linked list.</p>
         </blockquote>
-        <h3>思路</h3>
-        <p>用一个指针记录不含给定数字的数组边界，另一个指针记录当前遍历到的数组位置。只有不等于给定数字的数，才会被拷贝到子数组的边界上。</p>
-        <h3>代码</h3>
-        <pre><code>public class Solution {
-    public int removeElement(int[] nums, int val) {
-        int pos = 0;
-        for(int i = 0; i &lt; nums.length; i++){
-            // 只拷贝非给定数字的元素
-            if(nums[i] != val){
-                nums[pos] = nums[i];
-                pos++;
-            }
+
+        <div>
+            Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+            Output: 7 -> 0 -> 8
+        </div>
+
+        <h3>代码:</h3>
+        <pre><code>/*
+2 -> 4 -> 3
+5 -> 6 -> 4
+7    0    8
+*/
+public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    ListNode fake = new ListNode(0);
+    ListNode p = fake;
+
+    ListNode p1 = l1;
+    ListNode p2 = l2;
+
+    int carry = 0;
+    while(p1!=null || p2!=null){
+        int sum = carry;
+        if(p1!=null){
+            sum += p1.val;
+            p1 = p1.next;
         }
-        return pos;
+
+        if(p2!=null){
+            sum += p2.val;
+            p2 = p2.next;
+        }
+
+        if(sum>9){
+            carry=1;
+            sum = sum-10;
+        }else{
+            carry = 0;
+        }
+
+        ListNode l = new ListNode(sum);
+        p.next = l;
+        p = p.next;
     }
+
+    //don't forget check the carry value at the end
+    if(carry > 0){
+        ListNode l = new ListNode(carry);
+        p.next = l;
+    }
+    return fake.next;
 }
 </code></pre>
     </div>
