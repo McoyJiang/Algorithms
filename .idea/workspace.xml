@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" beforeDir="false" afterPath="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,18 +67,18 @@
         <counts>
           <entry key="dummy" value="33" />
           <entry key="gradle" value="8" />
-          <entry key="html" value="941" />
+          <entry key="html" value="966" />
           <entry key="java" value="1722" />
-          <entry key="json" value="353" />
+          <entry key="json" value="384" />
           <entry key="xml" value="618" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="8" />
-          <entry key="HTML" value="941" />
+          <entry key="HTML" value="966" />
           <entry key="JAVA" value="1722" />
-          <entry key="JSON" value="353" />
+          <entry key="JSON" value="384" />
           <entry key="PLAIN_TEXT" value="33" />
           <entry key="XML" value="618" />
         </counts>
@@ -88,7 +87,7 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="gradle" value="2" />
-          <entry key="html" value="25" />
+          <entry key="html" value="27" />
           <entry key="java" value="42" />
           <entry key="json" value="6" />
           <entry key="xml" value="16" />
@@ -98,7 +97,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Groovy" value="2" />
-          <entry key="HTML" value="25" />
+          <entry key="HTML" value="27" />
           <entry key="JAVA" value="42" />
           <entry key="JSON" value="6" />
           <entry key="XML" value="16" />
@@ -154,120 +153,93 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+            <state relative-caret-position="518">
+              <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/remove_duplicates_from_list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+              <folding>
+                <element signature="e#1638#1664#0" expanded="true" />
+                <element signature="e#1718#1748#0" expanded="true" />
+                <element signature="e#1755#1797#0" expanded="true" />
+                <element signature="e#1818#1860#0" expanded="true" />
+                <element signature="e#1889#1912#0" expanded="true" />
+                <element signature="e#1932#1974#0" expanded="true" />
+                <element signature="e#2020#2043#0" expanded="true" />
+                <element signature="e#2071#2094#0" expanded="true" />
+                <element signature="e#2110#2133#0" expanded="true" />
+                <element signature="e#2157#2199#0" expanded="true" />
+                <element signature="e#2215#2238#0" expanded="true" />
+                <element signature="e#2258#2281#0" expanded="true" />
+                <element signature="e#2298#2340#0" expanded="true" />
+                <element signature="e#2359#2382#0" expanded="true" />
+                <element signature="e#2404#2427#0" expanded="true" />
+                <element signature="e#2446#2469#0" expanded="true" />
+                <element signature="e#2486#2528#0" expanded="true" />
+                <element signature="e#2546#2569#0" expanded="true" />
+                <element signature="e#2597#2639#0" expanded="true" />
+                <element signature="e#2664#2687#0" expanded="true" />
+                <element signature="e#2697#2703#0" expanded="true" />
+                <element signature="e#2729#2752#0" expanded="true" />
+                <element signature="e#2772#2795#0" expanded="true" />
+                <element signature="e#2805#2811#0" expanded="true" />
+                <element signature="e#2826#2868#0" expanded="true" />
+                <element signature="e#2887#2910#0" expanded="true" />
+                <element signature="e#2927#2950#0" expanded="true" />
+                <element signature="e#2967#3009#0" expanded="true" />
+                <element signature="e#3028#3051#0" expanded="true" />
+                <element signature="e#3052#3057#0" expanded="true" />
+                <element signature="e#3057#3062#0" expanded="true" />
+                <element signature="e#3078#3101#0" expanded="true" />
+                <element signature="e#3120#3143#0" expanded="true" />
+                <element signature="e#3160#3202#0" expanded="true" />
+                <element signature="e#3220#3243#0" expanded="true" />
+                <element signature="e#3258#3281#0" expanded="true" />
+                <element signature="e#3309#3351#0" expanded="true" />
+                <element signature="e#3367#3390#0" expanded="true" />
+                <element signature="e#3407#3430#0" expanded="true" />
+                <element signature="e#3448#3471#0" expanded="true" />
+                <element signature="e#3490#3513#0" expanded="true" />
+                <element signature="e#3532#3555#0" expanded="true" />
+                <element signature="e#3572#3595#0" expanded="true" />
+                <element signature="e#3610#3633#0" expanded="true" />
+                <element signature="e#3667#3690#0" expanded="true" />
+                <element signature="e#3709#3732#0" expanded="true" />
+                <element signature="e#3750#3773#0" expanded="true" />
+                <element signature="e#3792#3815#0" expanded="true" />
+                <element signature="e#3833#3856#0" expanded="true" />
+                <element signature="e#3884#3907#0" expanded="true" />
+                <element signature="e#3922#3964#0" expanded="true" />
+                <element signature="e#3982#4005#0" expanded="true" />
+                <element signature="e#4039#4062#0" expanded="true" />
+                <element signature="e#4080#4103#0" expanded="true" />
+                <element signature="e#4121#4144#0" expanded="true" />
+                <element signature="e#4173#4196#0" expanded="true" />
+                <element signature="e#4220#4243#0" expanded="true" />
+                <element signature="e#4253#4259#0" expanded="true" />
+                <element signature="e#4274#4316#0" expanded="true" />
+                <element signature="e#4341#4364#0" expanded="true" />
+                <element signature="e#4384#4407#0" expanded="true" />
+                <element signature="e#4423#4446#0" expanded="true" />
+                <element signature="e#4506#4527#0" expanded="true" />
+                <element signature="e#4748#4753#0" expanded="true" />
+                <element signature="e#4753#4758#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/merge_two_lists.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-              <folding>
-                <element signature="e#2112#2330#0" expanded="true" />
-                <element signature="e#2530#2620#0" expanded="true" />
-                <element signature="e#2690#2711#0" expanded="true" />
-                <element signature="e#2856#2882#0" expanded="true" />
-                <element signature="e#2936#2966#0" expanded="true" />
-                <element signature="e#2973#3015#0" expanded="true" />
-                <element signature="e#3058#3081#0" expanded="true" />
-                <element signature="e#3120#3143#0" expanded="true" />
-                <element signature="e#3159#3182#0" expanded="true" />
-                <element signature="e#3216#3239#0" expanded="true" />
-                <element signature="e#3255#3297#0" expanded="true" />
-                <element signature="e#3323#3346#0" expanded="true" />
-                <element signature="e#3361#3384#0" expanded="true" />
-                <element signature="e#3399#3422#0" expanded="true" />
-                <element signature="e#3437#3460#0" expanded="true" />
-                <element signature="e#3491#3514#0" expanded="true" />
-                <element signature="e#3534#3557#0" expanded="true" />
-                <element signature="e#3567#3573#0" expanded="true" />
-                <element signature="e#3584#3626#0" expanded="true" />
-                <element signature="e#3645#3668#0" expanded="true" />
-                <element signature="e#3685#3708#0" expanded="true" />
-                <element signature="e#3724#3766#0" expanded="true" />
-                <element signature="e#3784#3807#0" expanded="true" />
-                <element signature="e#3825#3848#0" expanded="true" />
-                <element signature="e#3864#3906#0" expanded="true" />
-                <element signature="e#3924#3947#0" expanded="true" />
-                <element signature="e#3962#3985#0" expanded="true" />
-                <element signature="e#4009#4051#0" expanded="true" />
-                <element signature="e#4067#4090#0" expanded="true" />
-                <element signature="e#4107#4130#0" expanded="true" />
-                <element signature="e#4150#4173#0" expanded="true" />
-                <element signature="e#4174#4179#0" expanded="true" />
-                <element signature="e#4179#4184#0" expanded="true" />
-                <element signature="e#4199#4222#0" expanded="true" />
-                <element signature="e#4238#4280#0" expanded="true" />
-                <element signature="e#4298#4321#0" expanded="true" />
-                <element signature="e#4336#4359#0" expanded="true" />
-                <element signature="e#4387#4429#0" expanded="true" />
-                <element signature="e#4445#4468#0" expanded="true" />
-                <element signature="e#4486#4509#0" expanded="true" />
-                <element signature="e#4527#4550#0" expanded="true" />
-                <element signature="e#4551#4555#1" expanded="true" />
-                <element signature="e#4572#4595#0" expanded="true" />
-                <element signature="e#4612#4635#0" expanded="true" />
-                <element signature="e#4650#4673#0" expanded="true" />
-                <element signature="e#4707#4730#0" expanded="true" />
-                <element signature="e#4749#4772#0" expanded="true" />
-                <element signature="e#4790#4813#0" expanded="true" />
-                <element signature="e#4847#4870#0" expanded="true" />
-                <element signature="e#4888#4911#0" expanded="true" />
-                <element signature="e#4929#4952#0" expanded="true" />
-                <element signature="e#4980#5003#0" expanded="true" />
-                <element signature="e#5018#5060#0" expanded="true" />
-                <element signature="e#5078#5101#0" expanded="true" />
-                <element signature="e#5135#5158#0" expanded="true" />
-                <element signature="e#5176#5199#0" expanded="true" />
-                <element signature="e#5216#5239#0" expanded="true" />
-                <element signature="e#5273#5296#0" expanded="true" />
-                <element signature="e#5314#5337#0" expanded="true" />
-                <element signature="e#5355#5378#0" expanded="true" />
-                <element signature="e#5406#5429#0" expanded="true" />
-                <element signature="e#5459#5482#0" expanded="true" />
-                <element signature="e#5500#5523#0" expanded="true" />
-                <element signature="e#5541#5564#0" expanded="true" />
-                <element signature="e#5588#5611#0" expanded="true" />
-                <element signature="e#5626#5668#0" expanded="true" />
-                <element signature="e#5687#5729#0" expanded="true" />
-                <element signature="e#5745#5768#0" expanded="true" />
-                <element signature="e#5785#5808#0" expanded="true" />
-                <element signature="e#5824#5866#0" expanded="true" />
-                <element signature="e#5884#5907#0" expanded="true" />
-                <element signature="e#5922#5945#0" expanded="true" />
-                <element signature="e#5975#5998#0" expanded="true" />
-                <element signature="e#6017#6040#0" expanded="true" />
-                <element signature="e#6058#6081#0" expanded="true" />
-                <element signature="e#6109#6151#0" expanded="true" />
-                <element signature="e#6170#6193#0" expanded="true" />
-                <element signature="e#6217#6240#0" expanded="true" />
-                <element signature="e#6255#6297#0" expanded="true" />
-                <element signature="e#6316#6358#0" expanded="true" />
-                <element signature="e#6374#6397#0" expanded="true" />
-                <element signature="e#6414#6437#0" expanded="true" />
-                <element signature="e#6453#6495#0" expanded="true" />
-                <element signature="e#6513#6536#0" expanded="true" />
-                <element signature="e#6551#6574#0" expanded="true" />
-                <element signature="e#6604#6627#0" expanded="true" />
-                <element signature="e#6646#6669#0" expanded="true" />
-                <element signature="e#6687#6710#0" expanded="true" />
-                <element signature="e#6738#6780#0" expanded="true" />
-                <element signature="e#6799#6822#0" expanded="true" />
-                <element signature="e#6846#6869#0" expanded="true" />
-                <element signature="e#6889#6912#0" expanded="true" />
-                <element signature="e#6922#6928#0" expanded="true" />
-                <element signature="e#6939#6981#0" expanded="true" />
-                <element signature="e#7007#7030#0" expanded="true" />
-                <element signature="e#7048#7071#0" expanded="true" />
-                <element signature="e#7087#7110#0" expanded="true" />
-                <element signature="e#7170#7191#0" expanded="true" />
-                <element signature="e#7388#7393#0" expanded="true" />
-                <element signature="e#7393#7398#0" expanded="true" />
-                <element signature="e#7431#7435#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="376">
+              <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -277,15 +249,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="229">
               <caret line="43" column="18" selection-end-line="82" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/add_two_numbers.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -316,7 +279,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NOT_FOUND_OPERATION</find>
       <find>FIND_LEFT_OPERATION</find>
       <find>ADD_SUB_NODE</find>
       <find>imageMap</find>
@@ -346,6 +308,7 @@
       <find>page-header</find>
       <find>blog-post</find>
       <find>support-core-utils</find>
+      <find>span</find>
     </findStrings>
     <replaceStrings>
       <replace>graph</replace>
@@ -2514,7 +2477,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/common/TutorialFragment.java" />
         <option value="$PROJECT_DIR$/android/assets/data_structure/Array/quiz/array_quiz.html" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/AlgorithmApplication.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/utils/JPushEventUtils.java" />
@@ -2563,8 +2525,9 @@
         <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/link_list_cycle.html" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java" />
         <option value="$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayTutorialFragment.java" />
-        <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" />
         <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/merge_two_lists.html" />
+        <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json" />
+        <option value="$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/remove_duplicates_from_list.html" />
       </list>
     </option>
   </component>
@@ -2822,7 +2785,7 @@
     <property name="ExportApk.SignV1" value="true" />
     <property name="ExportApk.SignV2" value="true" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Bs&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.data_structure.tree.data.BinarySearchTree&#10;Al&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/Algorithm.java&#10;Data&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/DataStructureActivity.java&#10;arrays&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/arrays.xml&#10;string&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/strings.xml&#10;build&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build.gradle&#10;List.java&#9;FILE&#9;file:///Users/danny.jiang/Library/Android/sdk/sources/android-27/java/util/LinkedList.java&#10;Tu&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.common.TutorialFragment&#10;a&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/arrays.xml&#10;QueueT&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.data_structure.queue.QueueTutorialFragment&#10;Stack&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/stack/StackTutorialFragment.java&#10;Stac&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.data_structure.stack.StackTutorialFragment&#10;Link&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListTutorialFragment.java&#10;Arra&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayTutorialFragment.java&#10;Algori&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java&#10;Main&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/MainActivity.java&#10;A&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/AlgorithmApplication.java&#10;Quic&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.quick_sort.QuickSortAdapter&#10;InsertA&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Insert&#9;RUN_CONFIGURATION&#9;InsertSortAdapterTest.algorithm&#10;Bubble&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Algo&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/Algorithm.java&#10;Bubbl&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Block&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java&#10;Queue&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java&#10;Android&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml&#10;Algorithm&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.Algorithm&#10;Arr&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java&#10;Bubb&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Algor&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/AlgorithmActivity.java&#10;co&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/colors.xml&#10;Qui&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.quick_sort.QuickSortAdapter&#10;InsertAda&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Ins&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertSortAdapter.java&#10;Insertion&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertionSortTutorialFragment.java&#10;Smar&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/utils/SmartFontGenerator.java&#10;com&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/layout/common_activity_layout.xml" />
+    <property name="SearchEverywhereHistoryKey" value="mer&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/assets/data_structure/leetcode_questions/merge_two_lists.html&#10;Bs&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.data_structure.tree.data.BinarySearchTree&#10;Al&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/Algorithm.java&#10;Data&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/DataStructureActivity.java&#10;arrays&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/arrays.xml&#10;string&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/strings.xml&#10;build&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build.gradle&#10;List.java&#9;FILE&#9;file:///Users/danny.jiang/Library/Android/sdk/sources/android-27/java/util/LinkedList.java&#10;Tu&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.common.TutorialFragment&#10;a&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/arrays.xml&#10;QueueT&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.data_structure.queue.QueueTutorialFragment&#10;Stack&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/stack/StackTutorialFragment.java&#10;Stac&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.data_structure.stack.StackTutorialFragment&#10;Link&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListTutorialFragment.java&#10;Arra&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayTutorialFragment.java&#10;Algori&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/common/AlgorithmAdapter.java&#10;Main&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/MainActivity.java&#10;A&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/AlgorithmApplication.java&#10;Quic&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.quick_sort.QuickSortAdapter&#10;InsertA&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Insert&#9;RUN_CONFIGURATION&#9;InsertSortAdapterTest.algorithm&#10;Bubble&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Algo&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/Algorithm.java&#10;Bubbl&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Block&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/queue/group/BlockingQueueGroup.java&#10;Queue&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/queue/QueueAdapter.java&#10;Android&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml&#10;Algorithm&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.Algorithm&#10;Arr&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/data_structure/array/ArrayAdapter.java&#10;Bubb&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/bubble_sort/BubbleSortAdapter.java&#10;Algor&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/AlgorithmActivity.java&#10;co&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/values/colors.xml&#10;Qui&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.quick_sort.QuickSortAdapter&#10;InsertAda&#9;PSI&#9;JAVA://com.danny_jiang.algorithm.insert_sort.InsertSortAdapter&#10;Ins&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertSortAdapter.java&#10;Insertion&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/insert_sort/InsertionSortTutorialFragment.java&#10;Smar&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/src/com/danny_jiang/algorithm/utils/SmartFontGenerator.java&#10;com&#9;FILE&#9;file:///Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/layout/common_activity_layout.xml" />
     <property name="android.profiler.active" value="true" />
     <property name="android.project.structure.last.selected" value="android" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -3155,12 +3118,12 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49850968" visible="true" weight="0.28215224" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49850968" weight="0.28215224" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014903" side_tool="true" weight="0.32939634" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32938075" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.5288714" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32938075" />
-      <window_info anchor="bottom" id="Android Profiler" order="12" show_stripe_button="false" weight="0.32938075" />
+      <window_info anchor="bottom" id="Android Profiler" order="12" weight="0.32938075" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -3396,13 +3359,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/data_structure/linkedlist/LinkListAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/MatchDemo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -3610,6 +3566,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding>
+            <element signature="e#403#416#0" expanded="true" />
+          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2" />
@@ -3710,13 +3669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/add_two_numbers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/src/com/danny_jiang/algorithm/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -3731,6 +3683,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/add_two_numbers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="30" column="6" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/link_list_cycle.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -3738,119 +3704,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions.json">
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/merge_two_lists.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+        <state relative-caret-position="376">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/merge_two_lists.html">
+    <entry file="file://$PROJECT_DIR$/android/assets/data_structure/leetcode_questions/remove_duplicates_from_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="344">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding>
-            <element signature="e#2112#2330#0" expanded="true" />
-            <element signature="e#2530#2620#0" expanded="true" />
-            <element signature="e#2690#2711#0" expanded="true" />
-            <element signature="e#2856#2882#0" expanded="true" />
-            <element signature="e#2936#2966#0" expanded="true" />
-            <element signature="e#2973#3015#0" expanded="true" />
-            <element signature="e#3058#3081#0" expanded="true" />
+            <element signature="e#1638#1664#0" expanded="true" />
+            <element signature="e#1718#1748#0" expanded="true" />
+            <element signature="e#1755#1797#0" expanded="true" />
+            <element signature="e#1818#1860#0" expanded="true" />
+            <element signature="e#1889#1912#0" expanded="true" />
+            <element signature="e#1932#1974#0" expanded="true" />
+            <element signature="e#2020#2043#0" expanded="true" />
+            <element signature="e#2071#2094#0" expanded="true" />
+            <element signature="e#2110#2133#0" expanded="true" />
+            <element signature="e#2157#2199#0" expanded="true" />
+            <element signature="e#2215#2238#0" expanded="true" />
+            <element signature="e#2258#2281#0" expanded="true" />
+            <element signature="e#2298#2340#0" expanded="true" />
+            <element signature="e#2359#2382#0" expanded="true" />
+            <element signature="e#2404#2427#0" expanded="true" />
+            <element signature="e#2446#2469#0" expanded="true" />
+            <element signature="e#2486#2528#0" expanded="true" />
+            <element signature="e#2546#2569#0" expanded="true" />
+            <element signature="e#2597#2639#0" expanded="true" />
+            <element signature="e#2664#2687#0" expanded="true" />
+            <element signature="e#2697#2703#0" expanded="true" />
+            <element signature="e#2729#2752#0" expanded="true" />
+            <element signature="e#2772#2795#0" expanded="true" />
+            <element signature="e#2805#2811#0" expanded="true" />
+            <element signature="e#2826#2868#0" expanded="true" />
+            <element signature="e#2887#2910#0" expanded="true" />
+            <element signature="e#2927#2950#0" expanded="true" />
+            <element signature="e#2967#3009#0" expanded="true" />
+            <element signature="e#3028#3051#0" expanded="true" />
+            <element signature="e#3052#3057#0" expanded="true" />
+            <element signature="e#3057#3062#0" expanded="true" />
+            <element signature="e#3078#3101#0" expanded="true" />
             <element signature="e#3120#3143#0" expanded="true" />
-            <element signature="e#3159#3182#0" expanded="true" />
-            <element signature="e#3216#3239#0" expanded="true" />
-            <element signature="e#3255#3297#0" expanded="true" />
-            <element signature="e#3323#3346#0" expanded="true" />
-            <element signature="e#3361#3384#0" expanded="true" />
-            <element signature="e#3399#3422#0" expanded="true" />
-            <element signature="e#3437#3460#0" expanded="true" />
-            <element signature="e#3491#3514#0" expanded="true" />
-            <element signature="e#3534#3557#0" expanded="true" />
-            <element signature="e#3567#3573#0" expanded="true" />
-            <element signature="e#3584#3626#0" expanded="true" />
-            <element signature="e#3645#3668#0" expanded="true" />
-            <element signature="e#3685#3708#0" expanded="true" />
-            <element signature="e#3724#3766#0" expanded="true" />
-            <element signature="e#3784#3807#0" expanded="true" />
-            <element signature="e#3825#3848#0" expanded="true" />
-            <element signature="e#3864#3906#0" expanded="true" />
-            <element signature="e#3924#3947#0" expanded="true" />
-            <element signature="e#3962#3985#0" expanded="true" />
-            <element signature="e#4009#4051#0" expanded="true" />
-            <element signature="e#4067#4090#0" expanded="true" />
-            <element signature="e#4107#4130#0" expanded="true" />
-            <element signature="e#4150#4173#0" expanded="true" />
-            <element signature="e#4174#4179#0" expanded="true" />
-            <element signature="e#4179#4184#0" expanded="true" />
-            <element signature="e#4199#4222#0" expanded="true" />
-            <element signature="e#4238#4280#0" expanded="true" />
-            <element signature="e#4298#4321#0" expanded="true" />
-            <element signature="e#4336#4359#0" expanded="true" />
-            <element signature="e#4387#4429#0" expanded="true" />
-            <element signature="e#4445#4468#0" expanded="true" />
-            <element signature="e#4486#4509#0" expanded="true" />
-            <element signature="e#4527#4550#0" expanded="true" />
-            <element signature="e#4551#4555#1" expanded="true" />
-            <element signature="e#4572#4595#0" expanded="true" />
-            <element signature="e#4612#4635#0" expanded="true" />
-            <element signature="e#4650#4673#0" expanded="true" />
-            <element signature="e#4707#4730#0" expanded="true" />
-            <element signature="e#4749#4772#0" expanded="true" />
-            <element signature="e#4790#4813#0" expanded="true" />
-            <element signature="e#4847#4870#0" expanded="true" />
-            <element signature="e#4888#4911#0" expanded="true" />
-            <element signature="e#4929#4952#0" expanded="true" />
-            <element signature="e#4980#5003#0" expanded="true" />
-            <element signature="e#5018#5060#0" expanded="true" />
-            <element signature="e#5078#5101#0" expanded="true" />
-            <element signature="e#5135#5158#0" expanded="true" />
-            <element signature="e#5176#5199#0" expanded="true" />
-            <element signature="e#5216#5239#0" expanded="true" />
-            <element signature="e#5273#5296#0" expanded="true" />
-            <element signature="e#5314#5337#0" expanded="true" />
-            <element signature="e#5355#5378#0" expanded="true" />
-            <element signature="e#5406#5429#0" expanded="true" />
-            <element signature="e#5459#5482#0" expanded="true" />
-            <element signature="e#5500#5523#0" expanded="true" />
-            <element signature="e#5541#5564#0" expanded="true" />
-            <element signature="e#5588#5611#0" expanded="true" />
-            <element signature="e#5626#5668#0" expanded="true" />
-            <element signature="e#5687#5729#0" expanded="true" />
-            <element signature="e#5745#5768#0" expanded="true" />
-            <element signature="e#5785#5808#0" expanded="true" />
-            <element signature="e#5824#5866#0" expanded="true" />
-            <element signature="e#5884#5907#0" expanded="true" />
-            <element signature="e#5922#5945#0" expanded="true" />
-            <element signature="e#5975#5998#0" expanded="true" />
-            <element signature="e#6017#6040#0" expanded="true" />
-            <element signature="e#6058#6081#0" expanded="true" />
-            <element signature="e#6109#6151#0" expanded="true" />
-            <element signature="e#6170#6193#0" expanded="true" />
-            <element signature="e#6217#6240#0" expanded="true" />
-            <element signature="e#6255#6297#0" expanded="true" />
-            <element signature="e#6316#6358#0" expanded="true" />
-            <element signature="e#6374#6397#0" expanded="true" />
-            <element signature="e#6414#6437#0" expanded="true" />
-            <element signature="e#6453#6495#0" expanded="true" />
-            <element signature="e#6513#6536#0" expanded="true" />
-            <element signature="e#6551#6574#0" expanded="true" />
-            <element signature="e#6604#6627#0" expanded="true" />
-            <element signature="e#6646#6669#0" expanded="true" />
-            <element signature="e#6687#6710#0" expanded="true" />
-            <element signature="e#6738#6780#0" expanded="true" />
-            <element signature="e#6799#6822#0" expanded="true" />
-            <element signature="e#6846#6869#0" expanded="true" />
-            <element signature="e#6889#6912#0" expanded="true" />
-            <element signature="e#6922#6928#0" expanded="true" />
-            <element signature="e#6939#6981#0" expanded="true" />
-            <element signature="e#7007#7030#0" expanded="true" />
-            <element signature="e#7048#7071#0" expanded="true" />
-            <element signature="e#7087#7110#0" expanded="true" />
-            <element signature="e#7170#7191#0" expanded="true" />
-            <element signature="e#7388#7393#0" expanded="true" />
-            <element signature="e#7393#7398#0" expanded="true" />
-            <element signature="e#7431#7435#0" expanded="true" />
+            <element signature="e#3160#3202#0" expanded="true" />
+            <element signature="e#3220#3243#0" expanded="true" />
+            <element signature="e#3258#3281#0" expanded="true" />
+            <element signature="e#3309#3351#0" expanded="true" />
+            <element signature="e#3367#3390#0" expanded="true" />
+            <element signature="e#3407#3430#0" expanded="true" />
+            <element signature="e#3448#3471#0" expanded="true" />
+            <element signature="e#3490#3513#0" expanded="true" />
+            <element signature="e#3532#3555#0" expanded="true" />
+            <element signature="e#3572#3595#0" expanded="true" />
+            <element signature="e#3610#3633#0" expanded="true" />
+            <element signature="e#3667#3690#0" expanded="true" />
+            <element signature="e#3709#3732#0" expanded="true" />
+            <element signature="e#3750#3773#0" expanded="true" />
+            <element signature="e#3792#3815#0" expanded="true" />
+            <element signature="e#3833#3856#0" expanded="true" />
+            <element signature="e#3884#3907#0" expanded="true" />
+            <element signature="e#3922#3964#0" expanded="true" />
+            <element signature="e#3982#4005#0" expanded="true" />
+            <element signature="e#4039#4062#0" expanded="true" />
+            <element signature="e#4080#4103#0" expanded="true" />
+            <element signature="e#4121#4144#0" expanded="true" />
+            <element signature="e#4173#4196#0" expanded="true" />
+            <element signature="e#4220#4243#0" expanded="true" />
+            <element signature="e#4253#4259#0" expanded="true" />
+            <element signature="e#4274#4316#0" expanded="true" />
+            <element signature="e#4341#4364#0" expanded="true" />
+            <element signature="e#4384#4407#0" expanded="true" />
+            <element signature="e#4423#4446#0" expanded="true" />
+            <element signature="e#4506#4527#0" expanded="true" />
+            <element signature="e#4748#4753#0" expanded="true" />
+            <element signature="e#4753#4758#0" expanded="true" />
           </folding>
         </state>
       </provider>
