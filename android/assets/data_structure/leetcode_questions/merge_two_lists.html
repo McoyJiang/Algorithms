@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.tianmaying.com/tutorial/LC11"/>
+    <link rel="shortcut icon" href="https://oc5je3pwu.qnssl.com/favicon.ico">
+    <link rel="stylesheet"
+          href="https://tmy-assets.oss-cn-beijing.aliyuncs.com/css/tmy.9eee9def1069a37f5f376beccbbac653.css">
+    <script src="https://tmy-assets.oss-cn-beijing.aliyuncs.com/js/tmy.669ece8c162208774c6efa891554c881.js"></script>
+
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?f02c3bb44e74e96fb85d8f3084f4ce6e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+<div class="container mt15" style="position:relative">
+
+    <div class="article fmt article__content" data-id="1190000003802755"
+         data-license="cc">
+
+        <h1>Merge Two Sorted Lists</h1>
+        <blockquote>
+            <p>Merge two sorted linked lists and return it as a new list.
+                The new list should be made by splicing together the nodes of the first two
+                lists.</p>
+        </blockquote>
+
+        <h3><strong>Example:</strong></h3>
+        <h4>
+            Input: 1->2->4, 1->3->4<br>
+            Output: 1->1->2->3->4->4
+        </h4>
+
+        <h3><strong>Analysis</strong></h3>
+        <h4>
+            The key to solve the problem is defining a fake head.
+            Then compare the first elements from each list.
+            Add the smaller one to the merged list.
+            Finally, when one of them is empty, simply append it to the merged list,
+            since it is already sorted.
+        </h4>
+
+        <h3>Java Solution</h3>
+
+        <div class="wp_syntax" style="position:relative;">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="code"><pre class="java" style="font-family:monospace;"><span
+                            style="color: #000000; font-weight: bold;">public</span> ListNode mergeTwoLists<span
+                            style="color: #009900;">(</span>ListNode l1, ListNode l2<span
+                            style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+    ListNode head <span style="color: #339933;">=</span> <span
+                                style="color: #000000; font-weight: bold;">new</span> ListNode<span
+                                style="color: #009900;">(</span><span
+                                style="color: #cc66cc;">0</span><span
+                                style="color: #009900;">)</span><span
+                                style="color: #339933;">;</span>
+    ListNode p <span style="color: #339933;">=</span> head<span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">while</span><span
+                                style="color: #009900;">(</span>l1<span
+                                style="color: #339933;">!=</span><span
+                                style="color: #000066; font-weight: bold;">null</span><span
+                                style="color: #339933;">||</span>l2<span
+                                style="color: #339933;">!=</span><span
+                                style="color: #000066; font-weight: bold;">null</span><span
+                                style="color: #009900;">)</span><span
+                                style="color: #009900;">{</span>
+        <span style="color: #000000; font-weight: bold;">if</span><span
+                                style="color: #009900;">(</span>l1<span
+                                style="color: #339933;">!=</span>null<span style="color: #339933;">&amp;&amp;</span>l2<span
+                                style="color: #339933;">!=</span><span
+                                style="color: #000066; font-weight: bold;">null</span><span
+                                style="color: #009900;">)</span><span
+                                style="color: #009900;">{</span>
+            <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>l1.<span
+                                style="color: #006633;">val</span> <span style="color: #339933;">&lt;</span> l2.<span
+                                style="color: #006633;">val</span><span
+                                style="color: #009900;">)</span><span
+                                style="color: #009900;">{</span>
+                p.<span style="color: #006633;">next</span> <span style="color: #339933;">=</span> l1<span
+                                style="color: #339933;">;</span>
+                l1<span style="color: #339933;">=</span>l1.<span style="color: #006633;">next</span><span
+                                style="color: #339933;">;</span>
+            <span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span
+                                style="color: #009900;">{</span>
+                p.<span style="color: #006633;">next</span><span
+                                style="color: #339933;">=</span>l2<span
+                                style="color: #339933;">;</span>
+                l2<span style="color: #339933;">=</span>l2.<span style="color: #006633;">next</span><span
+                                style="color: #339933;">;</span>
+            <span style="color: #009900;">}</span>
+            p <span style="color: #339933;">=</span> p.<span
+                                style="color: #006633;">next</span><span
+                                style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span><span
+                                style="color: #000000; font-weight: bold;">else</span> <span
+                                style="color: #000000; font-weight: bold;">if</span><span
+                                style="color: #009900;">(</span>l1<span
+                                style="color: #339933;">==</span><span
+                                style="color: #000066; font-weight: bold;">null</span><span
+                                style="color: #009900;">)</span><span
+                                style="color: #009900;">{</span>
+            p.<span style="color: #006633;">next</span> <span
+                                style="color: #339933;">=</span> l2<span
+                                style="color: #339933;">;</span>
+            <span style="color: #000000; font-weight: bold;">break</span><span
+                                style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span><span
+                                style="color: #000000; font-weight: bold;">else</span> <span
+                                style="color: #000000; font-weight: bold;">if</span><span
+                                style="color: #009900;">(</span>l2<span
+                                style="color: #339933;">==</span><span
+                                style="color: #000066; font-weight: bold;">null</span><span
+                                style="color: #009900;">)</span><span
+                                style="color: #009900;">{</span>
+            p.<span style="color: #006633;">next</span> <span
+                                style="color: #339933;">=</span> l1<span
+                                style="color: #339933;">;</span>
+            <span style="color: #000000; font-weight: bold;">break</span><span
+                                style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+    <span style="color: #009900;">}</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">return</span> head.<span
+                                style="color: #006633;">next</span><span
+                                style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="theCode" style="display:none;">public ListNode mergeTwoLists(ListNode l1,
+                ListNode l2) {
+                ListNode head = new ListNode(0);
+                ListNode p = head;
+                while(l1!=null||l2!=null){
+                if(l1!=null&amp;&amp;l2!=null){
+                if(l1.val &lt; l2.val){
+                p.next = l1;
+                l1=l1.next;
+                }else{
+                p.next=l2;
+                l2=l2.next;
+                }
+                p = p.next;
+                }else if(l1==null){
+                p.next = l2;
+                break;
+                }else if(l2==null){
+                p.next = l1;
+                break;
+                }
+                }
+                return head.next;
+                }</p></div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

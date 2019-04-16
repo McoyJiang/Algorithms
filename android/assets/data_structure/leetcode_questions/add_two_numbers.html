@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="applicable-device" content="pc,mobile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://www.tianmaying.com/tutorial/LC11"/>
+    <link rel="shortcut icon" href="https://oc5je3pwu.qnssl.com/favicon.ico">
+    <link rel="stylesheet"
+          href="https://tmy-assets.oss-cn-beijing.aliyuncs.com/css/tmy.9eee9def1069a37f5f376beccbbac653.css">
+    <script src="https://tmy-assets.oss-cn-beijing.aliyuncs.com/js/tmy.669ece8c162208774c6efa891554c881.js"></script>
+
+    <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?f02c3bb44e74e96fb85d8f3084f4ce6e";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+<div class="container mt15" style="position:relative">
+
+    <div class="article fmt article__content" data-id="1190000003802755"
+         data-license="cc">
+
+        <h1>Add Two Numbers</h1>
+        <blockquote>
+            <p>You are given two linked lists representing two non-negative numbers.</p>
+            <p>The digits are stored in reverse order and each of their nodes contain a single digit.
+                Add the two numbers and return it as a linked list.</p>
+        </blockquote>
+
+        <div>
+            Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)<br>
+            Output: 7 -> 0 -> 8
+        </div>
+
+        <h3>Java Solution</h3>
+        <div class="wp_syntax" style="position:relative;"><table><tbody><tr><td class="code"><pre class="java" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">/*
+2 -&gt; 4 -&gt; 3
+5 -&gt; 6 -&gt; 4
+7    0    8
+*/</span>
+<span style="color: #000000; font-weight: bold;">public</span> ListNode addTwoNumbers<span style="color: #009900;">(</span>ListNode l1, ListNode l2<span style="color: #009900;">)</span> <span style="color: #009900;">{</span>
+    ListNode fake <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> ListNode<span style="color: #009900;">(</span><span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+    ListNode p <span style="color: #339933;">=</span> fake<span style="color: #339933;">;</span>
+&nbsp;
+    ListNode p1 <span style="color: #339933;">=</span> l1<span style="color: #339933;">;</span>
+    ListNode p2 <span style="color: #339933;">=</span> l2<span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #000066; font-weight: bold;">int</span> carry <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+    <span style="color: #000000; font-weight: bold;">while</span><span style="color: #009900;">(</span>p1<span style="color: #339933;">!=</span><span style="color: #000066; font-weight: bold;">null</span> <span style="color: #339933;">||</span> p2<span style="color: #339933;">!=</span><span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+        <span style="color: #000066; font-weight: bold;">int</span> sum <span style="color: #339933;">=</span> carry<span style="color: #339933;">;</span>
+        <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>p1<span style="color: #339933;">!=</span><span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+            sum <span style="color: #339933;">+=</span> p1.<span style="color: #006633;">val</span><span style="color: #339933;">;</span>
+            p1 <span style="color: #339933;">=</span> p1.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+&nbsp;
+        <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>p2<span style="color: #339933;">!=</span><span style="color: #000066; font-weight: bold;">null</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+            sum <span style="color: #339933;">+=</span> p2.<span style="color: #006633;">val</span><span style="color: #339933;">;</span>
+            p2 <span style="color: #339933;">=</span> p2.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+&nbsp;
+        <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>sum<span style="color: #339933;">&gt;</span><span style="color: #cc66cc;">9</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+            carry<span style="color: #339933;">=</span><span style="color: #cc66cc;">1</span><span style="color: #339933;">;</span>
+            sum <span style="color: #339933;">=</span> sum<span style="color: #339933;">-</span><span style="color: #cc66cc;">10</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span><span style="color: #000000; font-weight: bold;">else</span><span style="color: #009900;">{</span>
+            carry <span style="color: #339933;">=</span> <span style="color: #cc66cc;">0</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">}</span>
+&nbsp;
+        ListNode l <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> ListNode<span style="color: #009900;">(</span>sum<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+        p.<span style="color: #006633;">next</span> <span style="color: #339933;">=</span> l<span style="color: #339933;">;</span>
+        p <span style="color: #339933;">=</span> p.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">}</span>
+&nbsp;
+    <span style="color: #666666; font-style: italic;">//don't forget check the carry value at the end</span>
+    <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">(</span>carry <span style="color: #339933;">&gt;</span> <span style="color: #cc66cc;">0</span><span style="color: #009900;">)</span><span style="color: #009900;">{</span>
+        ListNode l <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> ListNode<span style="color: #009900;">(</span>carry<span style="color: #009900;">)</span><span style="color: #339933;">;</span>
+        p.<span style="color: #006633;">next</span> <span style="color: #339933;">=</span> l<span style="color: #339933;">;</span>
+    <span style="color: #009900;">}</span>
+    <span style="color: #000000; font-weight: bold;">return</span> fake.<span style="color: #006633;">next</span><span style="color: #339933;">;</span>
+<span style="color: #009900;">}</span></pre></td></tr></tbody></table><p class="theCode" style="display:none;">/*
+            2 -&gt; 4 -&gt; 3
+            5 -&gt; 6 -&gt; 4
+            7 0 8
+            */
+            public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+            ListNode fake = new ListNode(0);
+            ListNode p = fake;
+            ListNode p1 = l1;
+            ListNode p2 = l2;
+            int carry = 0;
+            while(p1!=null || p2!=null){
+            int sum = carry;
+            if(p1!=null){
+            sum += p1.val;
+            p1 = p1.next;
+            }
+            if(p2!=null){
+            sum += p2.val;
+            p2 = p2.next;
+            }
+            if(sum&gt;9){
+            carry=1;
+            sum = sum-10;
+            }else{
+            carry = 0;
+            }
+            ListNode l = new ListNode(sum);
+            p.next = l;
+            p = p.next;
+            }
+            //don't forget check the carry value at the end
+            if(carry &gt; 0){
+            ListNode l = new ListNode(carry);
+            p.next = l;
+            }
+            return fake.next;
+            }</p></div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

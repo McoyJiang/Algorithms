@@ -1357,6 +1357,7 @@ drawable service_num
 drawable stack
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable tree_into
 drawable wechat_num
 id ALT
 id CTRL

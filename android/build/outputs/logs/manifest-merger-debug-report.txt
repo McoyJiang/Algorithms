@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-81:12
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-81:12
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-81:12
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-81:12
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-84:12
 MERGED from [com.android.support:design:27.1.1] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/AndroidManifest.xml:17:1-22:12
 MERGED from [com.thoughtbot:expandablecheckrecyclerview:1.4] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/expandablecheckrecyclerview-1.4.aar/e14d3ae8ced7b7b7b7d29d04228fb080/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.McoyJiang:McoySnap:v2.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/AndroidManifest.xml:2:1-17:12
@@ -28,9 +28,9 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/danny.jiang/.gra
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/ff893ae27985c8b414adc34aa47a583b/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7409ad221af9b3c61a6619e28fdecbc1/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/2d8605e4c754c09401c23917865953e2/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-81:12
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-81:12
-INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-81:12
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-84:12
+INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:2:1-84:12
 	package
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:4:5-40
 		INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml
@@ -194,7 +194,7 @@ MERGED from [cn.jiguang.sdk:jpush:3.1.6] /Users/danny.jiang/.gradle/caches/trans
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:33:22-63
 application
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:35:5-79:19
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:35:5-82:19
 MERGED from [com.github.McoyJiang:McoySnap:v2.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.McoyJiang:McoySnap:v2.0] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/AndroidManifest.xml:11:5-15:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/1dba33dfc6cf063494863fd4f96f4b86/AndroidManifest.xml:9:5-20
@@ -220,79 +220,83 @@ MERGED from [cn.jiguang.sdk:jcore:1.2.5] /Users/danny.jiang/.gradle/caches/trans
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:36:9-45
 activity#com.danny_jiang.algorithm.WelcomeActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:43:9-48:20
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:43:9-45:20
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:43:19-50
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:44:13-47:29
-action#android.intent.action.MAIN
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:45:17-69
-	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:45:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:46:17-77
-	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:46:27-74
 activity#com.danny_jiang.algorithm.DataStructureActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:49:9-59
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:46:9-51:20
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:49:19-56
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:46:19-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:47:13-50:29
+action#android.intent.action.MAIN
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:48:17-69
+	android:name
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:48:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:49:17-77
+	android:name
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:49:27-74
 activity#com.danny_jiang.algorithm.data_structure.array.ArrayActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:51:9-72
-	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:51:19-69
-activity#com.danny_jiang.algorithm.data_structure.linkedlist.LinkListActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:52:9-80
-	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:52:19-77
-activity#com.danny_jiang.algorithm.data_structure.stack.StackActivity
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:53:9-72
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:53:19-69
+activity#com.danny_jiang.algorithm.data_structure.linkedlist.LinkListActivity
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:54:9-80
+	android:name
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:54:19-77
+activity#com.danny_jiang.algorithm.data_structure.stack.StackActivity
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:55:9-72
+	android:name
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:55:19-69
 activity#com.danny_jiang.algorithm.data_structure.queue.QueueActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:54:9-72
-	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:54:19-69
-activity#com.danny_jiang.algorithm.data_structure.tree.TreeIntroActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:55:9-75
-	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:55:19-72
-activity#com.danny_jiang.algorithm.data_structure.tree.RBTreeActivity
 ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:56:9-72
 	android:name
 		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:56:19-69
+activity#com.danny_jiang.algorithm.data_structure.tree.TreeIntroActivity
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:57:9-75
+	android:name
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:57:19-72
+activity#com.danny_jiang.algorithm.data_structure.tree.RBTreeActivity
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:58:9-72
+	android:name
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:58:19-69
+activity#com.danny_jiang.algorithm.data_structure.tree.BSTActivity
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:59:9-69
+	android:name
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:59:19-66
 activity#com.danny_jiang.algorithm.bubble_sort.BubbleSortActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:58:9-60:20
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:61:9-63:20
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:58:19-65
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:61:19-65
 activity#com.danny_jiang.algorithm.insert_sort.InsertionSortActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:62:9-71
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:65:9-71
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:62:19-68
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:65:19-68
 activity#com.danny_jiang.algorithm.kruskal_mst.KruskalMSTAlgoActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:64:9-65:20
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:67:9-68:20
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:64:19-69
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:67:19-69
 activity#com.danny_jiang.algorithm.heap_sort.HeapSortActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:67:9-69:20
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:70:9-72:20
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:67:19-61
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:70:19-61
 activity#com.danny_jiang.algorithm.breath_first_search.BreathFirstSearchActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:71:9-73:20
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:74:9-76:20
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:71:19-80
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:74:19-80
 activity#com.danny_jiang.algorithm.quick_sort.QuickSortActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:75:9-65
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:78:9-65
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:75:19-63
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:78:19-63
 activity#com.danny_jiang.algorithm.FeedbackActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:76:9-54
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:79:9-54
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:76:19-51
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:79:19-51
 activity#com.danny_jiang.algorithm.data_structure.QuestionDisplayActivity
-ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:77:9-76
+ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:80:9-76
 	android:name
-		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:77:19-73
+		ADDED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml:80:19-73
 uses-sdk
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/AndroidManifest.xml

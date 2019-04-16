@@ -44,5 +44,37 @@
     }
   ],
   "linklist": [
+    {
+      "title": "LeetCode 2",
+      "name": "Add Two Numbers",
+      "sequence":"001",
+      "tag":"LinkedList",
+      "url": "file:///android_asset/data_structure/leetcode_questions/add_two_numbers.html"
+    },
+    {
+      "title": "LeetCode 31",
+      "name": "Linked List Cycle",
+      "sequence":"002",
+      "tag":"LinkedList",
+      "url": "file:///android_asset/data_structure/leetcode_questions/link_list_cycle.html"
+    },
+    {
+      "name":"Merge Two Sorted Lists",
+      "sequence":"003",
+      "tag":"LinkedList",
+      "url": "file:///android_asset/data_structure/leetcode_questions/merge_two_lists.html"
+    },
+    {
+      "name":"Remove Duplicates from Sorted List I",
+      "sequence":"004",
+      "tag":"LinkedList",
+      "url": "file:///android_asset/data_structure/leetcode_questions/remove_duplicates_from_list.html"
+    },
+    {
+      "name":"Remove Duplicates from Sorted List II",
+      "sequence":"005",
+      "tag":"LinkedList",
+      "url": "file:///android_asset/data_structure/leetcode_questions/remove_duplicates_from_list_second.html"
+    }
   ]
 }
