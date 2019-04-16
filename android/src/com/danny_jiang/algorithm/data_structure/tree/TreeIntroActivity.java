@@ -6,6 +6,6 @@ public class TreeIntroActivity extends AlgorithmActivity {
     @Override
     protected void initFragments() {
         fragmentList.add(new TreeTutorialFragment());
-        fragmentList.add(new TreeVisualizerFragment());
+        //fragmentList.add(new TreeVisualizerFragment());
     }
 }

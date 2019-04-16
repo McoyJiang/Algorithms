@@ -1356,7 +1356,8 @@ int drawable service_num 0x7f08007a
 int drawable stack 0x7f08007b
 int drawable tooltip_frame_dark 0x7f08007c
 int drawable tooltip_frame_light 0x7f08007d
-int drawable wechat_num 0x7f08007e
+int drawable tree_into 0x7f08007e
+int drawable wechat_num 0x7f08007f
 int id ALT 0x7f090000
 int id CTRL 0x7f090001
 int id FUNCTION 0x7f090002

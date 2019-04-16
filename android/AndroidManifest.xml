@@ -56,6 +56,7 @@
         <activity android:name=".data_structure.queue.QueueActivity" />
         <activity android:name=".data_structure.tree.TreeIntroActivity" />
         <activity android:name=".data_structure.tree.RBTreeActivity" />
+        <activity android:name=".data_structure.tree.BSTActivity" />
 
         <activity android:name=".bubble_sort.BubbleSortActivity">
 

@@ -308,6 +308,10 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/9c474f6d87d517698d95d7b6807f004f/res/layout-v21/notification_action.xml"
     },
     {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_tree_into.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/tree_into.png"
+    },
+    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher.png.flat",
         "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-mdpi/ic_launcher.png"
     },
