@@ -10,6 +10,7 @@ import com.danny_jiang.algorithm.data_structure.linkedlist.LinkListActivity;
 import com.danny_jiang.algorithm.data_structure.queue.QueueActivity;
 import com.danny_jiang.algorithm.data_structure.stack.StackActivity;
 import com.danny_jiang.algorithm.data_structure.tree.BSTActivity;
+import com.danny_jiang.algorithm.data_structure.tree.BinaryTreeActivity;
 import com.danny_jiang.algorithm.data_structure.tree.RBTreeActivity;
 import com.danny_jiang.algorithm.data_structure.tree.TreeIntroActivity;
 import com.danny_jiang.algorithm.insert_sort.InsertionSortActivity;
@@ -26,14 +27,15 @@ public enum Algorithm implements Parcelable {
 
     // Tree structure
     TREE_INTRODUCTION("树简介", R.drawable.tree_into, TreeIntroActivity.class),
+    BINARY_TREE("二叉树", R.drawable.binary_tree, BinaryTreeActivity.class),
     BINARY_SEARCH_TREE("二叉搜索树", R.drawable.bst, BSTActivity.class),
     RED_BLACK_TREE("红黑树", R.drawable.red_black_tree, RBTreeActivity.class),
     // Graph algorithm
 
     // sort algorithm
-    BUBBLE_SORT("冒泡排序", R.drawable.array, BubbleSortActivity.class),
-    INSERTION_SORT("插入排序", R.drawable.array, InsertionSortActivity.class),
-    QUICK_SORT("快速排序", R.drawable.array, QuickSortActivity.class);
+    BUBBLE_SORT("冒泡排序", R.drawable.bubble_sort, BubbleSortActivity.class),
+    INSERTION_SORT("插入排序", R.drawable.insertion_sort, InsertionSortActivity.class),
+    QUICK_SORT("快速排序", R.drawable.quick_sort, QuickSortActivity.class);
 
     private String name;
     private int iconRes;

@@ -140,6 +140,10 @@
         "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/layout/bubble_sort_analyze_fragment.xml"
     },
     {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_insertion_sort.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/insertion_sort.png"
+    },
+    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/9c474f6d87d517698d95d7b6807f004f/res/layout-v21/notification_action_tombstone.xml"
     },
@@ -212,6 +216,10 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_bubble_sort.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/bubble_sort.png"
+    },
+    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
@@ -242,6 +250,10 @@
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_quick_sort.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/quick_sort.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_mcoy_produt_detail_layout1.xml.flat",
@@ -1070,6 +1082,10 @@
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_queue.png.flat",
         "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/queue.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_binary_tree.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/binary_tree.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
