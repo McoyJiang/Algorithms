@@ -44,12 +44,12 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/res/drawable-xxhdpi-v4/design_ic_visibility.png"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_design_navigation_menu_item.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_main_activity.xml.flat",
@@ -64,12 +64,12 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_array.png.flat",
         "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/array.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_list_item_algorithm_group.xml.flat",
@@ -84,20 +84,20 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_abc_popup_menu_header_item_layout.xml.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout/abc_popup_menu_header_item_layout.xml"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-v21_design_bottom_navigation_item_background.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/9e5a9f3c6f7af5454c576fe63e49f06e/res/drawable-v21/design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_abc_popup_menu_header_item_layout.xml.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/color_abc_tint_spinner.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/color/abc_tint_spinner.xml"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_36dp.png.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable_abc_list_selector_holo_dark.xml.flat",
@@ -140,6 +140,10 @@
         "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/layout/bubble_sort_analyze_fragment.xml"
     },
     {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_insertion_sort.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/insertion_sort.png"
+    },
+    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/9c474f6d87d517698d95d7b6807f004f/res/layout-v21/notification_action_tombstone.xml"
     },
@@ -152,24 +156,24 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxxhdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-v21_abc_action_bar_item_background_material.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
-        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-v21_abc_edit_text_material.xml.flat",
@@ -208,16 +212,20 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xhdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_bubble_sort.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/bubble_sort.png"
+    },
+    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable_abc_spinner_textfield_background_material.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_cab_background_top_mtrl_alpha.9.png.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -244,6 +252,10 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_quick_sort.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/quick_sort.png"
+    },
+    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_mcoy_produt_detail_layout1.xml.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/McoySnap-v2.0.aar/b2d37726e9a8f412c5cbb73a9b6dc91f/res/layout/mcoy_produt_detail_layout1.xml"
     },
@@ -268,12 +280,12 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-ldrtl-xxxhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-ldrtl-xxxhdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_question_item.xml.flat",
@@ -320,12 +332,12 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/anim/abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/color-v23_abc_tint_default.xml.flat",
@@ -392,12 +404,12 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow.xml.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/262bdf3a44bc7b6ef89975790a902c21/res/layout/notification_template_big_media_narrow.xml"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_notification_template_big_media_narrow.xml.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/262bdf3a44bc7b6ef89975790a902c21/res/layout/notification_template_big_media_narrow.xml"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_abc_search_view.xml.flat",
@@ -544,12 +556,12 @@
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-xxhdpi-v4/abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_abc_action_menu_item_layout.xml.flat",
-        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout/abc_action_menu_item_layout.xml"
-    },
-    {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/layout_abc_action_menu_item_layout.xml.flat",
+        "source": "/Users/danny.jiang/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/decbba35e65a49bcf1f1a3a793533b66/res/layout/abc_action_menu_item_layout.xml"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/color_abc_secondary_text_material_dark.xml.flat",
@@ -1070,6 +1082,10 @@
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_queue.png.flat",
         "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/queue.png"
+    },
+    {
+        "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xhdpi_binary_tree.png.flat",
+        "source": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/res/drawable-xhdpi/binary_tree.png"
     },
     {
         "merged": "/Users/danny.jiang/Downloads/work_dir/EasyAlgorithm/android/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",

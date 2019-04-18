@@ -1323,8 +1323,10 @@ drawable abc_vector_test
 drawable array
 drawable avd_hide_password
 drawable avd_show_password
+drawable binary_tree
 drawable bookstack
 drawable bst
+drawable bubble_sort
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1333,6 +1335,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_array
 drawable ic_launcher
+drawable insertion_sort
 drawable jpush_ic_richpush_actionbar_back
 drawable jpush_ic_richpush_actionbar_divider
 drawable jpush_richpush_btn_selector
@@ -1352,6 +1355,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable queue
+drawable quick_sort
 drawable red_black_tree
 drawable service_num
 drawable stack
