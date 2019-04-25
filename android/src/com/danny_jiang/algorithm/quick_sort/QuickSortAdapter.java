@@ -54,7 +54,7 @@ public class QuickSortAdapter extends AlgorithmAdapter {
         bubbleSortGroup.align(Align.center);
         bubbleSortGroup.space(30);
         bubbleSortGroup.setSize(stage.getWidth(), 200);
-        bubbleSortGroup.setPosition(0, stage.getHeight() * 3 / 4);
+        bubbleSortGroup.setPosition(0, stage.getHeight() - 260);
         stage.addActor(bubbleSortGroup);
 
         for (int i = 0; i < sData.length; i++) {
